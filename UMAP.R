@@ -1,4 +1,4 @@
-df = readRDS("df.rds")
+df = readRDS("/data/projects/psychencode/df.rds")
 library(umap)
 library(ggplot2)
 
