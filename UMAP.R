@@ -1,6 +1,3 @@
-install.packages("umap")
-install.packages("ggplot2")
-
 df = readRDS("/data/projects/psychencode/df.rds")
 library(umap)
 library(ggplot2)
