@@ -10,9 +10,9 @@ plotumap <- function(data, labels) {
   data_umap = umap(data)
   data_layout = data.frame(data_umap$layout)
   
-  png("UMAPplot.png")
+  png("UMAPplotIris.png")
   ggplot(data=data_layout, aes(x=X1, y=X2, color=labels)) +geom_point()
   dev.off
 }
 
-plotumap(df)
+plotumap(irisData, irisLabels)
