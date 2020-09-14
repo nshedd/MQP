@@ -1,11 +1,13 @@
 
+
 df = readRDS("/data/projects/psychencode/df.rds")
 types = read.table("cell_types.tsv", sep ="\t", header=FALSE)
  
 library(umap)
 library(ggplot2)
 
-dl = types[,2]
+ttypes = t(types)
+tdl = types[2,]
 
 tdf = t(df)
 
@@ -17,4 +19,4 @@ plotumap <- function(data, labels) {
   ggsave("UMAPplot.png", device=)
 }
 
-plotumap(tdf, types)
+plotumap(tdf, tdl)
