@@ -13,7 +13,7 @@ tdl = ttypes[2,]
 tdf = t(df)
 
 plotumap <- function(data, labels) {
-  data_umap = umap(data, min_dist=0.00001, spread=0.5)
+  data_umap = umap(data, min_dist=0.00001, spread=0.5, n_neighbors=5)
   data_layout = data.frame(data_umap$layout)
   
   ggplot(data=data_layout, aes(x=X1, y=X2, color=labels)) +geom_point()
