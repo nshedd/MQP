@@ -6,7 +6,8 @@ types = read.table("cell_types.tsv", sep ="\t", header=FALSE)
 library(umap)
 library(ggplot2)
 
-td = types[,2]
+ttypes = t(types)
+tdl = ttypes[2,]
 
 tdf = t(df)
 
@@ -18,4 +19,4 @@ plotumap <- function(data, labels) {
   ggsave("UMAPplot2.png", device=)
 }
 
-plotumap(df, td)
+plotumap(tdf, tdl)
