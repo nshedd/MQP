@@ -18,4 +18,4 @@ plotumap <- function(data, labels) {
   ggsave("UMAPplot.png", device=)
 }
 
-plotumap(tdf, td)
+plotumap(df, td)
