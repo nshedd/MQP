@@ -13,11 +13,11 @@ tdl = ttypes[2,]
 tdf = t(df)
 
 plotumap <- function(data, labels) {
-  data_umap = umap(data)
+  data_umap = umap(data, n_neighbors=100)
   data_layout = data.frame(data_umap$layout)
   
   ggplot(data=data_layout, aes(x=X1, y=X2, color=labels)) +geom_point()
   ggsave("UMAPplot2.png", device=)
 }
 
-plotumap(df, dl)
+plotumap(tdf, tdl)
