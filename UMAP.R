@@ -7,6 +7,7 @@ library(umap)
 library(ggplot2)
 
 ttypes = t(types)
+dl = types[,2]
 tdl = ttypes[2,]
 
 tdf = t(df)
@@ -19,4 +20,4 @@ plotumap <- function(data, labels) {
   ggsave("UMAPplot2.png", device=)
 }
 
-plotumap(tdf, tdl)
+plotumap(df, dl)
