@@ -17,7 +17,7 @@ plotumap <- function(data, labels) {
   data_layout = data.frame(data_umap$layout)
   
   ggplot(data=data_layout, aes(x=X1, y=X2, color=labels)) +geom_point()
-  ggsave("UMAPplot", device=)
+  ggsave("UMAPplot.png", device=)
 }
 
 plotumap(tdf, tdl)
