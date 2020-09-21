@@ -1,5 +1,5 @@
 
-df = read.table("/data/zusers/pratth/sc/atac/PBMC/PMBC.matrix.txt", sep="\t", header=TRUE)
+df = read.table("/data/zusers/pratth/sc/atac/PBMC/PBMC.matrix.txt", sep="\t", header=TRUE)
 
 library(umap)
 library(ggplot2)
