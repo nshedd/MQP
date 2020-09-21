@@ -14,4 +14,4 @@ plotumap <- function(data) {
   ggsave("ImmuneUMAP.png", device=)
 }
 
-plotumap(df)
+plotumap(tdf)
