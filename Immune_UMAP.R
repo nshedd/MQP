@@ -1,5 +1,5 @@
 
-df = read.table("/data/zusers/pratth/sc/atac/PBMC/PBMC.matrix.txt", sep="\t", header=TRUE)
+df = read.table("/data/zusers/pratth/sc/atac/PBMC/PBMC.matrix.txt", sep="\t", header=TRUE, row.names=1)
 
 library(umap)
 library(ggplot2)
@@ -14,4 +14,4 @@ plotumap <- function(data) {
   ggsave("ImmuneUMAP.png", device=)
 }
 
-plotumap(df)
+plotumap(tdf)
