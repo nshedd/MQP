@@ -4,7 +4,6 @@ df = read.table("/data/zusers/pratth/sc/atac/PBMC/PBMC.matrix.txt", sep="\t", he
 library(umap)
 library(ggplot2)
 
-tdf = t(df)
 
 plotumap <- function(data) {
   data_umap = umap(data)
