@@ -21,7 +21,7 @@ def read_matrix():
 
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
-    u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 5, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     matplotlib.pyplot.scatter(
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
