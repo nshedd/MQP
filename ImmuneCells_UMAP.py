@@ -20,7 +20,7 @@ def read_matrix():
     return elements, cells, matrix
 
 def read_cell_types():
-    with open("/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_t-cells.bed", 'r') as t:
+    with open("/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed", 'r') as t:
         elements = t.readline().strip().split() # creates an array with element IDs by splitting the first line at each tab
         lines=t.readlines()
         t_types=[]
