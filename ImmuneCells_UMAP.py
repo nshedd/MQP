@@ -25,7 +25,7 @@ def read_cell_types():
         lines=t.readlines()
         t_types=[]
         for x in lines:
-            t_types.append(x.split(' ')[3])
+            t_types.append(x.split()[3])
         f.close()  
     return t_types
 
