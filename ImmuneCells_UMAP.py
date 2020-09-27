@@ -40,8 +40,13 @@ def match_types(cells, types):
 
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
+    print("Elements:")
+    print(elements[0:100])
+    print("Cells:")
+    print(cells[0:100])
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
+    print("Unstimulated T cells:")
     print(t_types[0:100])
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
