@@ -10,12 +10,12 @@ import matplotlib.pyplot
 
 def read_matrix():
     matrix = [] # creates an empty array which will hold matrix values when populated
-    cells = [] # creates an empty array which will hold cell IDs when populated
+    elements = [] # creates an empty array which will hold cell IDs when populated
     with open("/data/zusers/pratth/sc/atac/PBMC/PBMC.matrix.txt", 'r') as f:
-        elements = f.readline().strip().split() # creates an array with element IDs by splitting the first line at each tab
+        cells = f.readline().strip().split() # creates an array with element IDs by splitting the first line at each tab
         for line in f: # for the remaining lines...
             fields = line.strip().split() # split the line into fields at each tab
-            cells.append(fields[0]) # the cell ID is in the first column
+            elements.append(fields[0]) # the cell ID is in the first column
             matrix.append([ float(x) for x in fields[1:] ]) # this converts all the fields from index 1 onward to floating point numbers and adds them to the matrix
     return elements, cells, matrix
 
@@ -41,16 +41,17 @@ def match_types(cells, types):
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
     print("Elements:")
-    print(elements[0:100])
+    print(elements[0:50])
     print("Cells:")
-    print(cells[0:100])
+    print(cells[0:50])
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
     print("Unstimulated T cells:")
-    print(t_types[0:100])
+    print(t_types[0:50])
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
-    colors = match_types(elements, t_types)
+    colors = match_types(cells, t_types)
+    print(colors[0:50])
     matplotlib.pyplot.scatter(
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
         [ y for x, y in coordinates ], # extract the y-coordinates from the UMAP output
