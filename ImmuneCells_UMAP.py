@@ -3,6 +3,7 @@
 import sys
 import os
 import umap
+import numpy as np
 
 import matplotlib
 matplotlib.use('Agg')
@@ -10,12 +11,12 @@ import matplotlib.pyplot
 
 def read_matrix():
     matrix = [] # creates an empty array which will hold matrix values when populated
-    elements = [] # creates an empty array which will hold cell IDs when populated
+    cells = [] # creates an empty array which will hold cell IDs when populated
     with open("/data/zusers/pratth/sc/atac/PBMC/PBMC.matrix.txt", 'r') as f:
-        cells = f.readline().strip().split() # creates an array with element IDs by splitting the first line at each tab
+        elements = f.readline().strip().split() # creates an array with element IDs by splitting the first line at each tab
         for line in f: # for the remaining lines...
             fields = line.strip().split() # split the line into fields at each tab
-            elements.append(fields[0]) # the cell ID is in the first column
+            cells.append(fields[0]) # the cell ID is in the first column
             matrix.append([ float(x) for x in fields[1:] ]) # this converts all the fields from index 1 onward to floating point numbers and adds them to the matrix
     return elements, cells, matrix
 
@@ -28,9 +29,9 @@ def read_cell_types(link):
         t.close()  
     return t_types
 
-def match_types(cells, types):
+def match_types(elements, types):
     c=[]
-    for i in cells:
+    for i in elements:
         if i in types:
             c.append("blue")
         else:
@@ -40,18 +41,14 @@ def match_types(cells, types):
 
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
-    print("Elements:")
-    print(elements[0:50])
-    print("Cells:")
-    print(cells[0:50])
+    tmatrix = np.transpose(matrix)
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
     print("Unstimulated T cells:")
-    print(t_types[0:50])
+    print(t_types[0:100])
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
-    coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
-    colors = match_types(cells, t_types)
-    print(colors[0:50])
+    coordinates = u.fit_transform(tmatrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
+    colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
         [ y for x, y in coordinates ], # extract the y-coordinates from the UMAP output
