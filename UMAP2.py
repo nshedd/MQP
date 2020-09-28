@@ -48,6 +48,8 @@ def color_graph(matrix, cells, elements, marker):
         marker_sum = sum(matrix[i,cols])
         sums = sums.append(marker_sum)
     matplotlib.pyplot.hist(sums)
+    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors.svg"))
+    matplotlib.pyplot.close()
 
 
 def main():
