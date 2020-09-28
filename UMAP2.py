@@ -40,16 +40,16 @@ def match_types(elements, types):
 
 def color_graph(matrix, cells, elements, marker):
     sums=[]
-    cols=[]
-    for j in range(0, len(elements), 1):
-        if elements[j] in marker:
-            cols.append(j)
     for i in range(0, len(cells), 1):
-        marker_sum = sum(matrix[i,cols])
-        sums = sums.append(marker_sum)
+        marker_sum = 0
+        for j in range(0, len(elements), 1):
+            if elements[j] in marker:
+                marker_sum = marker_sum + matrix[i,j]
+        sums.append(marker_sum)
     matplotlib.pyplot.hist(sums)
     matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors.svg"))
     matplotlib.pyplot.close()
+    print("done")
 
 
 def main():
