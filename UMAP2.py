@@ -44,7 +44,7 @@ def color_graph(matrix, cells, elements, marker):
         marker_sum = 0
         for j in range(0, len(elements), 1):
             if elements[j] in marker:
-                marker_sum = marker_sum + matrix[i,j]
+                marker_sum = marker_sum + matrix[i][j]
         sums.append(marker_sum)
     matplotlib.pyplot.hist(sums)
     matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors.svg"))
@@ -59,7 +59,7 @@ def main():
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
     color_graph(matrix, cells, elements, t_types)
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
-    coordinates = u.fit_transform(tmatrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
+    coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
