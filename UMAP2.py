@@ -52,20 +52,26 @@ def color_graph(matrix, cells, elements, marker):
         if marker_sum > 50:
             sums.append(marker_sum)
     matplotlib.pyplot.hist(sums, bins=50)
-    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsb2.svg"))
+    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsm1.svg"))
     matplotlib.pyplot.close()
     print("done")
 
 
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
-    #tmatrix = np.transpose(matrix)
+
     #t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     #t_types = read_cell_types(t_type_link) # reads a cell type matrix
     #color_graph(matrix, cells, elements, t_types) ## later add color_list to the input and just alter the color at an index if it is in a threshold
-    b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
-    b_types = read_cell_types(b_type_link) # reads a cell type matrix
-    color_graph(matrix, cells, elements, b_types)
+
+    #b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
+    #b_types = read_cell_types(b_type_link) # reads a cell type matrix
+    #color_graph(matrix, cells, elements, b_types)
+
+    m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cell.bed"
+    m_types = read_cell_types(m_type_link) # reads a cell type matrix
+    color_graph(matrix, cells, elements, m_types)
+
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
