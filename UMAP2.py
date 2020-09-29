@@ -40,9 +40,13 @@ def match_types(elements, types):
 
 def color_graph(matrix, cells, elements, marker):
     sums=[]
+    indices = []
+    for j in elements:
+        if j in marker:
+            indices.append(index.j)
     for i in range(0, len(cells), 1):
         marker_sum = 0
-        for j in range(0, len(elements), 1):
+        for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         sums.append(marker_sum)
