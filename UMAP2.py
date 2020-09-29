@@ -68,7 +68,7 @@ def main():
     #b_types = read_cell_types(b_type_link) # reads a cell type matrix
     #color_graph(matrix, cells, elements, b_types)
 
-    m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cell.bed"
+    m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
     color_graph(matrix, cells, elements, m_types)
 
