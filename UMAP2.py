@@ -60,7 +60,7 @@ def color_graph(matrix, cells, elements, marker, colors):
                     colors[i]="blue"
         if marker == "m_types":
             if marker_sum > 350:
-                if colors[i] == "red"
+                if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
                     colors[i]="green"
