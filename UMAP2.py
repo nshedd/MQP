@@ -68,6 +68,7 @@ def color_graph(matrix, cells, elements, marker, colors):
                     colors[i]="brown"
                 else:
                     colors[i]="yellow"
+    print(colors)
     return colors
 
 
