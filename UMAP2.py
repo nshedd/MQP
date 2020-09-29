@@ -52,7 +52,7 @@ def color_graph(matrix, cells, elements, marker):
         if marker_sum > 20:
             sums.append(marker_sum)
     matplotlib.pyplot.hist(sums, bins=50)
-    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors2.svg"))
+    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors4.svg"))
     matplotlib.pyplot.close()
     print("done")
 
