@@ -51,7 +51,7 @@ def color_graph(matrix, cells, elements, marker):
                 marker_sum = marker_sum + matrix[i][j]
         sums.append(marker_sum)
     matplotlib.pyplot.hist(sums, bins=50)
-    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors2.svg"))
+    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors3.svg"))
     matplotlib.pyplot.close()
     print("done")
 
