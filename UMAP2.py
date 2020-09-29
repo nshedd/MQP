@@ -95,10 +95,10 @@ def main():
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
         [ y for x, y in coordinates ], # extract the y-coordinates from the UMAP output
         marker = '.', # make the points small so the plot isn't too crowded
-        alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
+        #alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored2.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
