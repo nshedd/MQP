@@ -43,7 +43,7 @@ def color_graph(matrix, cells, elements, marker):
     indices = []
     for j in elements:
         if j in marker:
-            indices.append(index(j))
+            indices.append(elements.index(j))
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
