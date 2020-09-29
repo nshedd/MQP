@@ -38,7 +38,7 @@ def match_types(elements, types):
             c.append("black")
     return c
 
-def color_graph(matrix, cells, elements, marker, colors):
+def color_graph(matrix, cells, elements, marker, colors, marker_name):
     sums=[]
     indices = []
     for j in elements:
@@ -49,16 +49,16 @@ def color_graph(matrix, cells, elements, marker, colors):
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
-        if marker == "t_types":
+        if marker_name == "t_types":
             if marker_sum > 200:
                 colors[i]="red"
-        if marker == "b_types":
+        if marker_name == "b_types":
             if marker_sum > 300:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
-        if marker == "m_types":
+        if marker_name == "m_types":
             if marker_sum > 350:
                 if colors[i] == "red":
                     colors[i]="orange"
@@ -79,19 +79,18 @@ def main():
 
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
-    colors = color_graph(matrix, cells, elements, t_types, colors) ## later add color_list to the input and just alter the color at an index if it is in a threshold
+    colors = color_graph(matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
 
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
-    colors = color_graph(matrix, cells, elements, b_types, colors)
+    colors = color_graph(matrix, cells, elements, b_types, colors, "b_types")
 
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
-    colors = color_graph(matrix, cells, elements, m_types, colors)
+    colors = color_graph(matrix, cells, elements, m_types, colors, "m_types")
 
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
-    #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
         [ y for x, y in coordinates ], # extract the y-coordinates from the UMAP output
