@@ -49,10 +49,10 @@ def color_graph(matrix, cells, elements, marker):
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
-        if marker_sum > 20:
+        if marker_sum > 50:
             sums.append(marker_sum)
     matplotlib.pyplot.hist(sums, bins=50)
-    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsb1.svg"))
+    matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsb2.svg"))
     matplotlib.pyplot.close()
     print("done")
 
@@ -62,7 +62,7 @@ def main():
     #tmatrix = np.transpose(matrix)
     #t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     #t_types = read_cell_types(t_type_link) # reads a cell type matrix
-    #color_graph(matrix, cells, elements, t_types) ## later add colors to the input and just alter the color at an index if it is in a threshold
+    #color_graph(matrix, cells, elements, t_types) ## later add color_list to the input and just alter the color at an index if it is in a threshold
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
     color_graph(matrix, cells, elements, b_types)
