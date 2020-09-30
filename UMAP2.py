@@ -38,6 +38,8 @@ def match_types(elements, types):
             c.append("black")
     return c
 
+## Each time, this takes in the matrix, cells, and elements. It takes in a new marker, marker_name, and an updated color array
+## It outputs a color array that goes back into the function again to keep updating until there are no more new enhancer matrices to add
 def color_graph(matrix, cells, elements, marker, colors, marker_name):
     sums=[]
     indices = []
@@ -52,13 +54,13 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
         if marker_name == "t_types":
             if marker_sum > 200:
                 colors[i]="red"
-        if marker_name == "b_types":
+        elif marker_name == "b_types":
             if marker_sum > 300:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
-        if marker_name == "m_types":
+        elif marker_name == "m_types":
             if marker_sum > 350:
                 if colors[i] == "red":
                     colors[i]="orange"
@@ -77,14 +79,17 @@ def main():
 
     colors = ["black"] * len(cells)
 
+    ## First iteration, labels the unstimulated t cells as red and keeps the rest black
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
     colors = color_graph(matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
 
+    ## Second iteration, labels b cells as blue, or if it is already red, make it blue to show it is a regulatory site in both
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
     colors = color_graph(matrix, cells, elements, b_types, colors, "b_types")
 
+    ## Third iteration, labels myeloid cells as yellow, or both t and m as orange, both b and m as green, or all three as brown
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
     colors = color_graph(matrix, cells, elements, m_types, colors, "m_types")
