@@ -58,7 +58,8 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
-        sums.append(marker_sum)	
+        if marker_sum > 50:
+            sums.append(marker_sum)		
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt1.svg"))
@@ -112,6 +113,11 @@ def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
     n_matrix = normalize_data(matrix)
+    
+    print("matrix:")
+    print(matrix[0:10])
+    print("n_matrix:")
+    print(n_matrix[0:10])
 
     colors = ["black"] * len(cells)
 
