@@ -20,6 +20,15 @@ def read_matrix():
             matrix.append([ float(x) for x in fields[1:] ]) # this converts all the fields from index 1 onward to floating point numbers and adds them to the matrix
     return elements, cells, matrix
 
+def normalize_data(data):
+    for i in data:
+        sum = 0
+        for j in i:
+            sum = sum + j
+        for j in i:
+            j = j/sum
+    return data
+
 def read_cell_types(link):
     with open(link, 'r') as t:
         lines=t.readlines()
@@ -38,10 +47,36 @@ def match_types(elements, types):
             c.append("black")
     return c
 
-## Each time, this takes in the matrix, cells, and elements. It takes in a new marker, marker_name, and an updated color array
-## It outputs a color array that goes back into the function again to keep updating until there are no more new enhancer matrices to add
-def color_graph(matrix, cells, elements, marker, colors, marker_name):
+def create_histograms(matrix, cells, elements, marker, marker_name):
     sums=[]
+    indices = []
+    for j in elements:
+        if j in marker:
+            indices.append(elements.index(j))
+    for i in range(0, len(cells), 1):
+        marker_sum = 0
+        for j in indices:
+            if elements[j] in marker:
+                marker_sum = marker_sum + matrix[i][j]
+        sums.append(marker_sum)	
+    if marker_name="t_types":
+        matplotlib.pyplot.hist(sums, bins=50)
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt1.svg"))
+        matplotlib.pyplot.close()
+        print("done with t_cells")
+    if marker_name="b_types":
+        matplotlib.pyplot.hist(sums, bins=50)
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnb1.svg"))
+        matplotlib.pyplot.close()
+        print("done with b_cells")
+    if marker_name="m_types":
+        matplotlib.pyplot.hist(sums, bins=50)
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnm1.svg"))
+        matplotlib.pyplot.close()
+        print("done with m_cells")
+
+def color_graph(matrix, cells, elements, marker, colors, marker_name):
+    sum=[]
     indices = []
     for j in elements:
         if j in marker:
@@ -54,13 +89,13 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
         if marker_name == "t_types":
             if marker_sum > 200:
                 colors[i]="red"
-        elif marker_name == "b_types":
+        if marker_name == "b_types":
             if marker_sum > 300:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
-        elif marker_name == "m_types":
+        if marker_name == "m_types":
             if marker_sum > 350:
                 if colors[i] == "red":
                     colors[i]="orange"
@@ -70,32 +105,34 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
                     colors[i]="brown"
                 else:
                     colors[i]="yellow"
-    print(colors)
     return colors
 
 
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
+    n_matrix = normalize_data(matrix)
+
     colors = ["black"] * len(cells)
 
-    ## First iteration, labels the unstimulated t cells as red and keeps the rest black
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
-    colors = color_graph(matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
+    #colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
+    create_histograms(n_matrix, cells, elements, t_types, "t_types")
 
-    ## Second iteration, labels b cells as blue, or if it is already red, make it blue to show it is a regulatory site in both
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
-    colors = color_graph(matrix, cells, elements, b_types, colors, "b_types")
+    #colors = color_graph(n_matrix, cells, elements, b_types, colors "b_types")
+    create_histograms(n_matrix, cells, elements, b_types, "b_types")
 
-    ## Third iteration, labels myeloid cells as yellow, or both t and m as orange, both b and m as green, or all three as brown
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
-    colors = color_graph(matrix, cells, elements, m_types, colors, "m_types")
+    #colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
+    create_histograms(n_matrix, cells, elements, m_types, "m_types")
 
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
-    coordinates = u.fit_transform(matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
+    coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
+    #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
         [ x for x, y in coordinates ], # extract the x-coordinates from the UMAP output
         [ y for x, y in coordinates ], # extract the y-coordinates from the UMAP output
@@ -103,7 +140,7 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored2.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
