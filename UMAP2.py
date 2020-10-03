@@ -30,7 +30,7 @@ def normalize_data(data):
         for j in i:
             n_j = j/sum
             n_i.append(n_j)
-        n_data.append[n_i]
+        n_data.append(n_i)
     return n_data
 
 def read_cell_types(link):
