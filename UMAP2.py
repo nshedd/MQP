@@ -63,7 +63,7 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
-        if marker_sum > 50:
+        if marker_sum > .1:
             sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
