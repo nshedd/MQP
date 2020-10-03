@@ -30,8 +30,7 @@ def normalize_data(data):
         for j in i:
             n_j = j/sum
             n_i.append(n_j)
-        n_data.append(n_i)
-    print("finished normalizing data")
+        n_data.append[n_i]
     return n_data
 
 def read_cell_types(link):
@@ -63,7 +62,8 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
-        sums.append(marker_sum)	
+        if marker_sum > 0.1:
+            sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt1.svg"))
@@ -92,16 +92,16 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 200:
+            if marker_sum > 0.005:
                 colors[i]="red"
         if marker_name == "b_types":
-            if marker_sum > 300:
+            if marker_sum > 0.01:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            if marker_sum > 350:
+            if marker_sum > 0.01:
                 if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
@@ -122,18 +122,21 @@ def main():
 
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
-    #colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
-    create_histograms(n_matrix, cells, elements, t_types, "t_types")
+    colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
+    #create_histograms(n_matrix, cells, elements, t_types, "t_types")
+    print("done coloring t-cells")
 
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
-    #colors = color_graph(n_matrix, cells, elements, b_types, colors "b_types")
-    create_histograms(n_matrix, cells, elements, b_types, "b_types")
+    colors = color_graph(n_matrix, cells, elements, b_types, colors "b_types")
+    #create_histograms(n_matrix, cells, elements, b_types, "b_types")
+    print("done coloring b cells")
 
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
-    #colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
-    create_histograms(n_matrix, cells, elements, m_types, "m_types")
+    colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
+    #create_histograms(n_matrix, cells, elements, m_types, "m_types")
+    print("done coloring m cells")
 
     u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
