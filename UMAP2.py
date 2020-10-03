@@ -128,7 +128,7 @@ def main():
 
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
-    colors = color_graph(n_matrix, cells, elements, b_types, colors "b_types")
+    colors = color_graph(n_matrix, cells, elements, b_types, colors, "b_types")
     #create_histograms(n_matrix, cells, elements, b_types, "b_types")
     print("done coloring b cells")
 
