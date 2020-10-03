@@ -64,17 +64,17 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
                 marker_sum = marker_sum + matrix[i][j]
         if marker_sum > 50:
             sums.append(marker_sum)	
-    if marker_name="t_types":
+    if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt1.svg"))
         matplotlib.pyplot.close()
         print("done with t_cells")
-    if marker_name="b_types":
+    if marker_name=="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnb1.svg"))
         matplotlib.pyplot.close()
         print("done with b_cells")
-    if marker_name="m_types":
+    if marker_name=="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnm1.svg"))
         matplotlib.pyplot.close()
