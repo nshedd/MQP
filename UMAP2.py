@@ -21,13 +21,17 @@ def read_matrix():
     return elements, cells, matrix
 
 def normalize_data(data):
+    n_data = []
     for i in data:
         sum = 0
+        n_i = []
         for j in i:
             sum = sum + j
         for j in i:
-            j = j/sum
-    return data
+            n_j = j/sum
+            n_i.append(n_j)
+        n_data.append[n_i]
+    return n_data
 
 def read_cell_types(link):
     with open(link, 'r') as t:
@@ -59,18 +63,18 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_sum > 50:
-            sums.append(marker_sum)		
-    if marker_name=="t_types":
+            sums.append(marker_sum)	
+    if marker_name="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt1.svg"))
         matplotlib.pyplot.close()
         print("done with t_cells")
-    if marker_name=="b_types":
+    if marker_name="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnb1.svg"))
         matplotlib.pyplot.close()
         print("done with b_cells")
-    if marker_name=="m_types":
+    if marker_name="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnm1.svg"))
         matplotlib.pyplot.close()
@@ -113,11 +117,6 @@ def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
     n_matrix = normalize_data(matrix)
-    
-    print("matrix:")
-    print(matrix[0:10])
-    print("n_matrix:")
-    print(n_matrix[0:10])
 
     colors = ["black"] * len(cells)
 
