@@ -138,7 +138,7 @@ def main():
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
     print("done coloring m cells")
 
-    u = umap.UMAP(n_neighbors = 10, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 5, min_dist = 0.01, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
