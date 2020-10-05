@@ -1,3 +1,6 @@
+import sys
+import os
+
 def read_matrix():
     matrix = [] # creates an empty array which will hold matrix values when populated
     cells = [] # creates an empty array which will hold cell IDs when populated
@@ -44,3 +47,6 @@ def main():
     total_count = count_total(matrix)
     print("Number of measurements: ", end = '')
     print(total_count)
+
+if __name__ == "__main__":
+    sys.exit(main())
