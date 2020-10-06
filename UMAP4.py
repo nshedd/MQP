@@ -56,17 +56,17 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
         sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt2.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt3.svg"))
         matplotlib.pyplot.close()
         print("done with t_cells")
     if marker_name=="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnb2.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnb3.svg"))
         matplotlib.pyplot.close()
         print("done with b_cells")
     if marker_name=="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnm2.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnm3.svg"))
         matplotlib.pyplot.close()
         print("done with m_cells")
 
