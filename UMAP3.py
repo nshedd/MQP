@@ -51,10 +51,9 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
-            if elements[j] in marker[0:999]:
+            if elements[j] in marker[0:99]:
                 marker_sum = marker_sum + matrix[i][j]
-        if marker_sum > 0.1:
-            sums.append(marker_sum)	
+        sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt2.svg"))
