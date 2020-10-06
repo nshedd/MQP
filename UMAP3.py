@@ -79,19 +79,19 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
-            if elements[j] in marker:
+            if elements[j] in marker[0:99]:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 0.005:
+            if marker_sum > 0.00005:
                 colors[i]="red"
         if marker_name == "b_types":
-            if marker_sum > 0.01:
+            if marker_sum > 0.0002:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            if marker_sum > 0.01:
+            if marker_sum > 0.0002:
                 if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
