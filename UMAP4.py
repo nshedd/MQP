@@ -51,7 +51,7 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
-            if elements[j] in marker[0:99]:
+            if elements[j] in marker[0:999]:
                 marker_sum = marker_sum + matrix[i][j]
         sums.append(marker_sum)	
     if marker_name=="t_types":
@@ -135,7 +135,7 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_top100.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_top1000.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
