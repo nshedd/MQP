@@ -99,7 +99,7 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 0.017:
+            if marker_sum > 0.02:
                 colors[i]="red"
         if marker_name == "b_types":
             if marker_sum > 0.015:
