@@ -66,22 +66,30 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
             sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnt1.svg"))
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
+        matplotlib.pyplot.ylabel('Count')
+        matplotlib.pyplot.title("<Dataset 2> Unstimulated T-cells")
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_t1.svg"))
         matplotlib.pyplot.close()
         print("done with t_cells")
     if marker_name=="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnb1.svg"))
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
+        matplotlib.pyplot.ylabel('Count')
+        matplotlib.pyplot.title("<Dataset 2> B-cells")
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_b1.svg"))
         matplotlib.pyplot.close()
         print("done with b_cells")
     if marker_name=="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colorsnm1.svg"))
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
+        matplotlib.pyplot.ylabel('Count')
+        matplotlib.pyplot.title("<Dataset 2> Myeloid Cells")
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_m1.svg"))
         matplotlib.pyplot.close()
         print("done with m_cells")
 
 def color_graph(matrix, cells, elements, marker, colors, marker_name):
-    sum=[]
     indices = []
     for j in elements:
         if j in marker:
@@ -145,7 +153,8 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_uncolored_set2.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
