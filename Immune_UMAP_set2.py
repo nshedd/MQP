@@ -62,8 +62,7 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
-        if marker_sum > 0.1:
-            sums.append(marker_sum)	
+        sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
         matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
