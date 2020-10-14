@@ -124,6 +124,7 @@ def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
     n_matrix = normalize_data(matrix)
+    print("finished normalizing data")
 
     colors = ["black"] * len(cells)
 
@@ -131,18 +132,21 @@ def main():
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
     colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
     #create_histograms(n_matrix, cells, elements, t_types, "t_types")
+    print("finished coloring t cells")
 
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
     colors = color_graph(n_matrix, cells, elements, b_types, colors, "b_types")
     #create_histograms(n_matrix, cells, elements, b_types, "b_types")
+    print("finished coloring b cells")
 
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
     colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
+    print("finsihed coloring meyeloid cells")
 
-    u = umap.UMAP(n_neighbors = 50, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 30, min_dist = 0.01, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
