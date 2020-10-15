@@ -157,7 +157,7 @@ def main():
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
     matplotlib.pyplot.title("<Dataset 2> UMAP")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d1.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n30_d1.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
