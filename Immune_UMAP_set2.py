@@ -156,7 +156,7 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP")
+    matplotlib.pyplot.title("<Dataset 2> UMAP with n_neighbors=15 and min_dist=0.001")
     matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n15_d001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
