@@ -99,7 +99,7 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 0.02:
+            if marker_sum > 0.018:
                 colors[i]="red"
         if marker_name == "b_types":
             if marker_sum > 0.015:
@@ -146,7 +146,7 @@ def main():
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
     print("finsihed coloring meyeloid cells")
 
-    u = umap.UMAP(n_neighbors = 30, min_dist = 0.01, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 15, min_dist = 0.001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
@@ -157,7 +157,7 @@ def main():
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
     matplotlib.pyplot.title("<Dataset 2> UMAP")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n30_d1.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n15_d001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
