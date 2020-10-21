@@ -146,7 +146,7 @@ def main():
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
     print("finsihed coloring meyeloid cells")
 
-    u = umap.UMAP(n_neighbors = 15, min_dist = 0.001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 50, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
@@ -156,8 +156,8 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP with n_neighbors=15 and min_dist=0.001")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n15_d001.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP with n_neighbors=50 and min_dist=0.0001")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d000c1.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
