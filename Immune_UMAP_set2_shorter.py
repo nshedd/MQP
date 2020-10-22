@@ -53,3 +53,6 @@ def main():
     matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=50, min_dist=0.0001")
     matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d0001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
+
+if __name__ == "__main__":
+    sys.exit(main())
