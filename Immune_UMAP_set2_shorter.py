@@ -40,7 +40,7 @@ def main():
 
     colors = np.loadtxt("set2_top10k_colors.txt.npy", dtype=str)
 
-    u = umap.UMAP(n_neighbors = 30, min_dist = 0.1, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 50, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
@@ -50,6 +50,6 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n30_d0001.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=50, min_dist=0.0001")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d0001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
