@@ -146,7 +146,7 @@ def main():
     print("finished coloring myeloid cells")
 
     np_colors = np.array(colors)
-    np.save(os.path.expanduser("~/set2_top10k_colors.txt"), np_colors)
+    np.save("set2_top10k_colors", np_colors)
     print("saved array")
 
 
@@ -160,7 +160,7 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP")
+    matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=50, min_dist=0.0001")
     matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d0001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
