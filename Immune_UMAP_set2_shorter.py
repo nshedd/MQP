@@ -38,7 +38,7 @@ def main():
 
     n_matrix = normalize_data(matrix)
 
-    colors = np.loadtxt("set2_top10k_colors.txt.npy", dtype=str)
+    colors = np.loadtxt("~/set2_top10k_colors.txt.npy", dtype=str)
 
     u = umap.UMAP(n_neighbors = 50, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
