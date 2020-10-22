@@ -147,7 +147,7 @@ def main():
     print("saved array")
 
 
-    u = umap.UMAP(n_neighbors = 75, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    u = umap.UMAP(n_neighbors = 50, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
@@ -158,7 +158,7 @@ def main():
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
     matplotlib.pyplot.title("<Dataset 2> UMAP")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n75_d0001.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d0001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
