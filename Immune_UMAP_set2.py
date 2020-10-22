@@ -60,38 +60,38 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
-            if elements[j] in marker:
+            if elements[j] in marker[0:1000]:
                 marker_sum = marker_sum + matrix[i][j]
         sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 1k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
         matplotlib.pyplot.title("<Dataset 2> Unstimulated T-cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_t1.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_1k_t1.svg"))
         matplotlib.pyplot.close()
         print("done with t_cells")
     if marker_name=="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 1k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
         matplotlib.pyplot.title("<Dataset 2> B-cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_b1.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_1k_b1.svg"))
         matplotlib.pyplot.close()
         print("done with b_cells")
     if marker_name=="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 1k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
         matplotlib.pyplot.title("<Dataset 2> Myeloid Cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_m1.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_1k_m1.svg"))
         matplotlib.pyplot.close()
         print("done with m_cells")
 
 def color_graph(matrix, cells, elements, marker, colors, marker_name):
     indices = []
     for j in elements:
-        if j in marker:
+        if j in marker[0:1000]:
             indices.append(elements.index(j))
     for i in range(0, len(cells), 1):
         marker_sum = 0
@@ -99,16 +99,16 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 0.018:
+            if marker_sum > 0.0026:
                 colors[i]="red"
         if marker_name == "b_types":
-            if marker_sum > 0.015:
+            if marker_sum > 0.0017:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            if marker_sum > 0.0125:
+            if marker_sum > 0.00225:
                 if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
@@ -124,7 +124,6 @@ def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
     n_matrix = normalize_data(matrix)
-    print("finished normalizing data")
 
     colors = ["black"] * len(cells)
 
@@ -132,21 +131,23 @@ def main():
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
     colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
     #create_histograms(n_matrix, cells, elements, t_types, "t_types")
-    print("finished coloring t cells")
 
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
     colors = color_graph(n_matrix, cells, elements, b_types, colors, "b_types")
     #create_histograms(n_matrix, cells, elements, b_types, "b_types")
-    print("finished coloring b cells")
 
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
     colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
-    print("finsihed coloring meyeloid cells")
 
-    u = umap.UMAP(n_neighbors = 50, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    np_colors = np.array(colors)
+    np.save(os.path.expanduser("set2_top10k_colors.txt"), np_colors)
+    print("saved array")
+
+
+    u = umap.UMAP(n_neighbors = 75, min_dist = 0.0001, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
@@ -156,9 +157,10 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP with n_neighbors=50 and min_dist=0.0001")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n50_d000c1.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n75_d0001.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
     sys.exit(main())
+
