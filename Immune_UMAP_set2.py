@@ -146,7 +146,7 @@ def main():
     print("finished coloring myeloid cells")
 
     np_colors = np.array(colors)
-    np.save(os.path.expanduser("set2_top10k_colors.npy"), np_colors)
+    np.save(os.path.expanduser("~/set2_top10k_colors.npy"), np_colors)
     print("saved array")
 
 
