@@ -60,31 +60,30 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
-            if elements[j] in marker[0:1000]:
-                marker_sum = marker_sum + matrix[i][j]
+            marker_sum = marker_sum + matrix[i][j]
         sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.xlabel('Sum of Expression Across Top 1k Enhancer Elements')  
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
         matplotlib.pyplot.title("<Dataset 2> Unstimulated T-cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_1k_t1.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_10k_t1.svg"))
         matplotlib.pyplot.close()
         print("done with t_cells")
     if marker_name=="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.xlabel('Sum of Expression Across Top 1k Enhancer Elements')  
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
         matplotlib.pyplot.title("<Dataset 2> B-cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_1k_b1.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_10k_b1.svg"))
         matplotlib.pyplot.close()
         print("done with b_cells")
     if marker_name=="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
-        matplotlib.pyplot.xlabel('Sum of Expression Across Top 1k Enhancer Elements')  
+        matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
         matplotlib.pyplot.title("<Dataset 2> Myeloid Cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_1k_m1.svg"))
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_10k_m1.svg"))
         matplotlib.pyplot.close()
         print("done with m_cells")
 
@@ -98,16 +97,16 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 0.0026:
+            if marker_sum > 0.018:
                 colors[i]="red"
         if marker_name == "b_types":
-            if marker_sum > 0.0017:
+            if marker_sum > 0.015:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            if marker_sum > 0.00225:
+            if marker_sum > 0.0125:
                 if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
