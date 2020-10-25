@@ -91,8 +91,7 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
 def color_graph(matrix, cells, elements, marker, colors, marker_name):
     indices = []
     for j in elements:
-        if j in marker[0:1000]:
-            indices.append(elements.index(j))
+        indices.append(elements.index(j))
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
