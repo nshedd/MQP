@@ -124,6 +124,7 @@ def main():
 
     n_matrix = normalize_data(matrix)
     del matrix
+    print("finished normalizing matrix")
 
     colors = ["black"] * len(cells)
 
