@@ -41,7 +41,7 @@ def main():
     colors = []
     with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'r') as f:
         for line in f:
-            colors.append(line)
+            colors.append(line.strip())
     print("loaded colors")
 
     u = umap.UMAP(metric = 'euclidean') # initialize UMAP. different parameters might give better separation
