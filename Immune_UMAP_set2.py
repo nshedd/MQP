@@ -4,6 +4,7 @@ import sys
 import os
 import umap
 import numpy as np
+import math
 
 import matplotlib
 matplotlib.use('Agg')
@@ -29,7 +30,7 @@ def normalize_data(data):
             sum = sum + j
         for j in i:
             n_j = j/sum
-            n_i.append(n_j)
+            n_i.append(math.log(n_j+3))
         n_data.append(n_i)
     return n_data
 
@@ -97,16 +98,16 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > 0.018:
+            if marker_sum > math.log(3+0.018):
                 colors[i]="red"
         if marker_name == "b_types":
-            if marker_sum > 0.015:
+            if marker_sum > math.log(3+0.015):
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            if marker_sum > 0.0125:
+            if marker_sum > math.log(3+0.0125):
                 if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
@@ -122,6 +123,7 @@ def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
     n_matrix = normalize_data(matrix)
+    del matrix
 
     colors = ["black"] * len(cells)
 
