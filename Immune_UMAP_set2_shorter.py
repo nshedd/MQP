@@ -37,8 +37,12 @@ def main():
     matrix = read_matrix() # reads the matrix from the file
 
     n_matrix = normalize_data(matrix)
-
-    colors = np.loadtxt(os.path.expanduser("~/set2_top10k_colors.npy"), dtype=str)
+    
+    colors = []
+    with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'r') as f:
+        for line in f:
+            colors.append(line)
+    print("loaded colors")
 
     u = umap.UMAP(metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
