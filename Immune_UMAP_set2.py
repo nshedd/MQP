@@ -98,16 +98,19 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            if marker_sum > math.log(3+0.018):
+            t_cutoff = math.log(3+0.018)
+            if marker_sum > t_cutoff:
                 colors[i]="red"
         if marker_name == "b_types":
-            if marker_sum > math.log(3+0.015):
+            b_cutoff = math.log(3+0.015)
+            if marker_sum > b_cutoff:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            if marker_sum > math.log(3+0.0125):
+            m_cutoff = math.log(3+0.0125)
+            if marker_sum > m_cutoff:
                 if colors[i] == "red":
                     colors[i]="orange"
                 elif colors[i] == "blue":
@@ -122,7 +125,8 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
-    n_matrix = normalize_data(matrix)
+    #n_matrix = normalize_data(matrix)
+    n_matrix = normalize_data(matrix[0:200])
     del matrix
     print("finished normalizing matrix")
 
@@ -146,7 +150,7 @@ def main():
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
     print("finished coloring myeloid cells")
     
-    with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'w') as f:
+    with open(os.path.expanduser("~/set2_top10k_colors_small.txt"), 'w') as f:
         for item in my_list:
             f.write("%s\n" % item)
     print("saved array")
@@ -162,8 +166,8 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=70, min_dist=default")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n70.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP (test), n_neighbors=70, min_dist=default")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n70_small.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
