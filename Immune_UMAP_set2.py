@@ -152,7 +152,7 @@ def main():
     print("finished coloring myeloid cells")
     
     with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'w') as f:
-        for item in my_list:
+        for item in f:
             f.write("%s\n" % item)
     print("saved array")
 
