@@ -127,7 +127,7 @@ def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
 
     #n_matrix = normalize_data(matrix)
-    n_matrix = normalize_data(matrix[0:200])
+    n_matrix = normalize_data(matrix)
     del matrix
     print("finished normalizing matrix")
 
@@ -151,7 +151,7 @@ def main():
     #create_histograms(n_matrix, cells, elements, m_types, "m_types")
     print("finished coloring myeloid cells")
     
-    with open(os.path.expanduser("~/set2_top10k_colors_small.txt"), 'w') as f:
+    with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'w') as f:
         for item in my_list:
             f.write("%s\n" % item)
     print("saved array")
@@ -167,8 +167,8 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP (test), n_neighbors=70, min_dist=default")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n70_small.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=70, min_dist=default")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n70.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
