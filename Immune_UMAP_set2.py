@@ -93,24 +93,24 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
     for j in elements:
         if j in marker:
             indices.append(elements.index(j))
+    t_cutoff = math.log(3+0.018)
+    b_cutoff = math.log(3+0.015)
+    m_cutoff = math.log(3+0.0125)
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
             if elements[j] in marker:
                 marker_sum = marker_sum + matrix[i][j]
         if marker_name == "t_types":
-            t_cutoff = math.log(3+0.018)
             if marker_sum > t_cutoff:
                 colors[i]="red"
         if marker_name == "b_types":
-            b_cutoff = math.log(3+0.015)
             if marker_sum > b_cutoff:
                 if colors[i] == "red":
                     colors[i]="purple"
                 else:
                     colors[i]="blue"
         if marker_name == "m_types":
-            m_cutoff = math.log(3+0.0125)
             if marker_sum > m_cutoff:
                 if colors[i] == "red":
                     colors[i]="orange"
@@ -152,7 +152,7 @@ def main():
     print("finished coloring myeloid cells")
     
     with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'w') as f:
-        for item in f:
+        for item in colors:
             f.write("%s\n" % item)
     print("saved array")
 
