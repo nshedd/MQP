@@ -93,9 +93,9 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
     for j in elements:
         if j in marker:
             indices.append(elements.index(j))
-    t_cutoff = 0.0905
-    b_cutoff = 0.049
-    m_cutoff = 0.021
+    t_cutoff = 0.0905+10145.6
+    b_cutoff = 0.049+10177.5
+    m_cutoff = 0.021+10200.6
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
