@@ -2,7 +2,7 @@ import sys
 import os
 import umap
 import numpy as np
-
+import math
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot
@@ -28,23 +28,24 @@ def normalize_data(data):
             sum = sum + j
         for j in i:
             n_j = j/sum
-            n_i.append(n_j)
+            n_i.append(math.log(n_j+3))
         n_data.append(n_i)
     return n_data
 
 
 def main():
-    matrix = read_matrix() # reads the matrix from the file
-
-    n_matrix = normalize_data(matrix)
-    
     colors = []
     with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'r') as f:
         for line in f:
             colors.append(line.strip())
     print("loaded colors")
+    
+    matrix = read_matrix() # reads the matrix from the file
 
-    u = umap.UMAP(metric = 'euclidean') # initialize UMAP. different parameters might give better separation
+    n_matrix = normalize_data(matrix)
+    
+
+    u = umap.UMAP(n_neighbors=70, min_dist=10, metric = 'euclidean') # initialize UMAP. different parameters might give better separation
     coordinates = u.fit_transform(n_matrix) # perform the transformation. outputs a list of 2D coordinates, one for each row
     #colors = match_types(elements, t_types)
     matplotlib.pyplot.scatter(
@@ -54,8 +55,8 @@ def main():
         alpha = 0.1, # make the points semi-transparent so it is easier to tell where points densely cluster together
         c = colors # this makes unstimulated t cells blue and everything else black. TODO: replace with coloring by marker elements
     )
-    matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=default, min_dist=default")
-    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_default.svg")) # write the plot to "umap.svg" in your home directory
+    matplotlib.pyplot.title("<Dataset 2> UMAP, n_neighbors=70, min_dist=10")
+    matplotlib.pyplot.savefig(os.path.expanduser("~/umap_colored_set2_n70_d10.svg")) # write the plot to "umap.svg" in your home directory
     return 0
 
 if __name__ == "__main__":
