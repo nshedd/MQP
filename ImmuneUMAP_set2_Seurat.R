@@ -3,10 +3,10 @@ library(Seurat)
 library(patchwork)
 
 
-matrix = read.table("/data/zusers/pratth/sc/atac/GSM3722075_PBMC_Rep3_fragments.tsv.gz.rDHS.matrix.tsv", header=TRUE, sep="/t", row.names=1)
+matrix = read.table("/data/zusers/pratth/sc/atac/GSM3722075_PBMC_Rep3_fragments.tsv.gz.rDHS.matrix.tsv", header=TRUE, sep="\t", row.names=1)
 
 
-colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character, sep='/n', )
+colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character, sep='\n', )
 
 set2umap <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
