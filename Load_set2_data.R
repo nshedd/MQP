@@ -1,4 +1,4 @@
-matrix = read.table("/data/zusers/pratth/sc/atac/GSM3722075_PBMC_Rep3_fragments.tsv.gz.rDHS.matrix.tsv", header=TRUE, sep="/t", row.names=1)
+matrix = read.table("/data/zusers/pratth/sc/atac/GSM3722075_PBMC_Rep3_fragments.tsv.gz.rDHS.matrix.tsv", header=TRUE, sep="\t", row.names=1)
 
 print("finsihed loading data")
 
