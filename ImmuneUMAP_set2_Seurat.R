@@ -1,3 +1,5 @@
+remotes::install_github("satijalab/seurat", ref = "release/4.0.0")
+
 library(dplyr)
 library(Seurat)
 library(patchwork)
