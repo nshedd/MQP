@@ -7,7 +7,7 @@ library(patchwork)
 
 print("loaded packages")
 
-matrix = read.table("/data/zusers/pratth/sc/atac/GSM3722075_PBMC_Rep3_fragments.tsv.gz.rDHS.matrix.tsv", header=TRUE, sep="\t", row.names=1)
+matrix = loadRDS(matrix, file=path.expand("~/GSM3722075_PBMC_Rep3_fragments.rds"))
 print("loaded matrix")
 
 colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character, sep='\n')
