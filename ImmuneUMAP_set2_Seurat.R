@@ -10,7 +10,7 @@ print("loaded matrix")
 colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character(), sep='\n')
 print("loaded colors")
 
-set2umap <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
+set2umap <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 2000, min.features = 3)
 print("created seurat object")
 
 set2umap <- NormalizeData(set2umap, normalization.method = "LogNormalize", scale.factor = 10000)
