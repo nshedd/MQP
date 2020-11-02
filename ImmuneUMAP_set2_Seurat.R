@@ -1,6 +1,3 @@
-install.packages("dplyr")
-install.packages("patchwork")
-
 library(dplyr)
 library(Seurat)
 library(patchwork)
