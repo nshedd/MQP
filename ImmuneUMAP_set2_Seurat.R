@@ -16,7 +16,8 @@ print("created seurat object")
 set2umap <- NormalizeData(set2umap, normalization.method = "LogNormalize", scale.factor = 10000)
 print("normalized data")
 
-all.cells <- rownames(set2umap)
+all_cells <- rownames(set2umap)
+head(all_cells)
 set2umap <- ScaleData(set2umap, features = all.cells)
 
 set2umap <- RunUMAP(set2umap, dims = 1:10)
