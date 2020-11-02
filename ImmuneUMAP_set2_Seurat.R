@@ -4,7 +4,7 @@ library(patchwork)
 
 print("loaded packages")
 
-matrix = loadRDS(matrix, file=path.expand("~/GSM3722075_PBMC_Rep3_fragments.rds"))
+matrix = readRDS(matrix, file=path.expand("~/GSM3722075_PBMC_Rep3_fragments.rds"))
 print("loaded matrix")
 
 colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character, sep='\n')
