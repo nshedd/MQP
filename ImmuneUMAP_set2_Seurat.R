@@ -16,11 +16,10 @@ print("created seurat object")
 set2umap <- NormalizeData(set2umap, normalization.method = "LogNormalize", scale.factor = 10000)
 print("normalized data")
 
-set2umap <- FindVariableFeatures(set2umap)
-
 all_cells <- rownames(set2umap)
-head(all_cells)
 set2umap <- ScaleData(set2umap, features = all_cells)
+
+set2umap <- RunPCA(pbmc, features = VariableFeatures(object = pbmc))
 
 set2umap <- RunUMAP(set2umap, dims = 1:10)
 
