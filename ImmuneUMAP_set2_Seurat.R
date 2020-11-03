@@ -19,7 +19,7 @@ print("normalized data")
 all_cells <- rownames(set2umap)
 set2umap <- ScaleData(set2umap, features = all_cells)
 
-set2umap <- RunPCA(pbmc, features = VariableFeatures(object = pbmc))
+set2umap <- RunPCA(set2umap, features = VariableFeatures(object = set2umap))
 
 set2umap <- RunUMAP(set2umap, dims = 1:10)
 
