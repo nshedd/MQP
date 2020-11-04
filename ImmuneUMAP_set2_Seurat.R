@@ -28,7 +28,7 @@ set2umap <- FindClusters(set2umap, resolution = 0.5)
 
 set2umap <- RunUMAP(set2umap, dims = 1:10)
 
-DimPlot(set2umap, reduction = "umap", do.return=TRUE)
+plot = DimPlot(set2umap, reduction = "umap", do.return=TRUE)
 ggsave(path.expand("~/umap_colored_set2_seurat_default.svg"), device=)
 
 
