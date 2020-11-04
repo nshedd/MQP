@@ -31,4 +31,4 @@ plot = DimPlot(set2umap, reduction = "umap")
 ggsave(path.expand("~/umap_colored_set2_seurat_default.png"), device=)
 
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-set2umap.markers %>% group_by(cluster) %>% top_n(5, avg_diff)
+set2umap.markers %>% group_by(cluster)
