@@ -1,3 +1,5 @@
+remotes::install_github("jlmelville/uwot")
+
 library(dplyr)
 library(Seurat)
 library(patchwork)
