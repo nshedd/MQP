@@ -3,6 +3,7 @@ install.packages('Seurat')
 library(dplyr)
 library(Seurat)
 library(patchwork)
+library(ggplot2)
 
 print("loaded packages")
 
