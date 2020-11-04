@@ -1,4 +1,4 @@
-remotes::install_github("jlmelville/uwot")
+install.packages('Seurat')
 
 library(dplyr)
 library(Seurat)
