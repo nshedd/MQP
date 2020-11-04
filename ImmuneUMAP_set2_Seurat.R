@@ -6,7 +6,6 @@ library(ggplot2)
 print("loaded packages")
 
 matrix = readRDS(file=path.expand("~/GSM3722075_PBMC_Rep3_fragments.rds"))
-matrix = t(matrix)
 print("loaded matrix")
 print(matrix[1:10, 1:10, drop=FALSE])
 
@@ -32,4 +31,4 @@ plot = DimPlot(set2umap, reduction = "umap")
 ggsave(path.expand("~/umap_colored_set2_seurat_default.png"), device=)
 
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-set2umap.markers %>% group_by(cluster)
+set2umap.markers %>% group_by(cluster) %>% top_n(2, avg_diff)
