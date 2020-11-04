@@ -6,6 +6,7 @@ print("loaded packages")
 
 matrix = readRDS(file=path.expand("~/GSM3722075_PBMC_Rep3_fragments.rds"))
 print("loaded matrix")
+print(matrix[1:10, 1:10, drop=FALSE])
 
 colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character(), sep='\n')
 print("loaded colors")
