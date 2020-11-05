@@ -7,6 +7,8 @@ print("loaded packages")
 
 matrix = readRDS(file=path.expand("~/GSM3722075_PBMC_Rep3_fragments.rds"))
 print("loaded matrix")
+matrix = t(matrix)
+print("transposed matrix")
 print(matrix[1:10, 1:10, drop=FALSE])
 print("Number of rows:")
 print(nrow(matrix))
