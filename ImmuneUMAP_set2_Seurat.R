@@ -13,9 +13,6 @@ print(nrow(matrix))
 print("Number of columns:")
 print(ncol(matrix))
 
-colors <- scan(path.expand("~/set2_top10k_colors.txt"), what=character(), sep='\n')
-print("loaded colors")
-
 set2umap <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
 set2umap <- NormalizeData(set2umap, normalization.method = "LogNormalize", scale.factor = 10000)
@@ -32,9 +29,9 @@ set2umap <- FindClusters(set2umap, resolution = 0.5)
 set2umap <- RunUMAP(set2umap, dims = 1:10)
 
 plot = DimPlot(set2umap, reduction = "umap")
-ggsave(path.expand("~/umap_colored_set2_seurat_default.png"), device=)
+ggsave(path.expand("~/umap_colored_set2_seurat_nt_default.png"), device=)
 
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 diff_expressed = set2umap.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 
-write_tsv(diff_expressed, path.expand("~/set2_differentiallyexpressed.txt"))
+write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed_nt.txt"), sep="\t")
