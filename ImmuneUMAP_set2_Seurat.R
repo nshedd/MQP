@@ -31,9 +31,9 @@ set2umap <- FindClusters(set2umap, resolution = 0.5)
 set2umap <- RunUMAP(set2umap, dims = 1:10)
 
 plot = DimPlot(set2umap, reduction = "umap")
-ggsave(path.expand("~/umap_colored_set2_seurat_nt_default.png"), device=)
+ggsave(path.expand("~/umap_colored_set2_seurat_default.png"), device=)
 
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 diff_expressed = set2umap.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
 
-write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed_nt.txt"), sep="\t")
+write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed.txt"), sep="\t")
