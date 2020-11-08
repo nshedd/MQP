@@ -3,9 +3,6 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 
-install.packages('BiocManager')
-BiocManager::install('limma') 
-
 set2umap = readRDS(file=path.expand("~/GSM3722075_PBMC_Rep3_fragments_Seurat.rds"))
 
 T_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed",header = FALSE, sep="\t",stringsAsFactors=FALSE, quote="")
