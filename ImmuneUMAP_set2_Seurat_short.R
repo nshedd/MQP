@@ -3,7 +3,8 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 
-install.packages('BiocManager')                                                                              BiocManager::install('limma') 
+install.packages('BiocManager')
+BiocManager::install('limma') 
 
 set2umap = readRDS(file=path.expand("~/GSM3722075_PBMC_Rep3_fragments_Seurat.rds"))
 
