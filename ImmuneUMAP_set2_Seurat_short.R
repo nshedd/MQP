@@ -12,9 +12,9 @@ M_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid
 print("read tables")
 
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-diff_expressed = set2umap.markers %>% group_by(cluster) %>% top_n(5, avg_logFC)
+diff_expressed = set2umap.markers %>% group_by(cluster)
 
-write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed.txt"), sep="\t")
+write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed_all.txt"), sep="\t")
 print("wrote table once")
 
 celltypes <- character()
