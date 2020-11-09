@@ -9,7 +9,7 @@ T_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimu
 B_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed",header = FALSE, sep="\t",stringsAsFactors=FALSE, quote="")
 M_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed",header = FALSE, sep="\t",stringsAsFactors=FALSE, quote="")
 
-print(T_cells, drop=FALSE)
+head(T_cells)
 
 print("read tables")
 
