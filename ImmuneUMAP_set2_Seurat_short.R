@@ -14,9 +14,6 @@ print("read tables")
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 diff_expressed = set2umap.markers %>% group_by(cluster)
 
-write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed_all.txt"), sep="\t")
-print("wrote table once")
-
 celltypes <- character()
 for (marker in diff_expressed$gene) {
   if (marker %in% T_cells$V4) {
@@ -35,4 +32,4 @@ diff_expressed$cell_type <- celltypes
 print("finished matching cell types")
 
 write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed.txt"), sep="\t")
-print("wrote table twice")
+print("wrote table")
