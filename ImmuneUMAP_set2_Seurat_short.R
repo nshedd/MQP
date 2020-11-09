@@ -9,8 +9,6 @@ T_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimu
 B_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed",header = FALSE, sep="\t",stringsAsFactors=FALSE, quote="")
 M_cells = read.table("/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed",header = FALSE, sep="\t",stringsAsFactors=FALSE, quote="")
 
-head(T_cells)
-
 print("read tables")
 
 set2umap.markers <- FindAllMarkers(set2umap, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
@@ -21,11 +19,11 @@ print("wrote table once")
 
 celltypes <- character()
 for (marker in diff_expressed$gene) {
-  if (marker %in% T_cells) {
+  if (marker %in% T_cells$V4) {
     celltypes <- c(celltypes, "t-cell")
-  } else if (marker %in% B_cells) {
+  } else if (marker %in% B_cells$V4) {
     celltypes <- c(celltypes, "b-cell")
-  } else if (marker %in% M_cells) {
+  } else if (marker %in% M_cells$V4) {
     celltypes <- c(celltypes, "m-cell")
   } else {
     celltypes <- c(celltypes, "unknown")
