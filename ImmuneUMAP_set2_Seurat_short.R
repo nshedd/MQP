@@ -31,5 +31,5 @@ diff_expressed$cell_type <- celltypes
 
 print("finished matching cell types")
 
-write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed.txt"), sep="\t")
+write.table(diff_expressed, file = path.expand("~/set2_differentiallyexpressed_all.txt"), sep="\t")
 print("wrote table")
