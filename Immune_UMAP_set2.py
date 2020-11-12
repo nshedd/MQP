@@ -30,7 +30,7 @@ def normalize_data(data):
             sum = sum + j
         for j in i:
             n_j = j/sum
-            n_i.append(math.log(n_j+3))
+            n_i.append(n_j)
         n_data.append(n_i)
     return n_data
 
@@ -65,26 +65,29 @@ def create_histograms(matrix, cells, elements, marker, marker_name):
         sums.append(marker_sum)	
     if marker_name=="t_types":
         matplotlib.pyplot.hist(sums, bins=50)
+        matplotlib.pyplot.axvline(0.018, color='red', linestyle='dashed', linewidth=1)
         matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
-        matplotlib.pyplot.title("<Dataset 2> Log Normalized Unstimulated T-cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_lognorm_10k_t1.svg"))
+        matplotlib.pyplot.title("GSM3722075 PBMC Rep3 Unstimulated T-cells")
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_t.png"))
         matplotlib.pyplot.close()
         print("done with t_cells")
     if marker_name=="b_types":
         matplotlib.pyplot.hist(sums, bins=50)
+        matplotlib.pyplot.axvline(0.015, color='red', linestyle='dashed', linewidth=1)
         matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
-        matplotlib.pyplot.title("<Dataset 2> Log Normalized B-cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_lognorm_10k_b1.svg"))
+        matplotlib.pyplot.title("GSM3722075 PBMC Rep3 B-cells")
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_b.png"))
         matplotlib.pyplot.close()
         print("done with b_cells")
     if marker_name=="m_types":
         matplotlib.pyplot.hist(sums, bins=50)
+        matplotlib.pyplot.axvline(0.0125, color='red', linestyle='dashed', linewidth=1)
         matplotlib.pyplot.xlabel('Sum of Expression Across Top 10k Enhancer Elements')  
         matplotlib.pyplot.ylabel('Count')
-        matplotlib.pyplot.title("<Dataset 2> Log Normalized Myeloid Cells")
-        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_lognorm_10k_m1.svg"))
+        matplotlib.pyplot.title("GSM3722075 PBMC Rep3 Myeloid Cells")
+        matplotlib.pyplot.savefig(os.path.expanduser("~/marker_colors_set2_m.png"))
         matplotlib.pyplot.close()
         print("done with m_cells")
 
@@ -93,9 +96,9 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
     for j in elements:
         if j in marker:
             indices.append(elements.index(j))
-    t_cutoff = 0.0905+10145.6
-    b_cutoff = 0.049+10177.5
-    m_cutoff = 0.021+10200.6
+    t_cutoff = 0.018
+    b_cutoff = 0.015
+    m_cutoff = 0.0125
     for i in range(0, len(cells), 1):
         marker_sum = 0
         for j in indices:
@@ -135,20 +138,20 @@ def main():
 
     t_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/unstimulated_T-cells.bed"
     t_types = read_cell_types(t_type_link) # reads a cell type matrix
-    colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
-    #create_histograms(n_matrix, cells, elements, t_types, "t_types")
+    #colors = color_graph(n_matrix, cells, elements, t_types, colors, "t_types") ## later add color_list to the input and just alter the color at an index if it is in a threshold
+    create_histograms(n_matrix, cells, elements, t_types, "t_types")
     print("finished coloring t cells")
 
     b_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/B-cell.bed"
     b_types = read_cell_types(b_type_link) # reads a cell type matrix
-    colors = color_graph(n_matrix, cells, elements, b_types, colors, "b_types")
-    #create_histograms(n_matrix, cells, elements, b_types, "b_types")
+    #colors = color_graph(n_matrix, cells, elements, b_types, colors, "b_types")
+    create_histograms(n_matrix, cells, elements, b_types, "b_types")
     print("finished coloring b cells")
 
     m_type_link = "/data/zusers/pratth/ATAC/specific-elements/top-10k/myeloid_cells.bed"
     m_types = read_cell_types(m_type_link) # reads a cell type matrix
-    colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
-    #create_histograms(n_matrix, cells, elements, m_types, "m_types")
+    #colors = color_graph(n_matrix, cells, elements, m_types, colors, "m_types")
+    create_histograms(n_matrix, cells, elements, m_types, "m_types")
     print("finished coloring myeloid cells")
     
     with open(os.path.expanduser("~/set2_top10k_colors.txt"), 'w') as f:
