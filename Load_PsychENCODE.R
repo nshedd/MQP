@@ -1,6 +1,4 @@
-library(readr)
-
-matrix = read_tsv("/data/zusers/pratth/sc/atac/PEC/GRCh38-rDHSs_GW17_Cortex.aggregate.50k.tsv")
+matrix = read.table("/data/zusers/pratth/sc/atac/PEC/GRCh38-rDHSs_GW17_Cortex.aggregate.50k.tsv", header=TRUE, row.names=1, sep='\t')
 
 print("finsihed loading data")
 
