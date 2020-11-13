@@ -1,4 +1,4 @@
-import("readr")
+library(readr)
 
 matrix = read_tsv("/data/zusers/pratth/sc/atac/PEC/GRCh38-rDHSs_GW17_Cortex.aggregate.50k.tsv")
 
