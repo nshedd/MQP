@@ -1,6 +1,7 @@
 library(ArchR)
 
 sample_names = scan(what = path.expand("~/sample-names.txt"), sep = "\t")
+print(sample_names)
 
 ArrowFiles <- createArrowFiles(
   inputFiles = "/data/zusers/pratth/sc/atac/GSM3722075_PBMC_Rep3_fragments.tsv.gz.rDHS.matrix.tsv",
