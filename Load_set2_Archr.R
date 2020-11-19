@@ -9,7 +9,7 @@ print(sample_names)
 addArchRGenome("hg19")
 
 ArrowFiles <- createArrowFiles(
-  inputFiles = "/data/zusers/pratth/sc/atac/PEC/Temporal_GW2.bam",
+  inputFiles = "/data/zusers/pratth/sc/atac/PEC/Temporal_GW20.bam",
   sampleNames = names(inputFiles),
   filterTSS = 4, #Dont set this too high because you can always increase later
   filterFrags = 1000, 
