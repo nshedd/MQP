@@ -10,7 +10,7 @@ addArchRGenome("hg19")
 
 ArrowFiles <- createArrowFiles(
   inputFiles = "/data/zusers/pratth/sc/PEC/Temporal_GW20.bam",
-  sampleNames = names(inputFiles),
+  sampleNames = names("/data/zusers/pratth/sc/PEC/Temporal_GW20.bam"),
   filterTSS = 4, #Dont set this too high because you can always increase later
   filterFrags = 1000, 
   addTileMat = TRUE,
