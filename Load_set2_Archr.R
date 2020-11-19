@@ -13,8 +13,8 @@ ArrowFiles <- createArrowFiles(
   sampleNames = sample_names,
   #filterTSS = 4, #Dont set this too high because you can always increase later
   #filterFrags = 1000, 
-  addTileMat = TRUE,
-  addGeneScoreMat = TRUE
+  #addTileMat = TRUE,
+  #addGeneScoreMat = TRUE
 )
 
 print("Done loading Archr file")
