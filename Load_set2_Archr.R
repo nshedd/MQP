@@ -11,6 +11,7 @@ names("/data/zusers/pratth/sc/PEC/Temporal_GW20.bam")
 
 ArrowFiles <- createArrowFiles(
   inputFiles = "/data/zusers/pratth/sc/PEC/Temporal_GW20.bam",
+  bcTag = "CB"
   sampleNames = names("/data/zusers/pratth/sc/PEC/Temporal_GW20.bam"),
   filterTSS = 4, #Dont set this too high because you can always increase later
   filterFrags = 1000, 
