@@ -4,9 +4,10 @@ library(Seurat)
 library(patchwork)
 
 sample_names = scan(what = path.expand("~/sample-names.txt"), sep = "\t")
-print(sample_names)
+sample_names
 
 addArchRGenome("hg19")
+names("/data/zusers/pratth/sc/PEC/Temporal_GW20.bam")
 
 ArrowFiles <- createArrowFiles(
   inputFiles = "/data/zusers/pratth/sc/PEC/Temporal_GW20.bam",
