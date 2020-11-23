@@ -9,12 +9,12 @@ matrix = readRDS(file=path.expand("~/GRCh38-rDHSs_GW17_Cortex_50k_fragments_subs
 print("loaded matrix")
 matrix = t(matrix)
 print("transposed matrix")
-print(matrix[1:10, 1:10, drop=FALSE])
+print(matrix)
 print("Number of rows:")
 print(nrow(matrix))
 print("Number of columns:")
 print(ncol(matrix))
-print(matrix)
+
 
 set2umap <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
