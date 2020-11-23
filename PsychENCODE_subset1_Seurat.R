@@ -1,3 +1,5 @@
+install.packages('Seurat','ggplot2')
+
 library(dplyr)
 library(Seurat)
 library(patchwork)
