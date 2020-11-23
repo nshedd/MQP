@@ -132,6 +132,7 @@ def main():
     print(len(elements))
     print("Number of cells:")
     print(len(cells))
+    print(matrix[0:10, 0:10])
 
     #n_matrix = normalize_data(matrix)
     n_matrix = normalize_data(matrix)
