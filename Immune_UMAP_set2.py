@@ -129,10 +129,11 @@ def color_graph(matrix, cells, elements, marker, colors, marker_name):
 def main():
     elements, cells, matrix = read_matrix() # reads the matrix from the file
     print("Number of elements:")
+    print(elements[0:10])
     print(len(elements))
     print("Number of cells:")
+    print(cells[0:10])
     print(len(cells))
-    print(matrix[0:10][0:10])
 
     #n_matrix = normalize_data(matrix)
     n_matrix = normalize_data(matrix)
