@@ -1,7 +1,7 @@
 library(ArchR)
 
 #GRCh38
-addArchRGenome("hg19")
+addArchRGenome("hg38")
 
 args <- commandArgs(trailingOnly = TRUE)
 time = args[1]
