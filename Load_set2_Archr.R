@@ -12,5 +12,7 @@ ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
                                filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE, 
                                #gsubExpression=":.*"
                                )
+ArrowFiles
+
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
