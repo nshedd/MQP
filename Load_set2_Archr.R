@@ -4,6 +4,7 @@ addArchRGenome("hg38")
 
 args <- commandArgs(trailingOnly = TRUE)
 time = args[1]
+print(time)
 bam = "/data/zusers/pratth/sc/PEC/Temporal_GW20.sorted.fragments.tsv.gz"
 key = "temporal"
 
