@@ -4,7 +4,7 @@ addArchRGenome("hg38")
 
 args <- commandArgs(trailingOnly = TRUE)
 time = args[1]
-bam = "Temporal_GW20.sorted.fragments.tsv.gz"
+bam = "/data/zusers/pratth/sc/PEC/Temporal_GW20.sorted.fragments.tsv.gz"
 key = "temporal"
 
 ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
