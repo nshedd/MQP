@@ -14,6 +14,26 @@ ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 
+proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
+proj = addPeakMatrix(proj)
+
+proj = addIterativeLSI(ArchRProj = proj, useMatrix = "TileMatrix", name = "IterativeLSI_Tile", 
+                       iterations = 2, clusterParams = list(resolution = c(0.2), sampleCells = 10000, 
+                                                            n.start = 10), varFeatures = 25000, dimsToUse = 1:30, force=TRUE)
+proj = addClusters(input = proj, reducedDims = "IterativeLSI_Tile", 
+                   method = "Seurat", name = "Clusters_Tile", resolution = 0.8, force=TRUE)
+proj = addUMAP(ArchRProj = proj, reducedDims = "IterativeLSI_Tile", name = "UMAP_Tile", 
+               nNeighbors = 10, minDist = 0.5, metric = "cosine", force=TRUE)
+
+
+proj = addIterativeLSI(ArchRProj = proj, useMatrix = "PeakMatrix", name = "IterativeLSI_Peak", 
+                       iterations = 2, clusterParams = list(resolution = c(0.2), sampleCells = 10000, 
+                                                            n.start = 10), varFeatures = 25000, dimsToUse = 1:30, force=TRUE)
+proj = addClusters(input = proj, reducedDims = "IterativeLSI_Peak", 
+                   method = "Seurat", name = "Clusters_Peak", resolution = 0.8, force=TRUE)
+proj = addUMAP(ArchRProj = proj, reducedDims = "IterativeLSI_Peak", name = "UMAP_Peak", 
+               nNeighbors = 10, minDist = 0.1, metric = "cosine", force=TRUE)
+
 p=getEmbedding(ArchRProj = proj, embedding = "UMAP_Peak")
 t=getEmbedding(ArchRProj = proj, embedding = "UMAP_Tile")
 
