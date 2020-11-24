@@ -4,10 +4,10 @@ library(Seurat)
 library(patchwork)
 
 addArchRGenome("hg19")
-names("/data/zusers/pratth/sc/PEC/Temporal_GW20.tsv.bam")
+names("/data/zusers/pratth/sc/PEC/Temporal_GW20.tsv.gz")
 
 ArrowFiles <- createArrowFiles(
-  inputFiles = c("/data/zusers/pratth/sc/PEC/Temporal_GW20.tsv.bam"),
+  inputFiles = c("/data/zusers/pratth/sc/PEC/Temporal_GW20.tsv.gz"),
   bcTag = "CB",
   sampleNames = c("Temporal_GW20.bam"),
   filterTSS = 4, #Dont set this too high because you can always increase later
