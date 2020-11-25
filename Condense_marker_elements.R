@@ -1,4 +1,5 @@
 marker_elements = read.table(path.expand("~/temporal_marker_peaks.txt"), sep = '\t', header=TRUE)
+head(marker_elements)
 
 top_10_elements = marker_elements[1,]
 
