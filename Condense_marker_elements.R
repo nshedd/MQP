@@ -10,7 +10,7 @@ for (i in 1:11) {
   if (j >= 10) {
     top_temp_elements = temp_elements_sorted[1:10,]
   }
-  else {
+  else if (j>0) {
     top_temp_elements = temp_elements_sorted[1:j,]
   }
   print(top_temp_elements)
