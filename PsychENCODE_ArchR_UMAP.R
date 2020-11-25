@@ -33,6 +33,6 @@ markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", gr
                                   bias = c("TSSEnrichment", "log10(nFrags)"),testMethod = "wilcoxon")
 
 markerList <- getMarkers(markersPeaks, cutOff = "FDR <= 0.01 & Log2FC >= 1")
-write.table(markerList, file = path.expand("~/temporal_marker_peaks.txt"), sep = “/t”)
+write.table(markerList, file = path.expand("~/temporal_marker_peaks.txt"), sep = “\t”)
 
 saveArchRProject(ArchRProj = proj, outputDirectory = time, overwrite = TRUE, load = TRUE)
