@@ -35,4 +35,12 @@ markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", gr
 markerList <- getMarkers(markersPeaks, cutOff = "FDR <= 0.01 & Log2FC >= 1")
 write.table(markerList, file = path.expand("~/temporal_marker_peaks.txt"), sep = '\t')
 
+heatmapPeaks <- markerHeatmap(
+  seMarker = markersPeaks, 
+  cutOff = "FDR <= 0.1 & Log2FC >= 0.5",
+  transpose = TRUE
+)
+draw(heatmapPeaks, heatmap_legend_side = "bot", annotation_legend_side = "bot")
+plotPDF(heatmapPeaks, name = "Peak-Marker-Heatmap-Temporal", width = 8, height = 6, ArchRProj = proj, addDOC = FALSE)
+
 saveArchRProject(ArchRProj = proj, outputDirectory = time, overwrite = TRUE, load = TRUE)
