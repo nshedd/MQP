@@ -9,15 +9,14 @@ for (i in 1:11) {
   j = nrow(temp_elements_sorted)
   if (j >= 10) {
     top_temp_elements = temp_elements_sorted[1:10,]
+    top_10_elements = rbind(top_10_elements, top_temp_elements)
   }
   else if (j>0) {
     top_temp_elements = temp_elements_sorted[1:j,]
-  }
-  print(top_temp_elements)
-  top_10_elements = rbind(top_10_elements, top_temp_elements)
-  print(top_10_elements)
+    top_10_elements = rbind(top_10_elements, top_temp_elements)
+  } 
 }
 
-top_10_elements = top_10_elements[!1,]
+#top_10_elements = top_10_elements[!1,]
 
 write.table(top_10_elements, file = path.expand("~/temporal_marker_peaks_top10.txt"), sep = '\t')
