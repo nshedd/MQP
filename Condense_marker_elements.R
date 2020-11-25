@@ -5,6 +5,7 @@ top_10_elements = marker_elements[1,]
 
 for (i in 0:10) {
   temp_elements = marker_elements[marker_elements$group_name == i,]
+  print(temp_elements)
   temp_elements_sorted = order(temp_elements$Log2FC)
   j = nrow(temp_elements_sorted)
   print(j)
