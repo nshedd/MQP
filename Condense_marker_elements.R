@@ -5,11 +5,11 @@ top_10_elements = marker_elements[1,]
 for (i in range(0:10)) {
   temp_elements = marker_elements[marker_elements$group_name == i,]
   temp_elements_sorted = order(temp_elements$Log2FC)
-  if (nrow(temp_elements_sorted) >= 10) {
+  j = nrow(temp_elements_sorted)
+  if (j >= 10) {
     top_temp_elements = temp_elements_sorted[1:10,]
   }
   else {
-    j = nrow(temp_elements_sorted)
     top_temp_elements = temp_elements_sorted[1:j,]
   }
   top_10_elements = rbind(top_10_elements, top_temp_elements)
