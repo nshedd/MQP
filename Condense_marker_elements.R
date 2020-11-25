@@ -14,7 +14,7 @@ for (i in 1:11) {
   else {
     top_temp_elements = temp_elements_sorted[1:j,]
   }
-  head(top_temp_elements)
+  print(top_temp_elements)
   top_10_elements = rbind(top_10_elements, top_temp_elements)
 }
 
