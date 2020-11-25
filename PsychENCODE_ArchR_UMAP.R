@@ -23,7 +23,7 @@ proj <- addUMAP(ArchRProj = proj, reducedDims = "IterativeLSI")
 
 p <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters", embedding = "UMAP")
 
-plotPDF(p, name = "Plot-UMAP-Sample-Clusters.pdf",
+plotPDF(p, name = "Plot-UMAP-Temporal-Clusters.pdf",
         ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)
 
 markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters2",
