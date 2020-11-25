@@ -29,7 +29,7 @@ p <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters",
 plotPDF(p, name = "Plot-UMAP-Temporal-Clusters.pdf",
         ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)
 
-markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters2",
+markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters",
                                   bias = c("TSSEnrichment", "log10(nFrags)"),testMethod = "wilcoxon")
 
 markerList <- getMarkers(markersPeaks, cutOff = "FDR <= 0.01 & Log2FC >= 1")
