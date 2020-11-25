@@ -26,4 +26,10 @@ p <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters",
 plotPDF(p, name = "Plot-UMAP-Sample-Clusters.pdf",
         ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)
 
+markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters2",
+                                  bias = c("TSSEnrichment", "log10(nFrags)"),testMethod = "wilcoxon")
+
+markerList <- getMarkers(markersPeaks, cutOff = "FDR <= 0.01 & Log2FC >= 1")
+write.table(markerList, file = path.expand("~/temporal_marker_peaks.txt"), sep = “/t”)
+
 saveArchRProject(ArchRProj = proj, outputDirectory = time, overwrite = TRUE, load = TRUE)
