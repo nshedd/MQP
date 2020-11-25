@@ -41,7 +41,7 @@ t=plotEmbedding(ArchRProj = proj, colorBy = "cellColData$Clusters_Tile", embeddi
 
 ggAlignPlots(p, t, type = "h")
 
-plotPDF(p,t, name = "Plot-UMAP-Sample-Clusters-2.pdf",
+plotPDF(p,t, name = "Plot-UMAP-Temporal-Clusters-with-Peaks.pdf",
         ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)
 
 saveArchRProject(ArchRProj = proj, outputDirectory = time, overwrite = TRUE, load = TRUE)
