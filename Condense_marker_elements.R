@@ -4,7 +4,9 @@ head(marker_elements)
 top_10_elements = marker_elements[1,]
 
 for (i in 0:10) {
-  temp_elements = marker_elements[marker_elements$group == i,]
+  int = i
+  print(int)
+  temp_elements = marker_elements[marker_elements$group == int,]
   print(temp_elements)
   temp_elements_sorted = order(temp_elements$Log2FC)
   j = nrow(temp_elements_sorted)
@@ -17,7 +19,7 @@ for (i in 0:10) {
   }
   top_10_elements = rbind(top_10_elements, top_temp_elements)
 }
-  
+
 top_10_elements = top_10_elements[!1,]
 
 write.table(markerList, file = path.expand("~/temporal_marker_peaks_top10.txt"), sep = '\t')
