@@ -134,6 +134,11 @@ def main():
     print("Number of cells:")
     print(cells[0:10])
     print(len(cells))
+    
+    for i in range(0,10):
+        print("row", end='')
+        print(i)
+        print(matrix[i][0:10])
 
     #n_matrix = normalize_data(matrix)
     n_matrix = normalize_data(matrix)
