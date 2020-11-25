@@ -36,7 +36,7 @@ proj = addUMAP(ArchRProj = proj, reducedDims = "IterativeLSI_Peak", name = "UMAP
                nNeighbors = 10, minDist = 0.1, metric = "cosine", force=TRUE)
 
 
-p=plotEmbedding(ArchRProj = proj, embedding = "UMAP_Peak")
+p=plotEmbedding(ArchRProj = proj, colorBy = "cellColData", embedding = "UMAP_Peak")
 t=plotEmbedding(ArchRProj = proj, embedding = "UMAP_Tile")
 
 ggAlignPlots(p, t, type = "h")
