@@ -20,4 +20,4 @@ for (i in 1:11) {
 
 top_10_elements = top_10_elements[!1,]
 
-write.table(marker_elements, file = path.expand("~/temporal_marker_peaks_top10.txt"), sep = '\t')
+write.table(top_10_elements, file = path.expand("~/temporal_marker_peaks_top10.txt"), sep = '\t')
