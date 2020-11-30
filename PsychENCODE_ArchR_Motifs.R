@@ -4,7 +4,7 @@ time = "Temporal_Dev_Analysis"
 
 proj <- loadArchRProject(path = time)
 
-if("Motif" %ni% names(projHeme5@peakAnnotation)){
+if("Motif" %ni% names(proj@peakAnnotation)){
   proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
 }
 
