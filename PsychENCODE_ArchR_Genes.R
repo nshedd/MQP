@@ -4,36 +4,16 @@ time = "Temporal_Dev_Analysis"
 
 proj <- loadArchRProject(path = time)
 
-proj <- addImputeWeights(proj)
-
-print("we made it here")
-
-markerGenes = c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11")
-
-p <- plotEmbedding(
-  ArchRProj = proj, 
-  colorBy = "GeneScoreMatrix",
-  name = markerGenes,
-  embedding = "UMAP",
-  imputeWeights = getImputeWeights(proj)
+proj <- addCoAccessibility(
+  ArchRProj = proj,
+  reducedDims = "IterativeLSI"
 )
-print("we also made it here")
 
-p2 <- lapply(p, function(x){
-  x + guides(color = FALSE, fill = FALSE) + 
-    theme_ArchR(baseSize = 6.5) +
-    theme(plot.margin = unit(c(0, 0, 0, 0), "cm")) +
-    theme(
-      axis.text.x=element_blank(), 
-      axis.ticks.x=element_blank(), 
-      axis.text.y=element_blank(), 
-      axis.ticks.y=element_blank()
-    )
-})
-do.call(cowplot::plot_grid, c(list(ncol = 3),p2))
+cA <- getCoAccessibility(
+  ArchRProj = proj,
+  corCutOff = 0.5,
+  resolution = 1,
+  returnLoops = FALSE
+)
 
-
-plotPDF(plotList = p, 
-        name = "Plot-UMAP-Temporal-Marker-Genes.pdf", 
-        ArchRProj = proj, 
-        addDOC = FALSE, width = 5, height = 5)
+metadata(cA)[[1]]
