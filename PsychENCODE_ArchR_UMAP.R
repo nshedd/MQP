@@ -24,6 +24,8 @@ proj <- addClusters(input = proj, reducedDims = "IterativeLSI")
 
 proj <- addUMAP(ArchRProj = proj, reducedDims = "IterativeLSI")
 
+proj <- addImputeWeights(proj)
+
 p1 <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Sample", embedding = "UMAP")
 p2 <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters", embedding = "UMAP")
 
