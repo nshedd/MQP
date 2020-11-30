@@ -46,4 +46,4 @@ heatmapPeaks <- markerHeatmap(
 draw(heatmapPeaks, heatmap_legend_side = "bot", annotation_legend_side = "bot")
 plotPDF(heatmapPeaks, name = "Peak-Marker-Heatmap-Temporal", width = 8, height = 6, ArchRProj = proj, addDOC = FALSE)
 
-saveArchRProject(ArchRProj = proj, outputDirectory = time, overwrite = TRUE, load = TRUE)
+saveArchRProject(ArchRProj = proj)
