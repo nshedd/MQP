@@ -7,7 +7,7 @@ proj <- loadArchRProject(path = time)
 proj <- addImputeWeights(proj)
 
 p <- plotEmbedding(
-  ArchRProj = projHeme2, 
+  ArchRProj = proj, 
   colorBy = "GeneScoreMatrix",
   embedding = "UMAP",
   imputeWeights = getImputeWeights(projHeme2)
@@ -29,5 +29,5 @@ do.call(cowplot::plot_grid, c(list(ncol = 3),p2))
 
 plotPDF(plotList = p, 
         name = "Plot-UMAP-Temporal-Marker-Genes.pdf", 
-        ArchRProj = projHeme2, 
+        ArchRProj = proj, 
         addDOC = FALSE, width = 5, height = 5)
