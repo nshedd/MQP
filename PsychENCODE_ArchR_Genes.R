@@ -6,12 +6,15 @@ proj <- loadArchRProject(path = time)
 
 proj <- addImputeWeights(proj)
 
+print("we made it here")
+
 p <- plotEmbedding(
   ArchRProj = proj, 
   colorBy = "GeneScoreMatrix",
   embedding = "UMAP",
   imputeWeights = getImputeWeights(proj)
 )
+print("we also made it here")
 
 p2 <- lapply(p, function(x){
   x + guides(color = FALSE, fill = FALSE) + 
