@@ -11,6 +11,7 @@ print("we made it here")
 p <- plotEmbedding(
   ArchRProj = proj, 
   colorBy = "GeneScoreMatrix",
+  name = markerGenes,
   embedding = "UMAP",
   imputeWeights = getImputeWeights(proj)
 )
