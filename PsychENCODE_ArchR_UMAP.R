@@ -3,7 +3,7 @@ library(ArchR)
 addArchRGenome("hg38")
 
 args <- commandArgs(trailingOnly = TRUE)
-time = args[1]
+time = "Temporal_Dev_Analysis"
 print(time)
 bam = "/data/zusers/pratth/sc/PEC/Temporal_GW20.sorted.fragments.tsv.gz"
 key = "temporal"
@@ -24,12 +24,9 @@ proj <- addClusters(input = proj, reducedDims = "IterativeLSI")
 
 proj <- addUMAP(ArchRProj = proj, reducedDims = "IterativeLSI")
 
-p1 <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Sample", embedding = "UMAP")
-p2 <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters", embedding = "UMAP")		
+p <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters", embedding = "UMAP")		
 
-ggAlignPlots(p1, p2, type = "h")		
-
-plotPDF(p1, p2, name = "Plot-UMAP-Temporal-Clusters-2.pdf",		
+plotPDF(p, name = "Plot-UMAP-Temporal-Clusters-2.pdf",		
          ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)		
 
 markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters",
