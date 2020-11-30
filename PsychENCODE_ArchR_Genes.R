@@ -10,7 +10,7 @@ p <- plotEmbedding(
   ArchRProj = proj, 
   colorBy = "GeneScoreMatrix",
   embedding = "UMAP",
-  imputeWeights = getImputeWeights(projHeme2)
+  imputeWeights = getImputeWeights(proj)
 )
 
 p2 <- lapply(p, function(x){
