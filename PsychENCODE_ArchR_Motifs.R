@@ -10,7 +10,7 @@ proj <- loadArchRProject(path = time)
 
 motifsUp <- peakAnnoEnrichment(
     seMarker = markerTest,
-    ArchRProj = projHeme5,
+    ArchRProj = proj,
     peakAnnotation = "Motif",
     cutOff = "FDR <= 0.1 & Log2FC >= 0.5"
   )
