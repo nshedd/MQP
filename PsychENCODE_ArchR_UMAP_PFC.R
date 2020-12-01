@@ -5,7 +5,7 @@ addArchRGenome("hg38")
 args <- commandArgs(trailingOnly = TRUE)
 time = "PFC_Dev_Analysis"
 print(time)
-bam = "/data/zusers/pratth/sc/PEC/PFC_GW20.tsv.gz"
+bam = "/data/zusers/pratth/sc/PEC/PFC_GW20.bam.tsv.gz"
 key = "prefrontal_cortex"
 
 ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
