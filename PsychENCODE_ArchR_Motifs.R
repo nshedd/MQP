@@ -10,7 +10,7 @@ proj <- loadArchRProject(path = time)
 
 #saveArchRProject(ArchRProj = proj)
 
-proj <-addBgdPeaks(proj, method="chromVAR")
+proj <-addBgdPeaks(proj, method="ArchR")
 
 proj <- addDeviationsMatrix(
   ArchRProj = proj, 
