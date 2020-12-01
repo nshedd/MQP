@@ -8,7 +8,9 @@ if("Motif" %ni% names(proj@peakAnnotation)){
   proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
 }
 
-proj <-addBgdPeaks(proj)
+saveArchRProject(ArchRProj = proj)
+
+proj <-addBgdPeaks(proj, method="ArchR")
 
 proj <- addDeviationsMatrix(
   ArchRProj = proj, 
