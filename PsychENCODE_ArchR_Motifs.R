@@ -4,24 +4,33 @@ time = "Temporal_Dev_Analysis"
 
 proj <- loadArchRProject(path = time)
 
-#if("Motif" %ni% names(proj@peakAnnotation)){
-#  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
-#}
+#proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
 
 #saveArchRProject(ArchRProj = proj)
 
-proj <-addBgdPeaks(proj, method="ArchR")
+motifsUp <- peakAnnoEnrichment(
+    seMarker = markerTest,
+    ArchRProj = projHeme5,
+    peakAnnotation = "Motif",
+    cutOff = "FDR <= 0.1 & Log2FC >= 0.5"
+  )
 
-proj <- addDeviationsMatrix(
-  ArchRProj = proj, 
-  peakAnnotation = "Motif",
-  force = TRUE
-)
+df <- data.frame(TF = rownames(motifsUp), mlog10Padj = assay(motifsUp)[,1])
+df <- df[order(df$mlog10Padj, decreasing = TRUE),]
+df$rank <- seq_len(nrow(df))
 
-plotVarDev <- getVarDeviations(proj, name = "MotifMatrix", plot = TRUE)
+ggUp <- ggplot(df, aes(rank, mlog10Padj, color = mlog10Padj)) + 
+  geom_point(size = 1) +
+  ggrepel::geom_label_repel(
+        data = df[rev(seq_len(30)), ], aes(x = rank, y = mlog10Padj, label = TF), 
+        size = 1.5,
+        nudge_x = 2,
+        color = "black"
+  ) + theme_ArchR() + 
+  ylab("-log10(P-adj) Motif Enrichment") + 
+  xlab("Rank Sorted TFs Enriched") +
+  scale_color_gradientn(colors = paletteContinuous(set = "comet"))
 
-plotVarDev
-
-plotPDF(plotVarDev, name = "Variable-Motif-Deviation-Scores", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+plotPDF(ggUp, name = "Motif-Enrichment", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
 
 saveArchRProject(ArchRProj = proj)
