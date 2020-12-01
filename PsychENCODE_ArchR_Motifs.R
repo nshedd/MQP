@@ -22,3 +22,4 @@ plotVarDev
 
 plotPDF(plotVarDev, name = "Variable-Motif-Deviation-Scores", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
 
+saveArchRProject(ArchRProj = proj)
