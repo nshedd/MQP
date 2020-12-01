@@ -4,13 +4,13 @@ time = "Temporal_Dev_Analysis"
 
 proj <- loadArchRProject(path = time)
 
-if("Motif" %ni% names(proj@peakAnnotation)){
-  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
-}
+#if("Motif" %ni% names(proj@peakAnnotation)){
+#  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
+#}
 
-saveArchRProject(ArchRProj = proj)
+#saveArchRProject(ArchRProj = proj)
 
-proj <-addBgdPeaks(proj, method="ArchR")
+proj <-addBgdPeaks(proj, method="chromVAR")
 
 proj <- addDeviationsMatrix(
   ArchRProj = proj, 
