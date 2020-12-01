@@ -2,11 +2,10 @@ library(ArchR)
 
 addArchRGenome("hg38")
 
-args <- commandArgs(trailingOnly = TRUE)
 time = "PFC_Dev_Analysis"
 print(time)
 bam = "/data/zusers/pratth/sc/PEC/PFC_GW20.bam.tsv.gz"
-key = "prefrontal_cortex"
+key = "prefrontal"
 
 ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
   filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE, 
