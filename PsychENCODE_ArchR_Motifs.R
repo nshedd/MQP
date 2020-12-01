@@ -4,6 +4,16 @@ time = "Temporal_Dev_Analysis"
 
 proj <- loadArchRProject(path = time)
 
+markerTest <- getMarkerFeatures(
+  ArchRProj = proj, 
+  useMatrix = "PeakMatrix",
+  groupBy = "Clusters2",
+  testMethod = "wilcoxon",
+  bias = c("TSSEnrichment", "log10(nFrags)"),
+  useGroups = "C1",
+  bgdGroups = "C2"
+)
+
 #proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
 
 #saveArchRProject(ArchRProj = proj)
