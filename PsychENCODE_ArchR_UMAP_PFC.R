@@ -4,7 +4,7 @@ addArchRGenome("hg38")
 
 time = "PFC_Dev_Analysis"
 print(time)
-bam = "/data/zusers/pratth/sc/PEC/PFC_GW20.tsv.gz"
+bam = "/data/zusers/pratth/sc/PEC/PFC_GW20.bam.tsv.tsv.gz"
 key = "prefrontal"
 
 ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
