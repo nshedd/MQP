@@ -7,7 +7,7 @@ proj <- loadArchRProject(path = time)
 markerTest <- getMarkerFeatures(
   ArchRProj = proj, 
   useMatrix = "PeakMatrix",
-  groupBy = "Clusters2",
+  groupBy = "Clusters",
   testMethod = "wilcoxon",
   bias = c("TSSEnrichment", "log10(nFrags)"),
   useGroups = "C1",
