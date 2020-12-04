@@ -10,6 +10,9 @@ if("Motif" %ni% names(proj@peakAnnotation)){
   proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
 }
 
+markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters",
+                                  bias = c("TSSEnrichment", "log10(nFrags)"),testMethod = "wilcoxon")
+
 enrichMotifs <- peakAnnoEnrichment(
   seMarker = markersPeaks,
   ArchRProj = proj,
