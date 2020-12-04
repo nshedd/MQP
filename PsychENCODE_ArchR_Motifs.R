@@ -5,7 +5,7 @@ time = "Temporal_Dev_Analysis"
 proj <- loadArchRProject(path = time)
 
 markerTest <- getMarkerFeatures(
-  ArchRProj = projHeme5, 
+  ArchRProj = proj, 
   useMatrix = "PeakMatrix",
   groupBy = "Clusters2",
   testMethod = "wilcoxon",
@@ -18,7 +18,7 @@ proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif"
 
 motifsUp <- peakAnnoEnrichment(
     seMarker = markerTest,
-    ArchRProj = projHeme5,
+    ArchRProj = proj,
     peakAnnotation = "Motif",
     cutOff = "FDR <= 0.1 & Log2FC >= 0.5"
   )
@@ -41,7 +41,7 @@ ggUp <- ggplot(df, aes(rank, mlog10Padj, color = mlog10Padj)) +
 
 motifsDo <- peakAnnoEnrichment(
     seMarker = markerTest,
-    ArchRProj = projHeme5,
+    ArchRProj = proj,
     peakAnnotation = "Motif",
     cutOff = "FDR <= 0.1 & Log2FC <= -0.5"
   )
