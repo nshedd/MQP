@@ -16,7 +16,9 @@ markerTest <- getMarkerFeatures(
 
 saveArchRProject(ArchRProj = proj)
 
-proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif", force=TRUE)
+if("Motif" %ni% names(proj@peakAnnotation)){
+  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
+}
 
 motifsUp <- peakAnnoEnrichment(
     seMarker = markerTest,
@@ -65,13 +67,7 @@ ggDo <- ggplot(df, aes(rank, mlog10Padj, color = mlog10Padj)) +
   xlab("Rank Sorted TFs Enriched") +
   scale_color_gradientn(colors = paletteContinuous(set = "comet"))
 
-plotPDF(ggUp, ggDo, name = "Erythroid-vs-Progenitor-Markers-Motifs-Enriched", width = 5, height = 5, ArchRProj = projHeme5, addDOC = FALSE)
-
-#if("Motif" %ni% names(proj@peakAnnotation)){
-#  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
-#}
-
-#saveArchRProject(ArchRProj = proj)
+plotPDF(ggUp, ggDo, name = "C1-vs-C2-Markers-Motifs-Enriched", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
 
 proj <-addBgdPeaks(proj, method="ArchR")
 
@@ -80,3 +76,5 @@ proj <- addDeviationsMatrix(ArchRProj = proj, peakAnnotation = "Motif", force = 
 plotVarDev <- getVarDeviations(proj, name = "MotifMatrix", plot = TRUE)
 
 plotPDF(plotVarDev, name = "Variable-Motif-Deviation-Scores", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+
+saveArchRProject(ArchRProj = proj)
