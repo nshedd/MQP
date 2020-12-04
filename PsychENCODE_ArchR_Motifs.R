@@ -14,7 +14,7 @@ markerTest <- getMarkerFeatures(
   bgdGroups = "C2"
 )
 
-proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif")
+proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Temp_Motif")
 
 motifsUp <- peakAnnoEnrichment(
     seMarker = markerTest,
