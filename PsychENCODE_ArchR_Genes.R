@@ -12,7 +12,7 @@ markersGS <- getMarkerFeatures(
     testMethod = "wilcoxon"
 )
 
-write.table(markerList, file = path.expand("~/temporal_marker_gene_score.txt"), sep = '\t')
+write.table(markersGS, file = path.expand("~/temporal_marker_gene_score.txt"), sep = '\t')
 
 markerList <- getMarkers(markersGS, cutOff = "FDR <= 0.01 & Log2FC >= 1.25")
 
