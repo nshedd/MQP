@@ -14,6 +14,8 @@ markerTest <- getMarkerFeatures(
   bgdGroups = "C2"
 )
 
+saveArchRProject(ArchRProj = proj)
+
 proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "cisbp", name = "Motif", force=TRUE)
 
 motifsUp <- peakAnnoEnrichment(
@@ -22,6 +24,7 @@ motifsUp <- peakAnnoEnrichment(
     peakAnnotation = "Motif",
     cutOff = "FDR <= 0.1 & Log2FC >= 0.5"
   )
+
 
 df <- data.frame(TF = rownames(motifsUp), mlog10Padj = assay(motifsUp)[,1])
 df <- df[order(df$mlog10Padj, decreasing = TRUE),]
