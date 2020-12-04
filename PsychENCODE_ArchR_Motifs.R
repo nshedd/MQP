@@ -24,6 +24,6 @@ heatmapEM <- plotEnrichHeatmap(enrichMotifs, n = 7, transpose = TRUE)
 
 ComplexHeatmap::draw(heatmapEM, heatmap_legend_side = "bot", annotation_legend_side = "bot")
 
-plotPDF(heatmapEM, name = "Motifs-Enriched-Marker-Heatmap", width = 8, height = 6, ArchRProj = projHeme5, addDOC = FALSE)
+plotPDF(heatmapEM, name = "Motifs-Enriched-Marker-Heatmap", width = 8, height = 6, ArchRProj = proj, addDOC = FALSE)
 
 saveArchRProject(ArchRProj = proj)
