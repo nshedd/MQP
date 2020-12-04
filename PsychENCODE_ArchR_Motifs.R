@@ -6,8 +6,8 @@ time = "Temporal_Dev_Analysis"
 
 proj <- loadArchRProject(path = time)
 
-if("Motif" %ni% names(proj@peakAnnotation)){
-  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "encode", name = "Motif")
+if("Motif_ENCODE" %ni% names(proj@peakAnnotation)){
+  proj <- addMotifAnnotations(ArchRProj = proj, motifSet = "encode", name = "Motif_ENCODE")
 }
 
 markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters",
@@ -16,7 +16,7 @@ markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", gr
 enrichMotifs <- peakAnnoEnrichment(
   seMarker = markersPeaks,
   ArchRProj = proj,
-  peakAnnotation = "Motif",
+  peakAnnotation = "Motif_ENCODE",
   cutOff = "FDR <= 0.1 & Log2FC >= 0.5"
 )
 
