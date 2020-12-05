@@ -1,7 +1,7 @@
 
-brain_genes = read.table("Zlab single-cell marker genes - Brain.tsv", header=TRUE)
+brain_genes = read.table("Zlab single-cell marker genes - Brain.tsv", header=TRUE, sep="\t")
 
-diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1)
+diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
 celltypes <- character()
 for (gene in diff_expressed$name) {
