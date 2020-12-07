@@ -6,7 +6,7 @@ library(ggplot2)
 
 path1a = path.expand("~/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 path1b = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
-path1c = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+path1c = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")
 
 matrixa = read.table(path1a, header=TRUE, row.names=1)
 matrixb = read.table(path1b, header=TRUE, row.names=1)
