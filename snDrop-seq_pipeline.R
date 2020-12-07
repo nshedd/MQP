@@ -29,7 +29,7 @@ saveRDS(cerebellarhem, file = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_U
 plot = DimPlot(cerebellarhem, reduction = "umap")
 ggsave(path.expand("~/umap_GSE97930_CerebellarHem_Seurat_default.png"), device=)
 
-set2umap.markers <- FindAllMarkers(cerebellarhem, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+cerebellarhem.markers <- FindAllMarkers(cerebellarhem, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 diff_expressed = cerebellarhem.markers %>% group_by(cluster)
 
 path2 = path.expand("~/Zlab single-cell marker genes - Brain.tsv")
