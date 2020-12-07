@@ -1,16 +1,16 @@
 genes = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
-cluster1_genes = genes$name[genes$group == 1,]
-cluster2_genes = genes$name[genes$group == 2,]
-cluster3_genes = genes$name[genes$group == 3,]
-cluster4_genes = genes$name[genes$group == 4,]
-cluster5_genes = genes$name[genes$group == 5,]
-cluster6_genes = genes$name[genes$group == 6,]
-cluster7_genes = genes$name[genes$group == 7,]
-cluster8_genes = genes$name[genes$group == 8,]
-cluster9_genes = genes$name[genes$group == 9,]
-cluster10_genes = genes$name[genes$group == 10,]
-cluster11_genes = genes$name[genes$group == 11,]
+cluster1_genes = genes$name[genes$group == 1]
+cluster2_genes = genes$name[genes$group == 2]
+cluster3_genes = genes$name[genes$group == 3]
+cluster4_genes = genes$name[genes$group == 4]
+cluster5_genes = genes$name[genes$group == 5]
+cluster6_genes = genes$name[genes$group == 6]
+cluster7_genes = genes$name[genes$group == 7]
+cluster8_genes = genes$name[genes$group == 8]
+cluster9_genes = genes$name[genes$group == 9]
+cluster10_genes = genes$name[genes$group == 10]
+cluster11_genes = genes$name[genes$group == 11]
 
 write.table(cluster1_genes, path.expand("~/temporal_genes/cluster1.txt"), sep = "\n")
 write.table(cluster2_genes, path.expand("~/temporal_genes/cluster2.txt"), sep = "\n")
