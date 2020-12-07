@@ -1,4 +1,4 @@
-genes = read.table(path.expand("~/GSE97930_cerebellarhem_differentiallyexpressed.txt"), header=TRUE, row.names=1, sep="\t")
+genes = read.table(path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed.txt"), header=TRUE, row.names=1, sep="\t")
 
 cluster0_genes = genes$gene[genes$cluster == '0']
 cluster1_genes = genes$gene[genes$cluster == '1']
