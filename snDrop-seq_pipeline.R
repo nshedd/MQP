@@ -34,7 +34,7 @@ diff_expressed = cerebellarhem.markers %>% group_by(cluster)
 
 path2 = path.expand("~/Zlab single-cell marker genes - Brain.tsv")
 
-brain_genes = read.table(path2, header=TRUE)
+brain_genes = read.table(path2, header=TRUE, sep= "\t")
 blood_genes = 
 
 celltypes <- character()
