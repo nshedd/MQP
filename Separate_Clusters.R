@@ -12,15 +12,15 @@ cluster9_genes = genes$name[genes$group == 9]
 cluster10_genes = genes$name[genes$group == 10]
 cluster11_genes = genes$name[genes$group == 11]
 
-write.table(cluster1_genes, path.expand("~/temporal_genes/cluster1.txt"), sep = "\n", row.names=False)
-write.table(cluster2_genes, path.expand("~/temporal_genes/cluster2.txt"), sep = "\n", row.names=False)
-write.table(cluster3_genes, path.expand("~/temporal_genes/cluster3.txt"), sep = "\n", row.names=False)
-write.table(cluster4_genes, path.expand("~/temporal_genes/cluster4.txt"), sep = "\n", row.names=False)
-write.table(cluster5_genes, path.expand("~/temporal_genes/cluster5.txt"), sep = "\n", row.names=False)
-write.table(cluster6_genes, path.expand("~/temporal_genes/cluster6.txt"), sep = "\n", row.names=False)
-write.table(cluster7_genes, path.expand("~/temporal_genes/cluster7.txt"), sep = "\n", row.names=False)
-write.table(cluster8_genes, path.expand("~/temporal_genes/cluster8.txt"), sep = "\n", row.names=False)
-write.table(cluster9_genes, path.expand("~/temporal_genes/cluster9.txt"), sep = "\n", row.names=False)
-write.table(cluster10_genes, path.expand("~/temporal_genes/cluster10.txt"), sep = "\n", row.names=False)
-write.table(cluster11_genes, path.expand("~/temporal_genes/cluster11.txt"), sep = "\n", row.names=False)
+write.table(cluster1_genes, path.expand("~/temporal_genes/cluster1.txt"), sep = "\n", row.names=F)
+write.table(cluster2_genes, path.expand("~/temporal_genes/cluster2.txt"), sep = "\n", row.names=F)
+write.table(cluster3_genes, path.expand("~/temporal_genes/cluster3.txt"), sep = "\n", row.names=F)
+write.table(cluster4_genes, path.expand("~/temporal_genes/cluster4.txt"), sep = "\n", row.names=F)
+write.table(cluster5_genes, path.expand("~/temporal_genes/cluster5.txt"), sep = "\n", row.names=F)
+write.table(cluster6_genes, path.expand("~/temporal_genes/cluster6.txt"), sep = "\n", row.names=F)
+write.table(cluster7_genes, path.expand("~/temporal_genes/cluster7.txt"), sep = "\n", row.names=F)
+write.table(cluster8_genes, path.expand("~/temporal_genes/cluster8.txt"), sep = "\n", row.names=F)
+write.table(cluster9_genes, path.expand("~/temporal_genes/cluster9.txt"), sep = "\n", row.names=F)
+write.table(cluster10_genes, path.expand("~/temporal_genes/cluster10.txt"), sep = "\n", row.names=F)
+write.table(cluster11_genes, path.expand("~/temporal_genes/cluster11.txt"), sep = "\n", row.names=F)
 
