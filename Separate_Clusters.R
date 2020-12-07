@@ -1,6 +1,7 @@
 genes = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
 cluster1_genes = genes$name[genes$group == 1]
+print(cluster1_genes)
 cluster2_genes = genes$name[genes$group == 2]
 cluster3_genes = genes$name[genes$group == 3]
 cluster4_genes = genes$name[genes$group == 4]
