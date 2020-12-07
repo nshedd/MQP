@@ -1,6 +1,6 @@
 genes = read.table(path.expand("~/GSE97930_visualcortex_differentiallyexpressed.txt"), header=TRUE, row.names=1, sep="\t")
 
-cluster1_genes = genes$gene[genes$cluster == '0']
+cluster0_genes = genes$gene[genes$cluster == '0']
 cluster1_genes = genes$gene[genes$cluster == '1']
 cluster2_genes = genes$gene[genes$cluster == '2']
 cluster3_genes = genes$gene[genes$cluster == '3']
