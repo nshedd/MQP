@@ -8,9 +8,9 @@ path1a = path.expand("~/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_08-01-
 path1b = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 path1c = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
-matrixa = read.table(path1, header=TRUE, row.names=1)
-matrixb = read.table(path2, header=TRUE, row.names=1)
-matrixc = read.table(path3, header=TRUE, row.names=1)
+matrixa = read.table(path1a, header=TRUE, row.names=1)
+matrixb = read.table(path1b, header=TRUE, row.names=1)
+matrixc = read.table(path1c, header=TRUE, row.names=1)
 
 matrix <- merge(matrixa, matrixb, by = mergeCols)
 matrix <- merge(matrix, matrixc, by = mergeCols)
