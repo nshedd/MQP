@@ -4,40 +4,40 @@ library(patchwork)
 library(ggplot2)
 
 
-path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")
+path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
 matrix = read.table(path1, header=TRUE, row.names=1)
 
-cerebellarhem <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
+frontalcortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
-cerebellarhem <- NormalizeData(cerebellarhem, normalization.method = "LogNormalize", scale.factor = 10000)
+frontalcortex <- NormalizeData(frontalcortex, normalization.method = "LogNormalize", scale.factor = 10000)
 
-cerebellarhem <- FindVariableFeatures(object = cerebellarhem)
+frontalcortex <- FindVariableFeatures(object = frontalcortex)
 
-all_cells <- rownames(cerebellarhem)
-cerebellarhem <- ScaleData(cerebellarhem, features = all_cells)
+all_cells <- rownames(frontalcortex)
+frontalcortex <- ScaleData(frontalcortex, features = all_cells)
 
-cerebellarhem <- RunPCA(cerebellarhem, features = VariableFeatures(object = cerebellarhem))
+frontalcortex <- RunPCA(frontalcortex, features = VariableFeatures(object = frontalcortex))
 
-cerebellarhem <- FindNeighbors(cerebellarhem, dims = 1:10)
-cerebellarhem <- FindClusters(cerebellarhem, resolution = 0.5)
+frontalcortex <- FindNeighbors(frontalcortex, dims = 1:10)
+frontalcortex <- FindClusters(frontalcortex, resolution = 0.5)
 
-cerebellarhem <- RunUMAP(cerebellarhem, dims = 1:10)
+frontalcortex <- RunUMAP(frontalcortex, dims = 1:10)
 
-saveRDS(cerebellarhem, file = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+saveRDS(frontalcortex, file = path.expand("~/GSE97930_frontalcortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-plot = DimPlot(cerebellarhem, reduction = "umap")
-ggsave(path.expand("~/umap_GSE97930_CerebellarHem_Seurat_default.png"), device=)
+plot = DimPlot(frontalcortex, reduction = "umap")
+ggsave(path.expand("~/umap_GSE97930_frontalcortex_Seurat_default.png"), device=)
 
-cerebellarhem.markers <- FindAllMarkers(cerebellarhem, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
-diff_expressed = cerebellarhem.markers %>% group_by(cluster)
+frontalcortex.markers <- FindAllMarkers(frontalcortex, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
+diff_expressed = frontalcortex.markers %>% group_by(cluster)
 
 path2 = path.expand("~/Zlab single-cell marker genes - Brain.tsv")
 
 brain_genes = read.table(path2, header=TRUE, sep= "\t")
 blood_genes = 
-
-celltypes <- character()
+  
+  celltypes <- character()
 for (gene in diff_expressed$gene) {
   if (gene %in% brain_genes$Human_Gene) {
     celltypes <- c(celltypes, T_cells$Human_Gene)
@@ -49,4 +49,4 @@ for (gene in diff_expressed$gene) {
 
 diff_expressed$cell_type <- celltypes
 
-write.table(diff_expressed, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed.txt"), sep="\t")
+write.table(diff_expressed, file = path.expand("~/GSE97930_frontalcortex_differentiallyexpressed.txt"), sep="\t")
