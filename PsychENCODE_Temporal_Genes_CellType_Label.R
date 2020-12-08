@@ -7,8 +7,8 @@ head(brain_genes)
 
 celltypes <- character()
 for (gene in diff_expressed$name) {
-  if (gene %in% brain_genes$Human_Gene) {
-    celltypes <- c(celltypes, brain_genes$Cell_Type)
+  if (gene %in% brain_genes$Human.Gene) {
+    celltypes <- c(celltypes, brain_genes$Cell.Type)
   }
   else {
     celltypes <- c(celltypes, "unknown")
