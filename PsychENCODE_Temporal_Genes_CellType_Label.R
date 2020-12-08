@@ -7,17 +7,14 @@ celltypelist = brain_genes$Cell.type
 print(celltypelist[277])
 
 celltypes <- character()
-ind = 1
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
-    print(ind)
-    print(celltypelist[ind])
-    celltypes <- c(celltypes, celltypelist[ind])
+    celltype = brain_genes$Cell.type[brain_genes$Human.Gene == gene]
+    celltypes <- c(celltypes, celltype)
   }
   else {
     celltypes <- c(celltypes, "unknown")
   }
-  ind = ind + 1
 }
 
 diff_expressed$cell_type <- celltypes
