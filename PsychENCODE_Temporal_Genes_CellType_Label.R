@@ -11,6 +11,7 @@ celltypes <- character()
 index = 1
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
+    print(brain_genes[index,"Cell.type"])
     celltypes <- c(celltypes, brain_genes[index,"Cell.type"])
   }
   else {
