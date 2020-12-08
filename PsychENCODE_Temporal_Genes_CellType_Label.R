@@ -11,8 +11,6 @@ for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
     celltype = brain_genes$Cell.type[brain_genes$Human.Gene == gene]
     celltype = paste(celltype, collapse = ', ')
-    print(gene)
-    print(celltype)
     celltypes <- c(celltypes, celltype)
   }
   else {
@@ -22,4 +20,8 @@ for (gene in diff_expressed$name) {
 
 diff_expressed$cell_type <- celltypes
 
+diff_expressed_condensed = diff_expressed[diff_expressed$cell_type != "unknown",]
+
 write.table(diff_expressed, file = path.expand("~/temporal_marker_genes_celltypes.txt"), sep = '\t')
+
+write.table(diff_expressed_condensed, file = path.expand("~/temporal_marker_genes_celltypes_condensed.txt"), sep = '\t')
