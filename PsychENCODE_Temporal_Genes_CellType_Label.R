@@ -13,6 +13,7 @@ ind = 1
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
     print(gene)
+    print(ind)
     print(celltypelist[ind])
     celltypes <- c(celltypes, celltypelist[ind])
   }
