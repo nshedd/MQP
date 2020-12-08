@@ -3,7 +3,7 @@ brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 2.
 
 diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
-print(brain_genes$Human_Gene)
+head(brain_genes)
 
 celltypes <- character()
 for (gene in diff_expressed$name) {
