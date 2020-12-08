@@ -3,8 +3,6 @@ brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 2.
 
 diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
-head(brain_genes)
-
 celltypelist = brain_genes$Cell.type
 print(celltypelist[277])
 
@@ -12,7 +10,6 @@ celltypes <- character()
 ind = 1
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
-    print(gene)
     print(ind)
     print(celltypelist[ind])
     celltypes <- c(celltypes, celltypelist[ind])
