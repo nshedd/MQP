@@ -10,6 +10,8 @@ celltypes <- character()
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
     celltype = brain_genes$Cell.type[brain_genes$Human.Gene == gene]
+    print(gene)
+    print(celltype)
     celltypes <- c(celltypes, celltype)
   }
   else {
