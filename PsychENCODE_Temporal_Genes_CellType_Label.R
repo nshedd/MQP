@@ -1,5 +1,5 @@
 
-brain_genes = read.table("Zlab single-cell marker genes - Brain.tsv 2", header=TRUE, sep="\t")
+brain_genes = read.table("Zlab single-cell marker genes - Brain 2.tsv", header=TRUE, sep="\t")
 
 diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
