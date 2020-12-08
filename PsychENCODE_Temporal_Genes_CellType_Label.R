@@ -5,14 +5,16 @@ diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=T
 
 
 celltypes <- character()
+index = 1
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
     print(gene)
-    celltypes <- c(celltypes, brain_genes$Cell.Type)
+    celltypes <- c(celltypes, brain_genes[index,"Cell.Type"])
   }
   else {
     celltypes <- c(celltypes, "unknown")
   }
+  index = index + 1
 }
 
 diff_expressed$cell_type <- celltypes
