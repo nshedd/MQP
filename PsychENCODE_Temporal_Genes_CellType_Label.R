@@ -10,6 +10,7 @@ print(brain_genes[1,"Cell.type"])
 celltypes <- character()
 index = 1
 for (gene in diff_expressed$name) {
+  print(index)
   if (gene %in% brain_genes$Human.Gene) {
     print(brain_genes$Cell.type[index])
     celltypes <- c(celltypes, brain_genes$Cell.type[index])
