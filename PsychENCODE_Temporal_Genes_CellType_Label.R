@@ -12,8 +12,9 @@ celltypes <- character()
 ind = 1
 for (gene in diff_expressed$name) {
   if (gene %in% brain_genes$Human.Gene) {
+    print(gene)
     print(celltypelist[ind])
-    celltypes <- c(celltypes, celltypelist[index])
+    celltypes <- c(celltypes, celltypelist[ind])
   }
   else {
     celltypes <- c(celltypes, "unknown")
