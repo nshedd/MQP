@@ -6,6 +6,7 @@ diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=T
 head(brain_genes)
 
 celltypelist = brain_genes$Cell.type
+print(celltypelist[10])
 
 celltypes <- character()
 index = 1
