@@ -12,8 +12,8 @@ matrixa = read.table(path1a, header=TRUE, row.names=1)
 matrixb = read.table(path1b, header=TRUE, row.names=1)
 matrixc = read.table(path1c, header=TRUE, row.names=1)
 
-matrix <- merge(matrixa, matrixb, by = mergeCols)
-matrix <- merge(matrix, matrixc, by = mergeCols)
+matrix <- merge(matrixa, matrixb)
+matrix <- merge(matrix, matrixc)
 
 lake_all <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
