@@ -19,6 +19,10 @@ diff_expressed$cell_type <- celltypes
 
 diff_expressed_condensed = diff_expressed[diff_expressed$cell_type != "unknown",]
 
+diff_expressed_condensed_pres = diff_expressed_condensed[c("cluster", "gene", "cell_type")
+
 write.table(diff_expressed, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed.txt"), sep = '\t')
 
 write.table(diff_expressed_condensed, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed_condensed.txt"), sep = '\t')
+
+write.table(diff_expressed_condensed_pres, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed_condensed_pres.txt"), sep = '\t')
