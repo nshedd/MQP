@@ -24,7 +24,7 @@ frontalcortex <- FindClusters(frontalcortex, resolution = 0.5)
 
 frontalcortex <- RunUMAP(frontalcortex, dims = 1:10)
 
-new.cluster.ids <- c("Oligodendrocyte", "Neuron", "Excitatory Neuron", "GABAergic Neuron", "CD8 T", "GABAergic/Glutamatergic Neuron", 
+new.cluster.ids <- c("Oligodendrocyte", "Neuron", "Excitatory Neuron", "GABAergic Neuron", "Glutamatergic Neuron", "GABAergic/Glutamatergic Neuron", 
     "Astrocyte", "NA", "Neuron", "Oligodendrocyte Precursor", "Neuron", "Microglia")
 names(new.cluster.ids) <- levels(frontalcortex)
 frontalcortex <- RenameIdents(frontalcortex, new.cluster.ids)
