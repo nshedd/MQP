@@ -22,7 +22,7 @@ lake_all <- FindClusters(lake_all, resolution = 0.5)
 
 new.cluster.ids <- c("Neuron 1", "Neuron 2", "Oligodendrocyte", "Excitatory Neuron 1", "Inhibitory Neuron 1", "Inhibitory Neuron 2", "Neuron 3",
                      "Astrocyte 1", "Excitatory Neuron 2", "Oligodendrocyte Precursor", "Inhibitory Neuron 3", "? 1", "Microglia", "Astrocyte 2",
-                     "Endothelial", "? 2", "Astrocyte 3"
+                     "Endothelial", "? 2", "Astrocyte 3")
 
 names(new.cluster.ids) <- levels(lake_all)
 lake_all <- RenameIdents(lake_all, new.cluster.ids)
