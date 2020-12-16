@@ -1,7 +1,6 @@
-matrixa = readRDS(path.expand("~/GSE97930_VisualCortex.RDS"))
-matrixb = readRDS(path.expand("~/GSE97930_FrontalCortex.RDS"))
-#matrixc = readRDS(path.expand("~/GSE97930_CerebellarHem.RDS"))
+matrixc = readRDS(path.expand("~/GSE97930_CerebellarHem.RDS"))
+matrixab = readRDS(path.expand("~/GSE97930_All.RDS"))
 
-combinedmatrix = merge(matrixa, matrixb, by=0)
+combinedmatrix = merge(matrixab, matrixc, by=0)
 
 saveRDS(combinedmatrix, file = path.expand("~/GSE97930_All.RDS"))
