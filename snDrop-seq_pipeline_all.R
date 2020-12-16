@@ -31,7 +31,7 @@ lake_all <- RunUMAP(lake_all, dims = 1:10)
 
 saveRDS(lake_all, file = path.expand("~/GSE97930_lake_all_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-plot = DimPlot(lake_all, reduction = "umap")
+plot = DimPlot(lake_all, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/umap_GSE97930_lake_all_Seurat_default.png"), device=)
 
 lake_all.markers <- FindAllMarkers(lake_all, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
