@@ -5,6 +5,8 @@ matrixab = readRDS(path.expand("~/GSE97930_All.RDS"))
 
 combinedmatrix = merge(matrixa, matrixb, by=0)
 
+row.names(combinedmatrix)<-combinedmatrix$row.names
+
 combinedmatrix[0:10,0:10]
 
 saveRDS(combinedmatrix, file = path.expand("~/GSE97930_All.RDS"))
