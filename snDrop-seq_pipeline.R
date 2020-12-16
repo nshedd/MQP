@@ -4,7 +4,7 @@ library(patchwork)
 library(ggplot2)
 
 
-path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")
 
 matrix = read.table(path1, header=TRUE, row.names=1)
 
