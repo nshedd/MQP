@@ -5,7 +5,7 @@ matrixab = readRDS(path.expand("~/GSE97930_All.RDS"))
 
 combinedmatrix = merge(matrixa, matrixb, by=0)
 
-row.names(combinedmatrix)<-combinedmatrix$row.names
+row.names(combinedmatrix)<-combinedmatrix$Row.names
 
 combinedmatrix[0:10,0:10]
 
