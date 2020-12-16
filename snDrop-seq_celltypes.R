@@ -1,6 +1,6 @@
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 2.tsv"), header=TRUE, sep="\t")
 
-diff_expressed = read.table(path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed.txt"), header=TRUE, row.names=1, sep="\t")
+diff_expressed = read.table(path.expand("~/GSE97930_lake_all_differentiallyexpressed.txt"), header=TRUE, row.names=1, sep="\t")
 
 
 celltypes <- character()
@@ -21,8 +21,8 @@ diff_expressed_condensed = diff_expressed[diff_expressed$cell_type != "unknown",
 
 diff_expressed_condensed_pres = diff_expressed_condensed[c("cluster", "gene", "cell_type")]
 
-write.table(diff_expressed, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed.txt"), sep = '\t')
+write.table(diff_expressed, file = path.expand("~/GSE97930_lake_all_differentiallyexpressed.txt"), sep = '\t')
 
-write.table(diff_expressed_condensed, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed_condensed.txt"), sep = '\t')
+write.table(diff_expressed_condensed, file = path.expand("~/GSE97930_lake_all_differentiallyexpressed_condensed.txt"), sep = '\t')
 
-write.table(diff_expressed_condensed_pres, file = path.expand("~/GSE97930_CerebellarHem_differentiallyexpressed_condensed_pres.txt"), sep = '\t')
+write.table(diff_expressed_condensed_pres, file = path.expand("~/GSE97930_lake_all_differentiallyexpressed_condensed_pres.txt"), sep = '\t')
