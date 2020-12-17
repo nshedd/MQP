@@ -42,10 +42,10 @@ CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:20)
 Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:15)
 ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=)
 
-CerebellarHem$CellType <- Idents(CerebellarHem)
-
 CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:10)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
+
+CerebellarHem@active.ident <- plyr::mapvalues(x = CerebellarHem@active.ident)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:10)
 
