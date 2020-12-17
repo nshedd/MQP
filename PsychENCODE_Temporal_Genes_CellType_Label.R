@@ -1,7 +1,7 @@
 
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 2.tsv"), header=TRUE, sep="\t")
 
-diff_expressed = read.table(path.expand("~/temporal_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
+diff_expressed = read.table(path.expand("~/pfc_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
 
 celltypelist = brain_genes$Cell.type
 print(celltypelist[277])
@@ -22,6 +22,6 @@ diff_expressed$cell_type <- celltypes
 
 diff_expressed_condensed = diff_expressed[diff_expressed$cell_type != "unknown",]
 
-write.table(diff_expressed, file = path.expand("~/temporal_marker_genes_celltypes.txt"), sep = '\t')
+write.table(diff_expressed, file = path.expand("~/pfc_marker_genes_celltypes.txt"), sep = '\t')
 
-write.table(diff_expressed_condensed, file = path.expand("~/temporal_marker_genes_celltypes_condensed.txt"), sep = '\t')
+write.table(diff_expressed_condensed, file = path.expand("~/pfc_marker_genes_celltypes_condensed.txt"), sep = '\t')
