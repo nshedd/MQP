@@ -59,7 +59,7 @@ saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_Frontal
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5, group.by=ident) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_orgident.png"), device=)
 
-featureplot_FrontalCortex < - FeaturePlot(FrontalCortex, features = c("SYT1", "SYT1", "RBFOX3", "GAD2", "SLC1A3", "GRIN2B", "PCDH15", "MBP", "APBB1IP", "SLC6A1", "PCDH15", "SLC1A3"))
+featureplot_FrontalCortex < - FeaturePlot(FrontalCortex, features = c("SYT1"))
 ggsave(path.expand("~/Lake/FrontalCortex/featureplot_GSE97930_FrontalCortex_Seurat_default.png"), device=)
 
-write.table(diff_expressed, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_differentiallyexpressed.txt"), sep="\t")
+write.table(diff_expressed, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_differentiallyexpressed_ident.txt"), sep="\t")
