@@ -45,8 +45,6 @@ ggsave(path.expand("~/Lake/FrontalCortex/jackstrawplot_GSE97930_FrontalCortex_Se
 FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
 FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
-FrontalCortex@active.ident <- plyr::mapvalues(x = FrontalCortex@active.ident)
-
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:10)
 
 #new.cluster.ids <- c("Neuron 1", "Neuron 2", "Neuron 3", "Neuron 4", "Astrocyte", "Neuron 5", "? 1", "Oligodendrocyte", "Microglia", "Neuron 6", "? 2", "? 3")
@@ -58,8 +56,8 @@ diff_expressed = FrontalCortex.markers %>% group_by(cluster)
 
 saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_default.png"), device=)
+plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5, group.by=ident) + NoLegend()
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_orgident.png"), device=)
 
 featureplot_FrontalCortex < - FeaturePlot(FrontalCortex, features = c("SYT1", "SYT1", "RBFOX3", "GAD2", "SLC1A3", "GRIN2B", "PCDH15", "MBP", "APBB1IP", "SLC6A1", "PCDH15", "SLC1A3"))
 ggsave(path.expand("~/Lake/FrontalCortex/featureplot_GSE97930_FrontalCortex_Seurat_default.png"), device=)
