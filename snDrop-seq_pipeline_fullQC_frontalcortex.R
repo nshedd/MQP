@@ -42,8 +42,8 @@ FrontalCortex <- ScoreJackStraw(FrontalCortex, dims = 1:20)
 Jackstraw_FrontalCortex <- JackStrawPlot(FrontalCortex, dims = 1:15)
 ggsave(path.expand("~/Lake/FrontalCortex/jackstrawplot_GSE97930_FrontalCortex_Seurat.png"), device=)
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:10)
 
