@@ -56,7 +56,7 @@ diff_expressed = FrontalCortex.markers %>% group_by(cluster)
 
 saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5, group.by=ident) + NoLegend()
+plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_orgident.png"), device=)
 
 featureplot_FrontalCortex < - FeaturePlot(FrontalCortex, features = c("SYT1"))
