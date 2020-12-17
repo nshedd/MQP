@@ -11,7 +11,7 @@ matrix = read.table(path1, header=TRUE, row.names=1)
 CerebellarHem <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
 CerebellarHem[["percent.mt"]] <- PercentageFeatureSet(CerebellarHem, pattern = "^MT-")
-CerebellarHem_VlnPlot <- VlnPlot(pbmc, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+CerebellarHem_VlnPlot <- VlnPlot(CerebellarHem, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
 ggsave(path.expand("~/Lake/CerebellarHem/qcvlnplot_GSE97930_CerebellarHem_Seurat.png"), device=)
 
 plot1 <- FeatureScatter(CerebellarHem, feature1 = "nCount_RNA", feature2 = "percent.mt")
