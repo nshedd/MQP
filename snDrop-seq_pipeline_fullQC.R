@@ -34,7 +34,7 @@ ggsave(path.expand("~/Lake/CerebellarHem/qcdimloadings_GSE97930_CerebellarHem_Se
 pca_plot_CerebellarHem <- DimPlot(CerebellarHem, reduction = "pca")
 ggsave(path.expand("~/Lake/CerebellarHem/pcascatter_GSE97930_CerebellarHem_Seurat.png"), device=)
 
-pca_heatmap_CerebellarHem <- DimHeatmap(CerebellarHem, dims = 1, cells = 500, balanced = TRUE)
+pca_heatmap_CerebellarHem <- DimHeatmap(CerebellarHem, dims = 1, balanced = TRUE)
 ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), plot=pca_heatmap_CerebellarHem, device=)
 
 CerebellarHem <- JackStraw(CerebellarHem, num.replicate = 100)
