@@ -15,7 +15,7 @@ ggsave(path.expand("~/Lake/All/qcvlnplot_GSE97930_All_Seurat.png"), device=, wid
 plot1 <- FeatureScatter(All, feature1 = "nCount_RNA", feature2 = "percent.mt")
 plot2 <- FeatureScatter(All, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 plot <- plot1 + plot2
-ggsave(path.expand("~/Lake/All/featurescatter_GSE97930_All_Seurat.png"), device, width = 14, height = 7
+ggsave(path.expand("~/Lake/All/featurescatter_GSE97930_All_Seurat.png"), device, width = 14, height = 7)
 
 All <- NormalizeData(All, normalization.method = "LogNormalize", scale.factor = 10000)
 
