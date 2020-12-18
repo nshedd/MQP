@@ -12,12 +12,12 @@ CerebellarHem <- CreateSeuratObject(counts = matrix, project = "set2", min.cells
 
 CerebellarHem[["percent.mt"]] <- PercentageFeatureSet(CerebellarHem, pattern = "^MT-")
 CerebellarHem_VlnPlot <- VlnPlot(CerebellarHem, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
-ggsave(path.expand("~/Lake/CerebellarHem/qcvlnplot_GSE97930_CerebellarHem_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/qcvlnplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 plot1 <- FeatureScatter(CerebellarHem, feature1 = "nCount_RNA", feature2 = "percent.mt")
 plot2 <- FeatureScatter(CerebellarHem, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 plot <- plot1 + plot2
-ggsave(path.expand("~/Lake/CerebellarHem/featurescatter_GSE97930_CerebellarHem_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/featurescatter_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 CerebellarHem <- NormalizeData(CerebellarHem, normalization.method = "LogNormalize", scale.factor = 10000)
 
@@ -29,18 +29,21 @@ CerebellarHem <- ScaleData(CerebellarHem, features = all_cells)
 CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = CerebellarHem))
 
 pcs_plot_CerebellarHem <- VizDimLoadings(CerebellarHem, dims = 1:2, reduction = "pca")
-ggsave(path.expand("~/Lake/CerebellarHem/qcdimloadings_GSE97930_CerebellarHem_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/qcdimloadings_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 pca_plot_CerebellarHem <- DimPlot(CerebellarHem, reduction = "pca")
-ggsave(path.expand("~/Lake/CerebellarHem/pcascatter_GSE97930_CerebellarHem_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/pcascatter_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 pca_heatmap_CerebellarHem <- DimHeatmap(CerebellarHem, dims = 1, balanced = TRUE)
-ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), plot=pca_heatmap_CerebellarHem, device=)
+ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 CerebellarHem <- JackStraw(CerebellarHem, num.replicate = 100)
 CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:20)
 Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:15)
-ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
+
+Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)
+ggsave(path.expand("~/Lake/CerebellarHem/elbowplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 #CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:10)
 #CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
