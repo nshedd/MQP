@@ -42,7 +42,7 @@ FrontalCortex <- ScoreJackStraw(FrontalCortex, dims = 1:20)
 Jackstraw_FrontalCortex <- JackStrawPlot(FrontalCortex, dims = 1:15)
 ggsave(path.expand("~/Lake/FrontalCortex/jackstrawplot_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
-Elbow_FrontalCortex <- ElbowPlot(CerebellarHem)
+Elbow_FrontalCortex <- ElbowPlot(FrontalCortex)
 ggsave(path.expand("~/Lake/FrontalCortex/elbowplot_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 #FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
