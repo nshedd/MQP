@@ -12,12 +12,12 @@ FrontalCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells
 
 FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")
 FrontalCortex_VlnPlot <- VlnPlot(FrontalCortex, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
-ggsave(path.expand("~/Lake/FrontalCortex/qcvlnplot_GSE97930_FrontalCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/qcvlnplot_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 plot1 <- FeatureScatter(FrontalCortex, feature1 = "nCount_RNA", feature2 = "percent.mt")
 plot2 <- FeatureScatter(FrontalCortex, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 plot <- plot1 + plot2
-ggsave(path.expand("~/Lake/FrontalCortex/featurescatter_GSE97930_FrontalCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/featurescatter_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 FrontalCortex <- NormalizeData(FrontalCortex, normalization.method = "LogNormalize", scale.factor = 10000)
 
@@ -29,18 +29,21 @@ FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)
 FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))
 
 pcs_plot_FrontalCortex <- VizDimLoadings(FrontalCortex, dims = 1:2, reduction = "pca")
-ggsave(path.expand("~/Lake/FrontalCortex/qcdimloadings_GSE97930_FrontalCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/qcdimloadings_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 pca_plot_FrontalCortex <- DimPlot(FrontalCortex, reduction = "pca")
-ggsave(path.expand("~/Lake/FrontalCortex/pcascatter_GSE97930_FrontalCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/pcascatter_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 pca_heatmap_FrontalCortex <- DimHeatmap(FrontalCortex, dims = 1, balanced = TRUE)
-ggsave(path.expand("~/Lake/FrontalCortex/pcaheatmap_GSE97930_FrontalCortex_Seurat.png"), plot=pca_heatmap_FrontalCortex, device=)
+ggsave(path.expand("~/Lake/FrontalCortex/pcaheatmap_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 FrontalCortex <- JackStraw(FrontalCortex, num.replicate = 100)
 FrontalCortex <- ScoreJackStraw(FrontalCortex, dims = 1:20)
 Jackstraw_FrontalCortex <- JackStrawPlot(FrontalCortex, dims = 1:15)
-ggsave(path.expand("~/Lake/FrontalCortex/jackstrawplot_GSE97930_FrontalCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/jackstrawplot_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
+
+Elbow_FrontalCortex <- ElbowPlot(CerebellarHem)
+ggsave(path.expand("~/Lake/FrontalCortex/elbowplot_GSE97930_FrontalCortex_Seurat.png"), device=, width = 14, height = 7)
 
 #FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
 #FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
@@ -59,7 +62,7 @@ saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_Frontal
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_orgident.png"), device=)
 
-featureplot_FrontalCortex < - FeaturePlot(FrontalCortex, features = c("SYT1"))
-ggsave(path.expand("~/Lake/FrontalCortex/featureplot_GSE97930_FrontalCortex_Seurat_default.png"), device=)
+#featureplot_FrontalCortex < - FeaturePlot(FrontalCortex, features = c("SYT1"))
+#ggsave(path.expand("~/Lake/FrontalCortex/featureplot_GSE97930_FrontalCortex_Seurat_default.png"), device=)
 
 write.table(diff_expressed, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_differentiallyexpressed_ident.txt"), sep="\t")
