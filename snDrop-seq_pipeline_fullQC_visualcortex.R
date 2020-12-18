@@ -12,12 +12,12 @@ VisualCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells 
 
 VisualCortex[["percent.mt"]] <- PercentageFeatureSet(VisualCortex, pattern = "^MT-")
 VisualCortex_VlnPlot <- VlnPlot(VisualCortex, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
-ggsave(path.expand("~/Lake/VisualCortex/qcvlnplot_GSE97930_VisualCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/qcvlnplot_GSE97930_VisualCortex_Seurat.png"), device=, width = 21, height = 7)
 
 plot1 <- FeatureScatter(VisualCortex, feature1 = "nCount_RNA", feature2 = "percent.mt")
 plot2 <- FeatureScatter(VisualCortex, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
 plot <- plot1 + plot2
-ggsave(path.expand("~/Lake/VisualCortex/featurescatter_GSE97930_VisualCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/featurescatter_GSE97930_VisualCortex_Seurat.png"), device=, width = 14, height = 7)
 
 VisualCortex <- NormalizeData(VisualCortex, normalization.method = "LogNormalize", scale.factor = 10000)
 
@@ -29,18 +29,21 @@ VisualCortex <- ScaleData(VisualCortex, features = all_cells)
 VisualCortex <- RunPCA(VisualCortex, features = VariableFeatures(object = VisualCortex))
 
 pcs_plot_VisualCortex <- VizDimLoadings(VisualCortex, dims = 1:2, reduction = "pca")
-ggsave(path.expand("~/Lake/VisualCortex/qcdimloadings_GSE97930_VisualCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/qcdimloadings_GSE97930_VisualCortex_Seurat.png"), device=, width = 14, height = 7)
 
 pca_plot_VisualCortex <- DimPlot(VisualCortex, reduction = "pca")
-ggsave(path.expand("~/Lake/VisualCortex/pcascatter_GSE97930_VisualCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/pcascatter_GSE97930_VisualCortex_Seurat.png"), device=, width = 14, height = 7)
 
 pca_heatmap_VisualCortex <- DimHeatmap(VisualCortex, dims = 1, balanced = TRUE)
-ggsave(path.expand("~/Lake/VisualCortex/pcaheatmap_GSE97930_VisualCortex_Seurat.png"), plot=pca_heatmap_VisualCortex, device=)
+ggsave(path.expand("~/Lake/VisualCortex/pcaheatmap_GSE97930_VisualCortex_Seurat.png"), device=, width = 14, height = 7)
 
 VisualCortex <- JackStraw(VisualCortex, num.replicate = 100)
 VisualCortex <- ScoreJackStraw(VisualCortex, dims = 1:20)
 Jackstraw_VisualCortex <- JackStrawPlot(VisualCortex, dims = 1:15)
-ggsave(path.expand("~/Lake/VisualCortex/jackstrawplot_GSE97930_VisualCortex_Seurat.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/jackstrawplot_GSE97930_VisualCortex_Seurat.png"), device=, width = 14, height = 7)
+
+Elbow_VisualCortex <- ElbowPlot(VisualCortex)
+ggsave(path.expand("~/Lake/VisualCortex/elbowplot_GSE97930_VisualCortex_Seurat.png"), device=, width = 14, height = 7)
 
 #VisualCortex <- FindNeighbors(VisualCortex, dims = 1:10)
 #VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
