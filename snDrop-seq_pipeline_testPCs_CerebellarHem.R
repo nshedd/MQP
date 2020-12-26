@@ -39,8 +39,8 @@ CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = Cere
 #ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 CerebellarHem <- JackStraw(CerebellarHem, num.replicate = 100)
-CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1)
-Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:15)
+CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:200)
+Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:200)
 ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)
@@ -49,7 +49,7 @@ ggsave(path.expand("~/Lake/CerebellarHem/elbowplot_GSE97930_CerebellarHem_Seurat
 CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
 
-CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:20, metric="euclidean")
+CerebellarHem <- RunUMAP(CerebellarHem, dims = 1, metric="euclidean")
 
 #new.cluster.ids <- c("Neuron 1", "Neuron 2", "Neuron 3", "Neuron 4", "Astrocyte", "Neuron 5", "? 1", "Oligodendrocyte", "Microglia", "Neuron 6", "? 2", "? 3")
 #names(new.cluster.ids) <- levels(CerebellarHem)
