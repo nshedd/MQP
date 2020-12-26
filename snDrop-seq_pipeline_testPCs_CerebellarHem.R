@@ -3,7 +3,7 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 
-CerebellarHem = readRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+CerebellarHem = readRDS(file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 2, metric="euclidean")
 
