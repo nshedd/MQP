@@ -27,7 +27,7 @@ CerebellarHem <- FindVariableFeatures(CerebellarHem, selection.method = "vst", n
 all_cells <- rownames(CerebellarHem)
 CerebellarHem <- ScaleData(CerebellarHem, features = all_cells)
 
-CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = CerebellarHem))
+CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = CerebellarHem), npcs=200)
 
 #pcs_plot_CerebellarHem <- VizDimLoadings(CerebellarHem, dims = 1:2, reduction = "pca")
 #ggsave(path.expand("~/Lake/CerebellarHem/qcdimloadings_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
@@ -39,14 +39,14 @@ CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = Cere
 #ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 CerebellarHem <- JackStraw(CerebellarHem, num.replicate = 100)
-CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:20)
-Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:20)
+CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:200)
+Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:200)
 ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)
 ggsave(path.expand("~/Lake/CerebellarHem/elbowplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
-CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:100)
+CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:200)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1, metric="euclidean")
