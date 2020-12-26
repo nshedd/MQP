@@ -39,8 +39,8 @@ CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = Cere
 #ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 CerebellarHem <- JackStraw(CerebellarHem, num.replicate = 100)
-CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:200)
-Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:200)
+CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:20)
+Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:20)
 ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
 Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)
