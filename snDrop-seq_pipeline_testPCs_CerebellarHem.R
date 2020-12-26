@@ -38,7 +38,7 @@ CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = Cere
 #pca_heatmap_CerebellarHem <- DimHeatmap(CerebellarHem, dims = 1, balanced = TRUE)
 #ggsave(path.expand("~/Lake/CerebellarHem/pcaheatmap_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
-CerebellarHem <- JackStraw(CerebellarHem, num.replicate = 100)
+CerebellarHem <- JackStraw(CerebellarHem, dims=200, num.replicate = 100)
 CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:200)
 Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:200)
 ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
