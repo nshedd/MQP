@@ -46,7 +46,7 @@ ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Se
 Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)
 ggsave(path.expand("~/Lake/CerebellarHem/elbowplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)
 
-CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:200)
+CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:100)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1, metric="euclidean")
