@@ -17,7 +17,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:2, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_002pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_002pc_oglabels.png"), device=)
 
 ## 5 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -32,7 +32,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:5, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_005pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_005pc_oglabels.png"), device=)
 
 ## 10 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -47,7 +47,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:10, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_010pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_010pc_oglabels.png"), device=)
 
 ## 20 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -62,7 +62,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_020pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_020pc_oglabels.png"), device=)
 
 ## 50 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -77,7 +77,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:50, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_050pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_050pc_oglabels.png"), device=)
 
 ## 75 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -92,7 +92,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:75, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_075pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_075pc_oglabels.png"), device=)
 
 ## 100 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -107,7 +107,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:100, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_100pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_100pc_oglabels.png"), device=)
 
 ## 150 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -122,7 +122,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:150, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_150pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_150pc_oglabels.png"), device=)
 
 ## 200 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -137,7 +137,7 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:200, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_200pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_200pc_oglabels.png"), device=)
 
 ## 4 PCs -- optimal
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -152,4 +152,4 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:4, metric="euclidean")
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_004pc.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_004pc_oglabels.png"), device=)
