@@ -15,4 +15,4 @@ CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:150, metric="euclidean")
 #CerebellarHem <- RenameIdents(CerebellarHem, new.cluster.ids)
 
 plot = DimPlot(CerebellarHem, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_150pc.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_150pc_oglabels.png"), device=)
