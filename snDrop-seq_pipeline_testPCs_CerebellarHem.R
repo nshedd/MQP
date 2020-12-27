@@ -5,9 +5,9 @@ library(ggplot2)
 
 #CerebellarHem = readRDS(file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")		 CerebellarHem = readRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")
 
-matrix = read.table(path1, header=TRUE, row.names=1)		 CerebellarHem <- RunUMAP(CerebellarHem, dims = 2, metric="euclidean")
+matrix = read.table(path1, header=TRUE, row.names=1)
 
 CerebellarHem <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)		
 
