@@ -32,8 +32,8 @@ ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Se
 Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)		
 ggsave(path.expand("~/Lake/CerebellarHem/elbowplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)		
 
-CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:200)
-CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
+#CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:200)
+#CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:2, metric="euclidean")
 
@@ -47,4 +47,4 @@ diff_expressed = CerebellarHem.markers %>% group_by(cluster)
 saveRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 plot = DimPlot(CerebellarHem, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_02pc.png"), device=)
+ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_02pc_long.png"), device=)
