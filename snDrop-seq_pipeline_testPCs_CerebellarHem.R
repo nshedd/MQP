@@ -3,7 +3,34 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 
-CerebellarHem = readRDS(file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+#CerebellarHem = readRDS(file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+
+path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")		 CerebellarHem = readRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+
+matrix = read.table(path1, header=TRUE, row.names=1)		 CerebellarHem <- RunUMAP(CerebellarHem, dims = 2, metric="euclidean")
+
+CerebellarHem <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)		
+
+CerebellarHem[["percent.mt"]] <- PercentageFeatureSet(CerebellarHem, pattern = "^MT-")		
+
+CerebellarHem <- subset(CerebellarHem, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)		
+
+CerebellarHem <- NormalizeData(CerebellarHem, normalization.method = "LogNormalize", scale.factor = 10000)		
+
+CerebellarHem <- FindVariableFeatures(CerebellarHem, selection.method = "vst", nfeatures = 2000)		
+
+all_cells <- rownames(CerebellarHem)		
+CerebellarHem <- ScaleData(CerebellarHem, features = all_cells)		
+
+CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = CerebellarHem), npcs=200)		
+
+CerebellarHem <- JackStraw(CerebellarHem, dims=200, num.replicate = 100)		
+CerebellarHem <- ScoreJackStraw(CerebellarHem, dims = 1:200)
+Jackstraw_CerebellarHem <- JackStrawPlot(CerebellarHem, dims = 1:200)		
+ggsave(path.expand("~/Lake/CerebellarHem/jackstrawplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)		
+
+Elbow_CerebellarHem <- ElbowPlot(CerebellarHem)		
+ggsave(path.expand("~/Lake/CerebellarHem/elbowplot_GSE97930_CerebellarHem_Seurat.png"), device=, width = 14, height = 7)		
 
 CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:200)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
@@ -21,8 +48,3 @@ saveRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_Cerebel
 
 plot = DimPlot(CerebellarHem, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_02pc.png"), device=)
-
-#featureplot_CerebellarHem < - FeaturePlot(CerebellarHem, features = c("SYT1", "SYT1", "RBFOX3", "GAD2", "SLC1A3", "GRIN2B", "PCDH15", "MBP", "APBB1IP", "SLC6A1", "PCDH15", "SLC1A3"))
-#ggsave(path.expand("~/Lake/CerebellarHem/featureplot_GSE97930_CerebellarHem_Seurat_default.png"), device=)
-  
-#write.table(diff_expressed, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_differentiallyexpressed_origident.txt"), sep="\t")
