@@ -7,8 +7,8 @@ library(ggplot2)
 ## 2 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:2)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:2)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:2, metric="euclidean")
 
@@ -22,8 +22,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_002p
 ## 5 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:5)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:5)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:5, metric="euclidean")
 
@@ -37,8 +37,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_005p
 ## 10 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:10)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:10, metric="euclidean")
 
@@ -52,8 +52,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_010p
 ## 20 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
@@ -67,8 +67,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_020p
 ## 50 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:50)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:50)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:50, metric="euclidean")
 
@@ -82,8 +82,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_050p
 ## 75 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:75)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:75)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:75, metric="euclidean")
 
@@ -97,8 +97,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_075p
 ## 100 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:100)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:100)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:100, metric="euclidean")
 
@@ -112,8 +112,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_100p
 ## 150 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:150)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:150)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:150, metric="euclidean")
 
@@ -127,8 +127,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_150p
 ## 200 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:200)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:200)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:200, metric="euclidean")
 
@@ -142,8 +142,8 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_200p
 ## 4 PCs -- optimal
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:4)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:4)
+#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:4, metric="euclidean")
 
