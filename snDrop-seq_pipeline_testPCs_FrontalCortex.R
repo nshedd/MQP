@@ -42,7 +42,7 @@ FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:10, metric="euclidean")
 
-new.cluster.ids <- c("Ex1/End","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","Ex5","OPC")
+new.cluster.ids <- c("Ex1/End","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","Ex5","OPC","Per/Mic")
 names(new.cluster.ids) <- levels(FrontalCortex)
 FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
