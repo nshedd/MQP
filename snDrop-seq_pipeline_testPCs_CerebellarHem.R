@@ -10,7 +10,7 @@ CerebellarHem = readRDS(file = path.expand("~/Lake/CerebellarHem/GSE97930_Cerebe
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:200, metric="euclidean")
 
-#new.cluster.ids <- c("Gran", "Purk", "Ast", "OPC1", "Oli", "Mic", "End/Per", "OPC2")
+#new.cluster.ids <- c("Gran", "Purk/OPC1", "Ast", "Oli", "Mic", "End/Per/OPC2")
 #names(new.cluster.ids) <- levels(CerebellarHem)
 #CerebellarHem <- RenameIdents(CerebellarHem, new.cluster.ids)
 
