@@ -7,8 +7,8 @@ library(ggplot2)
 ## 2 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:2)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:2)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:2, metric="euclidean")
 
@@ -22,8 +22,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_002pc.
 ## 5 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:5)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:5)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:5, metric="euclidean")
 
@@ -37,8 +37,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_005pc.
 ## 10 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:10)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:10)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:10, metric="euclidean")
 
@@ -52,8 +52,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_010pc.
 ## 20 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:20)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:20)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:20, metric="euclidean")
 
@@ -67,8 +67,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_020pc.
 ## 50 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:50)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:50)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:50, metric="euclidean")
 
@@ -82,8 +82,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_050pc.
 ## 75 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:75)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:75)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:75, metric="euclidean")
 
@@ -97,8 +97,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_075pc.
 ## 100 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:100)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:100)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:100, metric="euclidean")
 
@@ -112,8 +112,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_100pc.
 ## 150 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:150)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:150)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:150, metric="euclidean")
 
@@ -127,8 +127,8 @@ ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_150pc.
 ## 200 PCs
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:200)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:200)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:200, metric="euclidean")
 
