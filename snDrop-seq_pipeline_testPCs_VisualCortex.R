@@ -138,18 +138,3 @@ VisualCortex <- RunUMAP(VisualCortex, dims = 1:200, metric="euclidean")
 
 plot = DimPlot(VisualCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_200pc.png"), device=)
-
-## 4 PCs -- optimal
-VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:4)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
-
-VisualCortex <- RunUMAP(VisualCortex, dims = 1:4, metric="euclidean")
-
-#new.cluster.ids <- c("Ex1","Ex2","Ex3","In1","End/Mic/Per","Oli1","In2","Ast","Oli2","OPC")
-#names(new.cluster.ids) <- levels(VisualCortex)
-#VisualCortex <- RenameIdents(VisualCortex, new.cluster.ids)
-
-plot = DimPlot(VisualCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_004pc.png"), device=)
