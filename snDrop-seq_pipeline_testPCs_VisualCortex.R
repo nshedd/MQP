@@ -88,7 +88,7 @@ VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:75, metric="euclidean")
 
-new.cluster.ids <- c("Ex2","Ex1/In1","Oli","Ex3","In2","In3","Ast","Ex4","In4","OPC","In5","Ex5","Mic","Ex6","End/Per","In6")
+new.cluster.ids <- c("Ex2","Ex1/In1","Oli","Ex3","In2","In3","Ast","Ex4","In4","OPC","In5","Ex5","Mic","Ex6","End/Per","In6","Ex7")
 names(new.cluster.ids) <- levels(VisualCortex)
 VisualCortex <- RenameIdents(VisualCortex, new.cluster.ids)
 
