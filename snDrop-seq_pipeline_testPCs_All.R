@@ -12,9 +12,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:2, metric="euclidean")
 
-new.cluster.ids <- c("In1","Ex1","Ex2","End","Oli1","Ex3","Oli1","Ex4","Ex5","Per/Mic","OPC","Ex6","Ex7","In2","In3","Ast","Oli2")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("In1","Ex1","Ex2","End","Oli1","Ex3","Oli1","Ex4","Ex5","Per/Mic","OPC","Ex6","Ex7","In2","In3","Ast","Oli2")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_002pc.png"), device=)
@@ -27,9 +27,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:5, metric="euclidean")
 
-new.cluster.ids <- c("Mic/Per/End","Oli","Ex1","Ex2","In1","Ex3","In2","Ast","OPC")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("Mic/Per/End","Oli","Ex1","Ex2","In1","Ex3","In2","Ast","OPC")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_005pc.png"), device=)
@@ -42,9 +42,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:10, metric="euclidean")
 
-new.cluster.ids <- c("Ex1/End","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","Ex5","OPC","Per/Mic")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("Ex1/End","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","Ex5","OPC","Per/Mic")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_010pc.png"), device=)
@@ -57,9 +57,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:20, metric="euclidean")
 
-new.cluster.ids <- c("Ex1","Oli","Ex2","In1","Ast","In2","In3","Ex3","Ex4","OPC","Ex5","Ex6","In4","Mic","Ex7","Ex8","Ex9","Ex10","Per")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("Ex1","Oli","Ex2","In1","Ast","In2","In3","Ex3","Ex4","OPC","Ex5","Ex6","In4","Mic","Ex7","Ex8","Ex9","Ex10","Per")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_020pc.png"), device=)
@@ -72,9 +72,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:50, metric="euclidean")
 
-new.cluster.ids <- c("Ex1","Oli","Ex2","In1","Ex3","Ast","In2","Ex4","In3","OPC","Ex5","In4","Mic","Ex6","Ex7","In5","Ex8","Per")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("Ex1","Oli","Ex2","In1","Ex3","Ast","In2","Ex4","In3","OPC","Ex5","In4","Mic","Ex6","Ex7","In5","Ex8","Per")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_050pc.png"), device=)
@@ -87,9 +87,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:75, metric="euclidean")
 
-new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","Ex3","In2","Ast","Ex4","OPC","Ex5","In3","Mic","Ex6","In4","Ex7","Per")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","Ex3","In2","Ast","Ex4","OPC","Ex5","In3","Mic","Ex6","In4","Ex7","Per")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_075pc.png"), device=)
@@ -102,9 +102,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:100, metric="euclidean")
 
-new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","Ex3","In2","Ast","Ex4","OPC","Ex5","In3","Mic","In4","Ex6","Per")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","Ex3","In2","Ast","Ex4","OPC","Ex5","In3","Mic","In4","Ex6","Per")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_100pc.png"), device=)
@@ -117,9 +117,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:150, metric="euclidean")
 
-new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","OPC","Ex5","Mic/Per","Ex6")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","OPC","Ex5","Mic/Per","Ex6")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_150pc.png"), device=)
@@ -132,9 +132,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:200, metric="euclidean")
 
-new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","Ex3","In2","Ast","OPC","Ex4","Mic/Per","Ex5")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("End/Ex1","Oli","Ex2","In1","Ex3","In2","Ast","OPC","Ex4","Mic/Per","Ex5")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_200pc.png"), device=)
@@ -147,9 +147,9 @@ All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:4, metric="euclidean")
 
-new.cluster.ids <- c("Ex1","Ex2","Ex3","In1","End/Mic/Per","Oli1","In2","Ast","Oli2","OPC")
-names(new.cluster.ids) <- levels(All)
-All <- RenameIdents(All, new.cluster.ids)
+#new.cluster.ids <- c("Ex1","Ex2","Ex3","In1","End/Mic/Per","Oli1","In2","Ast","Oli2","OPC")
+#names(new.cluster.ids) <- levels(All)
+#All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_004pc.png"), device=)
