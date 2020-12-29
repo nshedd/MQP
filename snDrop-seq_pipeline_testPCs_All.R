@@ -7,8 +7,8 @@ library(ggplot2)
 ## 2 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:2)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:2)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:2, metric="euclidean")
 
@@ -17,13 +17,13 @@ All <- RunUMAP(All, dims = 1:2, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_002pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_002pc_oglabels.png"), device=)
 
 ## 5 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:5)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:5)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:5, metric="euclidean")
 
@@ -32,13 +32,13 @@ All <- RunUMAP(All, dims = 1:5, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_005pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_005pc_oglabels.png"), device=)
 
 ## 10 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:10)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:10)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:10, metric="euclidean")
 
@@ -47,13 +47,13 @@ All <- RunUMAP(All, dims = 1:10, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_010pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_010pc_oglabels.png"), device=)
 
 ## 20 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:20)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:20)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:20, metric="euclidean")
 
@@ -62,13 +62,13 @@ All <- RunUMAP(All, dims = 1:20, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_020pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_020pc_oglabels.png"), device=)
 
 ## 50 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:50)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:50)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:50, metric="euclidean")
 
@@ -77,13 +77,13 @@ All <- RunUMAP(All, dims = 1:50, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_050pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_050pc_oglabels.png"), device=)
 
 ## 75 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:75)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:75)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:75, metric="euclidean")
 
@@ -92,13 +92,13 @@ All <- RunUMAP(All, dims = 1:75, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_075pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_075pc_oglabels.png"), device=)
 
 ## 100 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:100)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:100)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:100, metric="euclidean")
 
@@ -107,13 +107,13 @@ All <- RunUMAP(All, dims = 1:100, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_100pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_100pc_oglabels.png"), device=)
 
 ## 150 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:150)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:150)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:150, metric="euclidean")
 
@@ -122,13 +122,13 @@ All <- RunUMAP(All, dims = 1:150, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_150pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_150pc_oglabels.png"), device=)
 
 ## 200 PCs
 All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-All <- FindNeighbors(All, dims = 1:200)
-All <- FindClusters(All, resolution = 0.5)
+#All <- FindNeighbors(All, dims = 1:200)
+#All <- FindClusters(All, resolution = 0.5)
 
 All <- RunUMAP(All, dims = 1:200, metric="euclidean")
 
@@ -137,19 +137,4 @@ All <- RunUMAP(All, dims = 1:200, metric="euclidean")
 #All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_200pc.png"), device=)
-
-## 4 PCs -- optimal
-All <- readRDS(file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
-All <- FindNeighbors(All, dims = 1:4)
-All <- FindClusters(All, resolution = 0.5)
-
-All <- RunUMAP(All, dims = 1:4, metric="euclidean")
-
-#new.cluster.ids <- c("Ex1","Ex2","Ex3","In1","End/Mic/Per","Oli1","In2","Ast","Oli2","OPC")
-#names(new.cluster.ids) <- levels(All)
-#All <- RenameIdents(All, new.cluster.ids)
-
-plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_004pc.png"), device=)
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_200pc_oglabels.png"), device=)
