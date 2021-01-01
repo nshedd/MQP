@@ -27,6 +27,8 @@ proj <- addGeneIntegrationMatrix(
   nameScore = "predictedScore_Un"
 )
 
+proj
+
 cM <- as.matrix(confusionMatrix(proj$Clusters, proj$predictedGroup_Un))
 preClust <- colnames(cM)[apply(cM, 1 , which.max)]
 cbind(preClust, rownames(cM))
