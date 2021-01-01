@@ -14,6 +14,13 @@ seRNA <- CreateSeuratObject(counts = seRNA.data, project = "seRNA3k", min.cells 
 celltypes <- Idents(seRNA)
 seRNA <- AddMetaData(seRNA, celltypes, col.name = Idents)
 
+cluster_letters <- LETTERS[Idents(object = seRNA)]
+names(cluster_letters) <- colnames(x = pbmc_small)
+seRNA <- AddMetaData(
+  object = seRNA,
+  metadata = cluster_letters,
+  col.name = 'letter.idents'
+)
 print("Added metadata")
 
 proj <- addGeneIntegrationMatrix(
@@ -23,7 +30,7 @@ proj <- addGeneIntegrationMatrix(
   reducedDims = "IterativeLSI",
   seRNA = seRNA,
   addToArrow = FALSE,
-  groupRNA = "Idents",
+  groupRNA = "letter.idents",
   nameCell = "predictedCell_Un",
   nameGroup = "predictedGroup_Un",
   nameScore = "predictedScore_Un"
