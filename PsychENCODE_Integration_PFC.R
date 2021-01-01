@@ -11,6 +11,8 @@ seRNA.data = read.table(path1, header=TRUE, row.names=1)
 
 seRNA <- CreateSeuratObject(counts = seRNA.data, project = "seRNA3k", min.cells = 3, min.features = 200)
 
+seRNA
+
 colnames(colData(seRNA))
 
 table(colData(seRNA)$BioClassification)
