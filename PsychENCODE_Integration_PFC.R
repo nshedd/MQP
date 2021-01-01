@@ -1,4 +1,5 @@
 library(ArchR)
+library(Seurat)
 
 time = "PFC_Dev_Analysis"
 
@@ -6,7 +7,11 @@ proj <- loadArchRProject(path = time)
 
 path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
-seRNA = read.table(path1, header=TRUE, row.names=1)
+seRNA.data = read.table(path1, header=TRUE, row.names=1)
+
+seRNA <- CreateSeuratObject(counts = seRNA.data, project = "seRNA3k", min.cells = 3, min.features = 200)
+
+colnames(colData(seRNA))
 
 table(colData(seRNA)$BioClassification)
 
