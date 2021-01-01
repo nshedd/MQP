@@ -14,6 +14,8 @@ seRNA <- CreateSeuratObject(counts = seRNA.data, project = "seRNA3k", min.cells 
 celltypes <- Idents(seRNA)
 seRNA <- AddMetaData(seRNA, celltypes, col.name = Idents)
 
+print("Added metadata")
+
 proj <- addGeneIntegrationMatrix(
   ArchRProj = proj, 
   useMatrix = "GeneScoreMatrix",
