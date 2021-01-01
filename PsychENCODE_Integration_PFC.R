@@ -14,10 +14,6 @@ seRNA <- CreateSeuratObject(counts = seRNA.data, project = "seRNA3k", min.cells 
 seRNA
 Idents(seRNA)
 
-colnames(colData(seRNA))
-
-table(colData(seRNA)$BioClassification)
-
 
 proj <- addGeneIntegrationMatrix(
   ArchRProj = proj, 
@@ -26,7 +22,7 @@ proj <- addGeneIntegrationMatrix(
   reducedDims = "IterativeLSI",
   seRNA = seRNA,
   addToArrow = FALSE,
-  groupRNA = "BioClassification",
+  groupRNA = "Idents",
   nameCell = "predictedCell_Un",
   nameGroup = "predictedGroup_Un",
   nameScore = "predictedScore_Un"
