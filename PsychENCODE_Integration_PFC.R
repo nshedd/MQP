@@ -44,11 +44,11 @@ unique(unique(proj$predictedGroup_Un))
 
 plotPDF(cM, name = "ConfusionMatrix-PFC-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
 
-pal <- paletteDiscrete(values = colData(seRNA)$BioClassification)
+pal <- paletteDiscrete(values = colData(seRNA)$letter.idents)
 
 p1 <- plotEmbedding(
     projHeme2, 
-    colorBy = "colData", 
+    colorBy = "cellColData", 
     name = "predictedGroup_Un", 
     pal = pal
 )
