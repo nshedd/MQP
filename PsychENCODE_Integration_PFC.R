@@ -12,7 +12,7 @@ seRNA.data = read.table(path1, header=TRUE, row.names=1)
 seRNA <- CreateSeuratObject(counts = seRNA.data, project = "seRNA3k", min.cells = 3, min.features = 200)
 
 #names(cluster_letters)=rownames(seRNA@meta.data)
-cluster_letters <- LETTERS[Idents(object = seRNA)]
+cluster_letters <- Idents(object = seRNA)
 names(cluster_letters) <- colnames(x = seRNA)
 seRNA <- AddMetaData(
   object = seRNA,
