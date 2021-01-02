@@ -53,3 +53,13 @@ p1 <- plotEmbedding(
 )
 
 plotPDF(p1, name = "UMAP-PFC-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+
+proj$Clusters <- c("Ast1", "OPC", "Ast2", "Ast3", "Mic", "In1", "In2", "Ex1", "Ex2", "Ex3", "Ex4", "Ex5")
+
+p2 <- plotEmbedding(
+    proj, 
+    colorBy = "cellColData", 
+    name = "Clusters",
+)
+
+plotPDF(p1, name = "UMAP-PFC-CLusters-Renamed", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
