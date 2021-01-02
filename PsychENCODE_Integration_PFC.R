@@ -42,7 +42,7 @@ cbind(preClust, rownames(cM))
 
 unique(unique(proj$predictedGroup_Un))
 
-plotPDF(cM, name = "ConfusionMatrix-PFC-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+write.table(cM, file = path.expand("~/git/MQP/PFC_Dev_Analysis/Plots/ConfusionMatrix-PFC-Integrated.txt"), sep = '\t')
 
 #pal <- paletteDiscrete(values = colData(seRNA)$letter.idents)
 
