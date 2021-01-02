@@ -47,7 +47,7 @@ plotPDF(cM, name = "ConfusionMatrix-PFC-Integrated", width = 5, height = 5, Arch
 pal <- paletteDiscrete(values = colData(seRNA)$letter.idents)
 
 p1 <- plotEmbedding(
-    projHeme2, 
+    proj, 
     colorBy = "cellColData", 
     name = "predictedGroup_Un", 
     pal = pal
