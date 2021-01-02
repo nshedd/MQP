@@ -41,3 +41,14 @@ preClust <- colnames(cM)[apply(cM, 1 , which.max)]
 cbind(preClust, rownames(cM))
 
 unique(unique(proj$predictedGroup_Un))
+
+pal <- paletteDiscrete(values = colData(seRNA)$BioClassification)
+
+p1 <- plotEmbedding(
+    projHeme2, 
+    colorBy = "cellColData", 
+    name = "predictedGroup_Un", 
+    pal = pal
+)
+
+plotPDF(p1, name = "UMAP-PFC-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
