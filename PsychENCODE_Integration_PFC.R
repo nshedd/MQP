@@ -34,8 +34,6 @@ proj <- addGeneIntegrationMatrix(
   nameScore = "predictedScore_Un"
 )
 
-proj
-
 cM <- as.matrix(confusionMatrix(proj$Clusters, proj$predictedGroup_Un))
 preClust <- colnames(cM)[apply(cM, 1 , which.max)]
 cbind(preClust, rownames(cM))
@@ -54,12 +52,18 @@ p1 <- plotEmbedding(
 
 plotPDF(p1, name = "UMAP-PFC-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
 
-proj$Clusters <- c("Ast1", "OPC", "Ast2", "Ast3", "Mic", "In1", "In2", "Ex1", "Ex2", "Ex3", "Ex4", "Ex5")
+labelOld <- rownames(cM)
+
+labelNew <- colnames(cM)[apply(cM, 1, which.max)]
+print("new labels")
+labelNew
+
+proj$Clusters2 <- mapLabels(proj$Clusters, newLabels = labelNew, oldLabels = labelOld)
 
 p2 <- plotEmbedding(
     proj, 
     colorBy = "cellColData", 
-    name = "Clusters",
+    name = "Clusters2",
 )
 
 plotPDF(p1, name = "UMAP-PFC-CLusters-Renamed", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
