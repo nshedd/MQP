@@ -58,7 +58,22 @@ labelNew <- colnames(cM)[apply(cM, 1, which.max)]
 print("new labels")
 labelNew
 
-proj$Clusters2 <- mapLabels(proj$Clusters, newLabels = labelNew, oldLabels = labelOld)
+remapClust <- c(
+  "Ast" = "Astrocyte",
+  "Ex6b" = "Excitatory Neuron",
+  "Ex1" = "Excitatory Neuron",
+  "In1c" = "Inhibitory Neuron",
+  "Mic" = "Microglia"
+  "In8" = "Inhibitory Neuron",
+  "OPC" = "Oligodendrocyte Precursor"
+)
+
+remapClust <- remapClust[names(remapClust) %in% labelNew]
+
+labelNew2 <- mapLabels(labelNew, oldLabels = names(remapClust), newLabels = remapClust)
+labelNew2
+
+proj$Clusters2 <- mapLabels(proj$Clusters, newLabels = labelNew2, oldLabels = labelOld)
 
 p2 <- plotEmbedding(
     proj, 
