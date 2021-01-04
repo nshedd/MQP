@@ -63,7 +63,7 @@ remapClust <- c(
   "Ex6b" = "Excitatory Neuron",
   "Ex1" = "Excitatory Neuron",
   "In1c" = "Inhibitory Neuron",
-  "Mic" = "Microglia"
+  "Mic" = "Microglia",
   "In8" = "Inhibitory Neuron",
   "OPC" = "Oligodendrocyte Precursor"
 )
