@@ -66,4 +66,4 @@ p2 <- plotEmbedding(
     name = "Clusters2",
 )
 
-plotPDF(p1, name = "UMAP-PFC-CLusters-Renamed", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+plotPDF(p2, name = "UMAP-PFC-CLusters-Renamed", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
