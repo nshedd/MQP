@@ -3,8 +3,8 @@ library(ggplot2)
 
 VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:44)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+#VisualCortex <- FindNeighbors(VisualCortex, dims = 1:44)
+#VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:44, metric="euclidean")
 
@@ -13,4 +13,4 @@ VisualCortex <- RunUMAP(VisualCortex, dims = 1:44, metric="euclidean")
 #VisualCortex <- RenameIdents(VisualCortex, new.cluster.ids)
 
 plot = DimPlot(VisualCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_044pc.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_044pc_oglabels.png"), device=)
