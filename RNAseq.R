@@ -6,7 +6,7 @@ FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_Front
 FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:35)
 FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:2, metric="euclidean")
+FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:35, metric="euclidean")
 
 #new.cluster.ids <- c("In1","Ex1","Ex2","End","Oli1","Ex3","Oli1","Ex4","Ex5","Per/Mic","OPC","Ex6","Ex7","In2","In3","Ast","Oli2")
 #names(new.cluster.ids) <- levels(FrontalCortex)
