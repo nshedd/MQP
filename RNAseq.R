@@ -8,7 +8,7 @@ VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualC
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:44, metric="euclidean")
 
-#new.cluster.ids <- c("End/Ex1/In1","Ex2","Oli","Ex3","In2","Ast","In3","Ex4","In4","OPC","Ex5","In5","Mic","Ex6","Ex7","In6","Ex8","Per")
+#new.cluster.ids <- c("Ex2","Ex1/In1","Oli","Ex3","In2","Ex4","Ast","In3","Ex5","In4","OPC","In5","Ex6","Mic","Ex7","End/Per","In6","Ex8")
 #names(new.cluster.ids) <- levels(VisualCortex)
 #VisualCortex <- RenameIdents(VisualCortex, new.cluster.ids)
 
