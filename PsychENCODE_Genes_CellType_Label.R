@@ -1,7 +1,11 @@
 
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
+head(brain_genes)
+
 diff_expressed = read.table(path.expand("~/pfc_marker_genes.txt"), header=TRUE, row.names=1, sep="\t")
+
+head(diff_expressed)
 
 celltypelist = brain_genes$Cell.type
 print(celltypelist[277])
