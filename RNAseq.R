@@ -1,4 +1,5 @@
 library(Seurat)
+library(ggplot2)
 
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
