@@ -13,4 +13,4 @@ names(new.cluster.ids) <- levels(FrontalCortex)
 FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_035pc_oglabels.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_035pc.png"), device=)
