@@ -51,7 +51,7 @@ head(diff_expressed)
 celltypelist = brain_genes$Cell.type
 
 celltypes <- character()
-for (gene in diff_expressed$name) {
+for (gene in diff_expressed$gene) {
   if (gene %in% brain_genes$Human.Gene) {
     celltype = brain_genes$Cell.type[brain_genes$Human.Gene == gene]
     celltype = paste(celltype, collapse = ', ')
