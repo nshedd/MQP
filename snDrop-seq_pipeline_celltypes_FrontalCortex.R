@@ -6,13 +6,6 @@ library(ggplot2)
 
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 1.0)
-
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
-
-saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
 #new.cluster.ids <- c("Neuron 1", "Neuron 2", "Neuron 3", "Neuron 4", "Astrocyte", "Neuron 5", "? 1", "Oligodendrocyte", "Microglia", "Neuron 6", "? 2", "? 3")
 #names(new.cluster.ids) <- levels(FrontalCortex)
 #FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
