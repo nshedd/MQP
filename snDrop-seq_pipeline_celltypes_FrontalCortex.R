@@ -53,4 +53,4 @@ write.table(diff_expressed, file = path.expand("~/Lake/FrontalCortex/umap_GSE979
 write.table(diff_expressed_condensed, file = path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_diffexpressed_condensed.txt"), sep = '\t')
 
 FeaturePlot(FrontalCortex, features = c("SLC17A7", "GRIN1", "GRIN2B", "SATB2"))
-ggsave(path.expand("~/Lake/All/umap_GSE97930_FrontalCortex_Seurat_ExcitatoryFeatures.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_Seurat_ExcitatoryFeatures.png"), device=)
