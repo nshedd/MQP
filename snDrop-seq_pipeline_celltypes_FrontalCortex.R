@@ -37,14 +37,14 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct.png"), device=)
 
-pbmc.markers <- FindAllMarkers(pbmc, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
-pbmc.markers %>% group_by(cluster)
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
 
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
 head(brain_genes)
 
-diff_expressed = pbmc.markers
+diff_expressed = FrontalCortex.markers
 
 head(diff_expressed)
 
