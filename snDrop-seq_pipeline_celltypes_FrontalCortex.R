@@ -18,11 +18,7 @@ FrontalCortex.markers %>% group_by(cluster)
 
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
-head(brain_genes)
-
 diff_expressed = FrontalCortex.markers
-
-head(diff_expressed)
 
 celltypelist = brain_genes$Cell.type
 
