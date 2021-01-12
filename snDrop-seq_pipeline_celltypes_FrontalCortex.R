@@ -4,26 +4,7 @@ library(patchwork)
 library(ggplot2)
 
 
-path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
-
-matrix = read.table(path1, header=TRUE, row.names=1)
-
-FrontalCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)		
-
-FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")		
-
-FrontalCortex <- subset(FrontalCortex, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)		
-
-FrontalCortex <- NormalizeData(FrontalCortex, normalization.method = "LogNormalize", scale.factor = 10000)		
-
-FrontalCortex <- FindVariableFeatures(FrontalCortex, selection.method = "vst", nfeatures = 2000)		
-
-all_cells <- rownames(FrontalCortex)		
-FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)		
-
-FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))		
-
-saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
 FrontalCortex <- FindClusters(FrontalCortex, resolution = 1.0)
@@ -71,4 +52,5 @@ write.table(diff_expressed, file = path.expand("~/Lake/FrontalCortex/umap_GSE979
 
 write.table(diff_expressed_condensed, file = path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_diffexpressed_condensed.txt"), sep = '\t')
 
-#FeaturePlot(pbmc, features = c("MS4A1", "GNLY", "CD3E", "CD14", "FCER1A", "FCGR3A", "LYZ", "PPBP", "CD8A"))
+FeaturePlot(FrontalCortex, features = c("SLC17A7", "GRIN1", "GRIN2B", "SATB2"))
+ggsave(path.expand("~/Lake/All/umap_GSE97930_FrontalCortex_Seurat_ExcitatoryFeatures.png"), device=)
