@@ -44,4 +44,4 @@ write.table(diff_expressed, file = path.expand("~/Lake/FrontalCortex/umap_GSE979
 write.table(diff_expressed_condensed, file = path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_diffexpressed_condensed.txt"), sep = '\t')
 
 FeaturePlot(FrontalCortex, features = c("NCAM1", "GAP43"))
-ggsave(path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_Seurat_SchwannCellFeatures.png"), device=)
+ggsave(path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_Seurat_SchwannCellFeatures.png"), device=, width = 14, height = 7)
