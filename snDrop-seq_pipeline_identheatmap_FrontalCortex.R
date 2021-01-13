@@ -43,11 +43,26 @@ ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_find
 
 ## Paper labels
 
+FrontalCortex2 <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)		
+
+FrontalCortex2[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex2, pattern = "^MT-")		
+
+FrontalCortex2 <- subset(FrontalCortex2, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)		
+
+FrontalCortex2 <- NormalizeData(FrontalCortex2, normalization.method = "LogNormalize", scale.factor = 10000)		
+
+FrontalCortex2 <- FindVariableFeatures(FrontalCortex2, selection.method = "vst", nfeatures = 2000)		
+
+all_cells <- rownames(FrontalCortex2)		
+FrontalCortex2 <- ScaleData(FrontalCortex2, features = all_cells)		
+
+FrontalCortex2 <- RunPCA(FrontalCortex2, features = VariableFeatures(object = FrontalCortex2))	
+
 FrontalCortex2 <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 FrontalCortex2 <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+plot = DimPlot(FrontalCortex2, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_oglabels.png"), device=)
 
 
