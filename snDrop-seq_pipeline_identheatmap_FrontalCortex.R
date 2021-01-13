@@ -1,5 +1,3 @@
-devtools::install_github("crazyhottommy/scclusteval")
-
 library(dplyr)
 library(Seurat)
 library(patchwork)
