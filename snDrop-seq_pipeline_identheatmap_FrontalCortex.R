@@ -61,8 +61,10 @@ oglabels <- factor(oglabels)
 newlabels <- Idents(FrontalCortex)
 newlabels <- factor(newlabels)
 
+
+png(file=path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_JaccardHeatmap.png"))
 heatmap <- PairWiseJaccardSetsHeatmap(oglabels, newlabels)
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_JaccardHeatmap.png"), device=)
+dev.off()
 
 
 
