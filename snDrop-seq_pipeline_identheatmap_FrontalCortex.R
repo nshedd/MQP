@@ -1,3 +1,5 @@
+devtools::install_github("nshedd/scclusteval")
+
 library(dplyr)
 library(Seurat)
 library(patchwork)
