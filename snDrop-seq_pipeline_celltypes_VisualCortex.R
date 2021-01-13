@@ -23,10 +23,10 @@ VisualCortex <- ScaleData(VisualCortex, features = all_cells)
 
 VisualCortex <- RunPCA(VisualCortex, features = VariableFeatures(object = VisualCortex))
 
-VisualCortex <- FindNeighbors(VisualCortex, dims = 1:10)
-VisualCortex <- FindClusters(VisualCortex, resolution = 0.5)
+VisualCortex <- FindNeighbors(VisualCortex, dims = 1:20)
+VisualCortex <- FindClusters(VisualCortex, resolution = 1)
 
-VisualCortex <- RunUMAP(VisualCortex, dims = 1:10)
+VisualCortex <- RunUMAP(VisualCortex, dims = 1:20)
 
 saveRDS(VisualCortex, file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
