@@ -61,7 +61,7 @@ newlabels <- factor(newlabels)
 
 
 png(file=path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_Seurat_JaccardHeatmap.png"))
-heatmap <- PairWiseJaccardSetsHeatmap(oglabels, newlabels)
+PairWiseJaccardSetsHeatmap(oglabels, newlabels)
 dev.off()
 
 
