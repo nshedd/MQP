@@ -25,22 +25,6 @@ FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = Fron
 
 saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
-
-## My labels
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
-
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
-
-new.cluster.ids <- c("Ex1","Ex2","Oli1","Ast","Ex3","In1","Oli2","In2","In3","Ex4","OPC","Ex5",
-                    "Ex6","Ex7","In4","In5","Mic","Ex8","Ex9","Ex10","Ex11","Ex12","End/Per")
-names(new.cluster.ids) <- levels(FrontalCortex)
-FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
-
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct.png"), device=)
-
-
 ## Paper labels
 
 FrontalCortex2 <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)		
@@ -64,6 +48,20 @@ FrontalCortex2 <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
 plot = DimPlot(FrontalCortex2, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_oglabels.png"), device=)
+
+## My labels
+FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
+FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
+
+FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
+
+new.cluster.ids <- c("Ex1","Ex2","Oli1","Ast","Ex3","In1","Oli2","In2","In3","Ex4","OPC","Ex5",
+                    "Ex6","Ex7","In4","In5","Mic","Ex8","Ex9","Ex10","Ex11","Ex12","End/Per")
+names(new.cluster.ids) <- levels(FrontalCortex)
+FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
+
+plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct.png"), device=)
 
 
 ## Heatmap comparing labels
