@@ -74,7 +74,9 @@ newlabels <- factor(newlabels)
 
 
 png(file=path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_Seurat_JaccardHeatmap.png"))
-PairWiseJaccardSetsHeatmap(oglabels, newlabels)
+PairWiseJaccardSetsHeatmap(oglabels, newlabels, cell_fun = function(j, i, x, y, width, height, fill) {
+        grid.text(sprintf("%.1f", small_mat[i, j]), x, y, gp = gpar(fontsize = 10))
+})
 dev.off()
 
 
