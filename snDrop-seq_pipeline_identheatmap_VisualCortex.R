@@ -12,7 +12,24 @@ matrix = read.table(path1, header=TRUE, row.names=1)
 
 ## Paper labels
 
-VisualCortex2 <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))	
+path1 = path.expand("~/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+
+matrix = read.table(path1, header=TRUE, row.names=1)
+
+VisualCortex2 <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
+
+VisualCortex2[["percent.mt"]] <- PercentageFeatureSet(VisualCortex2, pattern = "^MT-")
+
+VisualCortex2 <- subset(VisualCortex2, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+
+VisualCortex2 <- NormalizeData(VisualCortex2, normalization.method = "LogNormalize", scale.factor = 10000)
+
+VisualCortex2 <- FindVariableFeatures(object = VisualCortex2)
+
+all_cells <- rownames(VisualCortex2)
+VisualCortex2 <- ScaleData(VisualCortex2, features = all_cells)
+
+VisualCortex2 <- RunPCA(VisualCortex2, features = VariableFeatures(object = VisualCortex2))
 
 VisualCortex2 <- RunUMAP(VisualCortex2, dims = 1:20, metric="euclidean")
 
@@ -20,7 +37,24 @@ plot = DimPlot(VisualCortex2, reduction = "umap", label = TRUE, pt.size = 0.5) +
 ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_findct_oglabels.png"), device=)
 
 ## My labels
-VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))	
+path1 = path.expand("~/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+
+matrix = read.table(path1, header=TRUE, row.names=1)
+
+VisualCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
+
+VisualCortex[["percent.mt"]] <- PercentageFeatureSet(VisualCortex, pattern = "^MT-")
+
+VisualCortex <- subset(VisualCortex, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+
+VisualCortex <- NormalizeData(VisualCortex, normalization.method = "LogNormalize", scale.factor = 10000)
+
+VisualCortex <- FindVariableFeatures(object = VisualCortex)
+
+all_cells <- rownames(VisualCortex)
+VisualCortex <- ScaleData(VisualCortex, features = all_cells)
+
+VisualCortex <- RunPCA(VisualCortex, features = VariableFeatures(object = VisualCortex))
 
 VisualCortex <- FindNeighbors(VisualCortex, dims = 1:20)
 VisualCortex <- FindClusters(VisualCortex, resolution = 1)
