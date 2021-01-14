@@ -33,7 +33,7 @@ VisualCortex <- FindClusters(VisualCortex, resolution = 1)
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:20)
 
 plot = DimPlot(VisualCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_findct.png"), device=)
+ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_findct_1.png"), device=)
 
 VisualCortex.markers <- FindAllMarkers(VisualCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 VisualCortex.markers %>% group_by(cluster)
