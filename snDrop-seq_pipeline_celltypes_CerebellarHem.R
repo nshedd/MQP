@@ -64,29 +64,29 @@ write.table(diff_expressed, file = path.expand("~/Lake/CerebellarHem/umap_GSE979
 
 write.table(diff_expressed_condensed, file = path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_diffexpressed_condensed.txt"), sep = '\t')
 
-FeaturePlot(VisualCortex, features = c("SLC17A7", "GRIN1", "GRIN2B"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_ExcitatoryFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("SLC17A7", "GRIN1", "GRIN2B"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_ExcitatoryFeatures.png"), device=)
  
-FeaturePlot(VisualCortex, features = c("GAD1", "GAD2", "SLC6A1"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_InhibitoryFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("GAD1", "GAD2", "SLC6A1"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_InhibitoryFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("CLDN11", "MOG", "MOBP", "MBP"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_OligodendrocyteFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("CLDN11", "MOG", "MOBP", "MBP"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_OligodendrocyteFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("GFAP", "SLC1A2", "SLC1A3", "SLC4A4", "AQP4"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_AstrocyteFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("GFAP", "SLC1A2", "SLC1A3", "SLC4A4", "AQP4"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_AstrocyteFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("COBLL1", "DUSP1", "FLT1"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_EndothelialFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("COBLL1", "DUSP1", "FLT1"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_EndothelialFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("COBLL1", "PDGFRB", "COBLL1", "PDGFRB"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_PericyteFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("COBLL1", "PDGFRB", "COBLL1", "PDGFRB"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_PericyteFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("PCDH15"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_OPCFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("PCDH15"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_OPCFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("APBB1IP", "P2RY12", "PTPRC"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_MicrogliaFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("APBB1IP", "P2RY12", "PTPRC"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_MicrogliaFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("RYR1"))
-ggsave(path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_Seurat_PurkinjeFeatures.png"), device=)
+FeaturePlot(CerebellarHem, features = c("RYR1"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_PurkinjeFeatures.png"), device=)
