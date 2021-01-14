@@ -20,7 +20,7 @@ plot = DimPlot(CerebellarHem2, reduction = "umap", label = TRUE, pt.size = 0.5) 
 ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_findct_oglabels.png"), device=)
 
 ## My labels
-CerebellarHem2 <- readRDS(file=path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+CerebellarHem <- readRDS(file=path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:20)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 1.5)
