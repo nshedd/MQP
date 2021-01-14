@@ -12,7 +12,7 @@ matrix = read.table(path1, header=TRUE, row.names=1)
 
 ## Paper labels
 
-VisualCortex2 <- ReadRDS(file=path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+VisualCortex2 <- readRDS(file=path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 VisualCortex2 <- RunUMAP(VisualCortex2, dims = 1:20, metric="euclidean")
 
@@ -20,7 +20,7 @@ plot = DimPlot(VisualCortex2, reduction = "umap", label = TRUE, pt.size = 0.5) +
 ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_findct_oglabels.png"), device=)
 
 ## My labels
-VisualCortex2 <- ReadRDS(file=path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+VisualCortex2 <- readRDS(file=path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 VisualCortex <- FindNeighbors(VisualCortex, dims = 1:20)
 VisualCortex <- FindClusters(VisualCortex, resolution = 1)
