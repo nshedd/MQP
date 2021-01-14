@@ -27,7 +27,7 @@ VisualCortex2 <- ScaleData(VisualCortex2, features = all_cells)
 
 VisualCortex2 <- RunPCA(VisualCortex2, features = VariableFeatures(object = VisualCortex2))	
 
-VisualCortex2 <- RunUMAP(VisualCortex, dims = 1:20, metric="euclidean")
+VisualCortex2 <- RunUMAP(VisualCortex2, dims = 1:20, metric="euclidean")
 
 plot = DimPlot(VisualCortex2, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_findct_oglabels.png"), device=)
