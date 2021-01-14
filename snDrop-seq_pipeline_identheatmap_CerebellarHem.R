@@ -27,8 +27,8 @@ CerebellarHem <- FindClusters(CerebellarHem, resolution = 1.5)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:20, metric="euclidean")
 
-new.cluster.ids <- c("Oli","Ex1","Ex2","In1","Ex3","Ex4","Ast1","Ex5","Ex6","Ex7",
-                     "In2","In3","OPC","In4","Ex8","In5","Mic","Ex9","End/Per","Ex10","Ast")
+new.cluster.ids <- c("In1","Ex1","Ex2","Ex3","Ex4","In2","In3","In4","Ast1",
+                     "OPC1","Ast2","Oli","Mic","In5","OPC2","Ex5","In1","In2")
 names(new.cluster.ids) <- levels(CerebellarHem)
 CerebellarHem <- RenameIdents(CerebellarHem, new.cluster.ids)
 
