@@ -4,7 +4,7 @@ library(patchwork)
 library(ggplot2)
 
 
-VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+#VisualCortex <- readRDS(file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 path1 = path.expand("~/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
@@ -25,12 +25,12 @@ VisualCortex <- ScaleData(VisualCortex, features = all_cells)
 
 VisualCortex <- RunPCA(VisualCortex, features = VariableFeatures(object = VisualCortex))
 
+saveRDS(VisualCortex, file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+
 VisualCortex <- FindNeighbors(VisualCortex, dims = 1:20)
 VisualCortex <- FindClusters(VisualCortex, resolution = 1)
 
 VisualCortex <- RunUMAP(VisualCortex, dims = 1:20)
-
-saveRDS(VisualCortex, file = path.expand("~/Lake/VisualCortex/GSE97930_VisualCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 plot = DimPlot(VisualCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/VisualCortex/umap_GSE97930_VisualCortex_Seurat_findct.png"), device=)
