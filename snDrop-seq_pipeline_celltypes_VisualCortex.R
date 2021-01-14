@@ -14,7 +14,7 @@ VisualCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells 
 
 VisualCortex[["percent.mt"]] <- PercentageFeatureSet(VisualCortex, pattern = "^MT-")
 
-VisualCortex2 <- subset(VisualCortex2, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+VisualCortex <- subset(VisualCortex, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
 
 VisualCortex <- NormalizeData(VisualCortex, normalization.method = "LogNormalize", scale.factor = 10000)
 
