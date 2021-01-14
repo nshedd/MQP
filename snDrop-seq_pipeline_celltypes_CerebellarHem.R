@@ -23,13 +23,12 @@ CerebellarHem <- ScaleData(CerebellarHem, features = all_cells)
 
 CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = CerebellarHem))
 
+saveRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+
 CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:20)
 CerebellarHem <- FindClusters(CerebellarHem, resolution = 1.5)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:20, metric="euclidean")
-
-saveRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
 
 plot = DimPlot(CerebellarHem, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/CerebellarHem/umap_GSE97930_CerebellarHem_Seurat_findct.png"), device=)
