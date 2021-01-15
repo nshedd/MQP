@@ -12,7 +12,7 @@ FrontalCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells
 
 FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")
 
-FrontalCortex <- subset(FrontalCortex, subset = nFeature_RNA > 200 & nFeature_RNA < 2500 & percent.mt < 5)
+FrontalCortex <- subset(FrontalCortex, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
 
 FrontalCortex <- NormalizeData(FrontalCortex, normalization.method = "LogNormalize", scale.factor = 10000)
 
