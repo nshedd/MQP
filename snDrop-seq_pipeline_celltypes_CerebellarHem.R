@@ -14,6 +14,8 @@ CerebellarHem <- CreateSeuratObject(counts = matrix, project = "set2", min.cells
 
 CerebellarHem[["percent.mt"]] <- PercentageFeatureSet(CerebellarHem, pattern = "^MT-")
 
+CerebellarHem <- subset(CerebellarHem, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+
 CerebellarHem <- NormalizeData(CerebellarHem, normalization.method = "LogNormalize", scale.factor = 10000)
 
 CerebellarHem <- FindVariableFeatures(object = CerebellarHem)
