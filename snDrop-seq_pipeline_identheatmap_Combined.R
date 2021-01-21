@@ -31,8 +31,9 @@ All <- FindClusters(All, resolution = 1.5)
 All <- RunUMAP(All, dims = 1:20, metric="euclidean")
 
 # Manually relabel clusters based on analysis
-new.cluster.ids <- c("Oli","Ex1","Ex2","In1","Ex3","Ex4","Ast1","Ex5","Ex6","Ex7",
-                     "In2","In3","OPC","In4","Ex8","In5","Mic","Ex9","End/Per","Ex10","Ast")
+new.cluster.ids <- c("Neuron", "Oli1", "Ex1", "Ex2", "In1", "Ast1", "Ex3", "Ex4", "In2", "In3",
+                    "OPC", "Ex5", "Gran1", "Ex6", "Ex7", "Oli2", "Gran2", "Purk1", "Ex8", "Gran3",
+                    "In4", "In5", "Mic", "Ex9", "Ast2", "Ex10", "End/Per", "Ex11", "Ast/Oli", "Mic/Oli", "Ex12", "Oli3")
 names(new.cluster.ids) <- levels(All)
 All <- RenameIdents(All, new.cluster.ids)
 
