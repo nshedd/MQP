@@ -30,6 +30,8 @@ All <- FindClusters(All, resolution = 1.5)
 
 All <- RunUMAP(All, dims = 1:20, metric="euclidean")
 
+ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_findct.png"), device=)
+
 # Manually relabel clusters based on analysis
 new.cluster.ids <- c("Neuron", "Oli1", "Ex1", "Ex2", "In1", "Ast1", "Ex3", "Ex4", "In2", "In3",
                     "OPC", "Ex5", "Gran1", "Ex6", "Ex7", "Oli2", "Gran2", "Purk1", "Ex8", "Gran3",
@@ -38,7 +40,7 @@ names(new.cluster.ids) <- levels(All)
 All <- RenameIdents(All, new.cluster.ids)
 
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/All/umap_GSE97930_All_Seurat_findct.png"), device=)
+
 
 
 ## Heatmap comparing labels
