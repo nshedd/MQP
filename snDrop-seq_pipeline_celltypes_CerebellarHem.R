@@ -91,3 +91,6 @@ ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_Microglia
 
 FeaturePlot(CerebellarHem, features = c("RYR1"))
 ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_PurkinjeFeatures.png"), device=)
+
+FeaturePlot(CerebellarHem, features = c("RELN", "GRM4", "RBFOX3"))
+ggsave(path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_Seurat_GranuleFeatures.png"), device=)
