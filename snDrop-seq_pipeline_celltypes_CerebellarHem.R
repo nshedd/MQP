@@ -28,7 +28,7 @@ CerebellarHem <- RunPCA(CerebellarHem, features = VariableFeatures(object = Cere
 saveRDS(CerebellarHem, file = path.expand("~/Lake/CerebellarHem/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 CerebellarHem <- FindNeighbors(CerebellarHem, dims = 1:20)
-CerebellarHem <- FindClusters(CerebellarHem, resolution = 1.5)
+CerebellarHem <- FindClusters(CerebellarHem, resolution = 0.5)
 
 CerebellarHem <- RunUMAP(CerebellarHem, dims = 1:20, metric="euclidean")
 
