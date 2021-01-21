@@ -22,13 +22,13 @@ All <- ScaleData(All, features = all_cells)
 
 All <- RunPCA(All, features = VariableFeatures(object = All))
 
+#Save Seurat object to create heatmap later
+saveRDS(All, file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
+
 All <- FindNeighbors(All, dims = 1:20)
 All <- FindClusters(All, resolution = 1.5)
 
 All <- RunUMAP(All, dims = 1:20, metric="euclidean")
-
-#Save Seurat object to create heatmap later
-saveRDS(All, file = path.expand("~/Lake/All/GSE97930_All_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
 #Plot UMAP
 plot = DimPlot(All, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
