@@ -28,7 +28,7 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 UMB5376 <- FindNeighbors(UMB5376, dims = 1:20)
 UMB5376 <- FindClusters(UMB5376, resolution = 0.5)
 
-UMB5376 <- RunUMAP(UMB5376, dims = 1:20, metric="euclidean", n.neighbors=10, min.dist=1)
+UMB5376 <- RunUMAP(UMB5376, dims = 1:20, metric="euclidean", n.neighbors=10)
 
 plot = DimPlot(UMB5376, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/umap_numberedclusters.png"), device=)
