@@ -30,7 +30,7 @@ FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
-plot = DimPlot(FrontalCortex, preduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+plot = DimPlot(FrontalCortex, prediction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_1.png"), device=)
 
 FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
