@@ -3,6 +3,7 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 
+print("loaded libraries")
 
 path1 = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/matrix.tsv")
 
