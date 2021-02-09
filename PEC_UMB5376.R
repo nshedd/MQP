@@ -37,7 +37,7 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 UMB5376.markers <- FindAllMarkers(UMB5376, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 UMB5376.markers %>% group_by(cluster)
 
-brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+brain_genes = read.table(path.expand("~/marker_genes.csv"), header=TRUE, sep=",")
 
 diff_expressed = UMB5376.markers
 
@@ -45,8 +45,8 @@ celltypelist = brain_genes$Cell.type
 
 celltypes <- character()
 for (gene in diff_expressed$gene) {
-   if (gene %in% brain_genes$Human.Gene) {
-      celltype = brain_genes$Cell.type[brain_genes$Human.Gene == gene]
+   if (gene %in% brain_genes$Full.Gene.Name) {
+      celltype = brain_genes$Cell.type[brain_genes$Full.Gene.Name == gene]
       celltype = paste(celltype, collapse = ', ')
       celltypes <- c(celltypes, celltype)
    }
@@ -84,8 +84,8 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 FeaturePlot(UMB5376, features = c("APBB1IP", "P2RY12", "APBB1IP", "P2RY12"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/MicrogliaFeatures.png"), device=)
 
-marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
-all_known_marker_genes = marker_gene_table$Human.Gene
+marker_gene_table = read.table(path.expand("~/marker_genes.csv"), header=TRUE, sep=",")
+all_known_marker_genes = marker_gene_table$Full.Gene.Name
 
 intersection = intersect(UMB5376.markers$gene, all_known_marker_genes)
 
