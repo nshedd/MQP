@@ -4,9 +4,9 @@ library(patchwork)
 library(ggplot2)
 
 
-path1 = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/matrix.txt")
+path1 = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/matrix.tsv")
 
-matrix = read.table(path1, header=TRUE, row.names=1)
+matrix = read.table(path1, header=TRUE, row.names=1, sep='\t')
 
 UMB5376 <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
