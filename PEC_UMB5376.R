@@ -86,5 +86,5 @@ intersection = diff_expressed_condensed
 
 dotplot <- DotPlot(UMB5376, features = intersection) + 
    theme(axis.text.x = element_text(angle = 90)) + 
-   scale_y_discrete(limits = rev(levels(UMB5376$seurat_clusters)))
+   scale_y_discrete(limits = rev(levels(UMB5376$cluster)))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/dotplot.png"), device=)
