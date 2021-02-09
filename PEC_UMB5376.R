@@ -37,18 +37,6 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 UMB5376.markers <- FindAllMarkers(UMB5376, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 UMB5376.markers %>% group_by(cluster)
 
-marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
-all_known_marker_genes = marker_gene_table$Human.Gene
-
-intersection = intersect(UMB5376.markers$gene, all_known_marker_genes)
-
-dotplot <- DotPlot(UMB5376, features = intersection) + 
-   theme(axis.text.x = element_text(angle = 90)) + 
-   scale_y_discrete(limits = rev(levels(UMB5376$seurat_clusters)))
-ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/dotplot.png"), device=)
-
-
-
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
 diff_expressed = UMB5376.markers
@@ -70,7 +58,6 @@ for (gene in diff_expressed$gene) {
 diff_expressed$cell_type <- celltypes
 
 diff_expressed_condensed = diff_expressed[diff_expressed$cell_type != "unknown",]
-
 
 write.table(diff_expressed, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/diffexpressed.txt"), sep = '\t')
 
@@ -96,3 +83,13 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 
 FeaturePlot(UMB5376, features = c("APBB1IP", "P2RY12", "APBB1IP", "P2RY12"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/MicrogliaFeatures.png"), device=)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(UMB5376.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(UMB5376, features = intersection) + 
+   theme(axis.text.x = element_text(angle = 90)) + 
+   scale_y_discrete(limits = rev(levels(UMB5376$seurat_clusters)))
+ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/dotplot.png"), device=)
