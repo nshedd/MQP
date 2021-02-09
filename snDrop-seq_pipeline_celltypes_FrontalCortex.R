@@ -39,11 +39,11 @@ FrontalCortex.markers %>% group_by(cluster)
 marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 all_known_marker_genes = marker_gene_table$Human.Gene
 
-intersection = intersect(brainRegion.markers$gene, all_known_marker_genes)
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
 
-dotplot <- DotPlot(brainRegion, features = intersection) + 
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
   theme(axis.text.x = element_text(angle = 90)) + 
-  scale_y_discrete(limits = rev(levels(brainRegion$seurat_clusters)))
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
 ggsave(path.expand("~/Lake/FrontalCortex/Dotplot_GSE97930_FrontalCortex_Seurat.png"), device=)
 
 
