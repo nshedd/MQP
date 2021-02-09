@@ -39,11 +39,11 @@ UMB5342.markers %>% group_by(cluster)
 marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 all_known_marker_genes = marker_gene_table$Human.Gene
 
-intersection = intersect(brainRegion.markers$gene, all_known_marker_genes)
+intersection = intersect(UMB5342.markers$gene, all_known_marker_genes)
 
-dotplot <- DotPlot(brainRegion, features = intersection) + 
+dotplot <- DotPlot(UMB5342, features = intersection) + 
    theme(axis.text.x = element_text(angle = 90)) + 
-   scale_y_discrete(limits = rev(levels(brainRegion$seurat_clusters)))
+   scale_y_discrete(limits = rev(levels(UMB5342$seurat_clusters)))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5342/analysis/dotplot.png"), device=)
 
 
