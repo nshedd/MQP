@@ -82,11 +82,7 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 FeaturePlot(UMB5376, features = c("ENSG00000134853.12", "ENSG00000184221.13"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/OPCFeatures.png"), device=)
 
-marker_gene_table = read.table(path.expand("~/marker_genes.csv"), header=TRUE, sep=",")
-all_known_marker_genes = marker_gene_table$Full.Gene.Name
-cell_genes = substr(diff_expressed$gene,1,nchar(diff_expressed$gene)-3)
-
-intersection = intersect(UMB5376.markers$gene, all_known_marker_genes)
+intersection = diff_expressed$gene
 
 dotplot <- DotPlot(UMB5376, features = intersection) + 
    theme(axis.text.x = element_text(angle = 90)) + 
