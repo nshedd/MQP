@@ -30,11 +30,23 @@ FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+plot = DimPlot(FrontalCortex, preduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_1.png"), device=)
 
 FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 FrontalCortex.markers %>% group_by(cluster)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(brainRegion.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(brainRegion, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(brainRegion$seurat_clusters)))
+ggsave(path.expand("~/Lake/FrontalCortex/Dotplot_GSE97930_FrontalCortex_Seurat.png"), device=)
+
+
 
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
