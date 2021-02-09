@@ -6,13 +6,10 @@ print("loaded libraries")
 path1 = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/matrix.tsv")
 
 matrix = read.table(path1, header=TRUE, row.names=1, sep='\t')
-head(matrix)
 
-UMB5376 <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
+UMB5376 <- CreateSeuratObject(counts = matrix, project = "PEC", min.cells = 3, min.features = 200)
 
 UMB5376[["percent.mt"]] <- PercentageFeatureSet(UMB5376, pattern = "^MT-")
-
-UMB5376 <- subset(UMB5376, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
 
 UMB5376 <- NormalizeData(UMB5376, normalization.method = "LogNormalize", scale.factor = 10000)
 
