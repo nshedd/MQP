@@ -8,33 +8,33 @@ path1 = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/matrix.t
 
 matrix = read.table(path1, header=TRUE, row.names=1)
 
-FrontalCortex <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
+UMB5376 <- CreateSeuratObject(counts = matrix, project = "set2", min.cells = 3, min.features = 200)
 
-FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")
+UMB5376[["percent.mt"]] <- PercentageFeatureSet(UMB5376, pattern = "^MT-")
 
-FrontalCortex <- subset(FrontalCortex, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+UMB5376 <- subset(UMB5376, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
 
-FrontalCortex <- NormalizeData(FrontalCortex, normalization.method = "LogNormalize", scale.factor = 10000)
+UMB5376 <- NormalizeData(UMB5376, normalization.method = "LogNormalize", scale.factor = 10000)
 
-FrontalCortex <- FindVariableFeatures(object = FrontalCortex)
+UMB5376 <- FindVariableFeatures(object = UMB5376)
 
-all_cells <- rownames(FrontalCortex)
-FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)
+all_cells <- rownames(UMB5376)
+UMB5376 <- ScaleData(UMB5376, features = all_cells)
 
-FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))
+UMB5376 <- RunPCA(UMB5376, features = VariableFeatures(object = UMB5376))
 
-saveRDS(FrontalCortex, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/Matrix_Seurat.rds"))
+saveRDS(UMB5376, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/Matrix_Seurat.rds"))
 
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
+UMB5376 <- FindNeighbors(UMB5376, dims = 1:20)
+UMB5376 <- FindClusters(UMB5376, resolution = 1)
 
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
+UMB5376 <- RunUMAP(UMB5376, dims = 1:20, metric="euclidean")
 
-plot = DimPlot(FrontalCortex, preduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+plot = DimPlot(UMB5376, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/umap_numberedclusters.png"), device=)
 
-FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
-FrontalCortex.markers %>% group_by(cluster)
+UMB5376.markers <- FindAllMarkers(UMB5376, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+UMB5376.markers %>% group_by(cluster)
 
 marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 all_known_marker_genes = marker_gene_table$Human.Gene
@@ -50,7 +50,7 @@ ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/
 
 brain_genes = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
-diff_expressed = FrontalCortex.markers
+diff_expressed = UMB5376.markers
 
 celltypelist = brain_genes$Cell.type
 
@@ -75,23 +75,23 @@ write.table(diff_expressed, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_
 
 write.table(diff_expressed_condensed, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/diffexpressed_condensed.txt"), sep = '\t')
 
-FeaturePlot(VisualCortex, features = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B"))
+FeaturePlot(UMB5376, features = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/ExcitatoryFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("GAD1", "GAD2", "SLC6A1"))
+FeaturePlot(UMB5376, features = c("GAD1", "GAD2", "SLC6A1"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/InhibitoryFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("CLDN11", "MOG", "MOBP", "MBP"))
+FeaturePlot(UMB5376, features = c("CLDN11", "MOG", "MOBP", "MBP"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/OligodendrocyteFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("SLC1A2", "SLC1A3", "SLC4A4", "GLUL", "AQP4"))
+FeaturePlot(UMB5376, features = c("SLC1A2", "SLC1A3", "SLC4A4", "GLUL", "AQP4"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/AstrocyteFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("COBLL1", "DUSP1", "FLT1"))
+FeaturePlot(UMB5376, features = c("COBLL1", "DUSP1", "FLT1"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/EndothelialFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("PCDH15", "OLIG1", "PCDH15", "OLIG1"))
+FeaturePlot(UMB5376, features = c("PCDH15", "OLIG1", "PCDH15", "OLIG1"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/OPCFeatures.png"), device=)
 
-FeaturePlot(VisualCortex, features = c("APBB1IP", "P2RY12", "APBB1IP", "P2RY12"))
+FeaturePlot(UMB5376, features = c("APBB1IP", "P2RY12", "APBB1IP", "P2RY12"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/MicrogliaFeatures.png"), device=)
