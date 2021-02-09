@@ -28,11 +28,14 @@ saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_Frontal
 FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
 FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
 
+FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
+
 new.cluster.ids <- c("Neuron", "Oli1", "Glu1", "Glu2", "Ast", "Oli2", "Gab1", "Gab2", "Gab3",
                      "Glu3", "OPC", "Glu4", "Glu5", "Glu6", "Gab4", "Glu7", "Gab5", "Mic",
                      "Glu8", "Glu9", "Glu10", "Glu11", "End")
+names(new.cluster.ids) <- levels(FrontalCortex)
+FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_1.png"), device=)
