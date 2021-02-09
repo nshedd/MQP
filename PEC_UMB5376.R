@@ -64,29 +64,27 @@ write.table(diff_expressed, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_
 
 write.table(diff_expressed_condensed, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/diffexpressed_condensed.txt"), sep = '\t')
 
-FeaturePlot(UMB5376, features = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B"))
+FeaturePlot(UMB5376, features = c("ENSG00000176884.15", "ENSG00000104888.10", "ENSG00000119042.17"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/ExcitatoryFeatures.png"), device=)
 
-FeaturePlot(UMB5376, features = c("GAD1", "GAD2", "SLC6A1"))
+FeaturePlot(UMB5376, features = c("ENSG00000128683.14", "ENSG00000136750.13", "ENSG00000157103.12"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/InhibitoryFeatures.png"), device=)
 
-FeaturePlot(UMB5376, features = c("CLDN11", "MOG", "MOBP", "MBP"))
+FeaturePlot(UMB5376, features = c("ENSG00000204655.12", "ENSG00000013297.11", "ENSG00000168314.17"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/OligodendrocyteFeatures.png"), device=)
 
-FeaturePlot(UMB5376, features = c("SLC1A2", "SLC1A3", "SLC4A4", "GLUL", "AQP4"))
+FeaturePlot(UMB5376, features = c("ENSG00000144908.13", "ENSG00000135821.18", "ENSG00000160307.10", "ENSG00000171885.17", "ENSG00000110436.13"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/AstrocyteFeatures.png"), device=)
 
-FeaturePlot(UMB5376, features = c("COBLL1", "DUSP1", "FLT1"))
+FeaturePlot(UMB5376, features = c("ENSG00000082438.17"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/EndothelialFeatures.png"), device=)
 
-FeaturePlot(UMB5376, features = c("PCDH15", "OLIG1", "PCDH15", "OLIG1"))
+FeaturePlot(UMB5376, features = c("ENSG00000134853.12", "ENSG00000184221.13"))
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/OPCFeatures.png"), device=)
-
-FeaturePlot(UMB5376, features = c("APBB1IP", "P2RY12", "APBB1IP", "P2RY12"))
-ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/MicrogliaFeatures.png"), device=)
 
 marker_gene_table = read.table(path.expand("~/marker_genes.csv"), header=TRUE, sep=",")
 all_known_marker_genes = marker_gene_table$Full.Gene.Name
+cell_genes = substr(diff_expressed$gene,1,nchar(diff_expressed$gene)-3)
 
 intersection = intersect(UMB5376.markers$gene, all_known_marker_genes)
 
