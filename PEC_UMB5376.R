@@ -23,9 +23,9 @@ UMB5376 <- RunPCA(UMB5376, features = VariableFeatures(object = UMB5376))
 #saveRDS(UMB5376, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/Matrix_Seurat.rds"))
 
 UMB5376 <- FindNeighbors(UMB5376, dims = 1:20)
-UMB5376 <- FindClusters(UMB5376, resolution = 1)
+UMB5376 <- FindClusters(UMB5376, resolution = 0.5)
 
-UMB5376 <- RunUMAP(UMB5376, dims = 1:20, metric="euclidean")
+UMB5376 <- RunUMAP(UMB5376, dims = 1:20, metric="euclidean", n.neighbors=10)
 
 plot = DimPlot(UMB5376, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/umap_numberedclusters.png"), device=)
