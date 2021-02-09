@@ -46,7 +46,7 @@ celltypelist = brain_genes$Cell.type
 celltypes <- character()
 for (mgene in diff_expressed$gene) {
    for (cgene in brain_genes$Full.Gene.Name) {
-      if (mgene is in cgene) {
+      if (grepl(mgene, cgene)) {
          celltype = brain_genes$Cell.type[brain_genes$Full.Gene.Name == cgene]
          celltype = paste(celltype, collapse = ', ')
          celltypes <- c(celltypes, celltype)
