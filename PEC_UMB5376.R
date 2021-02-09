@@ -40,20 +40,19 @@ UMB5376.markers %>% group_by(cluster)
 brain_genes = read.table(path.expand("~/marker_genes.csv"), header=TRUE, sep=",")
 
 diff_expressed = UMB5376.markers
+diff_expressed_genes_short = substr(diff_expressed$gene,1,nchar(diff_expressed$gene)-3) 
 
 celltypelist = brain_genes$Cell.type
 
 celltypes <- character()
-for (mgene in diff_expressed$gene) {
-   for (cgene in brain_genes$Full.Gene.Name) {
-      if (grepl(mgene, cgene)) {
-         celltype = brain_genes$Cell.type[brain_genes$Full.Gene.Name == cgene]
-         celltype = paste(celltype, collapse = ', ')
-         celltypes <- c(celltypes, celltype)
-      }
-      else {
-         celltypes <- c(celltypes, "unknown")
-      }
+for (gene in diff_expressed_genes_short) {
+   if (gene %in% brain_genes$Full.Gene.Name) {
+      celltype = brain_genes$Cell.type[brain_genes$Full.Gene.Name == gene]
+      celltype = paste(celltype, collapse = ', ')
+      celltypes <- c(celltypes, celltype)
+   }
+   else {
+      celltypes <- c(celltypes, "unknown")
    }
 }
 
