@@ -44,8 +44,8 @@ diff_expressed = UMB5376.markers
 celltypelist = brain_genes$Cell.type
 
 celltypes <- character()
-for (gene in diff_expressed$gene) {
-   if (gene %in% brain_genes$Full.Gene.Name) {
+for (gene in brain_genes$Full.Gene.Name) {
+   if (gene %in% diff_expressed$gene) {
       celltype = brain_genes$Cell.type[brain_genes$Full.Gene.Name == gene]
       celltype = paste(celltype, collapse = ', ')
       celltypes <- c(celltypes, celltype)
