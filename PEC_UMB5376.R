@@ -20,6 +20,9 @@ UMB5376 <- ScaleData(UMB5376, features = all_cells)
 
 UMB5376 <- RunPCA(UMB5376, features = VariableFeatures(object = UMB5376))
 
+ElbowPlot(pbmc)
+ggsave(path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/ElbowPlot.png"), device=)
+
 #saveRDS(UMB5376, file = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5376/analysis/Matrix_Seurat.rds"))
 
 UMB5376 <- FindNeighbors(UMB5376, dims = 1:20)
