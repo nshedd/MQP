@@ -10,14 +10,14 @@ matrix1 = read.table(path1, header=TRUE, row.names=1, sep='\t')
 matrix2 = read.table(path2, header=TRUE, row.names=1, sep='\t')
 matrix3 = read.table(path3, header=TRUE, row.names=1, sep='\t')
 
-combinedmatrix = merge(matrix1, matrix2, by=0)
+matrix12 = merge(matrix1, matrix2, by=0)
 
 row.names(combinedmatrix)<-combinedmatrix$Row.names
 combinedmatrix$Row.names <- NULL
 
 head(combinedmatrix)
 
-combinedmatrix = merge(combinedmatrix, matrix3, by=0)
+combinedmatrix = merge(matrix12, matrix3, by=0)
 
 row.names(combinedmatrix)<-combinedmatrix$Row.names
 combinedmatrix$Row.names <- NULL
