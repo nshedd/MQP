@@ -12,10 +12,8 @@ matrix3 = read.table(path3, header=TRUE, row.names=1, sep='\t')
 
 matrix12 = merge(matrix1, matrix2, by=0)
 
-row.names(combinedmatrix)<-matrix12$Row.names
-combinedmatrix$Row.names <- NULL
-
-head(combinedmatrix)
+row.names(matrix12)<-matrix12$Row.names
+matrix12$Row.names <- NULL
 
 combinedmatrix = merge(matrix12, matrix3, by=0)
 
