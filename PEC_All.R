@@ -8,7 +8,7 @@ path3 = path.expand("~/PEC_CTL_IsoHuB_DLPFC_snRNASeq_NextSeq500_UMB5168/matrix.t
 
 matrix1 = read.table(path1, header=TRUE, row.names=1, sep='\t')
 matrix2 = read.table(path2, header=TRUE, row.names=1, sep='\t')
-matrix2 = read.table(path2, header=TRUE, row.names=1, sep='\t')
+matrix3 = read.table(path3, header=TRUE, row.names=1, sep='\t')
 
 combinedmatrix = merge(matrix1, matrix2, by=0)
 
