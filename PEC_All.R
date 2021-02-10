@@ -12,7 +12,7 @@ matrix3 = read.table(path3, header=TRUE, row.names=1, sep='\t')
 
 matrix12 = merge(matrix1, matrix2, by=0)
 
-row.names(combinedmatrix)<-combinedmatrix$Row.names
+row.names(combinedmatrix)<-matrix12$Row.names
 combinedmatrix$Row.names <- NULL
 
 head(combinedmatrix)
@@ -22,7 +22,8 @@ combinedmatrix = merge(matrix12, matrix3, by=0)
 row.names(combinedmatrix)<-combinedmatrix$Row.names
 combinedmatrix$Row.names <- NULL
 
-All <- CreateSeuratObject(counts = matrix, project = "PEC", min.cells = 3, min.features = 200)
+
+All <- CreateSeuratObject(counts = combinedmatrix, project = "PEC", min.cells = 3, min.features = 200)
 
 All[["percent.mt"]] <- PercentageFeatureSet(All, pattern = "^MT-")
 
