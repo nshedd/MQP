@@ -15,6 +15,8 @@ combinedmatrix = merge(matrix1, matrix2, by=0)
 row.names(combinedmatrix)<-combinedmatrix$Row.names
 combinedmatrix$Row.names <- NULL
 
+head(combinedmatrix)
+
 combinedmatrix = merge(combinedmatrix, matrix3, by=0)
 
 row.names(combinedmatrix)<-combinedmatrix$Row.names
