@@ -10,7 +10,7 @@ sh test_build_index.sh 8 \
   ${work_path1}/STAR_index_2.7.7a/
   
 # Run STARsolo 2.7.7a
-data/zusers/pratth/sc/STAR/bin/Linux_x86_64/STAR \
+/data/zusers/pratth/sc/STAR/bin/Linux_x86_64/STAR \
 --genomeDir ${work_path1}/STAR_index_2.7.7a/ \
 --readFilesIn ${work_path2}/190620KelA_D19-6787_1_sequence.fastq.gz ${work_path2}/190620KelA_D19-6787_2_sequence.fastq.gz \
 --soloType Droplet \
