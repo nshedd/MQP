@@ -1,19 +1,18 @@
 
-work_path=/data/zusers/sheddn/Geschwind
+work_path1=/data/zusers/sheddn/SCZ-BP
+work_path2=/data/zusers/pratth/sc/rna/mk
 
-# download data (this part is the same as cellranger)
-# https://support.10xgenomics.com/single-cell-gene-expression/software/release-notes/build#mm10_#{files.refdata_mm10.version}
 
 # Then build index by STAR
 sh test_build_index.sh 8 \
-  ${work_path}/mm10-2020-A_build/Mus_musculus.GRCm38.dna.primary_assembly.fa.modified \
-  ${work_path}/mm10-2020-A_build/gencode.vM23.primary_assembly.annotation.gtf.filtered \
-  ${work_path}/STAR_index_2.7.7a/
+  ${work_path1}/mm10-2020-A_build/Mus_musculus.GRCm38.dna.primary_assembly.fa.modified \
+  ${work_path1}/mm10-2020-A_build/gencode.vM23.primary_assembly.annotation.gtf.filtered \
+  ${work_path1}/STAR_index_2.7.7a/
   
 # Run STARsolo 2.7.7a
-STAR \
---genomeDir ${work_path}/STAR_index_2.7.7a/ \
---readFilesIn ${work_path}/data/ENCSR874BOF_S1_L001_R2_001.fastq ${work_path}/data/ENCSR874BOF_S1_L001_R1_001.fastq \
+data/zusers/pratth/sc/STAR/bin/Linux_x86_64/STAR \
+--genomeDir ${work_path1}/STAR_index_2.7.7a/ \
+--readFilesIn ${work_path2}/190620KelA_D19-6787_1_sequence.fastq.gz ${work_path2}/190620KelA_D19-6787_2_sequence.fastq.gz \
 --soloType Droplet \
 --soloCBwhitelist /home/liying/cellranger-5.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt \
 --runThreadN 16 \
