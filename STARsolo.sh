@@ -1,6 +1,6 @@
 
-work_path1=/data/zusers/sheddn/
-work_path2=/data/zusers/pratth/sc/rna/mk/
+work_path1=/data/zusers/sheddn
+work_path2=/data/zusers/pratth/sc/rna/mk
 
 
 # Then build index by STAR
