@@ -1,12 +1,12 @@
 
-work_path1=/data/zusers/sheddn/SCZ-BP
-work_path2=/data/zusers/pratth/sc/rna/mk
+work_path1=/data/zusers/sheddn/SCZ-BP/
+work_path2=/data/zusers/pratth/sc/rna/mk/
 
 
 # Then build index by STAR
 sh test_build_index.sh 8 \
   ${work_path1}/mm10-2020-A_build/Mus_musculus.GRCm38.dna.primary_assembly.fa.modified \
-  ${work_path1}/mm10-2020-A_build/gencode.vM23.primary_assembly.annotation.gtf.filtered \
+# ${work_path1}/mm10-2020-A_build/gencode.vM23.primary_assembly.annotation.gtf.filtered \
   ${work_path1}/STAR_index_2.7.7a/
   
 # Run STARsolo 2.7.7a
