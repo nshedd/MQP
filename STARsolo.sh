@@ -14,7 +14,7 @@ sh test_build_index.sh 8 \
 --genomeDir ${work_path1}/STAR_index_2.7.7a/ \
 --readFilesIn ${work_path2}/190620KelA_D19-6787_1_sequence.fastq.gz ${work_path2}/190620KelA_D19-6787_2_sequence.fastq.gz \
 --soloType Droplet \
---soloCBwhitelist /home/liying/cellranger-5.0.1/lib/python/cellranger/barcodes/737K-august-2016.txt \
+--soloCBwhitelist https://github.com/10XGenomics/cellranger/raw/master/lib/python/cellranger/barcodes/737K-august-2016.txt \
 --runThreadN 16 \
 --soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
