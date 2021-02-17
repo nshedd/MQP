@@ -13,6 +13,7 @@ gtf_in="/home/sheddn/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz"
 
 fasta_modified="$build/$(basename "$fasta_in").modified"
 
+ID="(ENS(MUS)?[GTE][0-9]+)\.([0-9]+)"
 cat "$fasta_in" \
     | sed -E 's/^>(\S+).*/>\1 \1/' \
     | sed -E 's/^>([0-9]+|[XY]) />chr\1 /' \
