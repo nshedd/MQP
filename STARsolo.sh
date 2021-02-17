@@ -8,8 +8,8 @@ version="2020-A"
 build="GRCh38-2020-A_build"
 mkdir -p "$build"
 
-fasta_in="home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz"
-gtf_in="home/sheddn/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz"
+fasta_in="/home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz"
+gtf_in="/home/sheddn/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz"
 
 fasta_modified="$build/$(basename "$fasta_in").modified"
 
