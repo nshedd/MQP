@@ -8,8 +8,8 @@ version="2020-A"
 build="GRCh38-2020-A_build"
 mkdir -p "$build"
 
-fasta_in="~/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
-gtf_in="~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf"
+fasta_in="~/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz"
+gtf_in="~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz"
 
 fasta_modified="$build/$(basename "$fasta_in").modified"
 
@@ -24,8 +24,8 @@ cat "$fasta_in" \
 --runThreadN 1 \
 --runMode genomeGenerate \
 --genomeDir ~/SCZ-BP/ \
---genomeFastaFiles ~/SCZ-BP/Mus_musculus.GRCm38.dna.primary_assembly_modified.fa 
---sjdbGTFfile ~/SCZ-BP/gencode.vM23.primary_assembly.annotation.gtf.gz \
+--genomeFastaFiles ~/SCZ-BP/Mus_musculus.GRCm38.dna.primary_assembly.fa.gz.modified
+--sjdbGTFfile ~/SCZ-BP/gencode.vM23.primary_assembly.annotation.gtf.gz.modified \
 
   
 # Run STARsolo 2.7.7a
