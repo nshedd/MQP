@@ -2,12 +2,22 @@
 work_path1=/data/zusers/sheddn
 work_path2=/data/zusers/pratth/sc/rna/mk
 
+genome="GRCh38"
+version="2020-A"
 
-cat "~/SCZ-BP/Mus_musculus.GRCm38.dna.primary_assembly.fa.gz" \
+build="GRCh38-2020-A_build"
+mkdir -p "$build"
+
+fasta_in="~/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+gtf_in="~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf"
+
+fasta_modified="$build/$(basename "$fasta_in").modified"
+
+cat "$fasta_in" \
     | sed -E 's/^>(\S+).*/>\1 \1/' \
     | sed -E 's/^>([0-9]+|[XY]) />chr\1 /' \
     | sed -E 's/^>MT />chrM /' \
-    > "~/SCZ-BP/Mus_musculus.GRCm38.dna.primary_assembly_modified.fa"
+    > "$fasta_modified"
 
 # Build genome
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
