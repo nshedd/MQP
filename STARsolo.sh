@@ -29,7 +29,7 @@ cat "$fasta_in" \
 --runThreadN 1 \
 --runMode genomeGenerate \
 --genomeDir ~/SCZ-BP/ \
---genomeFastaFiles /home/sheddn/yard/apps/cellranger-5.0.1/bin/rna/GRCh38-2020-A_build/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz.modified
+--genomeFastaFiles /home/sheddn/yard/apps/cellranger-5.0.1/bin/rna/mkref
 --sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz \
 
   
