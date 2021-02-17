@@ -29,8 +29,8 @@ cat "$fasta_in" \
 --runThreadN 1 \
 --runMode genomeGenerate \
 --genomeDir ~/SCZ-BP \
---genomeFastaFiles /home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
---sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf \
+--genomeFastaFiles /home/sheddn/git/MQP/GRCh38-2020-A_build/Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified \
+--sjdbGTFfile /home/sheddn/git/MQP/GRCh38-2020-A_build/gencode.v32.primary_assembly.annotation.gtf.modified \
 --outFileNamePrefix /home/sheddn/SCZ-BP \
 
   
