@@ -10,7 +10,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 #   ${work_path1}/STAR_index_2.7.7a/
   
 # Run STARsolo 2.7.7a
-/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+/data/zusers/sheddn/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ${work_path1}/SCZ-BP/ \
 --readFilesIn ${work_path2}/190620KelA_D19-6787_1_sequence.fastq.gz ${work_path2}/190620KelA_D19-6787_2_sequence.fastq.gz \
 --soloType Droplet \
