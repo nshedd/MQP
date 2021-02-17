@@ -8,8 +8,8 @@ version="2020-A"
 build="GRCh38-2020-A_build"
 mkdir -p "$build"
 
-fasta_in="/home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz"
-gtf_in="/home/sheddn/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz"
+fasta_in="/home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
+gtf_in="/home/sheddn/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf"
 
 fasta_modified="$build/$(basename "$fasta_in").modified"
 
@@ -28,9 +28,9 @@ cat "$fasta_in" \
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --runThreadN 1 \
 --runMode genomeGenerate \
---genomeDir ~/SCZ-BP/ \
---genomeFastaFiles /home/sheddn/yard/apps/cellranger-5.0.1/bin/rna/mkref \
---sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz \
+--genomeDir ~/SCZ-BP \
+--genomeFastaFiles /home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
+--sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf \
 --outFileNamePrefix /home/sheddn/SCZ-BP \
 
   
