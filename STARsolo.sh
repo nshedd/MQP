@@ -29,8 +29,8 @@ cat "$fasta_in" \
 --runThreadN 1 \
 --runMode genomeGenerate \
 --genomeDir ~/SCZ-BP/ \
---genomeFastaFiles ~/SCZ-BP/Homo_sapiens.GRCm38.dna.primary_assembly.fa.gz.modified
---sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz.modified \
+--genomeFastaFiles /home/sheddn/yard/apps/cellranger-5.0.1/bin/rna/GRCh38-2020-A_build/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz.modified
+--sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz \
 
   
 # Run STARsolo 2.7.7a
