@@ -26,12 +26,12 @@ cat "$fasta_in" \
 
 # Build genome
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---runThreadN 1 
---runMode genomeGenerate 
---genomeDir ~/SCZ-BP/ 
---genomeFastaFiles /home/sheddn/yard/apps/cellranger-5.0.1/bin/rna/mkref
---sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz 
---outFileNamePrefix /home/sheddn/SCZ-BP
+--runThreadN 1 \
+--runMode genomeGenerate \
+--genomeDir ~/SCZ-BP/ \
+--genomeFastaFiles /home/sheddn/yard/apps/cellranger-5.0.1/bin/rna/mkref \
+--sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz \
+--outFileNamePrefix /home/sheddn/SCZ-BP \
 
   
 # Run STARsolo 2.7.7a
