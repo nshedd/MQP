@@ -21,7 +21,7 @@ cat "$fasta_in" \
     > "$fasta_modified"
     
 # Create reference package
-cellranger mkref --ref-version="$version" \
+/home/sheddn/yard/apps/cellranger-5.0.1/cellranger mkref --ref-version="$version" \
     --genome="$genome" --fasta="$fasta_modified" --genes="$gtf_filtered"
 
 # Build genome
