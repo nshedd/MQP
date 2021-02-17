@@ -24,8 +24,8 @@ cat "$fasta_in" \
 --runThreadN 1 \
 --runMode genomeGenerate \
 --genomeDir ~/SCZ-BP/ \
---genomeFastaFiles ~/SCZ-BP/Mus_musculus.GRCm38.dna.primary_assembly.fa.gz.modified
---sjdbGTFfile ~/SCZ-BP/gencode.vM23.primary_assembly.annotation.gtf.gz.modified \
+--genomeFastaFiles ~/SCZ-BP/Homo_sapiens.GRCm38.dna.primary_assembly.fa.gz.modified
+--sjdbGTFfile ~/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf.gz.modified \
 
   
 # Run STARsolo 2.7.7a
