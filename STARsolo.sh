@@ -14,7 +14,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6787/
 
 # Run STARsolo 2.7.7a
@@ -28,7 +28,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6788/
 
 # Run STARsolo 2.7.7a
@@ -42,7 +42,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6789/
 
 # Run STARsolo 2.7.7a
@@ -56,7 +56,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6790/
 
 # Run STARsolo 2.7.7a
@@ -70,7 +70,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6791/
 
 # Run STARsolo 2.7.7a
@@ -84,7 +84,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6792/
 
 # Run STARsolo 2.7.7a
@@ -98,7 +98,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6793/
 
 # Run STARsolo 2.7.7a
@@ -112,7 +112,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6794/
 
 # Run STARsolo 2.7.7a
@@ -126,7 +126,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6795/
 
 # Run STARsolo 2.7.7a
@@ -140,7 +140,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6796/
 
 # Run STARsolo 2.7.7a
@@ -154,7 +154,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6797/
 
 # Run STARsolo 2.7.7a
@@ -168,7 +168,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6798/
 
 # Run STARsolo 2.7.7a
@@ -182,7 +182,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6799/
 
 # Run STARsolo 2.7.7a
@@ -196,7 +196,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6800/
 
 # Run STARsolo 2.7.7a
@@ -210,7 +210,7 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6801/
 
 # Run STARsolo 2.7.7a
@@ -224,5 +224,5 @@ work_path2=/data/zusers/pratth/sc/rna/mk
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/190620KelA_D19/6802/
