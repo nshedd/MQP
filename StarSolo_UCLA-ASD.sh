@@ -13,5 +13,5 @@ work_path2=/home/sheddn/UCLA-ASD/PEC_syn18898607/scRNAseq
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene
+--soloFeatures Gene \
 --outFileNamePrefix /home/sheddn/UCLA-ASD/PEC_syn18898607/scRNAseq/counts
