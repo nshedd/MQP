@@ -6,9 +6,9 @@ library(ggplot2)
 dir = '/home/sheddn/UCLA-ASD/PEC_syn18898607/scRNAseq/10BW_s13/plots'
 
 data_dir <- '/home/sheddn/UCLA-ASD/PEC_syn18898607/scRNAseq/10BW_s13/Solo.out/Gene/filtered'
-list.files(data_dir) # Should show barcodes.tsv.gz, features.tsv.gz, and matrix.mtx.gz
-data <- Read10X(data.dir = data_dir)
-ASD = CreateSeuratObject(counts = data$`Gene Expression`)
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+seurat_object = CreateSeuratObject(counts = expression_matrix)
 
 
 FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")
