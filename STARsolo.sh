@@ -1,5 +1,5 @@
 
-work_path1=/data/zusers/sheddn
+work_path1=/home/sheddn
 work_path2=/data/zusers/pratth/sc/rna/mk
 
   
