@@ -21,11 +21,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4296_S2_L001_R2_001.fastq,${work_path2}/D19-4296_S2_L002_R2_001.fastq ${work_path2}/D19-4296_S2_L001_R1_001.fastq,${work_path2}/D19-4296_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4296_S2_L001_R2_001.fastq,${work_path2}/D19-4296_S2_L002_R2_001.fastq,${work_path2}/D19-4296_S2_L003_R2_001.fastq,${work_path2}/D19-4296_S2_L004_R2_001.fastq ${work_path2}/D19-4296_S2_L001_R1_001.fastq,${work_path2}/D19-4296_S2_L002_R1_001.fastq,${work_path2}/D19-4296_S2_L003_R1_001.fastq,${work_path2}/D19-4296_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -36,11 +36,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4297_S1_L001_R2_001.fastq,${work_path2}/D19-4297_S1_L002_R2_001.fastq ${work_path2}/D19-4297_S1_L001_R1_001.fastq,${work_path2}/D19-4297_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4297_S1_L001_R2_001.fastq,${work_path2}/D19-4297_S1_L002_R2_001.fastq,${work_path2}/D19-4297_S1_L003_R2_001.fastq,${work_path2}/D19-4297_S1_L004_R2_001.fastq ${work_path2}/D19-4297_S1_L001_R1_001.fastq,${work_path2}/D19-4297_S1_L002_R1_001.fastq,${work_path2}/D19-4297_S1_L003_R1_001.fastq,${work_path2}/D19-4297_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -54,7 +54,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -65,11 +65,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4298_S2_L001_R2_001.fastq,${work_path2}/D19-4298_S2_L002_R2_001.fastq ${work_path2}/D19-4298_S2_L001_R1_001.fastq,${work_path2}/D19-4298_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4298_S2_L001_R2_001.fastq,${work_path2}/D19-4298_S2_L002_R2_001.fastq,${work_path2}/D19-4298_S2_L003_R2_001.fastq,${work_path2}/D19-4298_S2_L004_R2_001.fastq ${work_path2}/D19-4298_S2_L001_R1_001.fastq,${work_path2}/D19-4298_S2_L002_R1_001.fastq,${work_path2}/D19-4298_S2_L003_R1_001.fastq,${work_path2}/D19-4298_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -84,7 +84,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -95,11 +95,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4299_S1_L001_R2_001.fastq,${work_path2}/D19-4299_S1_L002_R2_001.fastq ${work_path2}/D19-4299_S1_L001_R1_001.fastq,${work_path2}/D19-4299_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4299_S1_L001_R2_001.fastq,${work_path2}/D19-4299_S1_L002_R2_001.fastq,${work_path2}/D19-4299_S1_L003_R2_001.fastq,${work_path2}/D19-4299_S1_L004_R2_001.fastq ${work_path2}/D19-4299_S1_L001_R1_001.fastq,${work_path2}/D19-4299_S1_L002_R1_001.fastq,${work_path2}/D19-4299_S1_L003_R1_001.fastq,${work_path2}/D19-4299_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -114,7 +114,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -125,11 +125,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4300_S2_L001_R2_001.fastq,${work_path2}/D19-4300_S2_L002_R2_001.fastq ${work_path2}/D19-4300_S2_L001_R1_001.fastq,${work_path2}/D19-4300_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4300_S2_L001_R2_001.fastq,${work_path2}/D19-4300_S2_L002_R2_001.fastq,${work_path2}/D19-4300_S2_L003_R2_001.fastq,${work_path2}/D19-4300_S2_L004_R2_001.fastq ${work_path2}/D19-4300_S2_L001_R1_001.fastq,${work_path2}/D19-4300_S2_L002_R1_001.fastq,${work_path2}/D19-4300_S2_L003_R1_001.fastq,${work_path2}/D19-4300_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -144,7 +144,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -155,11 +155,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4301_S1_L001_R2_001.fastq,${work_path2}/D19-4301_S1_L002_R2_001.fastq ${work_path2}/D19-4301_S1_L001_R1_001.fastq,${work_path2}/D19-4301_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4301_S1_L001_R2_001.fastq,${work_path2}/D19-4301_S1_L002_R2_001.fastq,${work_path2}/D19-4301_S1_L003_R2_001.fastq,${work_path2}/D19-4301_S1_L004_R2_001.fastq ${work_path2}/D19-4301_S1_L001_R1_001.fastq,${work_path2}/D19-4301_S1_L002_R1_001.fastq,${work_path2}/D19-4301_S1_L003_R1_001.fastq,${work_path2}/D19-4301_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -174,7 +174,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -185,11 +185,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4302_S2_L001_R2_001.fastq,${work_path2}/D19-4302_S2_L002_R2_001.fastq ${work_path2}/D19-4302_S2_L001_R1_001.fastq,${work_path2}/D19-4302_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4302_S2_L001_R2_001.fastq,${work_path2}/D19-4302_S2_L002_R2_001.fastq,${work_path2}/D19-4302_S2_L003_R2_001.fastq,${work_path2}/D19-4302_S2_L004_R2_001.fastq ${work_path2}/D19-4302_S2_L001_R1_001.fastq,${work_path2}/D19-4302_S2_L002_R1_001.fastq,${work_path2}/D19-4302_S2_L003_R1_001.fastq,${work_path2}/D19-4302_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -204,7 +204,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -215,11 +215,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4303_S3_L001_R2_001.fastq,${work_path2}/D19-4303_S3_L002_R2_001.fastq ${work_path2}/D19-4303_S3_L001_R1_001.fastq,${work_path2}/D19-4303_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4303_S3_L001_R2_001.fastq,${work_path2}/D19-4303_S3_L002_R2_001.fastq,${work_path2}/D19-4303_S3_L003_R2_001.fastq,${work_path2}/D19-4303_S3_L004_R2_001.fastq ${work_path2}/D19-4303_S3_L001_R1_001.fastq,${work_path2}/D19-4303_S3_L002_R1_001.fastq,${work_path2}/D19-4303_S3_L003_R1_001.fastq,${work_path2}/D19-4303_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -230,11 +230,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4304_S4_L001_R2_001.fastq,${work_path2}/D19-4304_S4_L002_R2_001.fastq ${work_path2}/D19-4304_S4_L001_R1_001.fastq,${work_path2}/D19-4304_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4304_S4_L001_R2_001.fastq,${work_path2}/D19-4304_S4_L002_R2_001.fastq,${work_path2}/D19-4304_S4_L003_R2_001.fastq,${work_path2}/D19-4304_S4_L004_R2_001.fastq ${work_path2}/D19-4304_S4_L001_R1_001.fastq,${work_path2}/D19-4304_S4_L002_R1_001.fastq,${work_path2}/D19-4304_S4_L003_R1_001.fastq,${work_path2}/D19-4304_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -245,11 +245,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4305_S3_L001_R2_001.fastq,${work_path2}/D19-4305_S3_L002_R2_001.fastq ${work_path2}/D19-4305_S3_L001_R1_001.fastq,${work_path2}/D19-4305_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4305_S3_L001_R2_001.fastq,${work_path2}/D19-4305_S3_L002_R2_001.fastq,${work_path2}/D19-4305_S3_L003_R2_001.fastq,${work_path2}/D19-4305_S3_L004_R2_001.fastq ${work_path2}/D19-4305_S3_L001_R1_001.fastq,${work_path2}/D19-4305_S3_L002_R1_001.fastq,${work_path2}/D19-4305_S3_L003_R1_001.fastq,${work_path2}/D19-4305_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -260,11 +260,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4306_S4_L001_R2_001.fastq,${work_path2}/D19-4306_S4_L002_R2_001.fastq ${work_path2}/D19-4306_S4_L001_R1_001.fastq,${work_path2}/D19-4306_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4306_S4_L001_R2_001.fastq,${work_path2}/D19-4306_S4_L002_R2_001.fastq,${work_path2}/D19-4306_S4_L003_R2_001.fastq,${work_path2}/D19-4306_S4_L004_R2_001.fastq ${work_path2}/D19-4306_S4_L001_R1_001.fastq,${work_path2}/D19-4306_S4_L002_R1_001.fastq,${work_path2}/D19-4306_S4_L003_R1_001.fastq,${work_path2}/D19-4306_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -275,11 +275,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4307_S3_L001_R2_001.fastq,${work_path2}/D19-4307_S3_L002_R2_001.fastq ${work_path2}/D19-4307_S3_L001_R1_001.fastq,${work_path2}/D19-4307_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4307_S3_L001_R2_001.fastq,${work_path2}/D19-4307_S3_L002_R2_001.fastq,${work_path2}/D19-4307_S3_L003_R2_001.fastq,${work_path2}/D19-4307_S3_L004_R2_001.fastq ${work_path2}/D19-4307_S3_L001_R1_001.fastq,${work_path2}/D19-4307_S3_L002_R1_001.fastq,${work_path2}/D19-4307_S3_L003_R1_001.fastq,${work_path2}/D19-4307_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -290,11 +290,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4308_S4_L001_R2_001.fastq,${work_path2}/D19-4308_S4_L002_R2_001.fastq ${work_path2}/D19-4308_S4_L001_R1_001.fastq,${work_path2}/D19-4308_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4308_S4_L001_R2_001.fastq,${work_path2}/D19-4308_S4_L002_R2_001.fastq,${work_path2}/D19-4308_S4_L003_R2_001.fastq,${work_path2}/D19-4308_S4_L004_R2_001.fastq ${work_path2}/D19-4308_S4_L001_R1_001.fastq,${work_path2}/D19-4308_S4_L002_R1_001.fastq,${work_path2}/D19-4308_S4_L003_R1_001.fastq,${work_path2}/D19-4308_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -305,11 +305,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4309_S3_L001_R2_001.fastq,${work_path2}/D19-4309_S3_L002_R2_001.fastq ${work_path2}/D19-4309_S3_L001_R1_001.fastq,${work_path2}/D19-4309_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4309_S3_L001_R2_001.fastq,${work_path2}/D19-4309_S3_L002_R2_001.fastq,${work_path2}/D19-4309_S3_L003_R2_001.fastq,${work_path2}/D19-4309_S3_L004_R2_001.fastq ${work_path2}/D19-4309_S3_L001_R1_001.fastq,${work_path2}/D19-4309_S3_L002_R1_001.fastq,${work_path2}/D19-4309_S3_L003_R1_001.fastq,${work_path2}/D19-4309_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -320,11 +320,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4310_S4_L001_R2_001.fastq,${work_path2}/D19-4310_S4_L002_R2_001.fastq ${work_path2}/D19-4310_S4_L001_R1_001.fastq,${work_path2}/D19-4310_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-4310_S4_L001_R2_001.fastq,${work_path2}/D19-4310_S4_L002_R2_001.fastq,${work_path2}/D19-4310_S4_L003_R2_001.fastq,${work_path2}/D19-4310_S4_L004_R2_001.fastq ${work_path2}/D19-4310_S4_L001_R1_001.fastq,${work_path2}/D19-4310_S4_L002_R1_001.fastq,${work_path2}/D19-4310_S4_L003_R1_001.fastq,${work_path2}/D19-4310_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -335,11 +335,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5859_S1_L001_R2_001.fastq,${work_path2}/D19-5859_S1_L002_R2_001.fastq ${work_path2}/D19-5859_S1_L001_R1_001.fastq,${work_path2}/D19-5859_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5859_S1_L001_R2_001.fastq,${work_path2}/D19-5859_S1_L002_R2_001.fastq,${work_path2}/D19-5859_S1_L003_R2_001.fastq,${work_path2}/D19-5859_S1_L004_R2_001.fastq ${work_path2}/D19-5859_S1_L001_R1_001.fastq,${work_path2}/D19-5859_S1_L002_R1_001.fastq,${work_path2}/D19-5859_S1_L003_R1_001.fastq,${work_path2}/D19-5859_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -350,11 +350,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5860_S2_L001_R2_001.fastq,${work_path2}/D19-5860_S2_L002_R2_001.fastq ${work_path2}/D19-5860_S2_L001_R1_001.fastq,${work_path2}/D19-5860_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5860_S2_L001_R2_001.fastq,${work_path2}/D19-5860_S2_L002_R2_001.fastq,${work_path2}/D19-5860_S2_L003_R2_001.fastq,${work_path2}/D19-5860_S2_L004_R2_001.fastq ${work_path2}/D19-5860_S2_L001_R1_001.fastq,${work_path2}/D19-5860_S2_L002_R1_001.fastq,${work_path2}/D19-5860_S2_L003_R1_001.fastq,${work_path2}/D19-5860_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -365,11 +365,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5861_S1_L001_R2_001.fastq,${work_path2}/D19-5861_S1_L002_R2_001.fastq ${work_path2}/D19-5861_S1_L001_R1_001.fastq,${work_path2}/D19-5861_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5861_S1_L001_R2_001.fastq,${work_path2}/D19-5861_S1_L002_R2_001.fastq,${work_path2}/D19-5861_S1_L003_R2_001.fastq,${work_path2}/D19-5861_S1_L004_R2_001.fastq ${work_path2}/D19-5861_S1_L001_R1_001.fastq,${work_path2}/D19-5861_S1_L002_R1_001.fastq,${work_path2}/D19-5861_S1_L003_R1_001.fastq,${work_path2}/D19-5861_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -384,7 +384,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -395,11 +395,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5862_S2_L001_R2_001.fastq,${work_path2}/D19-5862_S2_L002_R2_001.fastq ${work_path2}/D19-5862_S2_L001_R1_001.fastq,${work_path2}/D19-5862_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5862_S2_L001_R2_001.fastq,${work_path2}/D19-5862_S2_L002_R2_001.fastq,${work_path2}/D19-5862_S2_L003_R2_001.fastq,${work_path2}/D19-5862_S2_L004_R2_001.fastq ${work_path2}/D19-5862_S2_L001_R1_001.fastq,${work_path2}/D19-5862_S2_L002_R1_001.fastq,${work_path2}/D19-5862_S2_L003_R1_001.fastq,${work_path2}/D19-5862_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -414,7 +414,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -425,11 +425,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5862_S1_L001_R2_001.fastq,${work_path2}/D19-5862_S1_L002_R2_001.fastq ${work_path2}/D19-5862_S1_L001_R1_001.fastq,${work_path2}/D19-5862_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5862_S1_L001_R2_001.fastq,${work_path2}/D19-5862_S1_L002_R2_001.fastq,${work_path2}/D19-5862_S1_L003_R2_001.fastq,${work_path2}/D19-5862_S1_L004_R2_001.fastq ${work_path2}/D19-5862_S1_L001_R1_001.fastq,${work_path2}/D19-5862_S1_L002_R1_001.fastq,${work_path2}/D19-5862_S1_L003_R1_001.fastq,${work_path2}/D19-5862_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -444,7 +444,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -455,11 +455,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5864_S2_L001_R2_001.fastq,${work_path2}/D19-5864_S2_L002_R2_001.fastq ${work_path2}/D19-5864_S2_L001_R1_001.fastq,${work_path2}/D19-5864_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5864_S2_L001_R2_001.fastq,${work_path2}/D19-5864_S2_L002_R2_001.fastq,${work_path2}/D19-5864_S2_L003_R2_001.fastq,${work_path2}/D19-5864_S2_L004_R2_001.fastq ${work_path2}/D19-5864_S2_L001_R1_001.fastq,${work_path2}/D19-5864_S2_L002_R1_001.fastq,${work_path2}/D19-5864_S2_L003_R1_001.fastq,${work_path2}/D19-5864_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -474,7 +474,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -485,11 +485,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5865_S1_L001_R2_001.fastq,${work_path2}/D19-5865_S1_L002_R2_001.fastq ${work_path2}/D19-5865_S1_L001_R1_001.fastq,${work_path2}/D19-5865_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5865_S1_L001_R2_001.fastq,${work_path2}/D19-5865_S1_L002_R2_001.fastq,${work_path2}/D19-5865_S1_L003_R2_001.fastq,${work_path2}/D19-5865_S1_L004_R2_001.fastq ${work_path2}/D19-5865_S1_L001_R1_001.fastq,${work_path2}/D19-5865_S1_L002_R1_001.fastq,${work_path2}/D19-5865_S1_L003_R1_001.fastq,${work_path2}/D19-5865_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -504,7 +504,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -515,11 +515,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5866_S2_L001_R2_001.fastq,${work_path2}/D19-5866_S2_L002_R2_001.fastq ${work_path2}/D19-5866_S2_L001_R1_001.fastq,${work_path2}/D19-5866_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5866_S2_L001_R2_001.fastq,${work_path2}/D19-5866_S2_L002_R2_001.fastq,${work_path2}/D19-5866_S2_L003_R2_001.fastq,${work_path2}/D19-5866_S2_L004_R2_001.fastq ${work_path2}/D19-5866_S2_L001_R1_001.fastq,${work_path2}/D19-5866_S2_L002_R1_001.fastq,${work_path2}/D19-5866_S2_L003_R1_001.fastq,${work_path2}/D19-5866_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -534,7 +534,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -545,11 +545,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5867_S3_L001_R2_001.fastq,${work_path2}/D19-5867_S3_L002_R2_001.fastq ${work_path2}/D19-5867_S3_L001_R1_001.fastq,${work_path2}/D19-5867_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5867_S3_L001_R2_001.fastq,${work_path2}/D19-5867_S3_L002_R2_001.fastq,${work_path2}/D19-5867_S3_L003_R2_001.fastq,${work_path2}/D19-5867_S3_L004_R2_001.fastq ${work_path2}/D19-5867_S3_L001_R1_001.fastq,${work_path2}/D19-5867_S3_L002_R1_001.fastq,${work_path2}/D19-5867_S3_L003_R1_001.fastq,${work_path2}/D19-5867_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -560,11 +560,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5868_S4_L001_R2_001.fastq,${work_path2}/D19-5868_S4_L002_R2_001.fastq ${work_path2}/D19-5868_S4_L001_R1_001.fastq,${work_path2}/D19-5868_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5868_S4_L001_R2_001.fastq,${work_path2}/D19-5868_S4_L002_R2_001.fastq,${work_path2}/D19-5868_S4_L003_R2_001.fastq,${work_path2}/D19-5868_S4_L004_R2_001.fastq ${work_path2}/D19-5868_S4_L001_R1_001.fastq,${work_path2}/D19-5868_S4_L002_R1_001.fastq,${work_path2}/D19-5868_S4_L003_R1_001.fastq,${work_path2}/D19-5868_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -575,11 +575,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5869_S3_L001_R2_001.fastq,${work_path2}/D19-5869_S3_L002_R2_001.fastq ${work_path2}/D19-5869_S3_L001_R1_001.fastq,${work_path2}/D19-5869_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5869_S3_L001_R2_001.fastq,${work_path2}/D19-5869_S3_L002_R2_001.fastq,${work_path2}/D19-5869_S3_L003_R2_001.fastq,${work_path2}/D19-5869_S3_L004_R2_001.fastq ${work_path2}/D19-5869_S3_L001_R1_001.fastq,${work_path2}/D19-5869_S3_L002_R1_001.fastq,${work_path2}/D19-5869_S3_L003_R1_001.fastq,${work_path2}/D19-5869_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -590,11 +590,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5870_S4_L001_R2_001.fastq,${work_path2}/D19-5870_S4_L002_R2_001.fastq ${work_path2}/D19-5870_S4_L001_R1_001.fastq,${work_path2}/D19-5870_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5870_S4_L001_R2_001.fastq,${work_path2}/D19-5870_S4_L002_R2_001.fastq,${work_path2}/D19-5870_S4_L003_R2_001.fastq,${work_path2}/D19-5870_S4_L004_R2_001.fastq ${work_path2}/D19-5870_S4_L001_R1_001.fastq,${work_path2}/D19-5870_S4_L002_R1_001.fastq,${work_path2}/D19-5870_S4_L003_R1_001.fastq,${work_path2}/D19-5870_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -605,11 +605,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5871_S3_L001_R2_001.fastq,${work_path2}/D19-5871_S3_L002_R2_001.fastq ${work_path2}/D19-5871_S3_L001_R1_001.fastq,${work_path2}/D19-5871_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5871_S3_L001_R2_001.fastq,${work_path2}/D19-5871_S3_L002_R2_001.fastq,${work_path2}/D19-5871_S3_L003_R2_001.fastq,${work_path2}/D19-5871_S3_L004_R2_001.fastq ${work_path2}/D19-5871_S3_L001_R1_001.fastq,${work_path2}/D19-5871_S3_L002_R1_001.fastq,${work_path2}/D19-5871_S3_L003_R1_001.fastq,${work_path2}/D19-5871_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -620,11 +620,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5872_S4_L001_R2_001.fastq,${work_path2}/D19-5872_S4_L002_R2_001.fastq ${work_path2}/D19-5872_S4_L001_R1_001.fastq,${work_path2}/D19-5872_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5872_S4_L001_R2_001.fastq,${work_path2}/D19-5872_S4_L002_R2_001.fastq,${work_path2}/D19-5872_S4_L003_R2_001.fastq,${work_path2}/D19-5872_S4_L004_R2_001.fastq ${work_path2}/D19-5872_S4_L001_R1_001.fastq,${work_path2}/D19-5872_S4_L002_R1_001.fastq,${work_path2}/D19-5872_S4_L003_R1_001.fastq,${work_path2}/D19-5872_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -634,11 +634,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
   # Run STARsolo 2.7.7a
   ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5873_S1_L001_R2_001.fastq,${work_path2}/D19-5873_S1_L002_R2_001.fastq ${work_path2}/D19-5873_S1_L001_R1_001.fastq,${work_path2}/D19-5873_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5873_S1_L001_R2_001.fastq,${work_path2}/D19-5873_S1_L002_R2_001.fastq,${work_path2}/D19-5873_S1_L003_R2_001.fastq,${work_path2}/D19-5873_S1_L004_R2_001.fastq ${work_path2}/D19-5873_S1_L001_R1_001.fastq,${work_path2}/D19-5873_S1_L002_R1_001.fastq,${work_path2}/D19-5873_S1_L003_R1_001.fastq,${work_path2}/D19-5873_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -649,11 +649,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-5874_S3_L001_R2_001.fastq,${work_path2}/D19-5874_S3_L002_R2_001.fastq ${work_path2}/D19-5874_S3_L001_R1_001.fastq,${work_path2}/D19-5874_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-5874_S3_L001_R2_001.fastq,${work_path2}/D19-5874_S3_L002_R2_001.fastq,${work_path2}/D19-5874_S3_L003_R2_001.fastq,${work_path2}/D19-5874_S3_L004_R2_001.fastq ${work_path2}/D19-5874_S3_L001_R1_001.fastq,${work_path2}/D19-5874_S3_L002_R1_001.fastq,${work_path2}/D19-5874_S3_L003_R1_001.fastq,${work_path2}/D19-5874_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -664,11 +664,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-6155_S4_L001_R2_001.fastq,${work_path2}/D19-6155_S4_L002_R2_001.fastq ${work_path2}/D19-6155_S4_L001_R1_001.fastq,${work_path2}/D19-6155_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-6155_S4_L001_R2_001.fastq,${work_path2}/D19-6155_S4_L002_R2_001.fastq,${work_path2}/D19-6155_S4_L003_R2_001.fastq,${work_path2}/D19-6155_S4_L004_R2_001.fastq ${work_path2}/D19-6155_S4_L001_R1_001.fastq,${work_path2}/D19-6155_S4_L002_R1_001.fastq,${work_path2}/D19-6155_S4_L003_R1_001.fastq,${work_path2}/D19-6155_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -683,7 +683,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -698,7 +698,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -713,7 +713,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -728,7 +728,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -743,7 +743,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -758,7 +758,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -773,7 +773,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -788,7 +788,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -803,7 +803,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -818,7 +818,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -833,7 +833,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -848,7 +848,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -863,7 +863,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -878,7 +878,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -893,7 +893,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -908,7 +908,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -919,11 +919,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7348_S1_L001_R2_001.fastq,${work_path2}/D19-7348_S1_L002_R2_001.fastq ${work_path2}/D19-7348_S1_L001_R1_001.fastq,${work_path2}/D19-7348_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7348_S1_L001_R2_001.fastq,${work_path2}/D19-7348_S1_L002_R2_001.fastq,${work_path2}/D19-7348_S1_L003_R2_001.fastq,${work_path2}/D19-7348_S1_L004_R2_001.fastq ${work_path2}/D19-7348_S1_L001_R1_001.fastq,${work_path2}/D19-7348_S1_L002_R1_001.fastq,${work_path2}/D19-7348_S1_L003_R1_001.fastq,${work_path2}/D19-7348_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -934,11 +934,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7349_S2_L001_R2_001.fastq,${work_path2}/D19-7349_S2_L002_R2_001.fastq ${work_path2}/D19-7349_S2_L001_R1_001.fastq,${work_path2}/D19-7349_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7349_S2_L001_R2_001.fastq,${work_path2}/D19-7349_S2_L002_R2_001.fastq,${work_path2}/D19-7349_S2_L003_R2_001.fastq,${work_path2}/D19-7349_S2_L004_R2_001.fastq ${work_path2}/D19-7349_S2_L001_R1_001.fastq,${work_path2}/D19-7349_S2_L002_R1_001.fastq,${work_path2}/D19-7349_S2_L003_R1_001.fastq,${work_path2}/D19-7349_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -949,11 +949,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7350_S3_L001_R2_001.fastq,${work_path2}/D19-7350_S3_L002_R2_001.fastq ${work_path2}/D19-7350_S3_L001_R1_001.fastq,${work_path2}/D19-7350_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7350_S3_L001_R2_001.fastq,${work_path2}/D19-7350_S3_L002_R2_001.fastq,${work_path2}/D19-7350_S3_L003_R2_001.fastq,${work_path2}/D19-7350_S3_L004_R2_001.fastq ${work_path2}/D19-7350_S3_L001_R1_001.fastq,${work_path2}/D19-7350_S3_L002_R1_001.fastq,${work_path2}/D19-7350_S3_L003_R1_001.fastq,${work_path2}/D19-7350_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -964,11 +964,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7351_S4_L001_R2_001.fastq,${work_path2}/D19-7351_S4_L002_R2_001.fastq ${work_path2}/D19-7351_S4_L001_R1_001.fastq,${work_path2}/D19-7351_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7351_S4_L001_R2_001.fastq,${work_path2}/D19-7351_S4_L002_R2_001.fastq,${work_path2}/D19-7351_S4_L003_R2_001.fastq,${work_path2}/D19-7351_S4_L004_R2_001.fastq ${work_path2}/D19-7351_S4_L001_R1_001.fastq,${work_path2}/D19-7351_S4_L002_R1_001.fastq,${work_path2}/D19-7351_S4_L003_R1_001.fastq,${work_path2}/D19-7351_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -979,11 +979,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7352_S5_L001_R2_001.fastq,${work_path2}/D19-7352_S5_L002_R2_001.fastq ${work_path2}/D19-7352_S5_L001_R1_001.fastq,${work_path2}/D19-7352_S5_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7352_S5_L001_R2_001.fastq,${work_path2}/D19-7352_S5_L002_R2_001.fastq,${work_path2}/D19-7352_S5_L003_R2_001.fastq,${work_path2}/D19-7352_S5_L004_R2_001.fastq ${work_path2}/D19-7352_S5_L001_R1_001.fastq,${work_path2}/D19-7352_S5_L002_R1_001.fastq,${work_path2}/D19-7352_S5_L003_R1_001.fastq,${work_path2}/D19-7352_S5_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -994,11 +994,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7353_S6_L001_R2_001.fastq,${work_path2}/D19-7353_S6_L002_R2_001.fastq ${work_path2}/D19-7353_S6_L001_R1_001.fastq,${work_path2}/D19-7353_S6_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7353_S6_L001_R2_001.fastq,${work_path2}/D19-7353_S6_L002_R2_001.fastq,${work_path2}/D19-7353_S6_L003_R2_001.fastq,${work_path2}/D19-7353_S6_L004_R2_001.fastq ${work_path2}/D19-7353_S6_L001_R1_001.fastq,${work_path2}/D19-7353_S6_L002_R1_001.fastq,${work_path2}/D19-7353_S6_L003_R1_001.fastq,${work_path2}/D19-7353_S6_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1009,11 +1009,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7354_S7_L001_R2_001.fastq,${work_path2}/D19-7354_S7_L002_R2_001.fastq ${work_path2}/D19-7354_S7_L001_R1_001.fastq,${work_path2}/D19-7354_S7_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7354_S7_L001_R2_001.fastq,${work_path2}/D19-7354_S7_L002_R2_001.fastq,${work_path2}/D19-7354_S7_L003_R2_001.fastq,${work_path2}/D19-7354_S7_L004_R2_001.fastq ${work_path2}/D19-7354_S7_L001_R1_001.fastq,${work_path2}/D19-7354_S7_L002_R1_001.fastq,${work_path2}/D19-7354_S7_L003_R1_001.fastq,${work_path2}/D19-7354_S7_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1024,11 +1024,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7355_S8_L001_R2_001.fastq,${work_path2}/D19-7355_S8_L002_R2_001.fastq ${work_path2}/D19-7355_S8_L001_R1_001.fastq,${work_path2}/D19-7355_S8_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7355_S8_L001_R2_001.fastq,${work_path2}/D19-7355_S8_L002_R2_001.fastq,${work_path2}/D19-7355_S8_L003_R2_001.fastq,${work_path2}/D19-7355_S8_L004_R2_001.fastq ${work_path2}/D19-7355_S8_L001_R1_001.fastq,${work_path2}/D19-7355_S8_L002_R1_001.fastq,${work_path2}/D19-7355_S8_L003_R1_001.fastq,${work_path2}/D19-7355_S8_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1039,11 +1039,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7356_S9_L001_R2_001.fastq,${work_path2}/D19-7356_S9_L002_R2_001.fastq ${work_path2}/D19-7356_S9_L001_R1_001.fastq,${work_path2}/D19-7356_S9_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7356_S9_L001_R2_001.fastq,${work_path2}/D19-7356_S9_L002_R2_001.fastq,${work_path2}/D19-7356_S9_L003_R2_001.fastq,${work_path2}/D19-7356_S9_L004_R2_001.fastq ${work_path2}/D19-7356_S9_L001_R1_001.fastq,${work_path2}/D19-7356_S9_L002_R1_001.fastq,${work_path2}/D19-7356_S9_L003_R1_001.fastq,${work_path2}/D19-7356_S9_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1054,11 +1054,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7357_S10_L001_R2_001.fastq,${work_path2}/D19-7357_S10_L002_R2_001.fastq ${work_path2}/D19-7357_S10_L001_R1_001.fastq,${work_path2}/D19-7357_S10_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7357_S10_L001_R2_001.fastq,${work_path2}/D19-7357_S10_L002_R2_001.fastq,${work_path2}/D19-7357_S10_L003_R2_001.fastq,${work_path2}/D19-7357_S10_L004_R2_001.fastq ${work_path2}/D19-7357_S10_L001_R1_001.fastq,${work_path2}/D19-7357_S10_L002_R1_001.fastq,${work_path2}/D19-7357_S10_L003_R1_001.fastq,${work_path2}/D19-7357_S10_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1069,11 +1069,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7358_S11_L001_R2_001.fastq,${work_path2}/D19-7358_S11_L002_R2_001.fastq ${work_path2}/D19-7358_S11_L001_R1_001.fastq,${work_path2}/D19-7358_S11_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7358_S11_L001_R2_001.fastq,${work_path2}/D19-7358_S11_L002_R2_001.fastq,${work_path2}/D19-7358_S11_L003_R2_001.fastq,${work_path2}/D19-7358_S11_L004_R2_001.fastq ${work_path2}/D19-7358_S11_L001_R1_001.fastq,${work_path2}/D19-7358_S11_L002_R1_001.fastq,${work_path2}/D19-7358_S11_L003_R1_001.fastq,${work_path2}/D19-7358_S11_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1084,11 +1084,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7359_S12_L001_R2_001.fastq,${work_path2}/D19-7359_S12_L002_R2_001.fastq ${work_path2}/D19-7359_S12_L001_R1_001.fastq,${work_path2}/D19-7359_S12_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7359_S12_L001_R2_001.fastq,${work_path2}/D19-7359_S12_L002_R2_001.fastq,${work_path2}/D19-7359_S12_L003_R2_001.fastq,${work_path2}/D19-7359_S12_L004_R2_001.fastq ${work_path2}/D19-7359_S12_L001_R1_001.fastq,${work_path2}/D19-7359_S12_L002_R1_001.fastq,${work_path2}/D19-7359_S12_L003_R1_001.fastq,${work_path2}/D19-7359_S12_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1099,11 +1099,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7360_S13_L001_R2_001.fastq,${work_path2}/D19-7360_S13_L002_R2_001.fastq ${work_path2}/D19-7360_S13_L001_R1_001.fastq,${work_path2}/D19-7360_S13_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7360_S13_L001_R2_001.fastq,${work_path2}/D19-7360_S13_L002_R2_001.fastq,${work_path2}/D19-7360_S13_L003_R2_001.fastq,${work_path2}/D19-7360_S13_L004_R2_001.fastq ${work_path2}/D19-7360_S13_L001_R1_001.fastq,${work_path2}/D19-7360_S13_L002_R1_001.fastq,${work_path2}/D19-7360_S13_L003_R1_001.fastq,${work_path2}/D19-7360_S13_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1114,11 +1114,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7361_S14_L001_R2_001.fastq,${work_path2}/D19-7361_S14_L002_R2_001.fastq ${work_path2}/D19-7361_S14_L001_R1_001.fastq,${work_path2}/D19-7361_S14_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7361_S14_L001_R2_001.fastq,${work_path2}/D19-7361_S14_L002_R2_001.fastq,${work_path2}/D19-7361_S14_L003_R2_001.fastq,${work_path2}/D19-7361_S14_L004_R2_001.fastq ${work_path2}/D19-7361_S14_L001_R1_001.fastq,${work_path2}/D19-7361_S14_L002_R1_001.fastq,${work_path2}/D19-7361_S14_L003_R1_001.fastq,${work_path2}/D19-7361_S14_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1129,11 +1129,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7362_S15_L001_R2_001.fastq,${work_path2}/D19-7362_S15_L002_R2_001.fastq ${work_path2}/D19-7362_S15_L001_R1_001.fastq,${work_path2}/D19-7362_S15_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7362_S15_L001_R2_001.fastq,${work_path2}/D19-7362_S15_L002_R2_001.fastq,${work_path2}/D19-7362_S15_L003_R2_001.fastq,${work_path2}/D19-7362_S15_L004_R2_001.fastq ${work_path2}/D19-7362_S15_L001_R1_001.fastq,${work_path2}/D19-7362_S15_L002_R1_001.fastq,${work_path2}/D19-7362_S15_L003_R1_001.fastq,${work_path2}/D19-7362_S15_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1144,11 +1144,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7363_S16_L001_R2_001.fastq,${work_path2}/D19-7363_S16_L002_R2_001.fastq ${work_path2}/D19-7363_S16_L001_R1_001.fastq,${work_path2}/D19-7363_S16_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7363_S16_L001_R2_001.fastq,${work_path2}/D19-7363_S16_L002_R2_001.fastq,${work_path2}/D19-7363_S16_L003_R2_001.fastq,${work_path2}/D19-7363_S16_L004_R2_001.fastq ${work_path2}/D19-7363_S16_L001_R1_001.fastq,${work_path2}/D19-7363_S16_L002_R1_001.fastq,${work_path2}/D19-7363_S16_L003_R1_001.fastq,${work_path2}/D19-7363_S16_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1159,11 +1159,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7364_S1_L001_R2_001.fastq,${work_path2}/D19-7364_S1_L002_R2_001.fastq ${work_path2}/D19-7364_S1_L001_R1_001.fastq,${work_path2}/D19-7364_S1_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7364_S1_L001_R2_001.fastq,${work_path2}/D19-7364_S1_L002_R2_001.fastq,${work_path2}/D19-7364_S1_L003_R2_001.fastq,${work_path2}/D19-7364_S1_L004_R2_001.fastq ${work_path2}/D19-7364_S1_L001_R1_001.fastq,${work_path2}/D19-7364_S1_L002_R1_001.fastq,${work_path2}/D19-7364_S1_L003_R1_001.fastq,${work_path2}/D19-7364_S1_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1174,11 +1174,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7365_S2_L001_R2_001.fastq,${work_path2}/D19-7365_S2_L002_R2_001.fastq ${work_path2}/D19-7365_S2_L001_R1_001.fastq,${work_path2}/D19-7365_S2_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7365_S2_L001_R2_001.fastq,${work_path2}/D19-7365_S2_L002_R2_001.fastq,${work_path2}/D19-7365_S2_L003_R2_001.fastq,${work_path2}/D19-7365_S2_L004_R2_001.fastq ${work_path2}/D19-7365_S2_L001_R1_001.fastq,${work_path2}/D19-7365_S2_L002_R1_001.fastq,${work_path2}/D19-7365_S2_L003_R1_001.fastq,${work_path2}/D19-7365_S2_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1189,11 +1189,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7366_S3_L001_R2_001.fastq,${work_path2}/D19-7366_S3_L002_R2_001.fastq ${work_path2}/D19-7366_S3_L001_R1_001.fastq,${work_path2}/D19-7366_S3_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7366_S3_L001_R2_001.fastq,${work_path2}/D19-7366_S3_L002_R2_001.fastq,${work_path2}/D19-7366_S3_L003_R2_001.fastq,${work_path2}/D19-7366_S3_L004_R2_001.fastq ${work_path2}/D19-7366_S3_L001_R1_001.fastq,${work_path2}/D19-7366_S3_L002_R1_001.fastq,${work_path2}/D19-7366_S3_L003_R1_001.fastq,${work_path2}/D19-7366_S3_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1204,11 +1204,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7367_S4_L001_R2_001.fastq,${work_path2}/D19-7367_S4_L002_R2_001.fastq ${work_path2}/D19-7367_S4_L001_R1_001.fastq,${work_path2}/D19-7367_S4_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7367_S4_L001_R2_001.fastq,${work_path2}/D19-7367_S4_L002_R2_001.fastq,${work_path2}/D19-7367_S4_L003_R2_001.fastq,${work_path2}/D19-7367_S4_L004_R2_001.fastq ${work_path2}/D19-7367_S4_L001_R1_001.fastq,${work_path2}/D19-7367_S4_L002_R1_001.fastq,${work_path2}/D19-7367_S4_L003_R1_001.fastq,${work_path2}/D19-7367_S4_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1219,11 +1219,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7368_S5_L001_R2_001.fastq,${work_path2}/D19-7368_S5_L002_R2_001.fastq ${work_path2}/D19-7368_S5_L001_R1_001.fastq,${work_path2}/D19-7368_S5_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7368_S5_L001_R2_001.fastq,${work_path2}/D19-7368_S5_L002_R2_001.fastq,${work_path2}/D19-7368_S5_L003_R2_001.fastq,${work_path2}/D19-7368_S5_L004_R2_001.fastq ${work_path2}/D19-7368_S5_L001_R1_001.fastq,${work_path2}/D19-7368_S5_L002_R1_001.fastq,${work_path2}/D19-7368_S5_L003_R1_001.fastq,${work_path2}/D19-7368_S5_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1234,11 +1234,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7369_S6_L001_R2_001.fastq,${work_path2}/D19-7369_S6_L002_R2_001.fastq ${work_path2}/D19-7369_S6_L001_R1_001.fastq,${work_path2}/D19-7369_S6_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7369_S6_L001_R2_001.fastq,${work_path2}/D19-7369_S6_L002_R2_001.fastq,${work_path2}/D19-7369_S6_L003_R2_001.fastq,${work_path2}/D19-7369_S6_L004_R2_001.fastq ${work_path2}/D19-7369_S6_L001_R1_001.fastq,${work_path2}/D19-7369_S6_L002_R1_001.fastq,${work_path2}/D19-7369_S6_L003_R1_001.fastq,${work_path2}/D19-7369_S6_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1249,11 +1249,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7370_S7_L001_R2_001.fastq,${work_path2}/D19-7370_S7_L002_R2_001.fastq ${work_path2}/D19-7370_S7_L001_R1_001.fastq,${work_path2}/D19-7370_S7_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7370_S7_L001_R2_001.fastq,${work_path2}/D19-7370_S7_L002_R2_001.fastq,${work_path2}/D19-7370_S7_L003_R2_001.fastq,${work_path2}/D19-7370_S7_L004_R2_001.fastq ${work_path2}/D19-7370_S7_L001_R1_001.fastq,${work_path2}/D19-7370_S7_L002_R1_001.fastq,${work_path2}/D19-7370_S7_L003_R1_001.fastq,${work_path2}/D19-7370_S7_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1264,11 +1264,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7371_S8_L001_R2_001.fastq,${work_path2}/D19-7371_S8_L002_R2_001.fastq ${work_path2}/D19-7371_S8_L001_R1_001.fastq,${work_path2}/D19-7371_S8_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7371_S8_L001_R2_001.fastq,${work_path2}/D19-7371_S8_L002_R2_001.fastq,${work_path2}/D19-7371_S8_L003_R2_001.fastq,${work_path2}/D19-7371_S8_L004_R2_001.fastq ${work_path2}/D19-7371_S8_L001_R1_001.fastq,${work_path2}/D19-7371_S8_L002_R1_001.fastq,${work_path2}/D19-7371_S8_L003_R1_001.fastq,${work_path2}/D19-7371_S8_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1279,11 +1279,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7372_S9_L001_R2_001.fastq,${work_path2}/D19-7372_S9_L002_R2_001.fastq ${work_path2}/D19-7372_S9_L001_R1_001.fastq,${work_path2}/D19-7372_S9_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7372_S9_L001_R2_001.fastq,${work_path2}/D19-7372_S9_L002_R2_001.fastq,${work_path2}/D19-7372_S9_L003_R2_001.fastq,${work_path2}/D19-7372_S9_L004_R2_001.fastq ${work_path2}/D19-7372_S9_L001_R1_001.fastq,${work_path2}/D19-7372_S9_L002_R1_001.fastq,${work_path2}/D19-7372_S9_L003_R1_001.fastq,${work_path2}/D19-7372_S9_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1294,11 +1294,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7373_S10_L001_R2_001.fastq,${work_path2}/D19-7373_S10_L002_R2_001.fastq ${work_path2}/D19-7373_S10_L001_R1_001.fastq,${work_path2}/D19-7373_S10_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7373_S10_L001_R2_001.fastq,${work_path2}/D19-7373_S10_L002_R2_001.fastq,${work_path2}/D19-7373_S10_L003_R2_001.fastq,${work_path2}/D19-7373_S10_L004_R2_001.fastq ${work_path2}/D19-7373_S10_L001_R1_001.fastq,${work_path2}/D19-7373_S10_L002_R1_001.fastq,${work_path2}/D19-7373_S10_L003_R1_001.fastq,${work_path2}/D19-7373_S10_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1309,11 +1309,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7374_S11_L001_R2_001.fastq,${work_path2}/D19-7374_S11_L002_R2_001.fastq ${work_path2}/D19-7374_S11_L001_R1_001.fastq,${work_path2}/D19-7374_S11_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7374_S11_L001_R2_001.fastq,${work_path2}/D19-7374_S11_L002_R2_001.fastq,${work_path2}/D19-7374_S11_L003_R2_001.fastq,${work_path2}/D19-7374_S11_L004_R2_001.fastq ${work_path2}/D19-7374_S11_L001_R1_001.fastq,${work_path2}/D19-7374_S11_L002_R1_001.fastq,${work_path2}/D19-7374_S11_L003_R1_001.fastq,${work_path2}/D19-7374_S11_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1324,11 +1324,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7375_S12_L001_R2_001.fastq,${work_path2}/D19-7375_S12_L002_R2_001.fastq ${work_path2}/D19-7375_S12_L001_R1_001.fastq,${work_path2}/D19-7375_S12_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7375_S12_L001_R2_001.fastq,${work_path2}/D19-7375_S12_L002_R2_001.fastq,${work_path2}/D19-7375_S12_L003_R2_001.fastq,${work_path2}/D19-7375_S12_L004_R2_001.fastq ${work_path2}/D19-7375_S12_L001_R1_001.fastq,${work_path2}/D19-7375_S12_L002_R1_001.fastq,${work_path2}/D19-7375_S12_L003_R1_001.fastq,${work_path2}/D19-7375_S12_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1339,11 +1339,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7376_S13_L001_R2_001.fastq,${work_path2}/D19-7376_S13_L002_R2_001.fastq ${work_path2}/D19-7376_S13_L001_R1_001.fastq,${work_path2}/D19-7376_S13_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7376_S13_L001_R2_001.fastq,${work_path2}/D19-7376_S13_L002_R2_001.fastq,${work_path2}/D19-7376_S13_L003_R2_001.fastq,${work_path2}/D19-7376_S13_L004_R2_001.fastq ${work_path2}/D19-7376_S13_L001_R1_001.fastq,${work_path2}/D19-7376_S13_L002_R1_001.fastq,${work_path2}/D19-7376_S13_L003_R1_001.fastq,${work_path2}/D19-7376_S13_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1354,11 +1354,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7377_S14_L001_R2_001.fastq,${work_path2}/D19-7377_S14_L002_R2_001.fastq ${work_path2}/D19-7377_S14_L001_R1_001.fastq,${work_path2}/D19-7377_S14_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7377_S14_L001_R2_001.fastq,${work_path2}/D19-7377_S14_L002_R2_001.fastq,${work_path2}/D19-7377_S14_L003_R2_001.fastq,${work_path2}/D19-7377_S14_L004_R2_001.fastq ${work_path2}/D19-7377_S14_L001_R1_001.fastq,${work_path2}/D19-7377_S14_L002_R1_001.fastq,${work_path2}/D19-7377_S14_L003_R1_001.fastq,${work_path2}/D19-7377_S14_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1369,11 +1369,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7378_S15_L001_R2_001.fastq,${work_path2}/D19-7378_S15_L002_R2_001.fastq ${work_path2}/D19-7378_S15_L001_R1_001.fastq,${work_path2}/D19-7378_S15_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7378_S15_L001_R2_001.fastq,${work_path2}/D19-7378_S15_L002_R2_001.fastq,${work_path2}/D19-7378_S15_L003_R2_001.fastq,${work_path2}/D19-7378_S15_L004_R2_001.fastq ${work_path2}/D19-7378_S15_L001_R1_001.fastq,${work_path2}/D19-7378_S15_L002_R1_001.fastq,${work_path2}/D19-7378_S15_L003_R1_001.fastq,${work_path2}/D19-7378_S15_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1384,11 +1384,11 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-7379_S16_L001_R2_001.fastq,${work_path2}/D19-7379_S16_L002_R2_001.fastq ${work_path2}/D19-7379_S16_L001_R1_001.fastq,${work_path2}/D19-7379_S16_L002_R1_001.fastq \
+--readFilesIn ${work_path2}/D19-7379_S16_L001_R2_001.fastq,${work_path2}/D19-7379_S16_L002_R2_001.fastq,${work_path2}/D19-7379_S16_L003_R2_001.fastq,${work_path2}/D19-7379_S16_L004_R2_001.fastq ${work_path2}/D19-7379_S16_L001_R1_001.fastq,${work_path2}/D19-7379_S16_L002_R1_001.fastq,${work_path2}/D19-7379_S16_L003_R1_001.fastq,${work_path2}/D19-7379_S16_L004_R1_001.fastq \
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1403,7 +1403,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1418,7 +1418,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1433,7 +1433,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1448,7 +1448,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1463,7 +1463,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1478,7 +1478,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1493,7 +1493,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1508,7 +1508,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1523,7 +1523,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1538,7 +1538,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1553,7 +1553,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1568,7 +1568,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1583,7 +1583,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1598,7 +1598,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1613,7 +1613,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1628,7 +1628,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1643,7 +1643,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1658,7 +1658,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1673,7 +1673,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1688,7 +1688,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1703,7 +1703,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1718,7 +1718,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1733,7 +1733,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1748,7 +1748,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1763,7 +1763,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1778,7 +1778,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1793,7 +1793,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1808,7 +1808,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1823,7 +1823,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1838,7 +1838,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1853,7 +1853,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1868,7 +1868,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1883,7 +1883,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1898,7 +1898,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1913,7 +1913,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1928,7 +1928,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1943,7 +1943,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1958,7 +1958,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1973,7 +1973,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1988,7 +1988,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2003,7 +2003,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2018,7 +2018,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2033,7 +2033,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2048,7 +2048,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2063,7 +2063,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2078,7 +2078,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2093,7 +2093,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2108,7 +2108,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2123,7 +2123,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2138,7 +2138,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2153,7 +2153,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2168,7 +2168,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2183,7 +2183,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2198,7 +2198,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2213,7 +2213,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2228,7 +2228,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2243,7 +2243,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2258,7 +2258,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2273,7 +2273,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2288,7 +2288,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2303,7 +2303,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2318,7 +2318,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2333,7 +2333,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2348,7 +2348,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2363,7 +2363,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2378,7 +2378,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2393,7 +2393,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2408,7 +2408,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2423,7 +2423,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2438,7 +2438,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2453,7 +2453,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2468,7 +2468,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2483,7 +2483,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2498,7 +2498,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2513,7 +2513,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2528,7 +2528,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2543,7 +2543,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2558,7 +2558,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2573,7 +2573,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2588,7 +2588,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 28 \
+--soloBarcodeReadLength 0 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
