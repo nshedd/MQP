@@ -10,7 +10,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -25,7 +25,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -40,7 +40,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -54,7 +54,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -69,7 +69,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -84,7 +84,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -99,7 +99,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -114,7 +114,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -129,7 +129,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -144,7 +144,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -159,7 +159,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -174,7 +174,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -189,7 +189,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -204,7 +204,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -219,7 +219,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -234,7 +234,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -249,7 +249,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -264,7 +264,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -279,7 +279,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -294,7 +294,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -309,7 +309,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -324,7 +324,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -339,7 +339,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -354,7 +354,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -369,7 +369,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -384,7 +384,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -399,7 +399,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -414,7 +414,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -429,7 +429,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -444,7 +444,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -459,7 +459,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -474,7 +474,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -489,7 +489,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -504,7 +504,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -519,7 +519,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -534,7 +534,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -549,7 +549,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -564,7 +564,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -579,7 +579,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -594,7 +594,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -609,7 +609,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -624,7 +624,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -638,7 +638,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -653,7 +653,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -668,7 +668,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -683,7 +683,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -698,7 +698,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -713,7 +713,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -728,7 +728,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -743,7 +743,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -758,7 +758,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -773,7 +773,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -788,7 +788,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -803,7 +803,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -818,7 +818,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -833,7 +833,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -848,7 +848,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -863,7 +863,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -878,7 +878,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -893,7 +893,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -908,7 +908,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -923,7 +923,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -938,7 +938,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -953,7 +953,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -968,7 +968,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -983,7 +983,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -998,7 +998,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1013,7 +1013,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1028,7 +1028,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1043,7 +1043,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1058,7 +1058,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1073,7 +1073,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1088,7 +1088,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1103,7 +1103,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1118,7 +1118,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1133,7 +1133,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1148,7 +1148,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1163,7 +1163,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1178,7 +1178,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1193,7 +1193,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1208,7 +1208,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1223,7 +1223,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1238,7 +1238,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1253,7 +1253,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1268,7 +1268,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1283,7 +1283,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1298,7 +1298,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1313,7 +1313,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1328,7 +1328,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1343,7 +1343,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1358,7 +1358,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1373,7 +1373,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1388,7 +1388,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1403,7 +1403,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1418,7 +1418,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1433,7 +1433,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1448,7 +1448,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1463,7 +1463,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1478,7 +1478,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1493,7 +1493,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1508,7 +1508,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1523,7 +1523,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1538,7 +1538,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1553,7 +1553,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1568,7 +1568,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1583,7 +1583,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1598,7 +1598,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1613,7 +1613,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1628,7 +1628,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1643,7 +1643,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1658,7 +1658,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1673,7 +1673,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1688,7 +1688,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1703,7 +1703,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1718,7 +1718,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1733,7 +1733,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1748,7 +1748,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1763,7 +1763,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1778,7 +1778,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1793,7 +1793,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1808,7 +1808,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1823,7 +1823,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1838,7 +1838,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1853,7 +1853,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1868,7 +1868,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1883,7 +1883,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1898,7 +1898,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1913,7 +1913,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1928,7 +1928,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1943,7 +1943,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1958,7 +1958,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1973,7 +1973,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -1988,7 +1988,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2003,7 +2003,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2018,7 +2018,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2033,7 +2033,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2048,7 +2048,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2063,7 +2063,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2078,7 +2078,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2093,7 +2093,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2108,7 +2108,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2123,7 +2123,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2138,7 +2138,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2153,7 +2153,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2168,7 +2168,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2183,7 +2183,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2198,7 +2198,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2213,7 +2213,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2228,7 +2228,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2243,7 +2243,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2258,7 +2258,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2273,7 +2273,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2288,7 +2288,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2303,7 +2303,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2318,7 +2318,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2333,7 +2333,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2348,7 +2348,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2363,7 +2363,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2378,7 +2378,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2393,7 +2393,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2408,7 +2408,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2423,7 +2423,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2438,7 +2438,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2453,7 +2453,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2468,7 +2468,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2483,7 +2483,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2498,7 +2498,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2513,7 +2513,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2528,7 +2528,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2543,7 +2543,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2558,7 +2558,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2573,7 +2573,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -2588,7 +2588,7 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --soloType Droplet \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 1 \
+--soloBarcodeReadLength 28 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
