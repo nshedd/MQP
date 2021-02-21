@@ -7,6 +7,7 @@ time = "Lake_Integration"
 print(time)
 
 bam = "/home/sheddn/LakeTHSseq/data/TGCAGCTA_TCTCTCCG_TTTACC.unique.R7P3P4H_noAlt.FC9.rm_mm.bam.txt"
+bam = reformatFragmentFiles(bam)
 key = "FCX1"
 
 ArrowFiles = createArrowFiles( inputFiles = bam, sampleNames = key,
