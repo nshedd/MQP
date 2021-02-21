@@ -1,4 +1,4 @@
-work_path1=/data/zusers/sheddn/UCLA-ASD/data
+work_path1=/home/sheddn/UCLA-ASD/data
 work_path2=/data/projects/psychencode/TR-SingleCell/UCLA-ASD/PEC_syn18898607/scRNAseq
 
   
