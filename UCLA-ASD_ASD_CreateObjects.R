@@ -186,7 +186,7 @@ BW59 = CreateSeuratObject(counts = expression_matrix)
 
 ASD <- merge(BW1, y=c(BW3,BW4,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,
                       BW29,BW31,BW32,BW34,BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW54,BW59),
-             add.cell.ids=c('BW3','BW4','BW10','BW14','BW16','BW17','BW18','BW19','BW21','BW22','BW24','BW26','BW27','BW28',
+             add.cell.ids=c('BW1','BW3','BW4','BW10','BW14','BW16','BW17','BW18','BW19','BW21','BW22','BW24','BW26','BW27','BW28',
                             'BW29','BW31','BW32','BW34','BW37','BW38','BW39','BW42','BW44','BW45','BW48','BW49','BW54','BW59'),
              , project = "UCLA-ASD")
 
@@ -194,7 +194,7 @@ saveRDS(ASD, '/home/sheddn/UCLA-ASD/data/ASD_SampleLabels')
 
 ASD_forcombined <- merge(BW1, y=c(BW3,BW4,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,
                       BW29,BW31,BW32,BW34,BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW54,BW59),
-             add.cell.ids=c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
+             add.cell.ids=c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
                             'ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD'),
              , project = "UCLA-ASD")
 
