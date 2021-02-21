@@ -198,5 +198,5 @@ ASD_forcombined <- merge(BW1, y=c(BW3,BW4,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW2
                             'ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD'),
              , project = "UCLA-ASD")
 
-saveRDS(ASD, '/home/sheddn/UCLA-ASD/data/ASD_GroupLabel')
+saveRDS(ASD_forcombined, '/home/sheddn/UCLA-ASD/data/ASD_GroupLabel')
 
