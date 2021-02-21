@@ -2,96 +2,96 @@
 work_path1=/home/sheddn
 work_path2=/data/zusers/pratth/sc/rna/mk
 
-mkdir ${work_path1}/SCZ-BP/4295_S1
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4295_S1_L001_R2_001.fastq,${work_path2}/D19-4295_S1_L002_R2_001.fastq ${work_path2}/D19-4295_S1_L001_R1_001.fastq,${work_path2}/D19-4295_S1_L002_R1_001.fastq \
---soloType Droplet \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 28 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene \
---outFileNamePrefix ${work_path1}/SCZ-BP/4295_S1/
-  
-  mkdir ${work_path1}/SCZ-BP/4296_S2
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4296_S2_L001_R2_001.fastq,${work_path2}/D19-4296_S2_L002_R2_001.fastq,${work_path2}/D19-4296_S2_L003_R2_001.fastq,${work_path2}/D19-4296_S2_L004_R2_001.fastq ${work_path2}/D19-4296_S2_L001_R1_001.fastq,${work_path2}/D19-4296_S2_L002_R1_001.fastq,${work_path2}/D19-4296_S2_L003_R1_001.fastq,${work_path2}/D19-4296_S2_L004_R1_001.fastq \
---soloType Droplet \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene \
---outFileNamePrefix ${work_path1}/SCZ-BP/4296_S2/
-  
-  mkdir ${work_path1}/SCZ-BP/4297_S1
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4297_S1_L001_R2_001.fastq,${work_path2}/D19-4297_S1_L002_R2_001.fastq,${work_path2}/D19-4297_S1_L003_R2_001.fastq,${work_path2}/D19-4297_S1_L004_R2_001.fastq ${work_path2}/D19-4297_S1_L001_R1_001.fastq,${work_path2}/D19-4297_S1_L002_R1_001.fastq,${work_path2}/D19-4297_S1_L003_R1_001.fastq,${work_path2}/D19-4297_S1_L004_R1_001.fastq \
---soloType Droplet \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene \
---outFileNamePrefix ${work_path1}/SCZ-BP/4297_S1/
-  
-  mkdir ${work_path1}/SCZ-BP/4297_S3
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4297_S3_L001_R2_001.fastq,${work_path2}/D19-4297_S3_L002_R2_001.fastq ${work_path2}/D19-4297_S3_L001_R1_001.fastq,${work_path2}/D19-4297_S3_L002_R1_001.fastq \
---soloType Droplet \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene \
---outFileNamePrefix ${work_path1}/SCZ-BP/4297_S3/
-  
-  mkdir ${work_path1}/SCZ-BP/4298_S2
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4298_S2_L001_R2_001.fastq,${work_path2}/D19-4298_S2_L002_R2_001.fastq,${work_path2}/D19-4298_S2_L003_R2_001.fastq,${work_path2}/D19-4298_S2_L004_R2_001.fastq ${work_path2}/D19-4298_S2_L001_R1_001.fastq,${work_path2}/D19-4298_S2_L002_R1_001.fastq,${work_path2}/D19-4298_S2_L003_R1_001.fastq,${work_path2}/D19-4298_S2_L004_R1_001.fastq \
---soloType Droplet \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene \
---outFileNamePrefix ${work_path1}/SCZ-BP/4298_S2/
-  
-  mkdir ${work_path1}/SCZ-BP/4298_S4
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/SCZ-BP/ \
---readFilesIn ${work_path2}/D19-4298_S4_L001_R2_001.fastq,${work_path2}/D19-4298_S4_L002_R2_001.fastq ${work_path2}/D19-4298_S4_L001_R1_001.fastq,${work_path2}/D19-4298_S4_L002_R1_001.fastq \
---soloType Droplet \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures Gene \
---outFileNamePrefix ${work_path1}/SCZ-BP/4298_S4/
-  
-  mkdir ${work_path1}/SCZ-BP/4299_S1
+# mkdir ${work_path1}/SCZ-BP/4295_S1
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/SCZ-BP/ \
+# --readFilesIn ${work_path2}/D19-4295_S1_L001_R2_001.fastq,${work_path2}/D19-4295_S1_L002_R2_001.fastq ${work_path2}/D19-4295_S1_L001_R1_001.fastq,${work_path2}/D19-4295_S1_L002_R1_001.fastq \
+# --soloType Droplet \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 28 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures Gene \
+# --outFileNamePrefix ${work_path1}/SCZ-BP/4295_S1/
+#   
+#   mkdir ${work_path1}/SCZ-BP/4296_S2
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/SCZ-BP/ \
+# --readFilesIn ${work_path2}/D19-4296_S2_L001_R2_001.fastq,${work_path2}/D19-4296_S2_L002_R2_001.fastq,${work_path2}/D19-4296_S2_L003_R2_001.fastq,${work_path2}/D19-4296_S2_L004_R2_001.fastq ${work_path2}/D19-4296_S2_L001_R1_001.fastq,${work_path2}/D19-4296_S2_L002_R1_001.fastq,${work_path2}/D19-4296_S2_L003_R1_001.fastq,${work_path2}/D19-4296_S2_L004_R1_001.fastq \
+# --soloType Droplet \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 0 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures Gene \
+# --outFileNamePrefix ${work_path1}/SCZ-BP/4296_S2/
+#   
+#   mkdir ${work_path1}/SCZ-BP/4297_S1
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/SCZ-BP/ \
+# --readFilesIn ${work_path2}/D19-4297_S1_L001_R2_001.fastq,${work_path2}/D19-4297_S1_L002_R2_001.fastq,${work_path2}/D19-4297_S1_L003_R2_001.fastq,${work_path2}/D19-4297_S1_L004_R2_001.fastq ${work_path2}/D19-4297_S1_L001_R1_001.fastq,${work_path2}/D19-4297_S1_L002_R1_001.fastq,${work_path2}/D19-4297_S1_L003_R1_001.fastq,${work_path2}/D19-4297_S1_L004_R1_001.fastq \
+# --soloType Droplet \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 0 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures Gene \
+# --outFileNamePrefix ${work_path1}/SCZ-BP/4297_S1/
+#   
+#   mkdir ${work_path1}/SCZ-BP/4297_S3
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/SCZ-BP/ \
+# --readFilesIn ${work_path2}/D19-4297_S3_L001_R2_001.fastq,${work_path2}/D19-4297_S3_L002_R2_001.fastq ${work_path2}/D19-4297_S3_L001_R1_001.fastq,${work_path2}/D19-4297_S3_L002_R1_001.fastq \
+# --soloType Droplet \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 0 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures Gene \
+# --outFileNamePrefix ${work_path1}/SCZ-BP/4297_S3/
+#   
+#   mkdir ${work_path1}/SCZ-BP/4298_S2
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/SCZ-BP/ \
+# --readFilesIn ${work_path2}/D19-4298_S2_L001_R2_001.fastq,${work_path2}/D19-4298_S2_L002_R2_001.fastq,${work_path2}/D19-4298_S2_L003_R2_001.fastq,${work_path2}/D19-4298_S2_L004_R2_001.fastq ${work_path2}/D19-4298_S2_L001_R1_001.fastq,${work_path2}/D19-4298_S2_L002_R1_001.fastq,${work_path2}/D19-4298_S2_L003_R1_001.fastq,${work_path2}/D19-4298_S2_L004_R1_001.fastq \
+# --soloType Droplet \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 0 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures Gene \
+# --outFileNamePrefix ${work_path1}/SCZ-BP/4298_S2/
+#   
+#   mkdir ${work_path1}/SCZ-BP/4298_S4
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/SCZ-BP/ \
+# --readFilesIn ${work_path2}/D19-4298_S4_L001_R2_001.fastq,${work_path2}/D19-4298_S4_L002_R2_001.fastq ${work_path2}/D19-4298_S4_L001_R1_001.fastq,${work_path2}/D19-4298_S4_L002_R1_001.fastq \
+# --soloType Droplet \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 0 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures Gene \
+# --outFileNamePrefix ${work_path1}/SCZ-BP/4298_S4/
+#   
+#   mkdir ${work_path1}/SCZ-BP/4299_S1
 # Run STARsolo 2.7.7a
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 --genomeDir ~/SCZ-BP/ \
@@ -2594,5 +2594,6 @@ mkdir ${work_path1}/SCZ-BP/4295_S1
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
 --soloFeatures Gene \
 --outFileNamePrefix ${work_path1}/SCZ-BP/SUB08762_9_S9/
+  
   
   
