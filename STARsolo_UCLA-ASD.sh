@@ -1,5 +1,5 @@
-work_path1=/home/sheddn/UCLA-ASD/star_index_GRCh38_no_alt_analysis_set_GCA_000001405-15_gencode_v37/data
-work_path2=/data/projects/psychencode/TR-SingleCell/UCLA-ASD/star_index_GRCh38_no_alt_analysis_set_GCA_000001405-15_gencode_v37/PEC_syn18898607/scRNAseq
+work_path1=/home/sheddn/UCLA-ASD/data
+work_path2=/data/projects/psychencode/TR-SingleCell/UCLA-ASD/PEC_syn18898607/scRNAseq
 
 
 # Run STARsolo 2.7.7a
