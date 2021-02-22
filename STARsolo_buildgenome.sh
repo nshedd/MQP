@@ -6,8 +6,8 @@ version="2020-A"
 build="GRCh38-2020-A_build"
 mkdir -p "$build"
 
-fasta_in="/home/sheddn/SCZ-BP/Homo_sapiens.GRCh38.dna.primary_assembly.fa"
-gtf_in="/home/sheddn/SCZ-BP/gencode.v32.primary_assembly.annotation.gtf"
+fasta_in="/home/sheddn/UCLA-ASD/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta"
+gtf_in="/home/sheddn/UCLA-ASD/gencode.v29.primary_assembly.annotation_UCSC_names.gtf"
 
 fasta_modified="$build/$(basename "$fasta_in").modified"
 
@@ -26,7 +26,7 @@ ID="(ENS(MUS)?[GTE][0-9]+)\.([0-9]+)"
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
  --runThreadN 1 \
  --runMode genomeGenerate \
- --genomeDir ~/SCZ-BP \
- --genomeFastaFiles /home/sheddn/git/MQP/GRCh38-2020-A_build/Homo_sapiens.GRCh38.dna.primary_assembly.fa.modified \
- --sjdbGTFfile /home/sheddn/git/MQP/GRCh38-2020-A_build/gencode.v32.primary_assembly.annotation.gtf.modified \
- --outFileNamePrefix /home/sheddn/SCZ-BP \
+ --genomeDir ~/UCLA-ASD \
+ --genomeFastaFiles /home/sheddn/git/MQP/GRCh38-2020-A_build/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta.modified \
+ --sjdbGTFfile /home/sheddn/git/MQP/GRCh38-2020-A_build/gencode.v29.primary_assembly.annotation_UCSC_names.gtf.modified \
+ --outFileNamePrefix /home/sheddn/UCLA-ASD \
