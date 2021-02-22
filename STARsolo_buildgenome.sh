@@ -37,7 +37,7 @@ cat "$gtf_in" \
 
  # Create reference package
  /home/sheddn/yard/apps/cellranger-5.0.1/cellranger mkref --ref-version="$version" \
-     --genome="$genome" --fasta="$fasta_modified  --genes="$gtf_modified"
+     --genome="$genome" --fasta="$fasta_modified"  --genes="$gtf_modified"
 
 # Build genome
 ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
