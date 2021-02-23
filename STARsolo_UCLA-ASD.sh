@@ -1,65 +1,65 @@
 work_path1=/home/sheddn/UCLA-ASD/data
 work_path2=/data/projects/psychencode/TR-SingleCell/UCLA-ASD/PEC_syn18898607/scRNAseq
 
-echo "10BW_S13"
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/UCLA-ASD/ \
---readFilesIn <(gunzip -c ${work_path2}/10BW_S13_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/10BW_S13_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/10BW_S13_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/10BW_S13_L002_R1_001.fastq.gz) \
---soloType CB_UMI_Simple \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures GeneFull \
---outFileNamePrefix ${work_path1}/10BW_S13/
-  
-  echo "11BW_S14"
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/UCLA-ASD/ \
---readFilesIn <(gunzip -c ${work_path2}/11BW_S14_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/11BW_S14_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/11BW_S14_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/11BW_S14_L002_R1_001.fastq.gz) \
---soloType CB_UMI_Simple \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures GeneFull \
---outFileNamePrefix ${work_path1}/11BW_S14/
-  
-  echo "12BW_S15"
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/UCLA-ASD/ \
---readFilesIn <(gunzip -c ${work_path2}/12BW_S15_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/12BW_S15_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/12BW_S15_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/12BW_S15_L002_R1_001.fastq.gz) \
---soloType CB_UMI_Simple \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures GeneFull \
---outFileNamePrefix ${work_path1}/12BW_S15/
-  
-  echo "13BW_S16"
-# Run STARsolo 2.7.7a
-~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
---genomeDir ~/UCLA-ASD/ \
---readFilesIn <(gunzip -c ${work_path2}/13BW_S16_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/13BW_S16_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/13BW_S16_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/13BW_S16_L002_R1_001.fastq.gz) \
---soloType CB_UMI_Simple \
---soloCBwhitelist ~/737K-august-2016.txt \
---runThreadN 16 \
---soloBarcodeReadLength 0 \
---outSAMtype BAM SortedByCoordinate \
---outSAMunmapped Within \
---outSAMattributes NH HI nM AS CR UR CB UB GX GN \
---soloFeatures GeneFull \
---outFileNamePrefix ${work_path1}/13BW_S16/
+# echo "10BW_S13"
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/UCLA-ASD/ \
+# --readFilesIn <(gunzip -c ${work_path2}/10BW_S13_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/10BW_S13_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/10BW_S13_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/10BW_S13_L002_R1_001.fastq.gz) \
+# --soloType CB_UMI_Simple \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 1 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures GeneFull \
+# --outFileNamePrefix ${work_path1}/10BW_S13/
+#   
+#   echo "11BW_S14"
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/UCLA-ASD/ \
+# --readFilesIn <(gunzip -c ${work_path2}/11BW_S14_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/11BW_S14_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/11BW_S14_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/11BW_S14_L002_R1_001.fastq.gz) \
+# --soloType CB_UMI_Simple \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 1 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures GeneFull \
+# --outFileNamePrefix ${work_path1}/11BW_S14/
+#   
+#   echo "12BW_S15"
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/UCLA-ASD/ \
+# --readFilesIn <(gunzip -c ${work_path2}/12BW_S15_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/12BW_S15_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/12BW_S15_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/12BW_S15_L002_R1_001.fastq.gz) \
+# --soloType CB_UMI_Simple \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 1 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures GeneFull \
+# --outFileNamePrefix ${work_path1}/12BW_S15/
+#   
+#   echo "13BW_S16"
+# # Run STARsolo 2.7.7a
+# ~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
+# --genomeDir ~/UCLA-ASD/ \
+# --readFilesIn <(gunzip -c ${work_path2}/13BW_S16_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/13BW_S16_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/13BW_S16_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/13BW_S16_L002_R1_001.fastq.gz) \
+# --soloType CB_UMI_Simple \
+# --soloCBwhitelist ~/737K-august-2016.txt \
+# --runThreadN 16 \
+# --soloBarcodeReadLength 1 \
+# --outSAMtype BAM SortedByCoordinate \
+# --outSAMunmapped Within \
+# --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
+# --soloFeatures GeneFull \
+# --outFileNamePrefix ${work_path1}/13BW_S16/
   
   echo "14BW_S17"
 # Run STARsolo 2.7.7a
@@ -67,9 +67,9 @@ echo "10BW_S13"
 --genomeDir ~/UCLA-ASD/ \
 --readFilesIn <(gunzip -c ${work_path2}/14BW_S17_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/14BW_S17_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/14BW_S17_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/14BW_S17_L002_R1_001.fastq.gz) \
 --soloType CB_UMI_Simple \
---soloCBwhitelist ~/3M-february-2018.txt \
+--soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -84,7 +84,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -99,7 +100,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -114,7 +116,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -129,7 +132,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -144,7 +148,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -159,7 +164,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -175,7 +181,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -191,7 +198,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -207,7 +215,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -223,7 +232,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -238,7 +248,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -253,7 +264,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -268,7 +280,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -283,7 +296,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -298,7 +312,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -313,7 +328,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -328,7 +344,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -343,7 +359,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -358,7 +375,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -373,7 +391,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -388,7 +407,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -403,7 +423,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -418,7 +439,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -433,7 +455,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -448,7 +471,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -463,7 +487,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -478,7 +503,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -493,7 +518,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -508,7 +534,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -523,7 +550,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -538,7 +566,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -553,7 +582,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -568,7 +598,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -583,7 +614,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -598,7 +629,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -613,7 +644,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -628,7 +659,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -643,7 +674,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -658,7 +689,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -673,7 +705,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -688,7 +721,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -703,7 +737,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -718,7 +753,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -733,7 +769,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -748,7 +785,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -763,7 +801,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -778,7 +817,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -793,7 +833,8 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/3M-february-2018.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
+--soloUMIlen 12 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
@@ -808,7 +849,7 @@ echo "10BW_S13"
 --soloType CB_UMI_Simple \
 --soloCBwhitelist ~/737K-august-2016.txt \
 --runThreadN 16 \
---soloBarcodeReadLength 0 \
+--soloBarcodeReadLength 1 \
 --outSAMtype BAM SortedByCoordinate \
 --outSAMunmapped Within \
 --outSAMattributes NH HI nM AS CR UR CB UB GX GN \
