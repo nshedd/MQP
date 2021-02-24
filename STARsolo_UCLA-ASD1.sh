@@ -5,7 +5,9 @@ labels="1BW_S1 2BW_S2 3BW_S3 4BW_S4 5BW_S5 6BW_S6 7BW_S10 8BW_S11 9BW_S12 10BW_S
 
 for f in $labels
 do
-	echo f
+	echo ${f}
+	# Run STARsolo 2.7.7a
+	~/STAR-2.7.7a/bin/Linux_x86_64/STAR \
 	--genomeDir ~/UCLA-ASD/ \
 	--readFilesIn <(gunzip -c ${work_path2}/${f}_L001_R2_001.fastq.gz),<(gunzip -c ${work_path2}/${f}_L002_R2_001.fastq.gz) <(gunzip -c ${work_path2}/${f}_L001_R1_001.fastq.gz),<(gunzip -c ${work_path2}/${f}_L002_R1_001.fastq.gz) \
 	--soloType CB_UMI_Simple \
