@@ -17,3 +17,4 @@ do
 	--outSAMattributes NH HI nM AS CR UR CB UB GX GN \
 	--soloFeatures GeneFull \
 	--outFileNamePrefix ${work_path1}/${f}/
+done
