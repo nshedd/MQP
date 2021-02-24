@@ -3,7 +3,7 @@ work_path2=/data/projects/psychencode/TR-SingleCell/UCLA-ASD/PEC_syn18898607/scR
 
 labels="1BW_S1 2BW_S2 3BW_S3 4BW_S4 5BW_S5 6BW_S6 7BW_S10 8BW_S11 9BW_S12 10BW_S13 11BW_S14 12BW_S15 13BW_S16 14BW_S17"
 
-for f in labels
+for f in $labels
 do
 	echo f
 	--genomeDir ~/UCLA-ASD/ \
