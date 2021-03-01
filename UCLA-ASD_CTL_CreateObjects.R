@@ -222,15 +222,16 @@ BW78 = CreateSeuratObject(counts = expression_matrix)
 CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,
                       BW51,BW52,BW53,BW55,BW56,BW57,BW58,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
              add.cell.ids=c('BW2','BW5','BW6','BW8','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW35','BW40','BW41','BW43','BW46',
-                            'BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
+                            'BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
              project = "UCLA-ASD")
 
 
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_SampleLabels')
 
-CTL_forcombined <- merge(BW2, y=c(BW5,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,BW51,BW52,BW53,BW55,BW56,BW57,BW58),
-                         add.cell.ids=c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL',,'CTL','CTL','CTL','CTL'
-                                        'CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL'),
+CTL_forcombined <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,
+                                  BW51,BW52,BW53,BW55,BW56,BW57,BW58,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
+                         add.cell.ids=c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL',
+                                        'CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL'),
                          project = "UCLA-ASD")
 
 saveRDS(CTL_forcombined, '/data/rusers/sheddn/UCLA-ASD/data/CTL_GroupLabel')
