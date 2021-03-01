@@ -2,12 +2,6 @@ library(dplyr)
 library(Seurat)
 library(ggplot2)
 
-print('11BW')
-data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/11BW_S14/Solo.out/GeneFull/filtered'
-list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
-expression_matrix <- Read10X(data.dir = data_dir)
-BW11 = CreateSeuratObject(counts = expression_matrix)
-
 print('2BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/2BW_S2/Solo.out/GeneFull/filtered'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
