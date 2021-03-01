@@ -4,6 +4,8 @@ library(ggplot2)
 
 CTL = readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_SampleLabels')
 
+CTL[["percent.mt"]] <- PercentageFeatureSet(CTL, pattern = "^MT-")
+
 VlnPlot(CTL, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3, )
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-VlnPlot.png', width = 14, height = 7)
 
