@@ -27,7 +27,7 @@ VizDimLoadings(CTL, dims = 1:20, reduction = "pca")
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/VizDimLoadings.png", width = 14, height = 7)
 
 DimPlot(CTL, reduction = "pca")
-ggsave("/data/rusers/sheddn/UCLA-ASD/plots/PCADimPlot.png"), width = 14, height = 7)
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/PCADimPlot.png", width = 14, height = 7)
 
 DimHeatmap(CTL, dims = 1:20, balanced = TRUE)
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/DimHeatmap.png", width = 14, height = 7)
