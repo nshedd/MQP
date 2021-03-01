@@ -14,6 +14,18 @@ list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW5 = CreateSeuratObject(counts = expression_matrix)
 
+##6BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/6BW_S6'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW6 = CreateSeuratObject(counts = expression_matrix)
+
+##8BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/8BW_S8'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW8 = CreateSeuratObject(counts = expression_matrix)
+
 ##11BW
 data_dir <- '/home/sheddn/UCLA-ASD/data/11BW_S14'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
@@ -152,21 +164,74 @@ list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW58 = CreateSeuratObject(counts = expression_matrix)
 
-## Missing 6, 8, 61, 62, 63, 64, 69, 71, 74, 77, 78
+##61BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/61BW_S31'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW61 = CreateSeuratObject(counts = expression_matrix)
+
+##62BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/62BW_S32'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW62 = CreateSeuratObject(counts = expression_matrix)
+
+##63BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/63BW_S5'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW63 = CreateSeuratObject(counts = expression_matrix)
+
+##64BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/64BW_S6'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW64 = CreateSeuratObject(counts = expression_matrix)
+
+##69BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/69BW_S11'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW69 = CreateSeuratObject(counts = expression_matrix)
+
+##71BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/71BW_S13'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW71 = CreateSeuratObject(counts = expression_matrix)
+
+##74BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/74BW_S16'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW74 = CreateSeuratObject(counts = expression_matrix)
+
+##77BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/77BW_S19'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW77 = CreateSeuratObject(counts = expression_matrix)
+
+##78BW
+data_dir <- '/home/sheddn/UCLA-ASD/data/78BW_S20'
+list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
+expression_matrix <- Read10X(data.dir = data_dir)
+BW78 = CreateSeuratObject(counts = expression_matrix)
 
 
-CTL <- merge(BW2, y=c(BW5,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,BW51,BW52,BW53,BW55,BW56,BW57,BW58),
-             add.cell.ids=c('BW2','BW5','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW35','BW40',
-                            'BW41','BW43','BW46','BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58'),
-             , project = "UCLA-ASD")
+CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,
+                      BW51,BW52,BW53,BW55,BW56,BW57,BW58,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
+             add.cell.ids=c('BW2','BW5','BW6','BW8','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW35','BW40','BW41','BW43','BW46',
+                            'BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
+             project = "UCLA-ASD")
 
 
 saveRDS(CTL, '/home/sheddn/UCLA-ASD/data/CTL_SampleLabels')
 
 CTL_forcombined <- merge(BW2, y=c(BW5,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,BW51,BW52,BW53,BW55,BW56,BW57,BW58),
-             add.cell.ids=c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL',
-                            'CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL'),
-             , project = "UCLA-ASD")
+             add.cell.ids=c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL',,'CTL','CTL','CTL','CTL'
+                            'CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL'),
+             project = "UCLA-ASD")
 
 saveRDS(CTL_forcombined, '/home/sheddn/UCLA-ASD/data/CTL_GroupLabel')
 
