@@ -39,4 +39,4 @@ CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony.png')
 
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony.RDS')
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_OrigIdent.RDS')
