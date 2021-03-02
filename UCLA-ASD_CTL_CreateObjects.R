@@ -198,7 +198,7 @@ print('74BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/74BW_S16/Solo.out/GeneFull/filtered'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW74 = CreateSeuratObject(counts = expression_matrix)
+BW74 = CreateSeuratObject(counts = expression_matrix, project='74BW')
 
 print('77BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/77BW_S19/Solo.out/GeneFull/filtered'
@@ -213,9 +213,9 @@ expression_matrix <- Read10X(data.dir = data_dir)
 BW78 = CreateSeuratObject(counts = expression_matrix, project='78BW')
 
 
-CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW35,BW40,BW41,BW43,BW46,BW47,
+CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW33,BW35,BW40,BW41,BW43,BW46,BW47,
                       BW51,BW52,BW53,BW55,BW56,BW57,BW58,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
-             add.cell.ids=c('BW2','BW5','BW6','BW8','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW35','BW40','BW41','BW43','BW46',
+             add.cell.ids=c('BW2','BW5','BW6','BW8','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW33','BW35','BW40','BW41','BW43','BW46',
                             'BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
              project = "UCLA-ASD")
 
