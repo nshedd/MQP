@@ -19,6 +19,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_002pc.png"), device=)
 
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_002.txt"), sep="\t")
+
 ## 5 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
@@ -33,6 +39,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_005pc.png"), device=)
+
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_005.txt"), sep="\t")
 
 ## 10 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -49,6 +61,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_010pc.png"), device=)
 
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_010.txt"), sep="\t")
+
 ## 20 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
@@ -63,6 +81,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_020pc.png"), device=)
+
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_020.txt"), sep="\t")
 
 ## 50 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -79,6 +103,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_050pc.png"), device=)
 
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_050.txt"), sep="\t")
+
 ## 75 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
@@ -93,6 +123,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_075pc.png"), device=)
+
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_075.txt"), sep="\t")
 
 ## 100 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -109,6 +145,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_100pc.png"), device=)
 
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_100.txt"), sep="\t")
+
 ## 150 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
 
@@ -123,6 +165,12 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_150pc.png"), device=)
+
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_150.txt"), sep="\t")
 
 ## 200 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -139,48 +187,8 @@ FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_200pc.png"), device=)
 
-## 4 PCs -- optimal
-FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:4)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
-
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:4, metric="euclidean")
-
-new.cluster.ids <- c("Ex1","Ex2","Ex3","In1","End/Mic/Per","Oli1","In2","Ast","Oli2","OPC")
-names(new.cluster.ids) <- levels(FrontalCortex)
-FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
-
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_004pc.png"), device=)
-
-## 11 PCs
-FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
-FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:11)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
-
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:11, metric="euclidean")
-
-#new.cluster.ids <- c("Ex1/End","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","Ex5","OPC","Per/Mic")
-#names(new.cluster.ids) <- levels(FrontalCortex)
-#FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
-
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_011pc.png"), device=)
-
-
-## 11 PCs
-FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
-
-#FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:11)
-#FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
-
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:11, metric="euclidean")
-
-#new.cluster.ids <- c("Ex1/End","Oli","Ex2","In1","In2","Ex3","Ast","Ex4","Ex5","OPC","Per/Mic")
-#names(new.cluster.ids) <- levels(FrontalCortex)
-#FrontalCortex <- RenameIdents(FrontalCortex, new.cluster.ids)
-
-plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_011pc_oglabels.png"), device=)
+##Save embedding
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings_200.txt"), sep="\t")
