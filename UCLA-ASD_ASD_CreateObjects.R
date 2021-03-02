@@ -2,257 +2,257 @@ library(dplyr)
 library(Seurat)
 library(ggplot2)
 
-##1BW
+print('1BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/1BW_S1'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW1 = CreateSeuratObject(counts = expression_matrix)
+BW1 = CreateSeuratObject(counts = expression_matrix, project='1BW')
 
-##3BW
+print('3BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/3BW_S3'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW3 = CreateSeuratObject(counts = expression_matrix)
+BW3 = CreateSeuratObject(counts = expression_matrix, project='3BW')
 
-##4BW
+print('4BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/4BW_S4'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW4 = CreateSeuratObject(counts = expression_matrix)
+BW4 = CreateSeuratObject(counts = expression_matrix, project='4BW')
 
-##7BW
+print('7BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/7BW_S7'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW7 = CreateSeuratObject(counts = expression_matrix)
+BW7 = CreateSeuratObject(counts = expression_matrix, project='7BW')
 
-##9BW
+print('9BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/9BW_S9'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW9 = CreateSeuratObject(counts = expression_matrix)
+BW9 = CreateSeuratObject(counts = expression_matrix, project='9BW')
 
-##10BW
+print('10BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/10BW_S13'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW10 = CreateSeuratObject(counts = expression_matrix)
+BW10 = CreateSeuratObject(counts = expression_matrix, project='10BW')
 
-##14BW
+print('14BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/14BW_S17'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW14 = CreateSeuratObject(counts = expression_matrix)
+BW14 = CreateSeuratObject(counts = expression_matrix, project='14BW')
 
-##16BW
+print('16BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/16BW_S2'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW16 = CreateSeuratObject(counts = expression_matrix)
+BW16 = CreateSeuratObject(counts = expression_matrix, project='16BW')
 
-##17BW
+print('17BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/17BW_S3'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW17 = CreateSeuratObject(counts = expression_matrix)
+BW17 = CreateSeuratObject(counts = expression_matrix, project='17BW')
 
-##18BW
+print('18BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/18BW_S4'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW18 = CreateSeuratObject(counts = expression_matrix)
+BW18 = CreateSeuratObject(counts = expression_matrix, project='18BW')
 
-##19BW
+print('19BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/19BW_S5'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW19 = CreateSeuratObject(counts = expression_matrix)
+BW19 = CreateSeuratObject(counts = expression_matrix, project='19BW')
 
-##21BW
+print('21BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/21BW_S7'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW21 = CreateSeuratObject(counts = expression_matrix)
+BW21 = CreateSeuratObject(counts = expression_matrix, project='21BW')
 
-##22BW
+print('22BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/22BW_S8'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW22 = CreateSeuratObject(counts = expression_matrix)
+BW22 = CreateSeuratObject(counts = expression_matrix, project='22BW')
 
-##24BW
+print('24BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/24BW_S10'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW24 = CreateSeuratObject(counts = expression_matrix)
+BW24 = CreateSeuratObject(counts = expression_matrix, project='24BW')
 
-##26BW
+print('26BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/26BW_S2'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW26 = CreateSeuratObject(counts = expression_matrix)
+BW26 = CreateSeuratObject(counts = expression_matrix, project='26BW')
 
-##27BW
+print('27BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/27BW_S3'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW27 = CreateSeuratObject(counts = expression_matrix)
+BW27 = CreateSeuratObject(counts = expression_matrix, project='27BW')
 
-##28BW
+print('28BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/28BW_S4'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW28 = CreateSeuratObject(counts = expression_matrix)
+BW28 = CreateSeuratObject(counts = expression_matrix, project='28BW')
 
-##28BW
+print('29BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/29BW_S5'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW29 = CreateSeuratObject(counts = expression_matrix)
+BW29 = CreateSeuratObject(counts = expression_matrix, project='29BW')
 
-##31BW
+print('31BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/31BW_S1'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW31 = CreateSeuratObject(counts = expression_matrix)
+BW31 = CreateSeuratObject(counts = expression_matrix, project='31BW')
 
-##32BW
+print('32BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/32BW_S2'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW32 = CreateSeuratObject(counts = expression_matrix)
+BW32 = CreateSeuratObject(counts = expression_matrix, project='32BW')
 
-##34BW
+print('34BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/34BW_S4'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW34 = CreateSeuratObject(counts = expression_matrix)
+BW34 = CreateSeuratObject(counts = expression_matrix, project='34BW')
 
-##37BW
+print('37BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/37BW_S7'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW37 = CreateSeuratObject(counts = expression_matrix)
+BW37 = CreateSeuratObject(counts = expression_matrix, project='37BW')
 
-##38BW
+print('38BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/38BW_S8'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW38 = CreateSeuratObject(counts = expression_matrix)
+BW38 = CreateSeuratObject(counts = expression_matrix, project='38BW')
 
-##39BW
+print('39BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/39BW_S9'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW39 = CreateSeuratObject(counts = expression_matrix)
+BW39 = CreateSeuratObject(counts = expression_matrix, project='39BW')
 
-##42BW
+print('42BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/42BW_S12'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW42 = CreateSeuratObject(counts = expression_matrix)
+BW42 = CreateSeuratObject(counts = expression_matrix, project='42BW')
 
-##44BW
+print('44BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/44BW_S14'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW44 = CreateSeuratObject(counts = expression_matrix)
+BW44 = CreateSeuratObject(counts = expression_matrix, project='44BW')
 
-##45BW
+print('45BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/45BW_S15'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW45 = CreateSeuratObject(counts = expression_matrix)
+BW45 = CreateSeuratObject(counts = expression_matrix, project='45BW')
 
-##48BW
+print('48BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/48BW_S3'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW48 = CreateSeuratObject(counts = expression_matrix)
+BW48 = CreateSeuratObject(counts = expression_matrix, project='48BW')
 
-##49BW
+print('49BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/49BW_S4'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW49 = CreateSeuratObject(counts = expression_matrix)
+BW49 = CreateSeuratObject(counts = expression_matrix, project='49BW')
 
-##50BW
+print('50BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/50BW_S5'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW50 = CreateSeuratObject(counts = expression_matrix)
+BW50 = CreateSeuratObject(counts = expression_matrix, project='50BW')
 
-##54BW
+print('54BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/54BW_S11'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW54 = CreateSeuratObject(counts = expression_matrix)
+BW54 = CreateSeuratObject(counts = expression_matrix, project='54BW')
 
-##59BW
+print('59BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/59BW_S29'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW59 = CreateSeuratObject(counts = expression_matrix)
+BW59 = CreateSeuratObject(counts = expression_matrix, project='59BW')
 
-##60BW
+print('60BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/60BW_S30'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW60 = CreateSeuratObject(counts = expression_matrix)
+BW60 = CreateSeuratObject(counts = expression_matrix, project='60BW')
 
-##65BW
+print('65BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/65BW_S7'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW65 = CreateSeuratObject(counts = expression_matrix)
+BW65 = CreateSeuratObject(counts = expression_matrix, project='65BW')
 
-##66BW
+print('66BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/66BW_S8'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW66 = CreateSeuratObject(counts = expression_matrix)
+BW66 = CreateSeuratObject(counts = expression_matrix, project='66BW')
 
-##67BW
+print('67BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/67BW_S9'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW67 = CreateSeuratObject(counts = expression_matrix)
+BW67 = CreateSeuratObject(counts = expression_matrix, project='67BW')
 
-##68BW
+print('68BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/68BW_S10'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW68 = CreateSeuratObject(counts = expression_matrix)
+BW68 = CreateSeuratObject(counts = expression_matrix, project='68BW')
 
-##70BW
+print('70BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/70BW_S12'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW70 = CreateSeuratObject(counts = expression_matrix)
+BW70 = CreateSeuratObject(counts = expression_matrix, project='70BW')
 
-##72BW
+print('72BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/72BW_S14'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW72 = CreateSeuratObject(counts = expression_matrix)
+BW72 = CreateSeuratObject(counts = expression_matrix, project='72BW')
 
-##73BW
+print('73BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/73BW_S15'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW73 = CreateSeuratObject(counts = expression_matrix)
+BW73 = CreateSeuratObject(counts = expression_matrix, project='73BW')
 
-##75BW
+print('75BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/75BW_S17'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW75 = CreateSeuratObject(counts = expression_matrix)
+BW75 = CreateSeuratObject(counts = expression_matrix, project='75BW')
 
-##76BW
+print('76BW')
 data_dir <- '/home/sheddn/UCLA-ASD/data/75BW_S18'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
-BW76 = CreateSeuratObject(counts = expression_matrix)
+BW76 = CreateSeuratObject(counts = expression_matrix, project='76BW')
 
 
 ASD <- merge(BW1, y=c(BW3,BW4,BW7,BW9,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,BW29,BW31,BW32,BW34,
@@ -264,11 +264,11 @@ ASD <- merge(BW1, y=c(BW3,BW4,BW7,BW9,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW
 
 saveRDS(ASD, '/home/sheddn/UCLA-ASD/data/ASD_SampleLabels')
 
-ASD_forcombined <- merge(BW1, y=c(BW3,BW4,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,
-                      BW29,BW31,BW32,BW34,BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW54,BW59),
-             add.cell.ids=c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
-                            'ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD'),
-             project = "UCLA-ASD")
+new.cluster.ids <- c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
+                     'ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
+                     'ASD','ASD','ASD','ASD','ASD','ASD','ASD')
+names(new.cluster.ids) <- levels(ASD)
+ASD <- RenameIdents(ASD, new.cluster.ids)
 
-saveRDS(ASD_forcombined, '/home/sheddn/UCLA-ASD/data/ASD_GroupLabel')
+saveRDS(ASD, '/home/sheddn/UCLA-ASD/data/ASD_GroupLabel')
 
