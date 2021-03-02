@@ -3,6 +3,7 @@ library(Seurat)
 library(patchwork)
 library(ggplot2)
 
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
 
 ## 2 PCs
 FrontalCortex <- readRDS(file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat.rds"))
@@ -18,6 +19,20 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:2, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_002pc.png"), device=)
+
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_002pc.png"), device=)
+
 
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
@@ -40,6 +55,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:5, metric="euclidean")
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_005pc.png"), device=)
 
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_005pc.png"), device=)
+
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
@@ -60,6 +88,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:10, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_010pc.png"), device=)
+
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_010pc.png"), device=)
 
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
@@ -82,6 +123,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_020pc.png"), device=)
 
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_020pc.png"), device=)
+
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
@@ -102,6 +156,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:50, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_050pc.png"), device=)
+
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_050pc.png"), device=)
 
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
@@ -124,6 +191,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:75, metric="euclidean")
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_075pc.png"), device=)
 
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_050pc.png"), device=)
+
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
@@ -144,6 +224,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:100, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_100pc.png"), device=)
+
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_100pc.png"), device=)
 
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
@@ -166,6 +259,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:150, metric="euclidean")
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_150pc.png"), device=)
 
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_150pc.png"), device=)
+
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
@@ -186,6 +292,19 @@ FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:200, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap_200pc.png"), device=)
+
+## Dotplot
+FrontalCortex.markers <- FindAllMarkers(FrontalCortex, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+FrontalCortex.markers %>% group_by(cluster)
+
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(FrontalCortex.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(FrontalCortex, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(FrontalCortex$seurat_clusters)))
+ggsave(path.expand("/data/rusers/sheddn/datavis4/dotplot_200pc.png"), device=)
 
 ##Save embedding
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
