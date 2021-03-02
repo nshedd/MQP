@@ -44,6 +44,9 @@ library(ggplot2)
 
 CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_PCAprocessed_BySample.RDS')
 
+head(colnames(CTL))
+tail(colnames(CTL))
+
 table(CTL$orig.ident)
 
 # CTL <- FindNeighbors(CTL, dims = 1:20)
