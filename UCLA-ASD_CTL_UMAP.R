@@ -54,3 +54,16 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_samples.png')
 
 # saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample.RDS')
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_OrigIdent.RDS')
+
+CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_PCAprocessed_BySample.RDS')
+
+CTL <- FindNeighbors(CTL, dims = 1:20)
+CTL <- FindClusters(CTL, resolution = 0.5)
+
+CTL <- RunUMAP(CTL, dims = 1:20)
+
+DimPlot(CTL, reduction = "umap", label = TRUE, pt.size = 0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP.png')
+
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample.RDS')
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample.RDS')
