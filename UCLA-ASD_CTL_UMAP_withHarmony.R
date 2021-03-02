@@ -22,6 +22,8 @@ CTL <- FindVariableFeatures(CTL, selection.method = "vst", nfeatures = 2000)
 all.genes <- rownames(CTL)
 CTL <- ScaleData(CTL, features = all.genes)
 
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_ScaledData.RDS')
+
 CTL <- RunHarmony(CTL, group.by.vars = "Method")
 
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BySample.RDS')
