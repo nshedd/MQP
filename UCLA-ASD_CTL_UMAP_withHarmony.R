@@ -26,7 +26,7 @@ library(harmony)
 
 CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_PCAprocessed_BySample.RDS')
 
-CTL <- RunHarmony(CTL, group.by.vars = "Method")
+CTL <- RunHarmony(CTL, "dataset")
 
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BySample.RDS')
 
