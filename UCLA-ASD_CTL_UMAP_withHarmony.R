@@ -29,7 +29,7 @@ CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 # CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters()
 
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_samples.png')
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_samples.png', width = 8, height = 7)
 
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_OrigIdent.RDS')
 
@@ -40,6 +40,6 @@ CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters()
 
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony.png')
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony.png', width = 8, height = 7)
 
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_OrigIdent.RDS')
