@@ -30,6 +30,6 @@ CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters()
 
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP.png')
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony.png')
 
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample.RDS')
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony.RDS')
