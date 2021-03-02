@@ -23,6 +23,8 @@ CTL <- ScaleData(CTL, features = all.genes)
 
 CTL <- RunPCA(CTL, features = VariableFeatures(object = CTL))
 
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_PCAprocessed_BySample.RDS')
+
 VizDimLoadings(CTL, dims = 1:20, reduction = "pca")
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/VizDimLoadings.png", width = 14, height = 7)
 
@@ -45,5 +47,7 @@ CTL <- FindClusters(CTL, resolution = 0.5)
 
 CTL <- RunUMAP(CTL, dims = 1:20)
 
-DimPlot(CTL, reduction = "umap")
+DimPlot(CTL, reduction = "umap", label = TRUE, pt.size = 0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP.png')
+
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample.RDS')
