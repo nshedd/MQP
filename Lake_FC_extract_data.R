@@ -20,9 +20,9 @@ FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)
 FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))
 
 FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
+FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
 
-FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20)
+FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20, metric="euclidean")
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 ggsave(path.expand("/data/rusers/sheddn/datavis4/umap.png"), device=)
