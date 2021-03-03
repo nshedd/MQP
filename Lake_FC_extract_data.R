@@ -34,7 +34,7 @@ avg_expression_full = AverageExpression(FrontalCortex, group.by='ident')
 num_clusters = nrow(avg_expression_full)
 
 ex = (avg_expression_full$SLC17A7 + avg_expression_full$GRIN1 + avg_expression_full$GRIN2B + avg_expression_full$SATB2) / 4
-print(ex)
+print(avg_expression_full$SLC17A7)
 inh = (avg_expression_full$GAD1 + avg_expression_full$GAD2 + avg_expression_full$SLC6A1) / 3
 print(inh)
 oli = (avg_expression_full$CLDN11 + avg_expression_full$MOG + avg_expression_full$MOBP + avg_expression_full$MBP) / 4
