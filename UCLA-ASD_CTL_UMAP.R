@@ -6,8 +6,12 @@ CTL = readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_SampleLabels')
 
 CTL[["percent.mt"]] <- PercentageFeatureSet(CTL, pattern = "^MT-")
 
-VlnPlot(CTL, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3, )
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-VlnPlot.png', width = 14, height = 7)
+VlnPlot(CTL, features = c("nFeature_RNA"))
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-VlnPlot-nFeatureRNA.png', width = 14, height = 7)
+VlnPlot(CTL, features = c("nCount_RNA"))
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-VlnPlot-nCountRNA.png', width = 14, height = 7)
+VlnPlot(CTL, features = c("percent.mt"))
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-VlnPlot-percentmt.png', width = 14, height = 7)
 
 plot1 <- FeatureScatter(CTL, feature1 = "nCount_RNA", feature2 = "percent.mt")
 plot2 <- FeatureScatter(CTL, feature1 = "nCount_RNA", feature2 = "nFeature_RNA")
