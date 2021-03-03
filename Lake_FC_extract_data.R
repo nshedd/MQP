@@ -27,7 +27,7 @@ embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
 embeddings$celltype = Idents(FrontalCortex)
 
-embeddings = as.data.frame(pbmc[["umap"]]@cell.embeddings)
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 write.table(embeddings, file = path.expand("/data/rusers/datavis4/embeddings.txt"), sep="\t")
 
 avg_expression_full = AverageExpression(FrontalCortex, group.by='ident')
