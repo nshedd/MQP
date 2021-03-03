@@ -19,9 +19,12 @@ FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)
 FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))
 
 FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
+FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20)
+
+plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
+ggsave(path.expand("/data/rusers/sheddn/datavis4/umap.txt"), device=)
 
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
@@ -47,7 +50,7 @@ opc = rowMeans(avg_expression_full[,c("PCDH15", "OLIG1")])
 end = rowMeans(avg_expression_full[,c("COBLL1", "DUSP1", "FLT1")])
 print(end)
 
-avg_expression = data.frame('cluster'= c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,21),
+avg_expression = data.frame('cluster'= seq(0,num_clusters-1)),
                             'Excitatory neuron'= ex,
                             'Inhibitory neuron'= inh,
                             'Oligodendrocyte'= oli,
