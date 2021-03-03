@@ -28,7 +28,7 @@ ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:30)
 
 # ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:30) %>% FindClusters()
 
-DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+DimPlot(ASD, group.by="ident")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_samples.png', width = 8, height = 7)
 
 saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_OrigIdent.RDS')
@@ -42,4 +42,4 @@ ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:30) %>% FindClusters()
 DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony.png', width = 8, height = 7)
 
-saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_OrigIdent.RDS')
+saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony.RDS')
