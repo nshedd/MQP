@@ -41,14 +41,14 @@ mic = (avg_expression_full$APBB1IP + avg_expression_full$P2RY12) / 2
 opc = (avg_expression_full$PCDH15 + avg_expression_full$OLIG1) / 2
 end = (avg_expression_full$COBLL1 + avg_expression_full$DUSP1 + avg_expression_full$FLT1) / 3
 
-avg_expression = data.frame('cluster': 1:num_clusters,
-                            'Excitatory neuron': ex,
-                            'Inhibitory neuron': inh,
-                            'Oligodendrocyte': oli,
-                            'Astrocyte': ast,
-                            'Microglia': mic,
-                            'Oligodendrocyte precursor': opc,
-                            'Endothelial cell': end)
+avg_expression = data.frame('cluster'= 1:num_clusters,
+                            'Excitatory neuron'= ex,
+                            'Inhibitory neuron'= inh,
+                            'Oligodendrocyte'= oli,
+                            'Astrocyte'= ast,
+                            'Microglia'= mic,
+                            'Oligodendrocyte precursor'= opc,
+                            'Endothelial cell'= end)
                             
 write.table(expression, file = path.expand("/data/rusers/sheddn/datavis4/expressionmatrix.txt"), sep="\t")
 
