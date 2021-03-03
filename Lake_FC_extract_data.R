@@ -32,8 +32,6 @@ write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddi
 
 avg_expression_full = t(AverageExpression(FrontalCortex)[["RNA"]])
 
-head(avg_expression_full)
-
 write.table(avg_expression_full, file ="/data/rusers/sheddn/datavis4/expression_full.txt", sep="\t")
 avg_expression_full = read.table("/data/rusers/sheddn/datavis4/expression_full.txt", header=TRUE, row.names=1)
 
@@ -41,24 +39,16 @@ num_clusters = nrow(avg_expression_full)
 
 print(avg_expression_full$SLC17A7)
 
-ex= rowMeans(avg_expression_full[,c("SLC17A7", "SATB2", "GRIN1", "GRIN2B")])
-
-#ex = (avg_expression_full$SLC17A7 + avg_expression_full$GRIN1 + avg_expression_full$GRIN2B + avg_expression_full$SATB2) / 4
-print(ex)
-inh = (avg_expression_full$GAD1 + avg_expression_full$GAD2 + avg_expression_full$SLC6A1) / 3
-print(inh)
-oli = (avg_expression_full$CLDN11 + avg_expression_full$MOG + avg_expression_full$MOBP + avg_expression_full$MBP) / 4
-print(oli)
-ast = (avg_expression_full$SLC1A2 + avg_expression_full$SLC1A3 + avg_expression_full$LC4A4 + avg_expression_full$GLUL + avg_expression_full$AQP4) / 5
-print(ast)
-mic = (avg_expression_full$APBB1IP + avg_expression_full$P2RY12) / 2
-print(mic)
-opc = (avg_expression_full$PCDH15 + avg_expression_full$OLIG1) / 2
-print(opc)
-end = (avg_expression_full$COBLL1 + avg_expression_full$DUSP1 + avg_expression_full$FLT1) / 3
+ex = rowMeans(avg_expression_full[,c("SLC17A7", "SATB2", "GRIN1", "GRIN2B")])
+inh = rowMeans(avg_expression_full[,c("GAD1", "GAD2", "SLC6A1")])
+oli = rowMeans(avg_expression_full[,c("CLDN11", "MOG", "MOBP", "MBP")])
+ast = rowMeans(avg_expression_full[,c("SLC1A2", "SLC1A3", "SLC4A4", "GLUL", "AQP4")])
+mic = rowMeans(avg_expression_full[,c("APBB1IP", "P2RY12")])
+opc = rowMeans(avg_expression_full[,c("PCDH15", "OLIG1")])
+end = rowMeans(avg_expression_full[,c("COBLL1", "DUSP1", "FLT1")])
 print(end)
 
-avg_expression = data.frame('cluster'= 1:num_clusters,
+avg_expression = data.frame('cluster'= c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,21),
                             'Excitatory neuron'= ex,
                             'Inhibitory neuron'= inh,
                             'Oligodendrocyte'= oli,
@@ -71,7 +61,7 @@ write.table(expression, file = path.expand("/data/rusers/sheddn/datavis4/express
 
 # expression = GetAssayData(object = FrontalCortex, slot = "scale.data")
 # 
-# marker_genes = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B", "GAD1", "GAD2", "SLC6A1", "CLDN11", "MOG", "MOBP", "MBP", "SLC1A2", "SLC1A3", "SLC4A4", "GLUL", "AQP4"
+# marker_genes = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B", "GAD1", "GAD2", "SLC6A1", "CLDN11", "MOG", "MOBP", "MBP", "SLC1A2", "SLC1A3", "SLC4A4", "GLUL", "AQP4",
 #                 "COBLL1", "DUSP1", "FLT1", "PCDH15", "OLIG1", "PCDH15", "OLIG1", "APBB1IP", "P2RY12", "APBB1IP", "P2RY12", "RYR1", "RELN", "GRM4", "RBFOX3")
 # 
 # expression = expression[markergenes,]
