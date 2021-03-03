@@ -31,7 +31,7 @@ write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddi
 
 avg_expression_full = t(AverageExpression(FrontalCortex)[["RNA"]])
 
-write.table(avg_expression_full, file ="/data/rusers/sheddn/datavis4/expression_full.txt", sep="\t")
+write.table(avg_expression_full, file ="/data/rusers/sheddn/datavis4/expression_full.txt", sep=",")
 avg_expression_full = read.table("/data/rusers/sheddn/datavis4/expression_full.txt", header=TRUE, row.names=1)
 
 num_clusters = nrow(avg_expression_full)
@@ -58,7 +58,7 @@ avg_expression = data.frame('cluster'= c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1
 
 print(avg_expression)
                             
-write.table(avg_expression, file = path.expand("/data/rusers/sheddn/datavis4/expressionmatrix.txt"), sep="\t")
+write.table(avg_expression, file = path.expand("/data/rusers/sheddn/datavis4/expressionmatrix.txt"), sep=",")
 
 # expression = GetAssayData(object = FrontalCortex, slot = "scale.data")
 # 
