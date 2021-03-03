@@ -21,13 +21,13 @@ expression_matrix <- Read10X(data.dir = data_dir)
 BW4 = CreateSeuratObject(counts = expression_matrix, project='4BW')
 
 print('7BW')
-data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/7BW_S7/Solo.out/GeneFull/filtered'
+data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/7BW_S10/Solo.out/GeneFull/filtered'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW7 = CreateSeuratObject(counts = expression_matrix, project='7BW')
 
 print('9BW')
-data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/9BW_S9/Solo.out/GeneFull/filtered'
+data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/9BW_S12/Solo.out/GeneFull/filtered'
 list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW9 = CreateSeuratObject(counts = expression_matrix, project='9BW')
