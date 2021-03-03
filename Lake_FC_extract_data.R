@@ -30,7 +30,7 @@ embeddings$celltype = Idents(FrontalCortex)
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings.txt"), sep="\t")
 
-avg_expression_full = t(AverageExpression(FrontalCortex)[["RNA"]])
+avg_expression_full = t(AverageExpression(FrontalCortex)["RNA"])
 
 head(avg_expression_full)
 
