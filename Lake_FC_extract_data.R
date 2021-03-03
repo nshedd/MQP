@@ -56,8 +56,10 @@ avg_expression = data.frame('cluster'= c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1
                             'Microglia'= mic,
                             'Oligodendrocyte precursor'= opc,
                             'Endothelial cell'= end)
+
+print(avg_expression)
                             
-write.table(expression, file = path.expand("/data/rusers/sheddn/datavis4/expressionmatrix.txt"), sep="\t")
+write.table(avg_expression, file = path.expand("/data/rusers/sheddn/datavis4/expressionmatrix.txt"), sep="\t")
 
 # expression = GetAssayData(object = FrontalCortex, slot = "scale.data")
 # 
