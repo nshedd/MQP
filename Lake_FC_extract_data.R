@@ -34,7 +34,7 @@ avg_expression_full = AverageExpression(FrontalCortex, group.by='ident')
 num_clusters = nrow(avg_expression_full)
 
 ex = (avg_expression_full$SLC17A7 + avg_expression_full$GRIN1 + avg_expression_full$GRIN2B + avg_expression_full$SATB2) / 4
-in = (avg_expression_full$GAD1 + avg_expression_full$GAD2 + avg_expression_full$SLC6A1) / 3
+inh = (avg_expression_full$GAD1 + avg_expression_full$GAD2 + avg_expression_full$SLC6A1) / 3
 oli = (avg_expression_full$CLDN11 + avg_expression_full$MOG + avg_expression_full$MOBP + avg_expression_full$MBP) / 4
 ast = (avg_expression_full$SLC1A2 + avg_expression_full$SLC1A3 + avg_expression_full$LC4A4 + avg_expression_full$GLUL + avg_expression_full$AQP4) / 5
 mic = (avg_expression_full$APBB1IP + avg_expression_full$P2RY12) / 2
@@ -43,7 +43,7 @@ end = (avg_expression_full$COBLL1 + avg_expression_full$DUSP1 + avg_expression_f
 
 avg_expression = data.frame('cluster': 1:num_clusters,
                             'Excitatory neuron': ex,
-                            'Inhibitory neuron': in,
+                            'Inhibitory neuron': inh,
                             'Oligodendrocyte': oli,
                             'Astrocyte': ast,
                             'Microglia': mic,
