@@ -6,11 +6,11 @@ ASD = readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_SampleLabels')
 
 ASD[["percent.mt"]] <- PercentageFeatureSet(ASD, pattern = "^MT-")
 
-VlnPlot(ASD, features = c("nFeature_RNA"), ncol = 3, )
+VlnPlot(ASD, features = c("nFeature_RNA"))
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-VlnPlot-nFeatureRNA.png', width = 14, height = 7)
-VlnPlot(ASD, features = c("nCount_RNA"), ncol = 3, )
+VlnPlot(ASD, features = c("nCount_RNA"))
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-VlnPlot-nCountRNA.png', width = 14, height = 7)
-VlnPlot(ASD, features = c("percent.mt"), ncol = 3, )
+VlnPlot(ASD, features = c("percent.mt"))
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-VlnPlot-percentmt.png', width = 14, height = 7)
 
 plot1 <- FeatureScatter(ASD, feature1 = "nCount_RNA", feature2 = "percent.mt")
