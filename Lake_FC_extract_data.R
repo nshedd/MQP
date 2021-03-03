@@ -41,7 +41,7 @@ num_clusters = nrow(avg_expression_full)
 
 print(avg_expression_full$SLC17A7)
 
-ex_genes= rowMeans(avg_expression_full[,c("SLC17A7", "SATB2", "GRIN1", "GRIN2B")])
+ex= rowMeans(avg_expression_full[,c("SLC17A7", "SATB2", "GRIN1", "GRIN2B")])
 
 #ex = (avg_expression_full$SLC17A7 + avg_expression_full$GRIN1 + avg_expression_full$GRIN2B + avg_expression_full$SATB2) / 4
 print(ex)
