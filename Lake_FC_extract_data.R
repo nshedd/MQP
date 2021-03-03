@@ -25,7 +25,7 @@ FrontalCortex <- FindClusters(FrontalCortex, resolution = 0.5)
 FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20)
 
 plot = DimPlot(FrontalCortex, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
-ggsave(path.expand("/data/rusers/sheddn/datavis4/umap.txt"), device=)
+ggsave(path.expand("/data/rusers/sheddn/datavis4/umap.png"), device=)
 
 embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
 head(embeddings)
