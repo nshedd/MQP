@@ -1,38 +1,37 @@
 library(dplyr)
 library(Seurat)
 
-# path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
-# matrix = read.table(path1, header=TRUE, row.names=1)
+matrix = read.table(path1, header=TRUE, row.names=1)
 
-# FrontalCortex <- CreateSeuratObject(counts = matrix, project = "Datavis", min.cells = 3, min.features = 200)
+FrontalCortex <- CreateSeuratObject(counts = matrix, project = "Datavis", min.cells = 3, min.features = 200)
 
-# FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")
+FrontalCortex[["percent.mt"]] <- PercentageFeatureSet(FrontalCortex, pattern = "^MT-")
 
-# FrontalCortex <- NormalizeData(FrontalCortex, normalization.method = "LogNormalize", scale.factor = 10000)
+FrontalCortex <- NormalizeData(FrontalCortex, normalization.method = "LogNormalize", scale.factor = 10000)
 
-# FrontalCortex <- FindVariableFeatures(object = FrontalCortex)
+FrontalCortex <- FindVariableFeatures(object = FrontalCortex)
 
-# all_cells <- rownames(FrontalCortex)
-# FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)
+all_cells <- rownames(FrontalCortex)
+FrontalCortex <- ScaleData(FrontalCortex, features = all_cells)
 
-# FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))
+FrontalCortex <- RunPCA(FrontalCortex, features = VariableFeatures(object = FrontalCortex))
 
-# FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
-# FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
+FrontalCortex <- FindNeighbors(FrontalCortex, dims = 1:20)
+FrontalCortex <- FindClusters(FrontalCortex, resolution = 1)
 
-# FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20)
+FrontalCortex <- RunUMAP(FrontalCortex, dims = 1:20)
 
-# embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
-# head(embeddings)
-# embeddings$celltype = Idents(FrontalCortex)
+embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
+head(embeddings)
+embeddings$celltype = Idents(FrontalCortex)
 
-# embeddings = as.data.frame(FrontalCortex[["umap"]]@cell.embeddings)
-# write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings.txt"), sep="\t")
+write.table(embeddings, file = path.expand("/data/rusers/sheddn/datavis4/embeddings.txt"), sep="\t")
 
-# avg_expression_full = t(AverageExpression(FrontalCortex)[["RNA"]])
+avg_expression_full = t(AverageExpression(FrontalCortex)[["RNA"]])
 
-# write.table(avg_expression_full, file ="/data/rusers/sheddn/datavis4/expression_full.txt", sep="\t")
+write.table(avg_expression_full, file ="/data/rusers/sheddn/datavis4/expression_full.txt", sep="\t")
 avg_expression_full = read.table("/data/rusers/sheddn/datavis4/expression_full.txt", header=TRUE, row.names=1)
 
 num_clusters = nrow(avg_expression_full)
