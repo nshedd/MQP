@@ -51,7 +51,7 @@ opc = rowMeans(avg_expression_full[,c("PCDH15", "OLIG1")])
 end = rowMeans(avg_expression_full[,c("COBLL1", "DUSP1", "FLT1")])
 print(end)
 
-avg_expression = data.frame('cluster'= seq(0,num_clusters-1)),
+avg_expression = data.frame('cluster'= c(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22),
                             'Excitatory neuron'= ex,
                             'Inhibitory neuron'= inh,
                             'Oligodendrocyte'= oli,
