@@ -47,7 +47,7 @@ ggsave("/data/rusers/sheddn/UCLA-ASD/plots/ElbowPlot.png", device=, width = 14, 
 # CTL <- FindNeighbors(CTL, dims = 1:20)
 # CTL <- FindClusters(CTL, resolution = 0.5)
 
-CTL <- RunUMAP(CTL, dims = 1:20)
+CTL <- RunUMAP(CTL, dims = 1:20, metric="euclidean")
 
 DimPlot(CTL, reduction = "umap")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_samples.png', width = 8, height = 7)
@@ -60,7 +60,7 @@ CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_PCAprocessed_BySample.RDS'
 CTL <- FindNeighbors(CTL, dims = 1:20)
 CTL <- FindClusters(CTL, resolution = 0.5)
 
-CTL <- RunUMAP(CTL, dims = 1:20)
+CTL <- RunUMAP(CTL, dims = 1:20, metric="euclidean")
 
 DimPlot(CTL, reduction = "umap", label = TRUE, pt.size = 0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP.png', width = 8, height = 7)
