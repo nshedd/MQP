@@ -216,13 +216,13 @@ CTL_BA4.6 <- merge(BW11, y=c(BW12,BW13,BW15,BW2,BW23,BW25,BW30,BW35,BW46,BW5,BW6
                     add.cell.ids=c('BW11','BW12','BW13','BW15','BW2','BW23','BW25','BW30','BW35','BW46','BW5','BW6','BW8'),
                    project = "UCLA-ASD")
 
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
+saveRDS(CTL_BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
 CTL_BA9 <- merge(BW20, y=c(BW33,BW40,BW41,BW43,BW47,BW51,BW52,BW53,BW55,BW56,BW57,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
                     add.cell.ids=c('BW20','BW33','BW40','BW41','BW43','BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
                    project = "UCLA-ASD")
 
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA9')
+saveRDS(CT_BA9L, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA9')
 
 
 # CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW33,BW35,BW40,BW41,BW43,BW46,BW47,
