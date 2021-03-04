@@ -35,8 +35,21 @@ CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters()
 DimPlot(CTL, group.by="ident")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
 
-print("Saving UMAP data BA 46...")
+print("Saving UMAP data BA4.6...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
+
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(CTL, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot"), device=)
 
 
 ## BA9
@@ -71,8 +84,21 @@ CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters()
 DimPlot(CTL, group.by="ident")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9.png', width = 8, height = 7)
 
-print("Saving UMAP data BA 46...")
+print("Saving UMAP data BA9...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9.RDS')
+
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(CTL, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot"), device=)
 
 
 
