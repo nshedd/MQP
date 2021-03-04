@@ -254,21 +254,33 @@ list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW76 = CreateSeuratObject(counts = expression_matrix, project='76BW')
 
+ASD_BA4.6 <- merge(BW1, y=c(BW10,BW14,BW16,BW17,BW22,BW24,BW26,BW27,BW3,BW31,BW32,BW4,BW59,BW60,BW7,BW9),
+                    add.cell.ids=c('BW1','BW10','BW14','BW16','BW17','BW22','BW24','BW26','BW27','BW3','BW31','BW32','BW4','BW59','BW60','BW7','BW9'),
+                   project = "UCLA-ASD")
 
-ASD <- merge(BW1, y=c(BW3,BW4,BW7,BW9,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,BW29,BW31,BW32,BW34,
-                      BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW54,BW59,BW60,BW65,BW66,BW67,BW68,BW70,BW72,BW73,BW75,BW76),
-             add.cell.ids=c('BW1','BW3','BW4','BW6','BW9','BW10','BW14','BW16','BW17','BW18','BW19','BW21','BW22','BW24',
-                            'BW26','BW27','BW28','BW29','BW31','BW32','BW34','BW37','BW38','BW39','BW42','BW44','BW45',
-                            'BW48','BW49','BW54','BW59','BW60','BW65','BW66','BW67','BW68','BW70','BW72','BW73','BW75','BW76'),
-             project = "UCLA-ASD")
+saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
 
-saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_SampleLabels')
+ASD_BA9 <- merge(BW18, y=c(BW19,BW21,BW28,BW29,BW34,BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW50,BW54,BW65,BW66,BW67,BW68,BW70,BW72,BW73,BW75,BW76),
+                    add.cell.ids=c('BW18','BW19','BW21','BW28','BW29','BW34','BW37','BW38','BW39','BW42','BW44','BW45','BW48','BW49','BW50','BW54','BW65','BW66','BW67','BW68','BW70','BW72','BW73','BW75','BW76'),
+                   project = "UCLA-ASD")
 
-new.cluster.ids <- c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
-                     'ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
-                     'ASD','ASD','ASD','ASD','ASD','ASD','ASD')
-names(new.cluster.ids) <- levels(ASD)
-ASD <- RenameIdents(ASD, new.cluster.ids)
+saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA9')
 
-saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_GroupLabel')
+
+# ASD <- merge(BW1, y=c(BW3,BW4,BW7,BW9,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,BW29,BW31,BW32,BW34,
+#                       BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW54,BW59,BW60,BW65,BW66,BW67,BW68,BW70,BW72,BW73,BW75,BW76),
+#              add.cell.ids=c('BW1','BW3','BW4','BW6','BW9','BW10','BW14','BW16','BW17','BW18','BW19','BW21','BW22','BW24',
+#                             'BW26','BW27','BW28','BW29','BW31','BW32','BW34','BW37','BW38','BW39','BW42','BW44','BW45',
+#                             'BW48','BW49','BW54','BW59','BW60','BW65','BW66','BW67','BW68','BW70','BW72','BW73','BW75','BW76'),
+#              project = "UCLA-ASD")
+# 
+# saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_SampleLabels')
+# 
+# new.cluster.ids <- c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
+#                      'ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD',
+#                      'ASD','ASD','ASD','ASD','ASD','ASD','ASD')
+# names(new.cluster.ids) <- levels(ASD)
+# ASD <- RenameIdents(ASD, new.cluster.ids)
+# 
+# saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_GroupLabel')
 
