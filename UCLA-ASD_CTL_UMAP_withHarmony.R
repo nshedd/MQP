@@ -15,18 +15,12 @@ CTL <- FindVariableFeatures(CTL, selection.method = "vst", nfeatures = 2000)
 all.genes <- rownames(CTL)
 CTL <- ScaleData(CTL, features = all.genes)
 
-print("Saving Scaled data BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_ScaledData_BA4.6.RDS')
-
 CTL <- RunPCA(CTL, features = VariableFeatures(object = CTL))
-
-print("Saving PCA data BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_PCAprocessed_BA4.6.RDS')
 
 CTL <- RunHarmony(CTL, "orig.ident")
 
 print("Saving Harmony data BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA4.6.RDS')
+saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA4.6.RDS')
 
 CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 
