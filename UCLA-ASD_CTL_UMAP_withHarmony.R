@@ -48,7 +48,7 @@ intersection = intersect(CTL.markers$gene, all_known_marker_genes)
 dotplot <- DotPlot(CTL, features = intersection) + 
   theme(axis.text.x = element_text(angle = 90)) + 
   scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
-ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot")
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png")
 
 
 ## BA9
@@ -91,7 +91,7 @@ intersection = intersect(CTL.markers$gene, all_known_marker_genes)
 dotplot <- DotPlot(CTL, features = intersection) + 
   theme(axis.text.x = element_text(angle = 90)) + 
   scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
-ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot"), device=)
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot.png")
 
 
 
