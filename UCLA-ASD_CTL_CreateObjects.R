@@ -212,21 +212,33 @@ list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW78 = CreateSeuratObject(counts = expression_matrix, project='78BW')
 
+CTL_BA4.6 <- merge(BW11, y=c(BW12,BW13,BW15,BW2,BW23,BW25,BW30,BW35,BW46,BW5,BW6,BW8),
+                    add.cell.ids=c('BW11','BW12','BW13','BW15','BW2','BW23','BW25','BW30','BW35','BW46','BW5','BW6','BW8'),
+                   project = "UCLA-ASD")
 
-CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW33,BW35,BW40,BW41,BW43,BW46,BW47,
-                      BW51,BW52,BW53,BW55,BW56,BW57,BW58,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
-             add.cell.ids=c('BW2','BW5','BW6','BW8','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW33','BW35','BW40','BW41','BW43','BW46',
-                            'BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
-             project = "UCLA-ASD")
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
+
+CTL_BA9 <- merge(BW20, y=c(BW33,BW40,BW41,BW43,BW47,BW51,BW52,BW53,BW55,BW56,BW57,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
+                    add.cell.ids=c('BW20','BW33','BW40','BW41','BW43','BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
+                   project = "UCLA-ASD")
+
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA9')
 
 
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_SampleLabels')
-
-new.cluster.ids <- c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL',
-                     'CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL', 'CTL')
-names(new.cluster.ids) <- levels(CTL)
-CTL <- RenameIdents(CTL, new.cluster.ids)
-
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_GroupLabel')
+# CTL <- merge(BW2, y=c(BW5,BW6,BW8,BW11,BW12,BW13,BW15,BW20,BW23,BW25,BW30,BW33,BW35,BW40,BW41,BW43,BW46,BW47,
+#                       BW51,BW52,BW53,BW55,BW56,BW57,BW58,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
+#              add.cell.ids=c('BW2','BW5','BW6','BW8','BW11','BW12','BW13','BW15','BW20','BW23','BW25','BW30','BW33','BW35','BW40','BW41','BW43','BW46',
+#                             'BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW58','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
+#              project = "UCLA-ASD")
+# 
+# 
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_SampleLabels')
+# 
+# new.cluster.ids <- c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL',
+#                      'CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL', 'CTL')
+# names(new.cluster.ids) <- levels(CTL)
+# CTL <- RenameIdents(CTL, new.cluster.ids)
+# 
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_GroupLabel')
 
 
