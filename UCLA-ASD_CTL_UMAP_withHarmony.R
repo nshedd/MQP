@@ -44,11 +44,13 @@ CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 
 CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters(resolution=0.5)
 
-DimPlot(CTL, group.by="ident")
+DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_lowerres.png', width = 8, height = 7)
 
-print("Saving UMAP data BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_lowerres.RDS')
+quit()
+
+# print("Saving UMAP data BA4.6...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_lowerres.RDS')
 
 # CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
 
