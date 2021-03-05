@@ -4,21 +4,6 @@ library(ggplot2)
 library(harmony)
 library(DoubletFinder)
 
-## Delete later
-
-print("Loading Harmony data BA9...")
-CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9.RDS')
-
-new.cluster.ids <- c('Ex1','Ex2','Ex3','Ast1','OPC','Ex4','In1','In2','In3','?','Ex5','Ex6','Ex7',
-                    'Ast2','Mic','Ex8','End','Oli1','In4','In5','Ex9','Ex10/Ast3','Ex11','Dop?','End/Per?',
-                    'Ex12','Ex13','In6','Ex14','In7','Ex15','Ex16','Ex17/Ast4','Ex18','In8','Ex19','In9','Oli2')
-names(new.cluster.ids) <- levels(CTL)
-CTL <- RenameIdents(CTL, new.cluster.ids)
-
-DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_labeled.png', width = 8, height = 7)
-
-
 ## BA4/6
 # CTL = readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 # 
@@ -30,14 +15,14 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_labeled.png', wi
 # 
 # all.genes <- rownames(CTL)
 # CTL <- ScaleData(CTL, features = all.genes)
-
+# 
 # CTL <- RunPCA(CTL, features = VariableFeatures(object = CTL))
 # 
 # CTL <- RunHarmony(CTL, "orig.ident")
 # 
 # print("Saving Harmony data BA4.6...")
 # saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA4.6.RDS')
-
+# 
 # CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:30)
 # 
 # CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:30) %>% FindClusters(resolution=0.5)
@@ -71,7 +56,7 @@ homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- se
 nExp_poi <- round(0.075*nrow(sobj@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
-CTL <- doubletFinder_v3(CTL, PCs = 1:10, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+CTL <- doubletFinder_v3(CTL, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
 DimPlot(CTL,group.by = colnames(CTL@meta.data)[grep("DF", colnames(CTL@meta.data))])
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doublets.png', width = 7, height = 7)
