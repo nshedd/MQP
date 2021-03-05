@@ -71,7 +71,7 @@ CTL <- ScaleData(CTL, features = all.genes)
 
 CTL <- RunPCA(CTL, features = VariableFeatures(object = CTL))
 
-CTL <- RunHarmony(CTL, "orig.ident")
+CTL <- RunHarmony(CTL, "orig.ident", max.iter.harmony=20)
 
 print("Saving Harmony data BA9...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA9.RDS')
