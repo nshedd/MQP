@@ -80,7 +80,7 @@ CTL <- SubsetData(CTL, cells=rownames(CTL@meta.data)[which(CTL@meta.data$DF.clas
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doubletsremoved.png', width = 8, height = 7)
 
-quit()
+q()
 
 
 # CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
