@@ -34,21 +34,27 @@ library(harmony)
 
 CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
 
+new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
+                    'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
+                     'In6','Dop?','In7','Ex12','Ast2','Ex13','Ast3','Ex14','Ex15','Ex16','End/Per')
+names(new.cluster.ids) <- levels(CTL)
+CTL <- RenameIdents(CTL, new.cluster.ids)
+
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
 
-CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
-CTL.markers %>% group_by(cluster)
-
-marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
-all_known_marker_genes = marker_gene_table$Human.Gene
-
-intersection = intersect(CTL.markers$gene, all_known_marker_genes)
-
-dotplot <- DotPlot(CTL, features = intersection) + 
-  theme(axis.text.x = element_text(angle = 90)) + 
-  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
-ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png", width = 14, height = 7)
+# CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+# CTL.markers %>% group_by(cluster)
+# 
+# marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+# all_known_marker_genes = marker_gene_table$Human.Gene
+# 
+# intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+# 
+# dotplot <- DotPlot(CTL, features = intersection) + 
+#   theme(axis.text.x = element_text(angle = 90)) + 
+#   scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+# ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png", width = 14, height = 7)
 
 
 ## BA9
