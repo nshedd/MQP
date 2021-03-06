@@ -1,3 +1,10 @@
+library(dplyr)
+library(Seurat)
+library(ggplot2)
+library(harmony)
+library(SingleR)
+library(SingleCellExperiment)
+
 matrix = readRDS(path.expand("~/GSE97930_All.RDS"))
 Lake <- CreateSeuratObject(counts = matrix, project = "SeuratPipeline", min.cells = 3, min.features = 200)
 
