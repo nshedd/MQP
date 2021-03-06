@@ -26,11 +26,42 @@ ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:30)
 
 ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:30) %>% FindClusters()
 
+# new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
+#                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
+#                     'In6','Dop?','In7','Ex12','Ast2','Ex13','Ast3','Ex14','Ex15','Ex16','End/Per')
+# names(new.cluster.ids) <- levels(ASD)
+# ASD <- RenameIdents(ASD, new.cluster.ids)
+
 DimPlot(ASD, group.by="ident")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
 
-print("Saving UMAP data BA 46...")
+print("Saving UMAP data BA 4.6...")
 saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
+
+## Doublet removal
+## pK indetification
+sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:30, sct = FALSE)
+sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
+bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
+bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
+
+## Doublet proportion estimate
+annotations <- ASD@meta.data$seurat_clusters
+homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
+nExp_poi <- round(0.25*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
+
+ASD <- doubletFinder_v3(ASD, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+
+DimPlot(ASD,group.by = colnames(ASD@meta.data)[grep("DF", colnames(ASD@meta.data))])
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_doublets.png', width = 7, height = 7)
+
+ASD <- SubsetData(ASD, cells=rownames(ASD@meta.data)[which(ASD@meta.data$DF.classification == "Singlet")])
+DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_doubletsremoved.png', width = 8, height = 7)
+
+print("Saving UMAP data w/o Doublets BA4.6...")
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
 ASD.markers <- FindAllMarkers(ASD, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 ASD.markers %>% group_by(cluster)
@@ -69,11 +100,42 @@ ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:30)
 
 ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:30) %>% FindClusters()
 
+# new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
+#                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
+#                     'In6','Dop?','In7','Ex12','Ast2','Ex13','Ast3','Ex14','Ex15','Ex16','End/Per')
+# names(new.cluster.ids) <- levels(ASD)
+# ASD <- RenameIdents(ASD, new.cluster.ids)
+
 DimPlot(ASD, group.by="ident")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9.png', width = 8, height = 7)
 
-print("Saving UMAP data BA 46...")
+print("Saving UMAP data BA 9...")
 saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9.RDS')
+
+## Doublet removal
+## pK indetification
+sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:30, sct = FALSE)
+sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
+bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
+bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
+
+## Doublet proportion estimate
+annotations <- ASD@meta.data$seurat_clusters
+homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
+nExp_poi <- round(0.25*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
+
+ASD <- doubletFinder_v3(ASD, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+
+DimPlot(ASD,group.by = colnames(ASD@meta.data)[grep("DF", colnames(ASD@meta.data))])
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_doublets.png', width = 7, height = 7)
+
+ASD <- SubsetData(ASD, cells=rownames(ASD@meta.data)[which(ASD@meta.data$DF.classification == "Singlet")])
+DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_doubletsremoved.png', width = 8, height = 7)
+
+print("Saving UMAP data w/o Doublets BA9...")
+saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
 ASD.markers <- FindAllMarkers(ASD, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 ASD.markers %>% group_by(cluster)
@@ -86,7 +148,7 @@ intersection = intersect(ASD.markers$gene, all_known_marker_genes)
 dotplot <- DotPlot(ASD, features = intersection) +
   theme(axis.text.x = element_text(angle = 90)) +
   scale_y_discrete(limits = rev(levels(ASD$seurat_clusters)))
-ggsave("/data/rusers/sheddn/UCLA-ASD/plots/ASD_BA4.6_dotplot.png", width = 14, height = 7)
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/ASD_BA9_dotplot.png", width = 14, height = 7)
 
 
 # # ASD = readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_SampleLabels')
