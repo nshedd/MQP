@@ -54,7 +54,7 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- CTL@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.075*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.15*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 CTL <- doubletFinder_v3(CTL, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
@@ -133,7 +133,7 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- CTL@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.075*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.15*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 CTL <- doubletFinder_v3(CTL, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
