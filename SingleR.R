@@ -1,3 +1,8 @@
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("SingleR")
+
 library(dplyr)
 library(Seurat)
 library(ggplot2)
