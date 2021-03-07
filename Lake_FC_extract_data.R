@@ -47,6 +47,9 @@ markergenes = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B", "GAD1", "GAD2", "SLC6A1",
 expression = expression[,markergenes]
 write.table(expression, file = path.expand("/data/rusers/sheddn/datavis4/FrontalCortex_expression.txt"), sep=",")
 
+data = merge(embeddings, expression, by=row.names, all=TRUE)
+write.table(data, "/data/rusers/sheddn/datavis4/FrontalCortex.txt", sep=',')
+
 
 
 
@@ -92,6 +95,8 @@ markergenes = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B", "GAD1", "GAD2", "SLC6A1",
 expression = expression[,markergenes]
 write.table(expression, file = path.expand("/data/rusers/sheddn/datavis4/VisualCortex_expression.txt"), sep=",")
 
+data = merge(embeddings, expression, by=row.names, all=TRUE)
+write.table(data, "/data/rusers/sheddn/datavis4/VisualCortex.txt", sep=',')
 
 
 path1 = path.expand("~/GSE97930_CerebellarHem_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt")
@@ -135,3 +140,6 @@ markergenes = c("SLC17A7", "SATB2", "GRIN1", "GRIN2B", "GAD1", "GAD2", "SLC6A1",
 
 expression = expression[,markergenes]
 write.table(expression, file = path.expand("/data/rusers/sheddn/datavis4/CerebellarHem_expression.txt"), sep=",")
+
+data = merge(embeddings, expression, by=row.names, all=TRUE)
+write.table(data, ("/data/rusers/sheddn/datavis4/CerebellarHem.txt", sep=',')
