@@ -31,7 +31,7 @@ print('Running SingleR...')
 CTL_SingleR <- SingleR(test=CTL_SCE,
                        ref=Lake_SCE,
                        labels=Lake_labels,
-                       clusters=CTL_SingleR,
+                       clusters=CTL_clust,
                        assay.type.test = "logcounts",
                        assay.type.ref = "logcounts")
 
