@@ -3,6 +3,21 @@ library(Seurat)
 library(ggplot2)
 library(harmony)
 
+## Load reference dataset for SingleR
+path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+
+matrix = read.table(path1, header=TRUE, row.names=1)
+Lake <- CreateSeuratObject(counts = matrix, project = "SeuratPipeline", min.cells = 3, min.features = 200)
+
+Lake[["percent.mt"]] <- PercentageFeatureSet(Lake, pattern = "^MT-")
+
+Lake <- subset(Lake, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+
+Lake <- NormalizeData(Lake, normalization.method = "LogNormalize", scale.factor = 10000)
+
+Lake_SCE <- as.SingleCellExperiment(Lake)
+Lake_labels <- Idents(Lake)
+
 ## BA4/6
 ASD = readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
 
@@ -75,6 +90,25 @@ dotplot <- DotPlot(ASD, features = intersection) +
   theme(axis.text.x = element_text(angle = 90)) +
   scale_y_discrete(limits = rev(levels(ASD$seurat_clusters)))
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/ASD_BA4.6_dotplot.png", width = 14, height = 7)
+
+## SingleR on BA4/6 data
+ASD_SCE <- as.SingleCellExperiment(ASD)
+ASD_clust <- Idents(ASD)
+
+print('Running SingleR...')
+ASD_SingleR <- SingleR(test=ASD_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+                       clusters=ASD_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+ASD$SingleR.pruned.calls <- ASD_SingleR$pruned.labels
+ASD$SingleR.calls <- ASD_SingleR$labels
+
+DimPlot(ASD, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_SingleRlabel.png', width = 8, height = 7)
 
 
 ## BA9
@@ -149,6 +183,25 @@ dotplot <- DotPlot(ASD, features = intersection) +
   theme(axis.text.x = element_text(angle = 90)) +
   scale_y_discrete(limits = rev(levels(ASD$seurat_clusters)))
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/ASD_BA9_dotplot.png", width = 14, height = 7)
+
+## SingleR on BA9 data
+ASD_SCE <- as.SingleCellExperiment(ASD)
+ASD_clust <- Idents(ASD)
+
+print('Running SingleR...')
+ASD_SingleR <- SingleR(test=ASD_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+                       clusters=ASD_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+ASD$SingleR.pruned.calls <- ASD_SingleR$pruned.labels
+ASD$SingleR.calls <- ASD_SingleR$labels
+
+DimPlot(ASD, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_SingleRlabel.png', width = 8, height = 7)
 
 
 # # ASD = readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_SampleLabels')
