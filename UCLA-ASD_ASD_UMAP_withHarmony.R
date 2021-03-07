@@ -78,7 +78,7 @@ DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_doubletsremoved.png', width = 8, height = 7)
 
 print("Saving UMAP data w/o Doublets BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
+saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
 ASD.markers <- FindAllMarkers(ASD, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 ASD.markers %>% group_by(cluster)
@@ -171,7 +171,7 @@ DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_doubletsremoved.png', width = 8, height = 7)
 
 print("Saving UMAP data w/o Doublets BA9...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
+saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
 ASD.markers <- FindAllMarkers(ASD, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 ASD.markers %>% group_by(cluster)
