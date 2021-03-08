@@ -2,6 +2,7 @@ library(dplyr)
 library(Seurat)
 library(ggplot2)
 library(harmony)
+library(DoubletFinder)
 library(SingleR)
 library(SingleCellExperiment)
 
@@ -65,7 +66,7 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- ASD@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.25*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.15*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 ASD <- doubletFinder_v3(ASD, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
@@ -158,7 +159,7 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- ASD@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.25*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.15*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 ASD <- doubletFinder_v3(ASD, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
