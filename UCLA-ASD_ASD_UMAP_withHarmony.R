@@ -40,9 +40,9 @@ ASD <- RunHarmony(ASD, "orig.ident")
 print("Saving Harmony data BA4.6...")
 saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_Harmonyprocessed_BA4.6.RDS')
 
-ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:30)
+ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:20)
 
-ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:30) %>% FindClusters()
+ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
 
 # new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
 #                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
@@ -58,7 +58,7 @@ saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmo
 
 ## Doublet removal
 ## pK indetification
-sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:30, sct = FALSE)
+sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:20, sct = FALSE)
 sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
 bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
 bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
@@ -69,7 +69,7 @@ homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- se
 nExp_poi <- round(0.15*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
-ASD <- doubletFinder_v3(ASD, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+ASD <- doubletFinder_v3(ASD, PCs = 1:20, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
 DimPlot(ASD,group.by = colnames(ASD@meta.data)[grep("DF", colnames(ASD@meta.data))])
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_doublets.png', width = 7, height = 7)
@@ -133,9 +133,9 @@ ASD <- RunHarmony(ASD, "orig.ident")
 print("Saving Harmony data BA9...")
 saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_Harmonyprocessed_BA9.RDS')
 
-ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:30)
+ASD <- RunUMAP(ASD, reduction = "harmony", dims = 1:20)
 
-ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:30) %>% FindClusters()
+ASD <- FindNeighbors(ASD, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
 
 # new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
 #                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
@@ -151,7 +151,7 @@ saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmo
 
 ## Doublet removal
 ## pK indetification
-sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:30, sct = FALSE)
+sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:20, sct = FALSE)
 sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
 bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
 bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
@@ -162,7 +162,7 @@ homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- se
 nExp_poi <- round(0.15*nrow(ASD@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
-ASD <- doubletFinder_v3(ASD, PCs = 1:30, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+ASD <- doubletFinder_v3(ASD, PCs = 1:20, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
 DimPlot(ASD,group.by = colnames(ASD@meta.data)[grep("DF", colnames(ASD@meta.data))])
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_doublets.png', width = 7, height = 7)
