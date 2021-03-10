@@ -6,6 +6,21 @@ library(DoubletFinder)
 library(SingleR)
 library(SingleCellExperiment)
 
+## Load reference dataset
+path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+
+matrix = read.table(path1, header=TRUE, row.names=1)
+Lake <- CreateSeuratObject(counts = matrix, project = "SeuratPipeline", min.cells = 3, min.features = 200)
+
+Lake[["percent.mt"]] <- PercentageFeatureSet(Lake, pattern = "^MT-")
+
+Lake <- subset(Lake, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+
+Lake <- NormalizeData(Lake, normalization.method = "LogNormalize", scale.factor = 10000)
+
+Lake_SCE <- as.SingleCellExperiment(Lake)
+Lake_labels <- Idents(Lake)
+
 ## BA4/6
 CTL = readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
@@ -22,8 +37,8 @@ CTL <- RunPCA(CTL, features = VariableFeatures(object = CTL))
 
 CTL <- RunHarmony(CTL, "orig.ident")
 
-print("Saving Harmony data BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA4.6.RDS')
+# print("Saving Harmony data BA4.6...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA4.6.RDS')
 
 CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:20)
 
@@ -32,8 +47,8 @@ CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:20) %>% FindClusters(r
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
 
-print("Saving UMAP data BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
+# print("Saving UMAP data BA4.6...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
 
 # new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
 #                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
@@ -65,21 +80,39 @@ CTL <- SubsetData(CTL, cells=rownames(CTL@meta.data)[which(CTL@meta.data$DF.clas
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doubletsremoved.png', width = 8, height = 7)
 
-print("Saving UMAP data w/o Doublets BA4.6...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
+# print("Saving UMAP data w/o Doublets BA4.6...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
-# CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
-# CTL.markers %>% group_by(cluster)
-# 
-# marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
-# all_known_marker_genes = marker_gene_table$Human.Gene
-# 
-# intersection = intersect(CTL.markers$gene, all_known_marker_genes)
-# 
-# dotplot <- DotPlot(CTL, features = intersection) + 
-#   theme(axis.text.x = element_text(angle = 90)) + 
-#   scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
-# ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png", width = 14, height = 7)
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(CTL, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png", width = 14, height = 7)
+
+CTL_SCE <- as.SingleCellExperiment(CTL)
+CTL_clust <- Idents(CTL)
+
+print('Running SingleR...')
+CTL_SingleR <- SingleR(test=CTL_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+                       clusters=CTL_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
+CTL$SingleR.calls <- CTL_SingleR$labels
+
+DimPlot(CTL, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_SingleRlabel.png', width = 8, height = 7)
 
 
 ## BA9
@@ -98,8 +131,8 @@ CTL <- RunPCA(CTL, features = VariableFeatures(object = CTL))
 
 CTL <- RunHarmony(CTL, "orig.ident", max.iter.harmony=20)
 
-print("Saving Harmony data BA9...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA9.RDS')
+# print("Saving Harmony data BA9...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_Harmonyprocessed_BA9.RDS')
 
 CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:20)
 
@@ -108,8 +141,8 @@ CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:20) %>% FindClusters(r
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9.png', width = 8, height = 7)
 
-print("Saving UMAP data BA9...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9.RDS')
+# print("Saving UMAP data BA9...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9.RDS')
 
 # new.cluster.ids <- c('Ex1','Ex2','Ex3','Ast1','OPC','Ex4','In1','In2','In3','?','Ex5','Ex6','Ex7',
 #                     'Ast2','Mic','Ex8','End','Oli1','In4','In5','Ex9','Ex10/Ast3','Ex11','Dop?','End/Per?',
@@ -141,8 +174,39 @@ CTL <- SubsetData(CTL, cells=rownames(CTL@meta.data)[which(CTL@meta.data$DF.clas
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_doubletsremoved.png', width = 8, height = 7)
 
-print("Saving UMAP data w/o Doublets BA9...")
-saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(CTL, features = intersection) + 
+  theme(axis.text.x = element_text(angle = 90)) + 
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot.png", width = 14, height = 7)
+
+CTL_SCE <- as.SingleCellExperiment(CTL)
+CTL_clust <- Idents(CTL)
+
+print('Running SingleR...')
+CTL_SingleR <- SingleR(test=CTL_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+                       clusters=CTL_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
+CTL$SingleR.calls <- CTL_SingleR$labels
+
+DimPlot(CTL, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_SingleRlabel.png', width = 8, height = 7)
+
+# print("Saving UMAP data w/o Doublets BA9...")
+# saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
 # CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 # CTL.markers %>% group_by(cluster)
