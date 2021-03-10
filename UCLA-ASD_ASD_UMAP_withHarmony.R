@@ -48,7 +48,7 @@ library(SingleCellExperiment)
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
 
 print("Loading UMAP data BA4.6...")
-CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
+ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
 
 DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
@@ -149,7 +149,7 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9.RDS')
 
 print("Loading UMAP data BA9...")
-CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9.RDS')
+ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9.RDS')
 
 DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9.png', width = 8, height = 7)
