@@ -1,11 +1,10 @@
 import scrublet as scr
 import numpy as np
+import pandas as pd
 
 counts_matrix_link = "/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6_counts.txt"
-genes_list_link = "/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6_genes.txt"
 
-counts_matrix = np.array(counts_matrix_link, delimiter='\t')
-genes_list = np.array(genes_list_link, delimiter='\t')
+counts_matrix = pd.read_csv(counts_matrix_link, index_col=0, header=0)
 
 scrub = scr.Scrublet(counts_matrix, expected_doublet_rate=0.15)
 
