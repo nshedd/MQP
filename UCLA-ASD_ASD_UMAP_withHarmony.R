@@ -177,8 +177,8 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_labeled.png', 
 print("Loading UMAP data w/o Doublets BA9...")
 ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
-new.cluster.ids <- c('Ex1','Ex2','Ex3','In1','OPC','Ex4','Ast','In2','Ex5',
-                     'Mic','Ex6','Ex7','In3','Ex8','Ex9','Ex10','Oli1','Ast','In4',
+new.cluster.ids <- c('Ex1','Ex2','Ex3','In1','OPC','Ex4','Ast1','In2','Ex5',
+                     'Mic','Ex6','Ex7','In3','Ex8','Ex9','Ex10','Oli1','Ast2','In4',
                      'Ex11','End/Per1','Ex12','In5','Ex13','Ex14','End/Per2','Oli2','Oli3')
 names(new.cluster.ids) <- levels(ASD)
 ASD <- RenameIdents(ASD, new.cluster.ids)
