@@ -5,6 +5,7 @@ library(harmony)
 library(DoubletFinder)
 library(SingleR)
 library(SingleCellExperiment)
+library(reshape2)
 
 ## ASD-BA4.6
 print("Loading ASD UMAP data w/o Doublets BA4.6...")
