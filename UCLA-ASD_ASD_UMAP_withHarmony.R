@@ -46,13 +46,10 @@ library(SingleCellExperiment)
 # 
 # print("Saving UMAP data BA 4.6...")
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
-
-print("Loading UMAP data BA4.6...")
-ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6.RDS')
-
-DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
-
+# 
+# DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+# ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
+# 
 # ## Doublet removal
 # ## pK indetification
 # sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:20, sct = FALSE)
@@ -78,17 +75,18 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 
 # print("Saving UMAP data w/o Doublets BA4.6...")
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
-# print("Loading UMAP data w/o Doublets BA4.6...")
-# CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
-# 
-# new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
-#                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
-#                     'In6','Dop?','In7','Ex12','Ast2','Ex13','Ast3','Ex14','Ex15','Ex16','End/Per')
-# names(new.cluster.ids) <- levels(ASD)
-# ASD <- RenameIdents(ASD, new.cluster.ids)
-# 
-# DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
-# ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_labeled.png', width = 8, height = 7)
+print("Loading UMAP data w/o Doublets BA4.6...")
+CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
+
+new.cluster.ids <- c('Ex1','Ex2','Ex3','Ast1','Oli1','In1','Ex4','In2','Ex5','Ex6','In3',
+                     'Ex7','OPC1','End/Per','Ex8','Mic1','In4','Ex9','Ex10','Ex11','Ex12','Ex13',
+                     'Oli2','Ex14','Ex15','Ast2','In5','In6','Ast3','Mic2','In7','Ex16','In8',
+                     'In9','In10','Ast4','Mic3','In11','Ex17','Ast5','Ast6','Ast7','OPC2','Mic4')
+names(new.cluster.ids) <- levels(ASD)
+ASD <- RenameIdents(ASD, new.cluster.ids)
+
+DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_labeled.png', width = 8, height = 7)
 
 # ASD.markers <- FindAllMarkers(ASD, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 # ASD.markers %>% group_by(cluster)
@@ -147,13 +145,10 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6.png', width = 
 # 
 # print("Saving UMAP data BA 9...")
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9.RDS')
-
-print("Loading UMAP data BA9...")
-ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9.RDS')
-
-DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9.png', width = 8, height = 7)
-
+# 
+# DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+# ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9.png', width = 8, height = 7)
+# 
 # ## Doublet removal
 # ## pK indetification
 # sweep.res.list_pbmc <- paramSweep_v3(ASD, PCs = 1:20, sct = FALSE)
@@ -179,17 +174,17 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9.png', width = 8,
 # print("Saving UMAP data w/o Doublets BA9...")
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
-# print("Loading UMAP data w/o Doublets BA9...")
-# CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
-# 
-# new.cluster.ids <- c('Ex1','Ex2','Ex3','Ex4','Oli','Ex5','In1','In2','In3','OPC','Ex6',
-#                     'Ex7','Ast1','End?','Ex8','Mic','Ex9','In4','Ex10','In5','Ex11','In6','Per?',
-#                     'In6','Dop?','In7','Ex12','Ast2','Ex13','Ast3','Ex14','Ex15','Ex16','End/Per')
-# names(new.cluster.ids) <- levels(ASD)
-# ASD <- RenameIdents(ASD, new.cluster.ids)
-# 
-# DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
-# ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_labeled.png', width = 8, height = 7)
+print("Loading UMAP data w/o Doublets BA9...")
+CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
+
+new.cluster.ids <- c('Ex1','Ex2','Ex3','In1','OPC','Ex4','Ast','In2','Ex5',
+                     'Mic','Ex6','Ex7','In3','Ex8','Ex9','Ex10','Oli1','Ast','In4',
+                     'Ex11','End/Per1','Ex12','In5','Ex13','Ex14','End/Per2','Oli2','Oli3')
+names(new.cluster.ids) <- levels(ASD)
+ASD <- RenameIdents(ASD, new.cluster.ids)
+
+DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA9_labeled.png', width = 8, height = 7)
 
 # ASD.markers <- FindAllMarkers(ASD, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 # ASD.markers %>% group_by(cluster)
