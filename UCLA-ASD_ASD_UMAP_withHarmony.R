@@ -76,7 +76,7 @@ library(SingleCellExperiment)
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
 print("Loading UMAP data w/o Doublets BA4.6...")
-CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
+ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
 new.cluster.ids <- c('Ex1','Ex2','Ex3','Ast1','Oli1','In1','Ex4','In2','Ex5','Ex6','In3',
                      'Ex7','OPC1','End/Per','Ex8','Mic1','In4','Ex9','Ex10','Ex11','Ex12','Ex13',
@@ -175,7 +175,7 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/ASD-UMAP_Harmony_BA4.6_labeled.png', 
 # saveRDS(ASD, '/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
 print("Loading UMAP data w/o Doublets BA9...")
-CTL <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
+ASD <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved.RDS')
 
 new.cluster.ids <- c('Ex1','Ex2','Ex3','In1','OPC','Ex4','Ast','In2','Ex5',
                      'Mic','Ex6','Ex7','In3','Ex8','Ex9','Ex10','Oli1','Ast','In4',
