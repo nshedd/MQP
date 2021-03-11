@@ -74,9 +74,9 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doubletsremove
 print("Saving UMAP data w/o Doublets BA4.6...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
-new.cluster.ids <- c('Ex1','In1','Ex2','Ex3','Ex4','Ex5','Oli','In','End/Per',
-                    'Ex6','In2','Ex7','OPC','Ast1','In3','Ex8','Mic','Ex9','Ex10',
-                    'Ex11','In4','In5','Ex12','Ex13','In6','Ex14','Ast2','Ex15')
+new.cluster.ids <- c('Ex1','In1','Ex2','Ex3','Ex4','Ex5','Oli','In2','End/Per',
+                    'Ex6','In3','Ex7','OPC','Ast1','In4','Ex8','Mic','Ex9','Ex10',
+                    'Ex11','In5','In6','Ex12','Ex13','In7','Ex14','Ast2','Ex15')
 names(new.cluster.ids) <- levels(CTL)
 CTL <- RenameIdents(CTL, new.cluster.ids)
 
