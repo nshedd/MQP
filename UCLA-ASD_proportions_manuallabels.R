@@ -23,7 +23,9 @@ ASD_BA4.6_prop_manual_table = table(ASD_BA4.6_prop_manual_list)
 
 ASD_BA4.6_prop_df = ASD_BA4.6_prop_manual_table %>% as.data.frame
 colnames(ASD_BA4.6_prop_df) <- c('Cell_Type', 'FreqASD')
-print(ASD_BA4.6_prop_df)
+
+ASD_BA4.6_sum = sum(ASD_BA4.6_prop_df$FreqASD)
+ASD_BA4.6_prop_df$FreqASD = ASD_BA4.6_prop_df$FreqASD/ASD_BA4.6_sum
 
 
 ## CTL-BA4.6
@@ -41,15 +43,16 @@ CTL_BA4.6_prop_manual_table = table(CTL_BA4.6_prop_manual_list)
 
 CTL_BA4.6_prop_df = CTL_BA4.6_prop_manual_table %>% as.data.frame
 colnames(CTL_BA4.6_prop_df) <- c('Cell_Type', 'FreqCTL')
-print(CTL_BA4.6_prop_df)
 
+CTL_BA4.6_sum = sum(CTL_BA4.6_prop_df$FreqCTL)
+CTL_BA4.6_prop_df$FreqCTL = CTL_BA4.6_prop_df$FreqCTL/CTL_BA4.6_sum
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
 print(BA4.6_prop_df)
 
 BA4.6_prop_df = melt(BA4.6_prop_df, id.vars='Cell_Type')
 
-ggplot(data=BA4.6_prop_df, aes(x = Cell_Type, y = value, fill=variable)) + geom_bar(stat="identity") +ggtitle("BA 4/6 - Cluster Labels")
+ggplot(data=BA4.6_prop_df, aes(x = Cell_Type, y = value, fill=variable)) + geom_bar(stat="identity", position='dodge') +ggtitle("BA 4/6 - Cluster Labels")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CellTypeProportion_BA4.6.png')
 
 
@@ -108,6 +111,8 @@ CTL_BA9_prop_manual_table = table(CTL_BA9_prop_manual_list)
 CTL_BA9_prop_df = CTL_BA9_prop_manual_table %>% as.data.frame
 colnames(CTL_BA9_prop_df) <- c('Cell_Type', 'FreqCTL')
 
+BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
+print(BA9_prop_df)
 
 BA9_prop_df = melt(BA9_prop_df, id.vars='Cell_Type')
 
