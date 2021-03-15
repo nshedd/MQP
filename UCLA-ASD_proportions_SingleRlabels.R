@@ -42,7 +42,7 @@ ASD_SingleR <- SingleR(test=ASD_SCE,
 print('Plotting...')
 ASD$SingleR.pruned.calls <- ASD_SingleR$pruned.labels
 
-for (i in range(1,len(ASD_SingleR$labels))) {
+for (i in range(1,length(ASD_SingleR$labels))) {
   if (grepl("Ex", ASD_SingleR[i,'labels'], fixed=TRUE)){
     ASD_SingleR[i,'labels'] = "Ex"
   } else if (grepl("In", ASD_SingleR[i,'labels'], fixed=TRUE)){
@@ -80,7 +80,7 @@ CTL_SingleR <- SingleR(test=CTL_SCE,
 print('Plotting...')
 CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
 
-for (i in range(1,len(CTL_SingleR$labels))) {
+for (i in range(1,length(CTL_SingleR$labels))) {
   if (grepl("Ex", CTL_SingleR[i,'labels'], fixed=TRUE)){
     CTL_SingleR[i,'labels'] = "Ex"
   } else if (grepl("In", CTL_SingleR[i,'labels'], fixed=TRUE)){
@@ -129,7 +129,7 @@ ASD_SingleR <- SingleR(test=ASD_SCE,
 print('Plotting...')
 ASD$SingleR.pruned.calls <- ASD_SingleR$pruned.labels
 
-for (i in range(1,len(ASD_SingleR$labels))) {
+for (i in range(1,length(ASD_SingleR$labels))) {
   if (grepl("Ex", ASD_SingleR[i,'labels'], fixed=TRUE)){
     ASD_SingleR[i,'labels'] = "Ex"
   } else if (grepl("In", ASD_SingleR[i,'labels'], fixed=TRUE)){
@@ -167,7 +167,7 @@ CTL_SingleR <- SingleR(test=CTL_SCE,
 print('Plotting...')
 CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
 
-for (i in range(1,len(CTL_SingleR$labels))) {
+for (i in range(1,length(CTL_SingleR$labels))) {
   if (grepl("Ex", CTL_SingleR[i,'labels'], fixed=TRUE)){
     CTL_SingleR[i,'labels'] = "Ex"
   } else if (grepl("In", CTL_SingleR[i,'labels'], fixed=TRUE)){
