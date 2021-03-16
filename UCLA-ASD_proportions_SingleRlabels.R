@@ -42,14 +42,6 @@ ASD_SingleR <- SingleR(test=ASD_SCE,
 print('Plotting...')
 ASD$SingleR.pruned.calls <- ASD_SingleR$pruned.labels
 
-for (i in range(1,length(ASD_SingleR$labels))) {
-  if (grepl("Ex", ASD_SingleR[i,'labels'], fixed=TRUE)){
-    ASD_SingleR[i,'labels'] = "Ex"
-  } else if (grepl("In", ASD_SingleR[i,'labels'], fixed=TRUE)){
-    ASD_SingleR[i,'labels'] = "In"
-  }
-}
-
 ASD$SingleR.calls <- ASD_SingleR$labels
 
 ASD_BA4.6_prop_singler_list = ASD$SingleR.calls
@@ -79,14 +71,6 @@ CTL_SingleR <- SingleR(test=CTL_SCE,
 
 print('Plotting...')
 CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
-
-for (i in range(1,length(CTL_SingleR$labels))) {
-  if (grepl("Ex", CTL_SingleR[i,'labels'], fixed=TRUE)){
-    CTL_SingleR[i,'labels'] = "Ex"
-  } else if (grepl("In", CTL_SingleR[i,'labels'], fixed=TRUE)){
-    CTL_SingleR[i,'labels'] = "In"
-  }
-}
 
 CTL$SingleR.calls <- CTL_SingleR$labels
 
@@ -129,18 +113,10 @@ ASD_SingleR <- SingleR(test=ASD_SCE,
 print('Plotting...')
 ASD$SingleR.pruned.calls <- ASD_SingleR$pruned.labels
 
-for (i in range(1,length(ASD_SingleR$labels))) {
-  if (grepl("Ex", ASD_SingleR[i,'labels'], fixed=TRUE)){
-    ASD_SingleR[i,'labels'] = "Ex"
-  } else if (grepl("In", ASD_SingleR[i,'labels'], fixed=TRUE)){
-    ASD_SingleR[i,'labels'] = "In"
-  }
-}
-
 ASD$SingleR.calls <- ASD_SingleR$labels
 
 ASD_BA9_prop_singler_list = ASD$SingleR.calls
-ASD_BA9_prop_singler_table = table(ASD_BA9_prop_manual_list)
+ASD_BA9_prop_singler_table = table(ASD_BA9_prop_singler_list)
 
 ASD_BA9_prop_df = ASD_BA9_prop_singler_table %>% as.data.frame
 colnames(ASD_BA9_prop_df) <- c('Cell_Type', 'FreqASD')
@@ -167,14 +143,6 @@ CTL_SingleR <- SingleR(test=CTL_SCE,
 print('Plotting...')
 CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
 
-for (i in range(1,length(CTL_SingleR$labels))) {
-  if (grepl("Ex", CTL_SingleR[i,'labels'], fixed=TRUE)){
-    CTL_SingleR[i,'labels'] = "Ex"
-  } else if (grepl("In", CTL_SingleR[i,'labels'], fixed=TRUE)){
-    CTL_SingleR[i,'labels'] = "In"
-  }
-}
-
 CTL$SingleR.calls <- CTL_SingleR$labels
 
 
@@ -186,7 +154,6 @@ colnames(CTL_BA9_prop_df) <- c('Cell_Type', 'FreqCTL')
 
 CTL_BA9_sum = sum(CTL_BA9_prop_df$FreqCTL)
 CTL_BA9_prop_df$FreqCTL = CTL_BA9_prop_df$FreqCTL/CTL_BA9_sum
-
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
 print(BA9_prop_df)
