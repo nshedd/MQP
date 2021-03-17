@@ -6,16 +6,16 @@ library(DoubletFinder)
 
 ASD_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
 
-# new.cluster.ids <- c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD')
-names(new.cluster.ids) <- levels(ASD)
-ASD_BA4.6 <- RenameIdents(ASD, new.cluster.ids)
+new.cluster.ids <- c('ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD','ASD')
+names(new.cluster.ids) <- levels(ASD_BA4.6)
+ASD_BA4.6 <- RenameIdents(ASD_BA4.6, new.cluster.ids)
 
 
 CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
 new.cluster.ids <- c('CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL','CTL')
-names(new.cluster.ids) <- levels(CTL)
-CTL_BA4.6 <- RenameIdents(CTL, new.cluster.ids)
+names(new.cluster.ids) <- levels(CTL_BA4.6)
+CTL_BA4.6 <- RenameIdents(CTL_BA4.6, new.cluster.ids)
 
 
 BA4.6 <- merge(CTL_BA4.6, ASD_BA4.6, add.cell.ids('CTL','ASD'), project='UCLA-ASD')
