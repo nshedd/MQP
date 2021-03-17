@@ -18,7 +18,7 @@ names(new.cluster.ids) <- levels(CTL_BA4.6)
 CTL_BA4.6 <- RenameIdents(CTL_BA4.6, new.cluster.ids)
 
 
-BA4.6 <- merge(CTL_BA4.6, ASD_BA4.6, add.cell.ids('CTL','ASD'), project='UCLA-ASD')
+BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6, add.cell.ids=c('CTL','ASD'), project='UCLA-ASD')
 
 
 saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
