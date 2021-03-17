@@ -41,7 +41,7 @@ CTL_BA4.6 <- subset(BA4.6, idents = "CTL", invert = TRUE)
 
 ASD_BA4.6 <- subset(BA4.6, idents = "ASD", invert = TRUE)
 
-CTL_BA4.6 <- RunUMAP(CT_BA4.6L, reduction = "harmony", dims = 1:20)
+CTL_BA4.6 <- RunUMAP(CTL_BA4.6, reduction = "harmony", dims = 1:20)
 
 CTL_BA4.6 <- FindNeighbors(CTL_BA4.6, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
 
