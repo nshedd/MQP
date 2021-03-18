@@ -26,6 +26,8 @@ CTL = readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
 CTL[["percent.mt"]] <- PercentageFeatureSet(CTL, pattern = "^MT-")
 
+CTL <- subset(CTL, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+
 CTL <- NormalizeData(CTL, normalization.method = "LogNormalize", scale.factor = 10000)
 
 CTL <- FindVariableFeatures(CTL, selection.method = "vst", nfeatures = 2000)
@@ -122,6 +124,8 @@ saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmo
 CTL = readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA9')
 
 CTL[["percent.mt"]] <- PercentageFeatureSet(CTL, pattern = "^MT-")
+
+CTL <- subset(CTL, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
 
 CTL <- NormalizeData(CTL, normalization.method = "LogNormalize", scale.factor = 10000)
 
