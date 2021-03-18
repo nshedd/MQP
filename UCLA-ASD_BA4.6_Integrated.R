@@ -6,21 +6,16 @@ library(DoubletFinder)
 
 ASD_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
 ASD_BA4.6$Group <- "ASD"
-ASD_BA4.6 <- subset(ASD_BA4.6, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
-ASD_BA4.6 <- NormalizeData(ASD_BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
-ASD_BA4.6 <- FindVariableFeatures(ASD_BA4.6, selection.method = "vst", nfeatures = 2000)
+
 
 CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 CTL_BA4.6$Group <- "CTL"
-CTL_BA4.6 <- subset(CTL_BA4.6, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
-CTL_BA4.6 <- NormalizeData(CTL_BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
-CTL_BA4.6 <- FindVariableFeatures(CTL_BA4.6, selection.method = "vst", nfeatures = 2000)
 
-anchors <- FindIntegrationAnchors(object.list = list(CTL_BA4.6, ASD_BA4.6), dims = 1:20)
+CTL_BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6,add.cell.ids=c('CTL','ASD'),project = "UCLA-ASD")
 
-BA4.6 <- IntegrateData(anchorset = anchors, dims = 1:20)
+BA4.6 <- NormalizeData(BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
+BA4.6 <- FindVariableFeatures(BA4.6, selection.method = "vst", nfeatures = 2000)
 
-DefaultAssay(BA4.6) <- "integrated"
 
 saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
 
