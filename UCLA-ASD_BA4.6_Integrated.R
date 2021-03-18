@@ -5,22 +5,20 @@ library(harmony)
 library(DoubletFinder)
 
 ASD_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
+ASD_BA4.6$Group <- "ASD"
+ASD_BA4.6 <- subset(ASD_BA4.6, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+ASD_BA4.6 <- NormalizeData(ASD_BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
+ASD_BA4.6 <- FindVariableFeatures(ASD_BA4.6, selection.method = "vst", nfeatures = 2000)
 
 CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
+CTL_BA4.6$Group <- "CTL"
+CTL_BA4.6 <- subset(CTL_BA4.6, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+CTL_BA4.6 <- NormalizeData(CTL_BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
+CTL_BA4.6 <- FindVariableFeatures(CTL_BA4.6, selection.method = "vst", nfeatures = 2000)
 
+print(CTL_BA4.6$Ident)
 
-BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6, add.cell.ids=c('CTL','ASD'), project='UCLA-ASD')
-print(BA4.6$orig.ident)
-print(BA4.6$Ident)
-
-BA4.6.list <- SplitObject(BA4.6, split.by = "Group")
-
-BA4.6.list <- lapply(X = BA4.6.list, FUN = function(x) {
-    x <- NormalizeData(x)
-    x <- FindVariableFeatures(x, selection.method = "vst", nfeatures = 2000)
-})
-
-anchors <- FindIntegrationAnchors(object.list = BA4.6.list, dims = 1:20)
+anchors <- FindIntegrationAnchors(object.list = list(CTL_BA4.6, ASD_BA4.6), dims = 1:20)
 
 BA4.6 <- IntegrateData(anchorset = anchors, dims = 1:20)
 
@@ -30,11 +28,12 @@ saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
 
 # BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
 
-BA4.6 <- ScaleData(BA4.6, verbose = FALSE)
+all.genes <- rownames(BA4.6)
+BA4.6 <- ScaleData(BA4.6, features = all.genes)
 
 BA4.6 <- RunPCA(BA4.6, features = VariableFeatures(object = BA4.6))
 
-BA4.6 <- RunHarmony(BA4.6, "orig.ident", plot_convergence = TRUE, kmeans_init_nstart=100, kmeans_init_iter_max=500)
+BA4.6 <- RunHarmony(BA4.6, "orig.ident", plot_convergence = TRUE)
 
 BA4.6 <- RunUMAP(CTL_BA4.6, reduction = "harmony", dims = 1:20)
 
