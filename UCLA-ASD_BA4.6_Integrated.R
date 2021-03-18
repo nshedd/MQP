@@ -31,20 +31,13 @@ BA4.6.list <- lapply(X = BA4.6.list, FUN = function(x) {
 
 anchors <- FindIntegrationAnchors(object.list = BA4.6.list, dims = 1:20)
 
-BA4.6.combined <- IntegrateData(anchorset = anchors, dims = 1:20)
+BA4.6 <- IntegrateData(anchorset = anchors, dims = 1:20)
 
-DefaultAssay(immune.combined) <- "integrated"
+DefaultAssay(BA4.6) <- "integrated"
 
 saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
 
-BA4.6[["percent.mt"]] <- PercentageFeatureSet(BA4.6, pattern = "^MT-")
-
-BA4.6 <- NormalizeData(BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
-
-BA4.6 <- FindVariableFeatures(BA4.6, selection.method = "vst", nfeatures = 2000)
-
-all.genes <- rownames(BA4.6)
-BA4.6 <- ScaleData(BA4.6, features = all.genes)
+BA4.6 <- ScaleData(BA4.6, verbose = FALSE)
 
 BA4.6 <- RunPCA(BA4.6, features = VariableFeatures(object = BA4.6))
 
