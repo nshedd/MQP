@@ -31,7 +31,7 @@ BA4.6.list <- lapply(X = BA4.6.list, FUN = function(x) {
 
 anchors <- FindIntegrationAnchors(object.list = BA4.6.list, dims = 1:20)
 
-BA4.6.combined <- IntegrateData(anchorset = BA4.6.anchors, dims = 1:20)
+BA4.6.combined <- IntegrateData(anchorset = anchors, dims = 1:20)
 
 DefaultAssay(immune.combined) <- "integrated"
 
