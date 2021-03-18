@@ -76,11 +76,11 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doubletsremove
 print("Saving UMAP data w/o Doublets BA4.6...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved.RDS')
 
-new.cluster.ids <- c('Ex1','In1','Ex2','Ex3','Ex4','Ex5','Oli','In2','End/Per',
-                    'Ex6','In3','Ex7','OPC','Ast1','In4','Ex8','Mic','Ex9','Ex10',
-                    'Ex11','In5','In6','Ex12','Ex13','In7','Ex14','Ast2','Ex15')
-names(new.cluster.ids) <- levels(CTL)
-CTL <- RenameIdents(CTL, new.cluster.ids)
+# new.cluster.ids <- c('Ex1','In1','Ex2','Ex3','Ex4','Ex5','Oli','In2','End/Per',
+#                     'Ex6','In3','Ex7','OPC','Ast1','In4','Ex8','Mic','Ex9','Ex10',
+#                     'Ex11','In5','In6','Ex12','Ex13','In7','Ex14','Ast2','Ex15')
+# names(new.cluster.ids) <- levels(CTL)
+# CTL <- RenameIdents(CTL, new.cluster.ids)
 
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_labeled.png', width = 8, height = 7)
@@ -88,36 +88,36 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_labeled.png', 
 print("Saving UMAP data w/o Doublets BA4.6...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA4.6_DoubletsRemoved_Relabeled.RDS')
 
-# CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
-# CTL.markers %>% group_by(cluster)
-# 
-# marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
-# all_known_marker_genes = marker_gene_table$Human.Gene
-# 
-# intersection = intersect(CTL.markers$gene, all_known_marker_genes)
-# 
-# dotplot <- DotPlot(CTL, features = intersection) + 
-#   theme(axis.text.x = element_text(angle = 90)) + 
-#   scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
-# ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png", width = 14, height = 7)
-# 
-# CTL_SCE <- as.SingleCellExperiment(CTL)
-# CTL_clust <- Idents(CTL)
-# 
-# print('Running SingleR...')
-# CTL_SingleR <- SingleR(test=CTL_SCE,
-#                        ref=Lake_SCE,
-#                        labels=Lake_labels,
-# clusters=CTL_clust,
-#                        assay.type.test = "logcounts",
-#                        assay.type.ref = "logcounts")
-# 
-# print('Plotting...')
-# CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
-# CTL$SingleR.calls <- CTL_SingleR$labels
-# 
-# DimPlot(CTL, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
-# ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_SingleRlabel.png', width = 8, height = 7)
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
+
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(CTL, features = intersection) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA4.6_dotplot.png", width = 14, height = 7)
+
+CTL_SCE <- as.SingleCellExperiment(CTL)
+CTL_clust <- Idents(CTL)
+
+print('Running SingleR...')
+CTL_SingleR <- SingleR(test=CTL_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+clusters=CTL_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
+CTL$SingleR.calls <- CTL_SingleR$labels
+
+DimPlot(CTL, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_SingleRlabel.png', width = 8, height = 7)
 
 
 ## BA9
@@ -187,34 +187,33 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_labeled.png', wi
 print("Saving UMAP data w/o Doublets BA9...")
 saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_UMAPprocessed_BySample_Harmony_BA9_DoubletsRemoved_Relabeled.RDS')
 
-# CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
-# CTL.markers %>% group_by(cluster)
-# 
-# marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
-# all_known_marker_genes = marker_gene_table$Human.Gene
-# 
-# intersection = intersect(CTL.markers$gene, all_known_marker_genes)
-# 
-# dotplot <- DotPlot(CTL, features = intersection) + 
-#   theme(axis.text.x = element_text(angle = 90)) + 
-#   scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
-# ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot.png", width = 14, height = 7)
-# 
-# CTL_SCE <- as.SingleCellExperiment(CTL)
-# CTL_clust <- Idents(CTL)
-# 
-# print('Running SingleR...')
-# CTL_SingleR <- SingleR(test=CTL_SCE,
-#                        ref=Lake_SCE,
-#                        labels=Lake_labels,
-#                        clusters=CTL_clust,
-#                        assay.type.test = "logcounts",
-#                        assay.type.ref = "logcounts")
-# 
-# print('Plotting...')
-# CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
-# CTL$SingleR.calls <- CTL_SingleR$labels
-# 
-# DimPlot(CTL, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
-# ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_SingleRlabel.png', width = 8, height = 7)
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
 
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
+
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
+
+dotplot <- DotPlot(CTL, features = intersection) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot.png", width = 14, height = 7)
+
+CTL_SCE <- as.SingleCellExperiment(CTL)
+CTL_clust <- Idents(CTL)
+
+print('Running SingleR...')
+CTL_SingleR <- SingleR(test=CTL_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+                       clusters=CTL_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+CTL$SingleR.pruned.calls <- CTL_SingleR$pruned.labels
+CTL$SingleR.calls <- CTL_SingleR$labels
+
+DimPlot(CTL, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_SingleRlabel.png', width = 8, height = 7)
