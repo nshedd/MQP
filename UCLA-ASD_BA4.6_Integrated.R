@@ -10,7 +10,8 @@ CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
 
 BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6, add.cell.ids=c('CTL','ASD'), project='UCLA-ASD')
-print(BA4.6$cell.ids)
+print(BA4.6$orig.ident)
+print(BA4.6$Ident)
 
 BA4.6.list <- SplitObject(BA4.6, split.by = "Group")
 
