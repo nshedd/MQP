@@ -38,8 +38,10 @@ BA4.6 <- RunHarmony(BA4.6, "orig.ident")
 
 
 CTL_BA4.6 <- subset(BA4.6, idents = "CTL", invert = TRUE)
+saveRDS(CTL_BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6_CombinedHarmony.RDS')
 
 ASD_BA4.6 <- subset(BA4.6, idents = "ASD", invert = TRUE)
+saveRDS(ASD_BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6_CombinedHarmony.RDS')
 
 CTL_BA4.6 <- RunUMAP(CTL_BA4.6, reduction = "harmony", dims = 1:20)
 
