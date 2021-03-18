@@ -16,8 +16,6 @@ CTL_BA4.6 <- subset(CTL_BA4.6, subset = nFeature_RNA > 200 & nFeature_RNA < 3000
 CTL_BA4.6 <- NormalizeData(CTL_BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
 CTL_BA4.6 <- FindVariableFeatures(CTL_BA4.6, selection.method = "vst", nfeatures = 2000)
 
-print(CTL_BA4.6$ident)
-
 anchors <- FindIntegrationAnchors(object.list = list(CTL_BA4.6, ASD_BA4.6), dims = 1:20)
 
 BA4.6 <- IntegrateData(anchorset = anchors, dims = 1:20)
