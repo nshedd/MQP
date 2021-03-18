@@ -43,7 +43,7 @@ BA4.6 <- ScaleData(BA4.6, verbose = FALSE)
 
 BA4.6 <- RunPCA(BA4.6, features = VariableFeatures(object = BA4.6))
 
-BA4.6 <- RunHarmony(BA4.6, "orig.ident")
+BA4.6 <- RunHarmony(BA4.6, "orig.ident", kmeans_init_nstart=20, kmeans_init_iter_max=100)
 
 BA4.6 <- RunUMAP(CTL_BA4.6, reduction = "harmony", dims = 1:20)
 
