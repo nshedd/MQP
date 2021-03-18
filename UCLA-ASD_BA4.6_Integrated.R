@@ -11,6 +11,8 @@ names(new.cluster.ids) <- levels(ASD_BA4.6)
 ASD_BA4.6 <- RenameIdents(ASD_BA4.6, new.cluster.ids)
 ASD_BA4.6$Group <- Idents(ASD_BA4.6)
 
+print(ASD_BA4.6$orig.ident)
+
 
 CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
