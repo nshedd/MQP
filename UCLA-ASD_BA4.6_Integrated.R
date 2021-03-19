@@ -47,15 +47,17 @@ nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+
+BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+
 p1 <- DimPlot(BA4.6, reduction = "umap", group.by = "Group")
 p2 <- DimPlot(BA4.6, reduction = "umap", label = TRUE)
 p3 <- p1 + p2
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_combined.png', width = 8, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_combined.png', width = 14, height = 7)
 
 DimPlot(BA4.6, reduction = "umap", split.by = "Group")
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_separate.png', width = 8, height = 7)
-
-saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_separate.png', width = 14, height = 7)
 
 BA4.6.markers <- FindAllMarkers(BA4.6, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 BA4.6.markers %>% group_by(cluster)
