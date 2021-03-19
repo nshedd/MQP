@@ -11,7 +11,7 @@ ASD_BA4.6$Group <- "ASD"
 CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 CTL_BA4.6$Group <- "CTL"
 
-CTL_BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6,add.cell.ids=c('CTL','ASD'),project = "UCLA-ASD")
+BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6,add.cell.ids=c('CTL','ASD'),project = "UCLA-ASD")
 
 BA4.6 <- NormalizeData(BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
 BA4.6 <- FindVariableFeatures(BA4.6, selection.method = "vst", nfeatures = 2000)
