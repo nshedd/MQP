@@ -8,13 +8,13 @@ list.files(data_dir) # Should show barcodes.tsv, genes.tsv, and matrix.mtx
 expression_matrix <- Read10X(data.dir = data_dir)
 BW2 = CreateSeuratObject(counts = expression_matrix, project='2BW')
 minCov=1000 #if a sample has a good coverage (>=minCov), then don't set a lower thresold for nCount, it's already pretty good. 
- if(min(BW2$nCount_RNA)>=minCov){
-    countLOW=min(BW2$nCount_RNA)
-  }else{
-    countLOW=quantile(BW2$nCount_RNA, prob=c(0.01))  
- }
- countHIGH=quantile(BW2$nCount_RNA, prob=0.97) 
- featureLOW=quantile(BW2$nFeature_RNA, prob=0.01)
+if(min(BW2$nCount_RNA)>=minCov){
+  countLOW=min(BW2$nCount_RNA)
+}else{
+  countLOW=quantile(BW2$nCount_RNA, prob=c(0.01))  
+}
+countHIGH=quantile(BW2$nCount_RNA, prob=0.95) 
+featureLOW=quantile(BW2$nFeature_RNA, prob=0.01)
 BW2 <- subset(BW2, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
 print('5BW')
@@ -28,7 +28,7 @@ if(min(BW5$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW5$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW5$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW5$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW5$nFeature_RNA, prob=0.01)
 BW5 <- subset(BW5, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -43,7 +43,7 @@ if(min(BW6$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW6$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW6$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW6$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW6$nFeature_RNA, prob=0.01)
 BW6 <- subset(BW6, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -58,7 +58,7 @@ if(min(BW8$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW8$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW8$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW8$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW8$nFeature_RNA, prob=0.01)
 BW8 <- subset(BW8, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -73,7 +73,7 @@ if(min(BW11$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW11$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW11$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW11$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW11$nFeature_RNA, prob=0.01)
 BW11 <- subset(BW11, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -88,7 +88,7 @@ if(min(BW12$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW12$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW12$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW12$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW12$nFeature_RNA, prob=0.01)
 BW12 <- subset(BW12, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -103,7 +103,7 @@ if(min(BW13$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW13$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW13$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW13$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW13$nFeature_RNA, prob=0.01)
 BW13 <- subset(BW13, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -118,7 +118,7 @@ if(min(BW15$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW15$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW15$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW15$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW15$nFeature_RNA, prob=0.01)
 BW15 <- subset(BW15, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -133,7 +133,7 @@ if(min(BW20$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW20$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW20$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW20$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW20$nFeature_RNA, prob=0.01)
 BW20 <- subset(BW20, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -148,7 +148,7 @@ if(min(BW23$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW23$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW23$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW23$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW23$nFeature_RNA, prob=0.01)
 BW23 <- subset(BW23, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -163,7 +163,7 @@ if(min(BW25$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW25$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW25$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW25$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW25$nFeature_RNA, prob=0.01)
 BW25 <- subset(BW25, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -178,7 +178,7 @@ if(min(BW30$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW30$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW30$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW30$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW30$nFeature_RNA, prob=0.01)
 BW30 <- subset(BW30, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -193,7 +193,7 @@ if(min(BW33$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW33$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW33$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW33$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW33$nFeature_RNA, prob=0.01)
 BW33 <- subset(BW33, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -208,7 +208,7 @@ if(min(BW35$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW35$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW35$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW35$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW35$nFeature_RNA, prob=0.01)
 BW35 <- subset(BW35, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -223,7 +223,7 @@ if(min(BW40$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW40$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW40$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW40$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW40$nFeature_RNA, prob=0.01)
 BW40 <- subset(BW40, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -238,7 +238,7 @@ if(min(BW41$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW41$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW41$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW41$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW41$nFeature_RNA, prob=0.01)
 BW41 <- subset(BW41, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -253,7 +253,7 @@ if(min(BW43$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW43$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW43$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW43$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW43$nFeature_RNA, prob=0.01)
 BW43 <- subset(BW43, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -268,7 +268,7 @@ if(min(BW46$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW46$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW46$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW46$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW46$nFeature_RNA, prob=0.01)
 BW46 <- subset(BW46, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -283,7 +283,7 @@ if(min(BW47$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW47$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW47$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW47$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW47$nFeature_RNA, prob=0.01)
 BW47 <- subset(BW47, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -298,7 +298,7 @@ if(min(BW51$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW51$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW51$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW51$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW51$nFeature_RNA, prob=0.01)
 BW51 <- subset(BW51, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -313,7 +313,7 @@ if(min(BW52$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW52$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW52$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW52$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW52$nFeature_RNA, prob=0.01)
 BW52 <- subset(BW52, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -328,7 +328,7 @@ if(min(BW53$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW53$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW53$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW53$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW53$nFeature_RNA, prob=0.01)
 BW53 <- subset(BW53, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -343,7 +343,7 @@ if(min(BW55$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW55$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW55$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW55$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW55$nFeature_RNA, prob=0.01)
 BW55 <- subset(BW55, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -358,7 +358,7 @@ if(min(BW56$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW56$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW56$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW56$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW56$nFeature_RNA, prob=0.01)
 BW56 <- subset(BW56, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -373,7 +373,7 @@ if(min(BW57$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW57$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW57$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW57$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW57$nFeature_RNA, prob=0.01)
 BW57 <- subset(BW57, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -388,7 +388,7 @@ if(min(BW58$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW58$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW58$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW58$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW58$nFeature_RNA, prob=0.01)
 BW58 <- subset(BW58, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -403,7 +403,7 @@ if(min(BW61$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW61$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW61$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW61$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW61$nFeature_RNA, prob=0.01)
 BW61 <- subset(BW61, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -418,7 +418,7 @@ if(min(BW62$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW62$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW62$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW62$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW62$nFeature_RNA, prob=0.01)
 BW62 <- subset(BW62, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -433,7 +433,7 @@ if(min(BW63$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW63$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW63$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW63$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW63$nFeature_RNA, prob=0.01)
 BW63 <- subset(BW63, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -448,7 +448,7 @@ if(min(BW64$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW64$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW64$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW64$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW64$nFeature_RNA, prob=0.01)
 BW64 <- subset(BW64, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -463,7 +463,7 @@ if(min(BW69$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW69$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW69$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW69$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW69$nFeature_RNA, prob=0.01)
 BW69 <- subset(BW69, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -478,7 +478,7 @@ if(min(BW71$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW71$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW71$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW71$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW71$nFeature_RNA, prob=0.01)
 BW71 <- subset(BW71, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -493,7 +493,7 @@ if(min(BW74$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW74$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW74$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW74$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW74$nFeature_RNA, prob=0.01)
 BW74 <- subset(BW74, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -508,7 +508,7 @@ if(min(BW77$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW77$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW77$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW77$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW77$nFeature_RNA, prob=0.01)
 BW77 <- subset(BW77, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
@@ -523,19 +523,19 @@ if(min(BW78$nCount_RNA)>=minCov){
 }else{
   countLOW=quantile(BW78$nCount_RNA, prob=c(0.01))  
 }
-countHIGH=quantile(BW78$nCount_RNA, prob=0.97) 
+countHIGH=quantile(BW78$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW78$nFeature_RNA, prob=0.01)
 BW78 <- subset(BW78, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
 
 CTL_BA4.6 <- merge(BW11, y=c(BW12,BW13,BW15,BW2,BW23,BW25,BW30,BW35,BW46,BW5,BW6,BW8),
-                    add.cell.ids=c('BW11','BW12','BW13','BW15','BW2','BW23','BW25','BW30','BW35','BW46','BW5','BW6','BW8'),
+                   add.cell.ids=c('BW11','BW12','BW13','BW15','BW2','BW23','BW25','BW30','BW35','BW46','BW5','BW6','BW8'),
                    project = "UCLA-ASD")
 
 saveRDS(CTL_BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
 
 CTL_BA9 <- merge(BW20, y=c(BW33,BW40,BW41,BW43,BW47,BW51,BW52,BW53,BW55,BW56,BW57,BW61,BW62,BW63,BW64,BW69,BW71,BW74,BW77,BW78),
-                    add.cell.ids=c('BW20','BW33','BW40','BW41','BW43','BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
-                   project = "UCLA-ASD")
+                 add.cell.ids=c('BW20','BW33','BW40','BW41','BW43','BW47','BW51','BW52','BW53','BW55','BW56','BW57','BW61','BW62','BW63','BW64','BW69','BW71','BW74','BW77','BW78'),
+                 project = "UCLA-ASD")
 
 saveRDS(CTL_BA9, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA9')
 
@@ -555,5 +555,3 @@ saveRDS(CTL_BA9, '/data/rusers/sheddn/UCLA-ASD/data/CTL_BA9')
 # CTL <- RenameIdents(CTL, new.cluster.ids)
 # 
 # saveRDS(CTL, '/data/rusers/sheddn/UCLA-ASD/data/CTL_GroupLabel')
-
-
