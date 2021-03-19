@@ -4,6 +4,7 @@ library(ggplot2)
 library(harmony)
 library(DoubletFinder)
 
+
 ASD_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
 ASD_BA4.6$Group <- "ASD"
 
@@ -26,9 +27,9 @@ BA4.6 <- ScaleData(BA4.6, features = all.genes)
 
 BA4.6 <- RunPCA(BA4.6, features = VariableFeatures(object = BA4.6))
 
-BA4.6 <- RunHarmony(BA4.6, "orig.ident", plot_convergence = TRUE)
+BA4.6 <- RunHarmony(BA4.6, "orig.ident")
 
-BA4.6 <- RunUMAP(CTL_BA4.6, reduction = "harmony", dims = 1:20)
+BA4.6 <- RunUMAP(BA4.6, reduction = "harmony", dims = 1:20)
 
 BA4.6 <- FindNeighbors(CTL_BA4.6, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
 
@@ -54,7 +55,17 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_combine
 DimPlot(BA4.6, reduction = "umap", split.by = "Group")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_separate.png', width = 8, height = 7)
 
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
+CTL.markers <- FindAllMarkers(CTL, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+CTL.markers %>% group_by(cluster)
 
+marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 3.tsv"), header=TRUE, sep="\t")
+all_known_marker_genes = marker_gene_table$Human.Gene
 
+intersection = intersect(CTL.markers$gene, all_known_marker_genes)
 
+dotplot <- DotPlot(CTL, features = intersection) +
+  theme(axis.text.x = element_text(angle = 90)) +
+  scale_y_discrete(limits = rev(levels(CTL$seurat_clusters)))
+ggsave("/data/rusers/sheddn/UCLA-ASD/plots/CTL_BA9_dotplot.png", width = 14, height = 7)
