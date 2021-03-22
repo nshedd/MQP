@@ -40,7 +40,7 @@ CTL <- RunHarmony(CTL, "orig.ident")
 
 CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:20)
 
-CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
+CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=1)
 
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6.png', width = 8, height = 7)
@@ -57,13 +57,13 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- CTL@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.15*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.075*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 CTL <- doubletFinder_v3(CTL, PCs = 1:20, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
 DimPlot(CTL,group.by = colnames(CTL@meta.data)[grep("DF", colnames(CTL@meta.data))])
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doublets.png', width = 7, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA4.6_doublets.png', width = 8, height = 7)
 
 CTL <- SubsetData(CTL, cells=rownames(CTL@meta.data)[which(CTL@meta.data$DF.classification == "Singlet")])
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
@@ -135,7 +135,7 @@ CTL <- RunHarmony(CTL, "orig.ident", max.iter.harmony=20)
 
 CTL <- RunUMAP(CTL, reduction = "harmony", dims = 1:20)
 
-CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
+CTL <- FindNeighbors(CTL, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=1)
 
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9.png', width = 8, height = 7)
@@ -152,13 +152,13 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- CTL@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.15*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.075*nrow(CTL@meta.data))  ## Assuming 7.5% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 CTL <- doubletFinder_v3(CTL, PCs = 1:20, pN = 0.25, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
 DimPlot(CTL,group.by = colnames(CTL@meta.data)[grep("DF", colnames(CTL@meta.data))])
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_doublets.png', width = 7, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_doublets.png', width = , height = 7)
 
 CTL <- SubsetData(CTL, cells=rownames(CTL@meta.data)[which(CTL@meta.data$DF.classification == "Singlet")])
 DimPlot(CTL, group.by="ident", label=TRUE, pt.size=0.5)
