@@ -3,6 +3,9 @@ library(Seurat)
 library(ggplot2)
 library(harmony)
 library(DoubletFinder)
+library(SingleR)
+library(SingleCellExperiment)
+
 
 ## Load SingleR reference dataset
 path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
@@ -89,6 +92,8 @@ dotplot <- DotPlot(BA4.6, features = intersection) +
   theme(axis.text.x = element_text(angle = 90)) +
   scale_y_discrete(limits = rev(levels(BA4.6$seurat_clusters)))
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/combined_BA4.6_dotplot.png", width = 14, height = 7)
+
+BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 BA4.6_SCE <- as.SingleCellExperiment(BA4.6)
 BA4.6_clust <- Idents(BA4.6)
