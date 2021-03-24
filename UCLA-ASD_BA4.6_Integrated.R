@@ -66,9 +66,9 @@ nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
-# saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
-BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+# BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
 
 
@@ -93,7 +93,7 @@ dotplot <- DotPlot(BA4.6, features = intersection) +
   scale_y_discrete(limits = rev(levels(BA4.6$seurat_clusters)))
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/combined_BA4.6_dotplot.png", width = 14, height = 7)
 
-BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 BA4.6_SCE <- as.SingleCellExperiment(BA4.6)
 BA4.6_clust <- Idents(BA4.6)
