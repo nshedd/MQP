@@ -106,4 +106,4 @@ BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
 BA4.6$SingleR.calls <- BA4.6_SingleR$labels
 
 DimPlot(BA4.6, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_SingleRlabel.png', width = 8, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 8, height = 7)
