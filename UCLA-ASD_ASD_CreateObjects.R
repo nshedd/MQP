@@ -16,6 +16,7 @@ if(min(BW1$nCount_RNA)>=minCov){
 countHIGH=quantile(BW1$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW1$nFeature_RNA, prob=0.01)
 BW1 <- subset(BW1, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW1$Sample <- "BW1"
 
 
 print('3BW')
@@ -32,6 +33,7 @@ if(min(BW3$nCount_RNA)>=minCov){
 countHIGH=quantile(BW3$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW3$nFeature_RNA, prob=0.01)
 BW3 <- subset(BW3, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW3$Sample <- "BW3"
 
 
 print('4BW')
@@ -48,6 +50,7 @@ if(min(BW4$nCount_RNA)>=minCov){
 countHIGH=quantile(BW4$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW4$nFeature_RNA, prob=0.01)
 BW4 <- subset(BW4, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW4$Sample <- "BW4"
 
 
 print('7BW')
@@ -64,7 +67,7 @@ if(min(BW7$nCount_RNA)>=minCov){
 countHIGH=quantile(BW7$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW7$nFeature_RNA, prob=0.01)
 BW7 <- subset(BW7, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW7$Sample <- "BW7"
 
 print('9BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/9BW_S12/Solo.out/GeneFull/filtered'
@@ -80,6 +83,7 @@ if(min(BW9$nCount_RNA)>=minCov){
 countHIGH=quantile(BW9$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW9$nFeature_RNA, prob=0.01)
 BW9 <- subset(BW9, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW9$Sample <- "BW9"
 
 
 print('10BW')
@@ -96,6 +100,7 @@ if(min(BW10$nCount_RNA)>=minCov){
 countHIGH=quantile(BW10$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW10$nFeature_RNA, prob=0.01)
 BW10 <- subset(BW10, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW10$Sample <- "BW10"
 
 
 print('14BW')
@@ -112,6 +117,7 @@ if(min(BW14$nCount_RNA)>=minCov){
 countHIGH=quantile(BW14$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW14$nFeature_RNA, prob=0.01)
 BW14 <- subset(BW14, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW14$Sample <- "BW14"
 
 
 print('16BW')
@@ -128,6 +134,7 @@ if(min(BW16$nCount_RNA)>=minCov){
 countHIGH=quantile(BW16$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW16$nFeature_RNA, prob=0.01)
 BW16 <- subset(BW16, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW16$Sample <- "BW16"
 
 
 print('17BW')
@@ -144,7 +151,7 @@ if(min(BW17$nCount_RNA)>=minCov){
 countHIGH=quantile(BW17$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW17$nFeature_RNA, prob=0.01)
 BW17 <- subset(BW17, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW17$Sample <- "BW17"
 
 print('18BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/18BW_S4/Solo.out/GeneFull/filtered'
@@ -160,7 +167,7 @@ if(min(BW18$nCount_RNA)>=minCov){
 countHIGH=quantile(BW18$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW18$nFeature_RNA, prob=0.01)
 BW18 <- subset(BW18, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW18$Sample <- "BW18"
 
 print('19BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/19BW_S5/Solo.out/GeneFull/filtered'
@@ -176,7 +183,7 @@ if(min(BW19$nCount_RNA)>=minCov){
 countHIGH=quantile(BW19$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW19$nFeature_RNA, prob=0.01)
 BW19 <- subset(BW19, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW19$Sample <- "BW19"
 
 print('21BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/21BW_S7/Solo.out/GeneFull/filtered'
@@ -192,7 +199,7 @@ if(min(BW21$nCount_RNA)>=minCov){
 countHIGH=quantile(BW21$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW21$nFeature_RNA, prob=0.01)
 BW21 <- subset(BW21, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW21$Sample <- "BW21"
 
 print('22BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/22BW_S8/Solo.out/GeneFull/filtered'
@@ -208,7 +215,7 @@ if(min(BW22$nCount_RNA)>=minCov){
 countHIGH=quantile(BW22$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW22$nFeature_RNA, prob=0.01)
 BW22 <- subset(BW22, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW22$Sample <- "BW22"
 
 print('24BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/24BW_S10/Solo.out/GeneFull/filtered'
@@ -224,6 +231,7 @@ if(min(BW24$nCount_RNA)>=minCov){
 countHIGH=quantile(BW24$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW24$nFeature_RNA, prob=0.01)
 BW24 <- subset(BW24, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
+BW24$Sample <- "BW24"
 
 
 print('26BW')
@@ -240,7 +248,7 @@ if(min(BW26$nCount_RNA)>=minCov){
 countHIGH=quantile(BW26$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW26$nFeature_RNA, prob=0.01)
 BW26 <- subset(BW26, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW26$Sample <- "BW26"
 
 print('27BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/27BW_S3/Solo.out/GeneFull/filtered'
@@ -256,7 +264,7 @@ if(min(BW27$nCount_RNA)>=minCov){
 countHIGH=quantile(BW27$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW27$nFeature_RNA, prob=0.01)
 BW27 <- subset(BW27, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW27$Sample <- "BW27"
 
 print('28BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/28BW_S4/Solo.out/GeneFull/filtered'
@@ -272,7 +280,7 @@ if(min(BW28$nCount_RNA)>=minCov){
 countHIGH=quantile(BW28$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW28$nFeature_RNA, prob=0.01)
 BW28 <- subset(BW28, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW28$Sample <- "BW28"
 
 print('29BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/29BW_S5/Solo.out/GeneFull/filtered'
@@ -288,7 +296,7 @@ if(min(BW29$nCount_RNA)>=minCov){
 countHIGH=quantile(BW29$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW29$nFeature_RNA, prob=0.01)
 BW29 <- subset(BW29, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW29$Sample <- "BW29"
 
 print('31BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/31BW_S1/Solo.out/GeneFull/filtered'
@@ -304,7 +312,7 @@ if(min(BW31$nCount_RNA)>=minCov){
 countHIGH=quantile(BW31$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW31$nFeature_RNA, prob=0.01)
 BW31 <- subset(BW31, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW31$Sample <- "BW31"
 
 print('32BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/32BW_S2/Solo.out/GeneFull/filtered'
@@ -320,7 +328,7 @@ if(min(BW32$nCount_RNA)>=minCov){
 countHIGH=quantile(BW32$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW32$nFeature_RNA, prob=0.01)
 BW32 <- subset(BW32, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW32$Sample <- "BW32"
 
 print('34BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/34BW_S4/Solo.out/GeneFull/filtered'
@@ -336,7 +344,7 @@ if(min(BW34$nCount_RNA)>=minCov){
 countHIGH=quantile(BW34$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW34$nFeature_RNA, prob=0.01)
 BW34 <- subset(BW34, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW34$Sample <- "BW34"
 
 print('37BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/37BW_S7/Solo.out/GeneFull/filtered'
@@ -352,7 +360,7 @@ if(min(BW37$nCount_RNA)>=minCov){
 countHIGH=quantile(BW37$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW37$nFeature_RNA, prob=0.01)
 BW37 <- subset(BW37, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW37$Sample <- "BW37"
 
 print('38BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/38BW_S8/Solo.out/GeneFull/filtered'
@@ -368,7 +376,7 @@ if(min(BW38$nCount_RNA)>=minCov){
 countHIGH=quantile(BW38$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW38$nFeature_RNA, prob=0.01)
 BW38 <- subset(BW38, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW38$Sample <- "BW38"
 
 print('39BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/39BW_S9/Solo.out/GeneFull/filtered'
@@ -384,7 +392,7 @@ if(min(BW39$nCount_RNA)>=minCov){
 countHIGH=quantile(BW39$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW39$nFeature_RNA, prob=0.01)
 BW39 <- subset(BW39, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW39$Sample <- "BW39"
 
 print('42BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/42BW_S12/Solo.out/GeneFull/filtered'
@@ -400,7 +408,7 @@ if(min(BW42$nCount_RNA)>=minCov){
 countHIGH=quantile(BW42$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW42$nFeature_RNA, prob=0.01)
 BW42 <- subset(BW42, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW42$Sample <- "BW42"
 
 print('44BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/44BW_S14/Solo.out/GeneFull/filtered'
@@ -416,7 +424,7 @@ if(min(BW44$nCount_RNA)>=minCov){
 countHIGH=quantile(BW44$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW44$nFeature_RNA, prob=0.01)
 BW44 <- subset(BW44, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW44$Sample <- "BW44"
 
 print('45BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/45BW_S15/Solo.out/GeneFull/filtered'
@@ -432,7 +440,7 @@ if(min(BW45$nCount_RNA)>=minCov){
 countHIGH=quantile(BW45$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW45$nFeature_RNA, prob=0.01)
 BW45 <- subset(BW45, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW45$Sample <- "BW45"
 
 print('48BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/48BW_S3/Solo.out/GeneFull/filtered'
@@ -448,7 +456,7 @@ if(min(BW48$nCount_RNA)>=minCov){
 countHIGH=quantile(BW48$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW48$nFeature_RNA, prob=0.01)
 BW48 <- subset(BW48, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW48$Sample <- "BW48"
 
 print('49BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/49BW_S4/Solo.out/GeneFull/filtered'
@@ -464,7 +472,7 @@ if(min(BW49$nCount_RNA)>=minCov){
 countHIGH=quantile(BW49$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW49$nFeature_RNA, prob=0.01)
 BW49 <- subset(BW49, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW49$Sample <- "BW49"
 
 print('50BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/50BW_S5/Solo.out/GeneFull/filtered'
@@ -480,7 +488,7 @@ if(min(BW50$nCount_RNA)>=minCov){
 countHIGH=quantile(BW50$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW50$nFeature_RNA, prob=0.01)
 BW50 <- subset(BW50, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW50$Sample <- "BW50"
 
 print('54BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/54BW_S11/Solo.out/GeneFull/filtered'
@@ -496,7 +504,7 @@ if(min(BW54$nCount_RNA)>=minCov){
 countHIGH=quantile(BW54$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW54$nFeature_RNA, prob=0.01)
 BW54 <- subset(BW54, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW54$Sample <- "BW54"
 
 print('59BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/59BW_S29/Solo.out/GeneFull/filtered'
@@ -512,7 +520,7 @@ if(min(BW59$nCount_RNA)>=minCov){
 countHIGH=quantile(BW59$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW59$nFeature_RNA, prob=0.01)
 BW59 <- subset(BW59, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW59$Sample <- "BW59"
 
 print('60BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/60BW_S30/Solo.out/GeneFull/filtered'
@@ -528,7 +536,7 @@ if(min(BW60$nCount_RNA)>=minCov){
 countHIGH=quantile(BW60$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW60$nFeature_RNA, prob=0.01)
 BW60 <- subset(BW60, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW60$Sample <- "BW60"
 
 print('65BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/65BW_S7/Solo.out/GeneFull/filtered'
@@ -544,7 +552,7 @@ if(min(BW65$nCount_RNA)>=minCov){
 countHIGH=quantile(BW65$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW65$nFeature_RNA, prob=0.01)
 BW65 <- subset(BW65, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW65$Sample <- "BW65"
 
 print('66BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/66BW_S8/Solo.out/GeneFull/filtered'
@@ -560,7 +568,7 @@ if(min(BW66$nCount_RNA)>=minCov){
 countHIGH=quantile(BW66$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW66$nFeature_RNA, prob=0.01)
 BW66 <- subset(BW66, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW66$Sample <- "BW66"
 
 print('67BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/67BW_S9/Solo.out/GeneFull/filtered'
@@ -576,7 +584,7 @@ if(min(BW67$nCount_RNA)>=minCov){
 countHIGH=quantile(BW67$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW67$nFeature_RNA, prob=0.01)
 BW67 <- subset(BW67, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW67$Sample <- "BW67"
 
 print('68BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/68BW_S10/Solo.out/GeneFull/filtered'
@@ -592,7 +600,7 @@ if(min(BW68$nCount_RNA)>=minCov){
 countHIGH=quantile(BW68$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW68$nFeature_RNA, prob=0.01)
 BW68 <- subset(BW68, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW68$Sample <- "BW68"
 
 print('70BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/70BW_S12/Solo.out/GeneFull/filtered'
@@ -608,7 +616,7 @@ if(min(BW70$nCount_RNA)>=minCov){
 countHIGH=quantile(BW70$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW70$nFeature_RNA, prob=0.01)
 BW70 <- subset(BW70, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW70$Sample <- "BW70"
 
 print('72BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/72BW_S14/Solo.out/GeneFull/filtered'
@@ -624,7 +632,7 @@ if(min(BW72$nCount_RNA)>=minCov){
 countHIGH=quantile(BW72$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW72$nFeature_RNA, prob=0.01)
 BW72 <- subset(BW72, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW72$Sample <- "BW72"
 
 print('73BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/73BW_S15/Solo.out/GeneFull/filtered'
@@ -640,7 +648,7 @@ if(min(BW73$nCount_RNA)>=minCov){
 countHIGH=quantile(BW73$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW73$nFeature_RNA, prob=0.01)
 BW73 <- subset(BW73, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW73$Sample <- "BW73"
 
 print('75BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/75BW_S17/Solo.out/GeneFull/filtered'
@@ -656,7 +664,7 @@ if(min(BW75$nCount_RNA)>=minCov){
 countHIGH=quantile(BW75$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW75$nFeature_RNA, prob=0.01)
 BW75 <- subset(BW75, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW75$Sample <- "BW75"
 
 print('76BW')
 data_dir <- '/data/rusers/sheddn/UCLA-ASD/data/76BW_S18/Solo.out/GeneFull/filtered'
@@ -672,7 +680,7 @@ if(min(BW76$nCount_RNA)>=minCov){
 countHIGH=quantile(BW76$nCount_RNA, prob=0.95) 
 featureLOW=quantile(BW76$nFeature_RNA, prob=0.01)
 BW76 <- subset(BW76, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW  & nCount_RNA < countHIGH)
-
+BW76$Sample <- "BW76"
 
 ASD_BA4.6 <- merge(BW1, y=c(BW10,BW14,BW16,BW17,BW22,BW24,BW26,BW27,BW3,BW31,BW32,BW4,BW59,BW60,BW7,BW9),
                     add.cell.ids=c('BW1','BW10','BW14','BW16','BW17','BW22','BW24','BW26','BW27','BW3','BW31','BW32','BW4','BW59','BW60','BW7','BW9'),
