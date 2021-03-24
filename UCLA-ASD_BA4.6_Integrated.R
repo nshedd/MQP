@@ -4,52 +4,70 @@ library(ggplot2)
 library(harmony)
 library(DoubletFinder)
 
+## Load SingleR reference dataset
+path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
-# ASD_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
-# ASD_BA4.6$Group <- "ASD"
+matrix = read.table(path1, header=TRUE, row.names=1)
+Lake <- CreateSeuratObject(counts = matrix, project = "SeuratPipeline", min.cells = 3, min.features = 200)
+
+Lake[["percent.mt"]] <- PercentageFeatureSet(Lake, pattern = "^MT-")
+
+Lake <- subset(Lake, subset = nFeature_RNA > 200 & nFeature_RNA < 3000)
+
+Lake <- NormalizeData(Lake, normalization.method = "LogNormalize", scale.factor = 10000)
+
+Lake_SCE <- as.SingleCellExperiment(Lake)
+Lake_labels <- Idents(Lake)
 
 
-# CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
-# CTL_BA4.6$Group <- "CTL"
 
-# BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6,add.cell.ids=c('CTL','ASD'),project = "UCLA-ASD")
-
-# BA4.6 <- NormalizeData(BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
-# BA4.6 <- FindVariableFeatures(BA4.6, selection.method = "vst", nfeatures = 2000)
+ASD_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
+ASD_BA4.6$Group <- "ASD"
 
 
-# saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
+CTL_BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/CTL_BA4.6')
+CTL_BA4.6$Group <- "CTL"
 
-# BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
+BA4.6 <- merge(CTL_BA4.6, y=ASD_BA4.6,add.cell.ids=c('CTL','ASD'),project = "UCLA-ASD")
 
-# all.genes <- rownames(BA4.6)
-# BA4.6 <- ScaleData(BA4.6, features = all.genes)
+BA4.6 <- NormalizeData(BA4.6, normalization.method = "LogNormalize", scale.factor = 10000)
+BA4.6 <- FindVariableFeatures(BA4.6, selection.method = "vst", nfeatures = 2000)
 
-# BA4.6 <- RunPCA(BA4.6, features = VariableFeatures(object = BA4.6))
 
-# BA4.6 <- RunHarmony(BA4.6, "orig.ident")
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
 
-# BA4.6 <- RunUMAP(BA4.6, reduction = "harmony", dims = 1:20)
+BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
 
-# BA4.6 <- FindNeighbors(BA4.6, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
+all.genes <- rownames(BA4.6)
+BA4.6 <- ScaleData(BA4.6, features = all.genes)
+
+BA4.6 <- RunPCA(BA4.6, features = VariableFeatures(object = BA4.6))
+
+BA4.6 <- RunHarmony(BA4.6, "orig.ident")
+
+BA4.6 <- RunUMAP(BA4.6, reduction = "harmony", dims = 1:20)
+
+BA4.6 <- FindNeighbors(BA4.6, reduction = "harmony", dims = 1:20) %>% FindClusters(resolution=0.5)
 
 ## pK indetification
-# sweep.res.list_pbmc <- paramSweep_v3(BA4.6, PCs = 1:20, sct = FALSE)
-# sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
-# bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
-# bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
+sweep.res.list_pbmc <- paramSweep_v3(BA4.6, PCs = 1:20, sct = FALSE)
+sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
+bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
+bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 
 ## Doublet proportion estimate
-# annotations <- BA4.6@meta.data$seurat_clusters
-# homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-# nExp_poi <- round(0.15*nrow(BA4.6@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
-# nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
+annotations <- BA4.6@meta.data$seurat_clusters
+homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
+nExp_poi <- round(0.15*nrow(BA4.6@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
+nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
-# BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
 # saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+
+
 
 p1 <- DimPlot(BA4.6, reduction = "umap", group.by = "Group")
 p2 <- DimPlot(BA4.6, reduction = "umap", label = TRUE)
@@ -71,3 +89,21 @@ dotplot <- DotPlot(BA4.6, features = intersection) +
   theme(axis.text.x = element_text(angle = 90)) +
   scale_y_discrete(limits = rev(levels(BA4.6$seurat_clusters)))
 ggsave("/data/rusers/sheddn/UCLA-ASD/plots/combined_BA4.6_dotplot.png", width = 14, height = 7)
+
+BA4.6_SCE <- as.SingleCellExperiment(BA4.6)
+BA4.6_clust <- Idents(BA4.6)
+
+print('Running SingleR...')
+BA4.6_SingleR <- SingleR(test=BA4.6_SCE,
+                       ref=Lake_SCE,
+                       labels=Lake_labels,
+                       clusters=BA4.6_clust,
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
+
+print('Plotting...')
+BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
+BA4.6$SingleR.calls <- BA4.6_SingleR$labels
+
+DimPlot(BA4.6, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/CTL-UMAP_Harmony_BA9_SingleRlabel.png', width = 8, height = 7)
