@@ -8,7 +8,7 @@ ArchR::installExtraPackages()
 addArchRGenome("hg38")
 
 args <- commandArgs(trailingOnly = TRUE)
-time = "Lake_Integration_Analysis"
+time = "/data/rusers/sheddn/Lake_ths-seq/Lake_Integration_Analysis"
 print(time)
 bam = "/data/zusers/pratth/sc/fragments.lake.tsv.gz"
 key = "Lake"
