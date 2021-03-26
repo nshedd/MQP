@@ -15,7 +15,7 @@ ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 print(proj$cellNames)
 rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
-proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
+proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = TRUE)
 proj = addPeakMatrix(proj)
 
 print(proj$cellNames)
