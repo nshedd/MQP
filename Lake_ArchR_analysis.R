@@ -35,6 +35,7 @@ proj <- addIterativeLSI(
     ), 
     varFeatures = 25000, 
     dimsToUse = 1:20
+  )
 
 
 doubScores <- addDoubletScores(
