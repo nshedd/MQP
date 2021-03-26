@@ -19,6 +19,12 @@ ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 
+
+proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
+proj = addPeakMatrix(proj)
+
+proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "TileMatrix", name = "IterativeLSI")
+
 doubScores <- addDoubletScores(
     input = ArrowFiles,
     k = 10, #Refers to how many cells near a "pseudo-doublet" to count.
@@ -27,12 +33,6 @@ doubScores <- addDoubletScores(
 )	
 
 proj <- filterDoublets(proj)
-
-proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
-proj = addPeakMatrix(proj)
-
-proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "TileMatrix", name = "IterativeLSI")
-
 
 proj <- addClusters(input = proj, reducedDims = "IterativeLSI")
 
