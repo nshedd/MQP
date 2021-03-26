@@ -20,7 +20,7 @@ rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
 proj = addPeakMatrix(proj)
 
-head(proj$cellNames)
+print(proj$cellNames)
 
 doubScores <- addDoubletScores(
     input = ArrowFiles,
