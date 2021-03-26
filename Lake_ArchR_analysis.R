@@ -5,13 +5,13 @@ addArchRGenome("hg38")
 args <- commandArgs(trailingOnly = TRUE)
 time = "/data/rusers/sheddn/Lake_ths-seq/Lake_Integration_Analysis"
 print(time)
-fragment = "/data/zusers/pratth/sc/fragments.lake.1.tsv.gz"
+fragment = "/data/rusers/sheddn/Lake_ths-seq/fragments.lake.1.tsv.gz"
 key = "Lake"
 
-# reformatFragmentFiles(
-#   fragmentFiles = fragment,
-#   checkChrPrefix = FALSE
-# )
+reformatFragmentFiles(
+  fragmentFiles = fragment,
+  checkChrPrefix = getArchRChrPrefix()
+)
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
   filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE, force=TRUE,
