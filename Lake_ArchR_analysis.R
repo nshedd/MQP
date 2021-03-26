@@ -8,10 +8,9 @@ print(time)
 fragment = "/data/rusers/sheddn/Lake_ths-seq/fragments.lake.tsv.gz"
 key = "Lake"
 
-# reformatFragmentFiles(
-#   fragmentFiles = fragment,
-#   checkChrPrefix = getArchRChrPrefix()
-# )
+reformatFragmentFiles(
+  fragmentFiles = fragment,
+  )
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
   filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE)
