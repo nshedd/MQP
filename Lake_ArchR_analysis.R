@@ -9,7 +9,8 @@ fragment = "/data/zusers/pratth/sc/fragments.lake.tsv.gz"
 key = "Lake"
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
-  filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE)
+  filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE,
+  gsubExpression=":.*")
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 print(proj$cellNames)
