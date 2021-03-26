@@ -16,28 +16,6 @@ key = "Lake"
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
   filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE)
 
-proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
-rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
-
-
-proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
-proj = addPeakMatrix(proj)
-
-proj <- addIterativeLSI(
-    ArchRProj = proj,
-    useMatrix = "TileMatrix", 
-    name = "IterativeLSI", 
-    iterations = 2, 
-    clusterParams = list( #See Seurat::FindClusters
-        resolution = c(0.2), 
-        sampleCells = 10000, 
-        n.start = 10
-    ), 
-    varFeatures = 25000, 
-    dimsToUse = 1:20
-  )
-
-
 doubScores <- addDoubletScores(
     input = ArrowFiles,
     k = 10, #Refers to how many cells near a "pseudo-doublet" to count.
@@ -45,7 +23,14 @@ doubScores <- addDoubletScores(
     LSIMethod = 1
 )	
 
-proj <- filterDoublets(proj)
+proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
+# rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
+# proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
+# proj = addPeakMatrix(proj)
+
+proj <- filterDoublets(ArchRProj = proj)
+
+proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "TileMatrix", name = "IterativeLSI")
 
 proj <- addClusters(input = proj, reducedDims = "IterativeLSI")
 
