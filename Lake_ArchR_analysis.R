@@ -5,7 +5,7 @@ addArchRGenome("hg38")
 args <- commandArgs(trailingOnly = TRUE)
 time = "/data/rusers/sheddn/Lake_ths-seq/Lake_Integration_Analysis"
 print(time)
-fragment = "/data/zusers/pratth/sc/fragments.lake.tsv.gz"
+fragment = "/data/rusers/sheddn/Lake_ths-seq/fragments.lake.tsv.gz"
 key = "Lake"
 
 reformatFragmentFiles(
