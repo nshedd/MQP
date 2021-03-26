@@ -23,7 +23,19 @@ rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
 proj = addPeakMatrix(proj)
 
-proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "TileMatrix", name = "IterativeLSI")
+proj <- addIterativeLSI(
+    ArchRProj = proj,
+    useMatrix = "TileMatrix", 
+    name = "IterativeLSI", 
+    iterations = 2, 
+    clusterParams = list( #See Seurat::FindClusters
+        resolution = c(0.2), 
+        sampleCells = 10000, 
+        n.start = 10
+    ), 
+    varFeatures = 25000, 
+    dimsToUse = 1:20
+
 
 doubScores <- addDoubletScores(
     input = ArrowFiles,
