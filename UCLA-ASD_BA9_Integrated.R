@@ -97,6 +97,7 @@ saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
 
 BA9_SCE <- as.SingleCellExperiment(BA9)
 BA9_clust <- Idents(BA9)
+head(BA9_clust)
 
 print('Running SingleR...')
 BA9_SingleR <- SingleR(test=BA9_SCE,
