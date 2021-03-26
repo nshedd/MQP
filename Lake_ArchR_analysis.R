@@ -8,6 +8,11 @@ print(time)
 fragment = "/data/rusers/sheddn/Lake_ths-seq/fragments.lake-Reformat.tsv.gz"
 key = "Lake"
 
+reformatFragmentFiles(
+  fragmentFiles = fragment,
+  checkChrPrefix = FALSE
+)
+
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
   filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE, force=TRUE,
   gsubExpression=":.*")
