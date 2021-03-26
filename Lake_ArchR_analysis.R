@@ -8,14 +8,11 @@ print(time)
 fragment = "/data/rusers/sheddn/Lake_ths-seq/fragments.lake.tsv.gz"
 key = "Lake"
 
-reformatFragmentFiles(
-  fragmentFiles = fragment,
-  )
-
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
   filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE)
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
+print(proj$cellNames)
 rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
 proj = addPeakMatrix(proj)
