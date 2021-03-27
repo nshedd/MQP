@@ -1,4 +1,4 @@
-BA4.6 <- saveRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
+BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 BA4.6_SCE <- as.SingleCellExperiment(BA4.6)
 BA4.6_clust <- Idents(BA4.6)
@@ -19,7 +19,7 @@ DimPlot(BA4.6, group.by="SingleR.cluster", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 8, height = 7)
 
 
-BA9 <- saveRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
+BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
 
 BA9_SCE <- as.SingleCellExperiment(BA9)
 BA9_clust <- Idents(BA9)
