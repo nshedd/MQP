@@ -38,9 +38,12 @@ BA4.6_SingleR <- SingleR(test=BA4.6_SCE,
 print('Plotting...')
 BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
 BA4.6$SingleR.calls <- BA4.6_SingleR$labels
+BA4.6$SingleR.cluster <- BA4.6_SingleR$cluster
 
 DimPlot(BA4.6, group.by="SingleR.cluster", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 8, height = 7)
+
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_SingleR.RDS')
 
 
 BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
@@ -59,6 +62,9 @@ BA9_SingleR <- SingleR(test=BA9_SCE,
 print('Plotting...')
 BA9$SingleR.pruned.calls <- BA9_SingleR$pruned.labels
 BA9$SingleR.calls <- BA9_SingleR$labels
+BA9$SingleR.cluster <- BA9_SingleR$cluster
 
 DimPlot(BA9, group.by="SingleR.cluster", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel.png', width = 8, height = 7)
+
+saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_SingleR.RDS')
