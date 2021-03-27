@@ -1,3 +1,11 @@
+library(dplyr)
+library(Seurat)
+library(ggplot2)
+library(harmony)
+library(DoubletFinder)
+library(SingleR)
+library(SingleCellExperiment)
+
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 BA4.6_SCE <- as.SingleCellExperiment(BA4.6)
