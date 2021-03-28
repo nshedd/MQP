@@ -37,7 +37,7 @@ BA4.6_SingleR <- SingleR(test=GetAssayData(BA4.6, assay = "RNA"),
 # BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
 # BA4.6$SingleR.calls <- BA4.6_SingleR$labels
 
-print(BA4.6_SingleR$cluster.labels)
+print(BA4.6_SingleR$labels)
 
 new.cluster.ids <- BA4.6_SingleR$cluster.labels
 names(new.cluster.ids) <- levels(BA4.6)
@@ -65,7 +65,7 @@ BA9_SingleR <- SingleR(test=GetAssayData(BA9, assay = "RNA"),
 # BA9$SingleR.pruned.calls <- BA9_SingleR$pruned.labels
 # BA9$SingleR.calls <- BA9_SingleR$labels
 
-print(BA9_SingleR$cluster.labels)
+print(BA9_SingleR$labels)
 
 new.cluster.ids <- BA9_SingleR$cluster.labels
 names(new.cluster.ids) <- levels(BA9)
