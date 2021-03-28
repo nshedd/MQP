@@ -33,15 +33,17 @@ BA4.6_SingleR <- SingleR(test=GetAssayData(BA4.6, assay = "RNA"),
                        assay.type.test = "logcounts",
                        assay.type.ref = "logcounts")
 
-print('Plotting...')
-BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
-BA4.6$SingleR.calls <- BA4.6_SingleR$labels
+
+# BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
+# BA4.6$SingleR.calls <- BA4.6_SingleR$labels
+
 print(BA4.6_SingleR$cluster.labels)
 
 new.cluster.ids <- BA4.6_SingleR$cluster.labels
 names(new.cluster.ids) <- levels(BA4.6)
 BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
+print('Plotting...')
 
 DimPlot(BA4.6, label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 8, height = 7)
@@ -60,14 +62,16 @@ BA9_SingleR <- SingleR(test=GetAssayData(BA9, assay = "RNA"),
                        assay.type.test = "logcounts",
                        assay.type.ref = "logcounts")
 
-print('Plotting...')
-BA9$SingleR.pruned.calls <- BA9_SingleR$pruned.labels
-BA9$SingleR.calls <- BA9_SingleR$labels
-print(BA4.6_SingleR$cluster.labels)
+# BA9$SingleR.pruned.calls <- BA9_SingleR$pruned.labels
+# BA9$SingleR.calls <- BA9_SingleR$labels
 
-new.cluster.ids <- BA4.6_SingleR$cluster.labels
-names(new.cluster.ids) <- levels(BA4.6)
-BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
+print(BA9_SingleR$cluster.labels)
+
+new.cluster.ids <- BA9_SingleR$cluster.labels
+names(new.cluster.ids) <- levels(BA9)
+BA9 <- RenameIdents(BA9, new.cluster.ids)
+
+print('Plotting...')
 
 DimPlot(BA9, label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel.png', width = 8, height = 7)
