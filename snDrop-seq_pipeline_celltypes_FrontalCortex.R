@@ -57,8 +57,8 @@ FrontalCortex <- doubletFinder_v3(FrontalCortex, PCs = 1:20, pN = 0.25, pK = bcm
 DimPlot(FrontalCortex,group.by = colnames(FrontalCortex@meta.data)[grep("DF", colnames(FrontalCortex@meta.data))])
 ggsave("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_doublets.png", width = 7, height = 7)
 
-ASD <- SubsetData(ASD, cells=rownames(ASD@meta.data)[which(ASD@meta.data$DF.classification == "Singlet")])
-DimPlot(ASD, group.by="ident", label=TRUE, pt.size=0.5)
+ASD <- SubsetData(FrontalCortex, cells=rownames(FrontalCortex@meta.data)[which(FrontalCortex@meta.data$DF.classification == "Singlet")])
+DimPlot(FrontalCortex, group.by="ident", label=TRUE, pt.size=0.5)
 ggsave("~/Lake/FrontalCortex/umap_GSE97930_FrontalCortex_Seurat_findct_doubletsremoved.png", width = 8, height = 7)
 
 saveRDS(FrontalCortex, file = path.expand("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat_relabeled.rds"))
