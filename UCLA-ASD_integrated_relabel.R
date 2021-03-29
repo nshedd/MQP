@@ -7,7 +7,7 @@ library(SingleR)
 library(SingleCellExperiment)
 
 
-Lake <- ReadRDS("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat_relabeled.rds")
+Lake <- readRDS("~/Lake/FrontalCortex/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_Seurat_relabeled.rds")
 
 Lake_SCE <- as.SingleCellExperiment(Lake)
 Lake_labels <- Idents(Lake)
