@@ -15,8 +15,10 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleR
 DimPlot(BA4.6, reduction = "umap", label=TRUE, pt.size=0.5, split.by = "Group")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_separate.png', width = 16, height = 7)
 
-new_ids = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1","Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5","Ex12",
-"Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8","Ex15","Ex16","In9","OPC2","In10","Ast5","OPC3")
+new_ids = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1",
+            "Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5",
+            "Ex12","Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8",
+            "Ex15","Ex16","In9","OPC2","In10","Ex17","OPC3","In11","Ast5","OPC4")
 
 new.cluster.ids <- new_ids
 names(new.cluster.ids) <- levels(BA4.6)
@@ -136,8 +138,9 @@ write.table(BA4.6_prop_df, '/data/rusers/sheddn/UCLA-ASD/data/CellTypeProportion
 ## Read and relabel clusters and plot
 BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
 
-new_ids = c('Ex1'.'Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5','Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1',
-            'Ex10','In4','Ex11','Ex12','Ex13','In5','Ex14','Ex15','In6','In7','Ex16','In8','Ex17')
+new_ids = c('Ex1'.'Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5',
+            'Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1','Ex10','In4','Ex11',
+            'Ex12','Ex13','In5','Ex14','Ex15','Ex16''In6','In7','Ex17','In8','Ex18')
 
 new.cluster.ids <- new_ids
 names(new.cluster.ids) <- levels(BA9)
