@@ -50,7 +50,7 @@ for (i in unique(ASD_BA4.6$Sample)) {
   ASD_BA4.6_sum = sum(df[lab])
   df[lab] = df[lab]/ASD_BA4.6_sum
   
-  merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
   
 }
 
@@ -80,7 +80,7 @@ for (i in unique(CTL_BA4.6$Sample)) {
   CTL_BA4.6_sum = sum(df[lab])
   df[lab] = df[lab]/CTL_BA4.6_sum
   
-  merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  CTL_BA4.6_prop_df = merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
@@ -115,9 +115,9 @@ for (i in unique(ASD_BA4.6$Sample)) {
   colnames(df) <- c('Cell_Type', lab)
 
   ASD_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/ASD_BA4.6_sum
+  df[lab] = df[lab]/ASDL_BA4.6_sum
   
-  merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 CTL_BA4.6 <- subset(BA4.6, subset = Group == "CTL")
@@ -126,7 +126,7 @@ CTL_BA4.6_prop_singler_list = CTL_BA4.6$SingleR.calls
 CTL_BA4.6_prop_singler_table = table(CTL_BA4.6_prop_singler_list)
 
 CTL_BA4.6_prop_df = CTL_BA4.6_prop_singler_table %>% as.data.frame
-colnames(CTL_BA4.6_prop_df) <- c('Cell_Type', 'FreqASD')
+colnames(CTL_BA4.6_prop_df) <- c('Cell_Type', 'FreqCTL')
 
 CTL_BA4.6_sum = sum(CTL_BA4.6_prop_df$FreqCTL)
 CTL_BA4.6_prop_df$FreqASD = CTL_BA4.6_prop_df$FreqCTL/CTL_BA4.6_sum
@@ -140,12 +140,12 @@ for (i in unique(CTL_BA4.6$Sample)) {
   CTL_BA4.6_prop_singler_table = table(CTL_BA4.6_prop_singler_list)
 
   df = CTL_BA4.6_prop_singler_table %>% as.data.frame
-  colnames(df) <- c('Cell_Type', 'FreqCTL')
+  colnames(df) <- c('Cell_Type', lab)
 
-  CTL_BA4.6_sum = sum(df$FreqCTL)
-  df$FreqCTL = df$FreqCTL/CTL_BA4.6_sum
+  CTL_BA4.6_sum = sum(df[lab])
+  df[lab] = df[lab]/CTL_BA4.6_sum
   
-  CTL_BA4.6_prop_df[lab] = df$FreqCTL
+  CTL_BA4.6_prop_df = merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
@@ -198,7 +198,7 @@ for (i in unique(ASD_BA9$Sample)) {
   ASD_BA4.6_sum = sum(df[lab])
   df[lab] = df[lab]/ASD_BA4.6_sum
   
-  merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 
@@ -224,10 +224,10 @@ for (i in unique(CTL_BA9$Sample)) {
   df = CTL_BA9_prop_manual_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', lab)
 
-  ASD_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/ASD_BA4.6_sum
+  CTL_BA4.6_sum = sum(df[lab])
+  df[lab] = df[lab]/CTL_BA4.6_sum
   
-  merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  CTL_BA4.6_prop_df = merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
@@ -264,7 +264,7 @@ for (i in unique(ASD_BA9$Sample)) {
   ASD_BA4.6_sum = sum(df[lab])
   df[lab] = df[lab]/ASD_BA4.6_sum
   
-  merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 CTL_BA9 <- subset(BA9, subset = Group == "CTL")
@@ -273,7 +273,7 @@ CTL_BA9_prop_singler_list = CTL_BA9$SingleR.calls
 CTL_BA9_prop_singler_table = table(CTL_BA9_prop_singler_list)
 
 CTL_BA9_prop_df = CTL_BA9_prop_singler_table %>% as.data.frame
-colnames(CTL_BA9_prop_df) <- c('Cell_Type', 'FreqASD')
+colnames(CTL_BA9_prop_df) <- c('Cell_Type', 'FreqCTL')
 
 CTL_BA9_sum = sum(CTL_BA9_prop_df$FreqCTL)
 CTL_BA9_prop_df$FreqASD = CTL_BA9_prop_df$FreqCTL/CTL_BA9_sum
@@ -289,10 +289,10 @@ for (i in unique(CTL_BA9$Sample)) {
   df = CTL_BA9_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', lab)
 
-  ASD_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/ASD_BA4.6_sum
+  CTL_BA4.6_sum = sum(df[lab])
+  df[lab] = df[lab]/CTL_BA4.6_sum
   
-  merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  CTL_BA4.6_prop_df = merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
