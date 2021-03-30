@@ -50,7 +50,7 @@ for (i in unique(ASD_BA4.6$Sample)) {
   ASD_BA4.6_sum = sum(df$FreqASD)
   df$FreqASD = df$FreqASD/ASD_BA4.6_sum
   
-  df[lab] = df$FreqASD
+  ASD_BA4.6_prop_df[lab] = df$FreqASD
 }
 
 
@@ -79,7 +79,7 @@ for (i in unique(CTL_BA4.6$Sample)) {
   CTL_BA4.6_sum = sum(df$FreqCTL)
   df$FreqCTL = df$FreqCTL/CTL_BA4.6_sum
   
-  df[lab] = df$FreqCTL
+  CTL_BA4.6_prop_df[lab] = df$FreqCTL
 }
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
@@ -107,16 +107,16 @@ for (i in unique(ASD_BA4.6$Sample)) {
   
   lab = paste("ASD", "_", i)
             
-  ASD_BA4.6_prop_manual_list = Idents(ASD_BA4.6)
-  ASD_BA4.6_prop_manual_table = table(ASD_BA4.6_prop_manual_list)
+  ASD_BA4.6_prop_singler_list = ASD_BA4.6$SingleR.calls
+  ASD_BA4.6_prop_singler_table = table(ASD_BA4.6_prop_singler_list)
 
-  df = ASD_BA4.6_prop_manual_table %>% as.data.frame
+  df = ASD_BA4.6_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', 'FreqASD')
 
   ASD_BA4.6_sum = sum(df$FreqASD)
   df$FreqASD = df$FreqASD/ASD_BA4.6_sum
   
-  df[lab] = df$FreqASD
+  ASD_BA4.6_prop_df[lab] = df$FreqASD
 }
 
 CTL_BA4.6 <- subset(BA4.6, subset = Group == "CTL")
@@ -134,17 +134,17 @@ for (i in unique(CTL_BA4.6$Sample)) {
   data <- subset(CTL_BA4.6, subset = Sample == i)
   
   lab = paste("CTL", "_", i)
-  
-  CTL_BA4.6_prop_manual_list = Idents(CTL_BA4.6)
-  CTL_BA4.6_prop_manual_table = table(CTL_BA4.6_prop_manual_list)
-  
-  df = CTL_BA4.6_prop_manual_table %>% as.data.frame
+            
+  CTL_BA4.6_prop_singler_list = CTL_BA4.6$SingleR.calls
+  CTL_BA4.6_prop_singler_table = table(CTL_BA4.6_prop_singler_list)
+
+  df = CTL_BA4.6_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', 'FreqCTL')
-  
+
   CTL_BA4.6_sum = sum(df$FreqCTL)
   df$FreqCTL = df$FreqCTL/CTL_BA4.6_sum
   
-  df[lab] = df$FreqCTL
+  CTL_BA4.6_prop_df[lab] = df$FreqCTL
 }
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
@@ -197,7 +197,7 @@ for (i in unique(ASD_BA9$Sample)) {
   ASD_BA9_sum = sum(df$FreqASD)
   df$FreqASD = df$FreqASD/ASD_BA9_sum
   
-  df[lab] = df$FreqASD
+  ASD_BA9_prop_df[lab] = df$FreqASD
 }
 
 
@@ -226,7 +226,7 @@ for (i in unique(CTL_BA9$Sample)) {
   CTL_BA9_sum = sum(df$FreqCTL)
   df$FreqCTL = df$FreqCTL/CTL_BA9_sum
   
-  df[lab] = df$FreqCTL
+  CTL_BA9_prop_df[lab] = df$FreqCTL
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
@@ -254,16 +254,16 @@ for (i in unique(ASD_BA9$Sample)) {
   
   lab = paste("ASD", "_", i)
   
-  ASD_BA9_prop_manual_list = Idents(ASD_BA9)
-  ASD_BA9_prop_manual_table = table(ASD_BA9_prop_manual_list)
+  ASD_BA9_prop_singler_list = ASD_BA9$SingleR.calls
+  ASD_BA9_prop_singler_table = table(ASD_BA9_prop_singler_list)
   
-  df = ASD_BA9_prop_manual_table %>% as.data.frame
+  df = ASD_BA9_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', 'FreqASD')
   
   ASD_BA9_sum = sum(df$FreqASD)
   df$FreqASD = df$FreqASD/ASD_BA9_sum
   
-  df[lab] = df$FreqASD
+  ASD_BA9_prop_df[lab] = df$FreqASD
 }
 
 CTL_BA9 <- subset(BA9, subset = Group == "CTL")
@@ -282,16 +282,16 @@ for (i in unique(CTL_BA9$Sample)) {
   
   lab = paste("CTL", "_", i)
   
-  CTL_BA9_prop_manual_list = Idents(CTL_BA9)
-  CTL_BA9_prop_manual_table = table(CTL_BA9_prop_manual_list)
+  CTL_BA9_prop_singler_list = CTL_BA9$SingleR.calls
+  CTL_BA9_prop_singler_table = table(CTL_BA9_prop_singler_list)
   
-  df = CTL_BA9_prop_manual_table %>% as.data.frame
+  df = CTL_BA9_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', 'FreqCTL')
   
   CTL_BA9_sum = sum(df$FreqCTL)
   df$FreqCTL = df$FreqCTL/CTL_BA9_sum
   
-  df[lab] = df$FreqCTL
+  CTL_BA9_prop_df[lab] = df$FreqCTL
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
