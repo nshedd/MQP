@@ -14,8 +14,8 @@ reformatFragmentFiles(
 )
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
-  filterTSS = 4, filterFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE, force=TRUE,
-  gsubExpression=":.*", removeFilteredCells=FALSE)
+  filterTSS = 4, filterFrags = 500, addTileMat = TRUE, addGeneScoreMat = TRUE, force=TRUE,
+  gsubExpression=":.*")
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 print(proj$cellNames)
