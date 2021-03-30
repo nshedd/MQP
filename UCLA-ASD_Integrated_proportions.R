@@ -9,6 +9,12 @@ library(SingleCellExperiment)
 ## Read and relabel clusters and plot
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
+DimPlot(BA4.6, label=TRUE, pt.size=0.5)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster.png', width = 8, height = 7)
+
+DimPlot(BA4.6, reduction = "umap", label=TRUE, split.by = "Group")
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_separate.png', width = 16, height = 7)
+
 new_ids = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1","Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5","Ex12",
 "Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8","Ex15","Ex16","In9","OPC2","In10","Ast5","OPC3")
 
@@ -17,10 +23,10 @@ names(new.cluster.ids) <- levels(BA4.6)
 BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
 DimPlot(BA4.6, label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster.png', width = 8, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_relabeled.png', width = 8, height = 7)
 
 DimPlot(BA4.6, reduction = "umap", label=TRUE, split.by = "Group")
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_separate.png', width = 16, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_separate_relabeled.png', width = 16, height = 7)
 
 ## By cluster proportion analysis
 ASD_BA4.6 <- subset(BA4.6, subset = Group == "ASD")
