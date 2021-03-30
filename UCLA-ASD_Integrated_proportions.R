@@ -9,12 +9,6 @@ library(SingleCellExperiment)
 ## Read and relabel clusters and plot
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
-DimPlot(BA4.6, label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster.png', width = 8, height = 7)
-
-DimPlot(BA4.6, reduction = "umap", label=TRUE, pt.size=0.5, split.by = "Group")
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_separate.png', width = 16, height = 7)
-
 new_ids = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1",
             "Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5",
             "Ex12","Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8",
@@ -46,12 +40,19 @@ for (i in unique(ASD_BA4.6$Sample)) {
   data <- subset(ASD_BA4.6, subset = Sample == i)
   
   lab = paste("ASD", "_", i)
+            
+  ASD_BA4.6_prop_manual_list = Idents(ASD_BA4.6)
+  ASD_BA4.6_prop_manual_table = table(ASD_BA4.6_prop_manual_list)
+
+  df = ASD_BA4.6_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqASD')
+
+  ASD_BA4.6_sum = sum(df$FreqASD)
+  df$FreqASD = df$FreqASD/ASD_BA4.6_sum
   
-  ASD_BA4.6_prop_df[lab] = Idents(ASD_BA4.6)
-  
-  ASD_BA4.6_sum = sum(ASD_BA4.6_prop_df[lab])
-  ASD_BA4.6_prop_df[lab] = ASD_BA4.6_prop_df[lab]/ASD_BA4.6_sum
+  df[lab] = df$FreqASD
 }
+
 
 CTL_BA4.6 <- subset(BA4.6, subset = Group == "CTL")
 
@@ -69,10 +70,16 @@ for (i in unique(CTL_BA4.6$Sample)) {
   
   lab = paste("CTL", "_", i)
   
-  CTL_BA4.6_prop_df[lab] = Idents(CTL_BA4.6)
+  CTL_BA4.6_prop_manual_list = Idents(CTL_BA4.6)
+  CTL_BA4.6_prop_manual_table = table(CTL_BA4.6_prop_manual_list)
   
-  CTL_BA4.6_sum = sum(CTL_BA4.6_prop_df[lab])
-  CTL_BA4.6_prop_df[lab] = CTL_BA4.6_prop_df[lab]/CTL_BA4.6_sum
+  df = CTL_BA4.6_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqCTL')
+  
+  CTL_BA4.6_sum = sum(df$FreqCTL)
+  df$FreqCTL = df$FreqCTL/CTL_BA4.6_sum
+  
+  df[lab] = df$FreqCTL
 }
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
@@ -99,11 +106,17 @@ for (i in unique(ASD_BA4.6$Sample)) {
   data <- subset(ASD_BA4.6, subset = Sample == i)
   
   lab = paste("ASD", "_", i)
+            
+  ASD_BA4.6_prop_manual_list = Idents(ASD_BA4.6)
+  ASD_BA4.6_prop_manual_table = table(ASD_BA4.6_prop_manual_list)
 
-  ASD_BA4.6_prop_df[lab] = data$SingleR.calls
+  df = ASD_BA4.6_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqASD')
 
-  ASD_BA4.6_sum = sum(ASD_BA4.6_prop_df[lab])
-  ASD_BA4.6_prop_df[lab] = ASD_BA4.6_prop_df[lab]/ASD_BA4.6_sum
+  ASD_BA4.6_sum = sum(df$FreqASD)
+  df$FreqASD = df$FreqASD/ASD_BA4.6_sum
+  
+  df[lab] = df$FreqASD
 }
 
 CTL_BA4.6 <- subset(BA4.6, subset = Group == "CTL")
@@ -121,11 +134,17 @@ for (i in unique(CTL_BA4.6$Sample)) {
   data <- subset(CTL_BA4.6, subset = Sample == i)
   
   lab = paste("CTL", "_", i)
-
-  CTL_BA4.6_prop_df[lab] = data$SingleR.calls
-
-  CTL_BA4.6_sum = sum(CTL_BA4.6_prop_df[lab])
-  CTL_BA4.6_prop_df[lab] = CTL_BA4.6_prop_df[lab]/CTL_BA4.6_sum
+  
+  CTL_BA4.6_prop_manual_list = Idents(CTL_BA4.6)
+  CTL_BA4.6_prop_manual_table = table(CTL_BA4.6_prop_manual_list)
+  
+  df = CTL_BA4.6_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqCTL')
+  
+  CTL_BA4.6_sum = sum(df$FreqCTL)
+  df$FreqCTL = df$FreqCTL/CTL_BA4.6_sum
+  
+  df[lab] = df$FreqCTL
 }
 
 BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = CTL_BA4.6_prop_df, by = 'Cell_Type', all = TRUE)
@@ -149,7 +168,7 @@ BA9 <- RenameIdents(BA9, new.cluster.ids)
 DimPlot(BA9, label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel_bycluster_relabeled.png', width = 8, height = 7)
 
-DimPlot(BA9, reduction = "umap", label=TRUE, pt.size=0.5 split.by = "Group")
+DimPlot(BA9, reduction = "umap", label=TRUE, split.by = "Group")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel_bycluster_separate_relabeled.png', width = 16, height = 7)
 
 ## By cluster proportion analysis
@@ -169,11 +188,18 @@ for (i in unique(ASD_BA9$Sample)) {
   
   lab = paste("ASD", "_", i)
   
-  ASD_BA9_prop_df[lab] = Idents(ASD_BA9)
+  ASD_BA9_prop_manual_list = Idents(ASD_BA9)
+  ASD_BA9_prop_manual_table = table(ASD_BA9_prop_manual_list)
   
-  ASD_BA9_sum = sum(ASD_BA9_prop_df[lab])
-  ASD_BA9_prop_df[lab] = ASD_BA9_prop_df[lab]/ASD_BA9_sum
+  df = ASD_BA9_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqASD')
+  
+  ASD_BA9_sum = sum(df$FreqASD)
+  df$FreqASD = df$FreqASD/ASD_BA9_sum
+  
+  df[lab] = df$FreqASD
 }
+
 
 CTL_BA9 <- subset(BA9, subset = Group == "CTL")
 
@@ -191,10 +217,16 @@ for (i in unique(CTL_BA9$Sample)) {
   
   lab = paste("CTL", "_", i)
   
-  CTL_BA9_prop_df[lab] = Idents(CTL_BA9)
+  CTL_BA9_prop_manual_list = Idents(CTL_BA9)
+  CTL_BA9_prop_manual_table = table(CTL_BA9_prop_manual_list)
   
-  CTL_BA9_sum = sum(CTL_BA9_prop_df[lab])
-  CTL_BA9_prop_df[lab] = CTL_BA9_prop_df[lab]/CTL_BA9_sum
+  df = CTL_BA9_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqCTL')
+  
+  CTL_BA9_sum = sum(df$FreqCTL)
+  df$FreqCTL = df$FreqCTL/CTL_BA9_sum
+  
+  df[lab] = df$FreqCTL
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
@@ -222,10 +254,16 @@ for (i in unique(ASD_BA9$Sample)) {
   
   lab = paste("ASD", "_", i)
   
-  ASD_BA9_prop_df[lab] = data$SingleR.calls
+  ASD_BA9_prop_manual_list = Idents(ASD_BA9)
+  ASD_BA9_prop_manual_table = table(ASD_BA9_prop_manual_list)
   
-  ASD_BA9_sum = sum(ASD_BA9_prop_df[lab])
-  ASD_BA9_prop_df[lab] = ASD_BA9_prop_df[lab]/ASD_BA9_sum
+  df = ASD_BA9_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqASD')
+  
+  ASD_BA9_sum = sum(df$FreqASD)
+  df$FreqASD = df$FreqASD/ASD_BA9_sum
+  
+  df[lab] = df$FreqASD
 }
 
 CTL_BA9 <- subset(BA9, subset = Group == "CTL")
@@ -244,10 +282,16 @@ for (i in unique(CTL_BA9$Sample)) {
   
   lab = paste("CTL", "_", i)
   
-  CTL_BA9_prop_df[lab] = data$SingleR.calls
+  CTL_BA9_prop_manual_list = Idents(CTL_BA9)
+  CTL_BA9_prop_manual_table = table(CTL_BA9_prop_manual_list)
   
-  CTL_BA9_sum = sum(CTL_BA9_prop_df[lab])
-  CTL_BA9_prop_df[lab] = CTL_BA9_prop_df[lab]/CTL_BA9_sum
+  df = CTL_BA9_prop_manual_table %>% as.data.frame
+  colnames(df) <- c('Cell_Type', 'FreqCTL')
+  
+  CTL_BA9_sum = sum(df$FreqCTL)
+  df$FreqCTL = df$FreqCTL/CTL_BA9_sum
+  
+  df[lab] = df$FreqCTL
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
