@@ -160,7 +160,7 @@ BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
 
 new_ids = c('Ex1','Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5',
             'Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1','Ex10','In4','Ex11',
-            'Ex12','Ex13','In5','Ex14','Ex15','Ex16''In6','In7','Ex17','In8','Ex18')
+            'Ex12','Ex13','In5','Ex14','Ex15','Ex16','In6','In7','Ex17','In8','Ex18')
 
 new.cluster.ids <- new_ids
 names(new.cluster.ids) <- levels(BA9)
