@@ -115,7 +115,7 @@ for (i in unique(ASD_BA4.6$Sample)) {
   colnames(df) <- c('Cell_Type', lab)
 
   ASD_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/ASDL_BA4.6_sum
+  df[lab] = df[lab]/ASD_BA4.6_sum
   
   ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
