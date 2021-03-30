@@ -7,12 +7,12 @@ library(SingleR)
 library(SingleCellExperiment)
 
 ## Read and relabel clusters and plot
-BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
+BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
 DimPlot(BA4.6, label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster.png', width = 8, height = 7)
 
-DimPlot(BA4.6, reduction = "umap", label=TRUE, split.by = "Group")
+DimPlot(BA4.6, reduction = "umap", label=TRUE, pt.size=0.5, split.by = "Group")
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel_bycluster_separate.png', width = 16, height = 7)
 
 new_ids = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1","Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5","Ex12",
@@ -134,7 +134,7 @@ write.table(BA4.6_prop_df, '/data/rusers/sheddn/UCLA-ASD/data/CellTypeProportion
 
 
 ## Read and relabel clusters and plot
-BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
+BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
 
 new_ids = c('Ex1'.'Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5','Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1',
             'Ex10','In4','Ex11','Ex12','Ex13','In5','Ex14','Ex15','In6','In7','Ex16','In8','Ex17')
@@ -144,10 +144,10 @@ names(new.cluster.ids) <- levels(BA9)
 BA9 <- RenameIdents(BA9, new.cluster.ids)
 
 DimPlot(BA9, label=TRUE, pt.size=0.5)
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel_bycluster.png', width = 8, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel_bycluster_relabeled.png', width = 8, height = 7)
 
-DimPlot(BA9, reduction = "umap", label=TRUE, split.by = "Group")
-ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel_bycluster_separate.png', width = 16, height = 7)
+DimPlot(BA9, reduction = "umap", label=TRUE, pt.size=0.5 split.by = "Group")
+ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel_bycluster_separate_relabeled.png', width = 16, height = 7)
 
 ## By cluster proportion analysis
 ASD_BA9 <- subset(BA9, subset = Group == "ASD")
