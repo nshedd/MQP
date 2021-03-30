@@ -14,19 +14,19 @@ reformatFragmentFiles(
 )
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
-  minTSS = 1, minFrags = 100, addTileMat = TRUE, addGeneScoreMat = TRUE, force=TRUE,
+  minTSS = 1, minFrags = 100, addTileMat = TRUE, addGeneScoreMat = TRUE,
   gsubExpression=":.*")
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 print(proj$cellNames)
 rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
-proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = TRUE)
+proj = addPeakSet(ArchRProj = proj, peakSet = rdhss)
 proj = addPeakMatrix(proj)
 
 print(proj$cellNames)
 
 proj <- addDoubletScores(
-    input = ArrowFiles,
+    input = proj,
     k = 10, #Refers to how many cells near a "pseudo-doublet" to count.
     knnMethod = "UMAP", #Refers to the embedding to use for nearest neighbor search with doublet projection.
     LSIMethod = 1
