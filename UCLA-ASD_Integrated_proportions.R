@@ -195,10 +195,10 @@ for (i in unique(ASD_BA9$Sample)) {
   df = ASD_BA9_prop_manual_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', lab)
 
-  ASD_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/ASD_BA4.6_sum
+  ASD_BA9_sum = sum(df[lab])
+  df[lab] = df[lab]/ASD_BA9_sum
   
-  ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  ASD_BA9_prop_df = merge(x = ASD_BA9_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 
@@ -224,10 +224,10 @@ for (i in unique(CTL_BA9$Sample)) {
   df = CTL_BA9_prop_manual_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', lab)
 
-  CTL_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/CTL_BA4.6_sum
+  CTL_BA9_sum = sum(df[lab])
+  df[lab] = df[lab]/CTL_BA9_sum
   
-  CTL_BA4.6_prop_df = merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  CTL_BA9_prop_df = merge(x = CTL_BA9_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
@@ -261,10 +261,10 @@ for (i in unique(ASD_BA9$Sample)) {
   df = ASD_BA9_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', lab)
 
-  ASD_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/ASD_BA4.6_sum
+  ASD_BA9_sum = sum(df[lab])
+  df[lab] = df[lab]/ASD_BA9_sum
   
-  ASD_BA4.6_prop_df = merge(x = ASD_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  ASD_BA9_prop_df = merge(x = ASD_BA9_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 CTL_BA9 <- subset(BA9, subset = Group == "CTL")
@@ -289,10 +289,10 @@ for (i in unique(CTL_BA9$Sample)) {
   df = CTL_BA9_prop_singler_table %>% as.data.frame
   colnames(df) <- c('Cell_Type', lab)
 
-  CTL_BA4.6_sum = sum(df[lab])
-  df[lab] = df[lab]/CTL_BA4.6_sum
+  CTL_BA9_sum = sum(df[lab])
+  df[lab] = df[lab]/CTL_BA9_sum
   
-  CTL_BA4.6_prop_df = merge(x = CTL_BA4.6_prop_df, y = df, by = 'Cell_Type', all = TRUE)
+  CTL_BA9_prop_df = merge(x = CTL_BA9_prop_df, y = df, by = 'Cell_Type', all = TRUE)
 }
 
 BA9_prop_df = merge(x = ASD_BA9_prop_df, y = CTL_BA9_prop_df, by = 'Cell_Type', all = TRUE)
