@@ -25,7 +25,7 @@ proj = addPeakMatrix(proj)
 
 print(proj$cellNames)
 
-doubScores <- addDoubletScores(
+proj <- addDoubletScores(
     input = ArrowFiles,
     k = 10, #Refers to how many cells near a "pseudo-doublet" to count.
     knnMethod = "UMAP", #Refers to the embedding to use for nearest neighbor search with doublet projection.
