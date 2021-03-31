@@ -45,7 +45,9 @@ p <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters",
 plotPDF(p, name = "Plot-Lake-UMAP-Clusters.pdf",		
          ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)		
 
-saveArchRProject(ArchRProj = proj, overwrite = TRUE, load = TRUE)
+getCellColData(proj)
+
+saveArchRProject(ArchRProj = proj, overwrite = TRUE, load = TRUE, dropCells = TRUE)
 
 markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters",
                                   bias = c("TSSEnrichment", "log10(nFrags)"),testMethod = "wilcoxon")
