@@ -139,12 +139,8 @@ labelNew <- colnames(cM)[apply(cM, 1, which.max)]
 print("new labels")
 labelNew
 
-remapClust <- remapClust[names(remapClust) %in% labelNew]
 
-labelNew2 <- mapLabels(labelNew, oldLabels = names(remapClust), newLabels = remapClust)
-labelNew2
-
-proj$Clusters2 <- mapLabels(proj$Clusters, newLabels = labelNew2, oldLabels = labelOld)
+proj$Clusters2 <- mapLabels(proj$Clusters, newLabels = labelNew, oldLabels = labelOld)
 
 p2 <- plotEmbedding(
     proj, 
