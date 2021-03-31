@@ -86,7 +86,7 @@ ComplexHeatmap::draw(heatmapGS, heatmap_legend_side = "bot", annotation_legend_s
 
 plotPDF(heatmapGS, name = "GeneScores-Marker-Heatmap", width = 8, height = 6, ArchRProj = proj, addDOC = FALSE)
 
-path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+path1 = path.expand("/data/rusers/sheddn/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
 
 seRNA.data = read.table(path1, header=TRUE, row.names=1)
 
