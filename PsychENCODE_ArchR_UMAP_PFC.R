@@ -17,7 +17,7 @@ rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 proj = addPeakSet(ArchRProj = proj, peakSet = rdhss, force = FALSE)
 proj = addPeakMatrix(proj)
 
-proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "TileMatrix", name = "IterativeLSI")
+proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "PeakMatrix", name = "IterativeLSI")
 
 proj <- addClusters(input = proj, reducedDims = "IterativeLSI")
 
