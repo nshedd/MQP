@@ -9,7 +9,7 @@ cluster = range(0,39)
 for (c in cluster){
   for (s in sample) {
     data <- as.matrix(GetAssayData(BA4.6, slot = "counts")[, WhichCells(BA4.6, ident=c)])
-    data <- subset(data, subset = Sample==s)
+    data <- subset(data, subset = "Sample"==s)
   }
 }
 
