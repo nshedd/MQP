@@ -32,7 +32,7 @@ proj <- addDoubletScores(
     LSIMethod = 1
 )	
 
-proj <- filterDoublets(ArchRProj = proj)
+# proj <- filterDoublets(ArchRProj = proj)
 
 proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "PeakMatrix", name = "IterativeLSI")
 
@@ -45,9 +45,9 @@ p <- plotEmbedding(ArchRProj = proj, colorBy = "cellColData", name = "Clusters",
 plotPDF(p, name = "Plot-Lake-UMAP-Clusters.pdf",		
          ArchRProj = proj, addDOC = FALSE, width = 5, height = 5)		
 
-getCellColData(proj)
-
-saveArchRProject(ArchRProj = proj, overwrite = TRUE, load = TRUE, dropCells = TRUE)
+# proj <- subsetArchRProject(proj)
+# 
+# saveArchRProject(ArchRProj = proj, overwrite = TRUE, load = TRUE)
 
 markersPeaks <- getMarkerFeatures(ArchRProj = proj, useMatrix = "PeakMatrix", groupBy = "Clusters",
                                   bias = c("TSSEnrichment", "log10(nFrags)"),testMethod = "wilcoxon")
