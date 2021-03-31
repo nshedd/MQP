@@ -131,6 +131,27 @@ p1 <- plotEmbedding(
     name = "predictedGroup_Un",
 )
 
-plotPDF(p1, name = "UMAP-PFC-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+plotPDF(p1, name = "UMAP-Lake-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
+
+labelOld <- rownames(cM)
+
+labelNew <- colnames(cM)[apply(cM, 1, which.max)]
+print("new labels")
+labelNew
+
+remapClust <- remapClust[names(remapClust) %in% labelNew]
+
+labelNew2 <- mapLabels(labelNew, oldLabels = names(remapClust), newLabels = remapClust)
+labelNew2
+
+proj$Clusters2 <- mapLabels(proj$Clusters, newLabels = labelNew2, oldLabels = labelOld)
+
+p2 <- plotEmbedding(
+    proj, 
+    colorBy = "cellColData", 
+    name = "Clusters2",
+)
+
+plotPDF(p2, name = "UMAP-Lake-Clusters-Integrated", width = 5, height = 5, ArchRProj = proj, addDOC = FALSE)
 
 saveArchRProject(ArchRProj = proj)
