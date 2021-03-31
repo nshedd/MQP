@@ -25,14 +25,14 @@ proj = addPeakMatrix(proj)
 
 print(proj$cellNames)
 
-# proj <- addDoubletScores(
-#     input = proj,
-#     k = 10, #Refers to how many cells near a "pseudo-doublet" to count.
-#     knnMethod = "UMAP", #Refers to the embedding to use for nearest neighbor search with doublet projection.
-#     LSIMethod = 1
-# )	
-# 
-# proj <- filterDoublets(ArchRProj = proj)
+proj <- addDoubletScores(
+    input = proj,
+    k = 10, #Refers to how many cells near a "pseudo-doublet" to count.
+    knnMethod = "UMAP", #Refers to the embedding to use for nearest neighbor search with doublet projection.
+    LSIMethod = 1
+)	
+
+proj <- filterDoublets(ArchRProj = proj)
 
 proj <- addIterativeLSI(ArchRProj = proj, useMatrix = "PeakMatrix", name = "IterativeLSI")
 
