@@ -9,6 +9,6 @@ cluster = unique(Idents(BA4.6))
 for (s in sample) {
   data <- subset(BA4.6, subset = Sample==s)
   data.expression = AverageExpression(data)
-  head(data.expression)
+  head(data.expression[["RNA"]])
 }
 
