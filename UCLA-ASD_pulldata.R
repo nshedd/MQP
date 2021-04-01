@@ -12,4 +12,4 @@ for (s in sample) {
   data.expresssion = as.matrix(data.expression[["RNA"]])
 }
 
-print(data.expression)
+head(data.expression)
