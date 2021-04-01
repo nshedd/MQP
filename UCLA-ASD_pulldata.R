@@ -10,6 +10,6 @@ for (s in sample) {
   data <- subset(BA4.6, subset = Sample==s)
   data.expression = AverageExpression(data, slot="counts")
   data.expresssion = as.matrix(data.expression[["RNA"]])
-  head(data.expression)
 }
 
+print(data.expression)
