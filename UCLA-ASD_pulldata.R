@@ -96,3 +96,4 @@ for (s in sample) {
   expression.38 <- merge(expression.38, data.expression$C38, all=TRUE)
 }
               
+head(expression.0)
