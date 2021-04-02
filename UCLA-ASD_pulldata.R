@@ -2,7 +2,7 @@ library(Seurat)
 
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
-expression <- as.matrix(getAssayData(BA4.6, slot="counts"))
+expression <- as.matrix(GetAssayData(BA4.6, slot="counts"))
 head(expression[, 1:5])
 expression.clusters <- data.frame("Genes"=markers, "Example"=samples)
 
