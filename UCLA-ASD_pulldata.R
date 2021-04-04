@@ -58,45 +58,86 @@ for (s in sample) {
   data <- subset(BA4.6, subset= Sample==s)
   data.expression = AverageExpression(data, slot="counts")
   data.expression.rna = data.expression[["RNA"]]
-  cluster.expression.0[,s] = data.expression.rna[,"0"]
-  cluster.expression.1[,s] = data.expression.rna[,"1"]
-  cluster.expression.2[,s] = data.expression.rna[,"2"]
-  cluster.expression.3[,s] = data.expression.rna[,"3"]
-  cluster.expression.4[,s] = data.expression.rna[,"4"]
-  cluster.expression.5[,s] = data.expression.rna[,"5"]
-  cluster.expression.6[,s] = data.expression.rna[,"6"]
-  cluster.expression.7[,s] = data.expression.rna[,"7"]
-  cluster.expression.8[,s] = data.expression.rna[,"8"]
-  cluster.expression.9[,s] = data.expression.rna[,"9"]
-  cluster.expression.10[,s] = data.expression.rna[,"10"]
-  cluster.expression.11[,s] = data.expression.rna[,"11"]
-  cluster.expression.12[,s] = data.expression.rna[,"12"]
-  cluster.expression.13[,s] = data.expression.rna[,"13"]
-  cluster.expression.14[,s] = data.expression.rna[,"14"]
-  cluster.expression.15[,s] = data.expression.rna[,"15"]
-  cluster.expression.16[,s] = data.expression.rna[,"16"]
-  cluster.expression.17[,s] = data.expression.rna[,"17"]
-  cluster.expression.18[,s] = data.expression.rna[,"18"]
-  cluster.expression.19[,s] = data.expression.rna[,"19"]
-  cluster.expression.20[,s] = data.expression.rna[,"20"]
-  cluster.expression.21[,s] = data.expression.rna[,"21"]
-  cluster.expression.22[,s] = data.expression.rna[,"22"]
-  cluster.expression.23[,s] = data.expression.rna[,"23"]
-  cluster.expression.24[,s] = data.expression.rna[,"24"]
-  cluster.expression.25[,s] = data.expression.rna[,"25"]
-  cluster.expression.26[,s] = data.expression.rna[,"26"]
-  cluster.expression.27[,s] = data.expression.rna[,"27"]
-  cluster.expression.28[,s] = data.expression.rna[,"28"]
-  cluster.expression.29[,s] = data.expression.rna[,"29"]
-  cluster.expression.30[,s] = data.expression.rna[,"30"]
-  cluster.expression.31[,s] = data.expression.rna[,"31"]
-  cluster.expression.32[,s] = data.expression.rna[,"32"]
-  cluster.expression.33[,s] = data.expression.rna[,"33"]
-  cluster.expression.34[,s] = data.expression.rna[,"34"]
-  cluster.expression.35[,s] = data.expression.rna[,"35"]
-  cluster.expression.36[,s] = data.expression.rna[,"36"]
-  cluster.expression.37[,s] = data.expression.rna[,"37"]
-  cluster.expression.38[,s] = data.expression.rna[,"38"]
+  cluster = unique(Idents(data))
+  for (c in cluster) {
+    if (c == "0"){
+      cluster.expression.0[,s] = data.expression.rna[,"0"]}
+    if (c == "1"){
+      cluster.expression.1[,s] = data.expression.rna[,"1"]}
+    if (c == "2"){
+      cluster.expression.2[,s] = data.expression.rna[,"2"]}
+    if (c == "3"){
+      cluster.expression.3[,s] = data.expression.rna[,"3"]}
+    if (c == "4"){
+      cluster.expression.4[,s] = data.expression.rna[,"4"]}
+    if (c == "5"){
+      cluster.expression.5[,s] = data.expression.rna[,"5"]}
+    if (c == "6"){
+      cluster.expression.6[,s] = data.expression.rna[,"6"]}
+    if (c == "7"){
+      cluster.expression.7[,s] = data.expression.rna[,"7"]}
+    if (c == "8"){
+      cluster.expression.8[,s] = data.expression.rna[,"8"]}
+    if (c == "9"){
+      cluster.expression.9[,s] = data.expression.rna[,"9"]}
+    if (c == "10"){
+      cluster.expression.10[,s] = data.expression.rna[,"10"]}
+    if (c == "11"){
+      cluster.expression.11[,s] = data.expression.rna[,"11"]}
+    if (c == "12"){
+      cluster.expression.12[,s] = data.expression.rna[,"12"]}
+    if (c == "13"){
+      cluster.expression.13[,s] = data.expression.rna[,"13"]}
+    if (c == "14"){
+      cluster.expression.14[,s] = data.expression.rna[,"14"]}
+    if (c == "15"){
+      cluster.expression.15[,s] = data.expression.rna[,"15"]}
+    if (c == "16"){
+      cluster.expression.16[,s] = data.expression.rna[,"16"]}
+    if (c == "17"){
+      cluster.expression.17[,s] = data.expression.rna[,"17"]}
+    if (c == "18"){
+      cluster.expression.18[,s] = data.expression.rna[,"18"]}
+    if (c == "19"){
+      cluster.expression.19[,s] = data.expression.rna[,"19"]}
+    if (c == "20"){
+      cluster.expression.20[,s] = data.expression.rna[,"20"]}
+    if (c == "21"){
+      cluster.expression.21[,s] = data.expression.rna[,"21"]}
+    if (c == "22"){
+      cluster.expression.22[,s] = data.expression.rna[,"22"]}
+    if (c == "23"){
+      cluster.expression.23[,s] = data.expression.rna[,"23"]}
+    if (c == "24"){
+      cluster.expression.24[,s] = data.expression.rna[,"24"]}
+    if (c == "25"){
+      cluster.expression.25[,s] = data.expression.rna[,"25"]}
+    if (c == "26"){
+      cluster.expression.26[,s] = data.expression.rna[,"26"]}
+    if (c == "27"){
+      cluster.expression.27[,s] = data.expression.rna[,"27"]}
+    if (c == "28"){
+      cluster.expression.28[,s] = data.expression.rna[,"28"]}
+    if (c == "29"){
+      cluster.expression.29[,s] = data.expression.rna[,"29"]}
+    if (c == "30"){
+      cluster.expression.30[,s] = data.expression.rna[,"30"]}
+    if (c == "31"){
+      cluster.expression.31[,s] = data.expression.rna[,"31"]}
+    if (c == "32"){
+      cluster.expression.32[,s] = data.expression.rna[,"32"]}
+    if (c == "33"){
+      cluster.expression.33[,s] = data.expression.rna[,"33"]}
+    if (c == "34"){
+      cluster.expression.34[,s] = data.expression.rna[,"34"]}
+    if (c == "35"){
+      cluster.expression.35[,s] = data.expression.rna[,"35"]}
+    if (c == "36"){
+      cluster.expression.36[,s] = data.expression.rna[,"36"]}
+    if (c == "37"){
+      cluster.expression.37[,s] = data.expression.rna[,"37"]}
+    if (c == "38"){
+      cluster.expression.38[,s] = data.expression.rna[,"38"]}
 }
               
 head(cluster.expression.0)
