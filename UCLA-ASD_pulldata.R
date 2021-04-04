@@ -3,8 +3,8 @@ library(Seurat)
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 expression <- (GetAssayData(BA4.6, slot="counts"))[,1]
-head(expression)
 expression.clusters <- as.matrix(expression)
+head(expression.clusters)
 
 group = c('CTL','ASD')
 sample = unique(BA4.6$Sample)
