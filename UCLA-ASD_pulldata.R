@@ -2,9 +2,11 @@ library(Seurat)
 
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
-expression <- (GetAssayData(BA4.6, slot="counts"))[,1]
-expression.clusters <- as.matrix(expression)
-head(expression.clusters)
+data.expression = AverageExpression(data, slot="counts")
+data.expresssion = as.matrix(data.expression[["RNA"]])
+head(data.expression)
+q()
+
 
 group = c('CTL','ASD')
 sample = unique(BA4.6$Sample)
