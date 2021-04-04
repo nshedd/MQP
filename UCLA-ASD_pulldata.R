@@ -48,7 +48,6 @@ cluster.expression.38 = data.expression.rna[,"38", drop=FALSE]
 
 write.table(data.expression.rna, "/data/rusers/sheddn/UCLA-ASD/data/BA4.6_averageexpression.txt")
 
-q()
 
 
 group = c('CTL','ASD')
