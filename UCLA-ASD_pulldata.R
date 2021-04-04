@@ -4,7 +4,7 @@ BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS'
 
 data.expression = AverageExpression(BA4.6, slot="counts")
 data.expresssion = as.matrix(data.expression[["RNA"]])
-head(data.expression)
+head(data.expression[,1:5])
 q()
 
 
