@@ -59,10 +59,13 @@ for (s in sample) {
   data.expression = AverageExpression(data, slot="counts")
   data.expression.rna = data.expression[["RNA"]]
   cluster = unique(Idents(data))
+  print("made it here 1")
   for (c in cluster) {
     if (c == "0"){
       cluster.expression.0[,s] = data.expression.rna[,"0"]
+      print("made it here 2")
     }
+    print("made it here 3")
     if (c == "1"){
       cluster.expression.1[,s] = data.expression.rna[,"1"]
     }
@@ -176,6 +179,7 @@ for (s in sample) {
     }
     if (c == "38"){
       cluster.expression.38[,s] = data.expression.rna[,"38"]
+    }
     }
 }
               
