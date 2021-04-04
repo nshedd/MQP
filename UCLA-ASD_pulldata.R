@@ -3,7 +3,10 @@ library(Seurat)
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 data.expression = AverageExpression(BA4.6, slot="counts", group.by="Sample")
-head(data.expression[,1:5])
+data.expression.rna = data.expression[["RNA"]]
+head(data.expression.rna)
+write.table(data.expression.rna, "/data/rusers/sheddn/UCLA-ASD/data/BA4.6_averageexpression.txt")
+
 q()
 
 
