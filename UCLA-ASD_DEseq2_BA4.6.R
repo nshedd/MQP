@@ -5,7 +5,7 @@ library(DESeq2)
 metaData = read.table("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata.txt", sep='\t', header=TRUE)
 
 for (i in range(0,38)) {
-  file = paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster", i, ".txt", sep='')
+  file = paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster.", i, ".txt", sep='')
   countData = read.table(file)
   dds <- DESeqDataSetFromMatrix(countData=countData, 
                                 colData=metaData, 
