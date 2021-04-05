@@ -5,7 +5,7 @@ addArchRGenome("hg38")
 args <- commandArgs(trailingOnly = TRUE)
 time = "/data/rusers/sheddn/Lake_ths-seq/Lake_Integration_Analysis"
 print(time)
-fragment = "/data/rusers/sheddn/Lake_ths-seq/fragments.lake.no-underscores.tsv.gz"
+fragment = "/data/rusers/sheddn/Lake_ths-seq/Lake-040521.tsv.gz"
 key = "Lake"
 
 reformatFragmentFiles(
@@ -14,8 +14,8 @@ reformatFragmentFiles(
 )
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
-  minTSS = 1, minFrags = 100, addTileMat = TRUE, addGeneScoreMat = TRUE,
-  gsubExpression=":.*")
+  minTSS = 4, minFrags = 1000, addTileMat = TRUE, addGeneScoreMat = TRUE,
+  gsubExpression=":.*", Force=TRUE)
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
 print(proj$cellNames)
