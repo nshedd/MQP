@@ -7,7 +7,7 @@ head(metaData)
 
 for (i in range(0,38)) {
   file = paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster", i, ".txt", sep='')
-  countData = read.table(file, header=TRUE, row.names=0, sep=" ")
+  countData = read.table(file, header=TRUE, row.names=1, sep=" ")
   dds <- DESeqDataSetFromMatrix(countData=countData, 
                                 colData=metaData, 
                                 design=~Group, tidy = TRUE)
