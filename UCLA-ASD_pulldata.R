@@ -1,6 +1,6 @@
 library(Seurat)
 
-BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
+BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
 
 data.expression = AverageExpression(BA9)
 data.expression.rna = data.expression[["RNA"]]
