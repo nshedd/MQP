@@ -43,11 +43,11 @@ write.table(data.expression.rna, "/data/rusers/sheddn/UCLA-ASD/data/BA9_averagee
 
 
 group = c('CTL','ASD')
-sample = unique(BA4.6$Sample)
-cluster = unique(Idents(BA4.6))
+sample = unique(BA9$Sample)
+cluster = unique(Idents(BA9))
                
 for (s in sample) {
-  data <- subset(BA4.6, subset= Sample==s)
+  data <- subset(BA9, subset= Sample==s)
   data.expression = AverageExpression(data)
   data.expression.rna = data.expression[["RNA"]]
   cluster = unique(Idents(data))
