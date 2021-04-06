@@ -5,12 +5,12 @@ library(DESeq2)
 metaData = read.table("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata.txt", sep='\t', header=TRUE)
 head(metaData)
 
-countData = read.table(file="/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", header=FALSE, sep="\t")
+countData = read.table(file="/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", header=TRUE, sep="\t")
 head(countData)
 
 dds <- DESeqDataSetFromMatrix(countData=countData, 
                               colData=metaData, 
-                              design=~Group, tidy = TRUE)
+                              design=~Group)
 dds <- DESeq(dds)
 
 res <- results(dds)
