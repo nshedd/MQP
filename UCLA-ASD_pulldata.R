@@ -60,123 +60,124 @@ for (s in sample) {
   data.expression.rna = data.expression[["RNA"]]
   cluster = unique(Idents(data))
   n = paste(data$Group[1], s, sep='_')
+  num_cells = length(Idents(data))
   for (c in cluster) {
     if (c == "0"){
-      cluster.expression.0[,n] = data.expression.rna[,"0"]
+      cluster.expression.0[,n] = data.expression.rna[,"0"] * num_cells
     }
     if (c == "1"){
-      cluster.expression.1[,n] = data.expression.rna[,"1"]
+      cluster.expression.1[,n] = data.expression.rna[,"1"] * num_cells
     }
     if (c == "2"){
-      cluster.expression.2[,n] = data.expression.rna[,"2"]
+      cluster.expression.2[,n] = data.expression.rna[,"2"] * num_cells
     }
     if (c == "3"){
-      cluster.expression.3[,n] = data.expression.rna[,"3"]
+      cluster.expression.3[,n] = data.expression.rna[,"3"] * num_cells
     }
     if (c == "4"){
-      cluster.expression.4[,n] = data.expression.rna[,"4"]
+      cluster.expression.4[,n] = data.expression.rna[,"4"] * num_cells
     }
     if (c == "5"){
-      cluster.expression.5[,n] = data.expression.rna[,"5"]
+      cluster.expression.5[,n] = data.expression.rna[,"5"] * num_cells
     }
     if (c == "6"){
-      cluster.expression.6[,n] = data.expression.rna[,"6"]
+      cluster.expression.6[,n] = data.expression.rna[,"6"] * num_cells
     }
     if (c == "7"){
-      cluster.expression.7[,n] = data.expression.rna[,"7"]
+      cluster.expression.7[,n] = data.expression.rna[,"7"] * num_cells
     }
     if (c == "8"){
-      cluster.expression.8[,n] = data.expression.rna[,"8"]
+      cluster.expression.8[,n] = data.expression.rna[,"8"] * num_cells
     }
     if (c == "9"){
-      cluster.expression.9[,n] = data.expression.rna[,"9"]
+      cluster.expression.9[,n] = data.expression.rna[,"9"] * num_cells
     }
     if (c == "10"){
-      cluster.expression.10[,n] = data.expression.rna[,"10"]
+      cluster.expression.10[,n] = data.expression.rna[,"10"] * num_cells
     }
     if (c == "11"){
-      cluster.expression.11[,n] = data.expression.rna[,"11"]
+      cluster.expression.11[,n] = data.expression.rna[,"11"] * num_cells
     }
     if (c == "12"){
-      cluster.expression.12[,n] = data.expression.rna[,"12"]
+      cluster.expression.12[,n] = data.expression.rna[,"12"] * num_cells
     }
     if (c == "13"){
-      cluster.expression.13[,n] = data.expression.rna[,"13"]
+      cluster.expression.13[,n] = data.expression.rna[,"13"] * num_cells
     }
     if (c == "14"){
-      cluster.expression.14[,n] = data.expression.rna[,"14"]
+      cluster.expression.14[,n] = data.expression.rna[,"14"] * num_cells
     }
     if (c == "15"){
-      cluster.expression.15[,n] = data.expression.rna[,"15"]
+      cluster.expression.15[,n] = data.expression.rna[,"15"] * num_cells
     }
     if (c == "16"){
-      cluster.expression.16[,n] = data.expression.rna[,"16"]
+      cluster.expression.16[,n] = data.expression.rna[,"16"] * num_cells
     }
     if (c == "17"){
-      cluster.expression.17[,n] = data.expression.rna[,"17"]
+      cluster.expression.17[,n] = data.expression.rna[,"17"] * num_cells
     }
     if (c == "18"){
-      cluster.expression.18[,n] = data.expression.rna[,"18"]
+      cluster.expression.18[,n] = data.expression.rna[,"18"] * num_cells
     }
     if (c == "19"){
-      cluster.expression.19[,n] = data.expression.rna[,"19"]
+      cluster.expression.19[,n] = data.expression.rna[,"19"] * num_cells
     }
     if (c == "20"){
-      cluster.expression.20[,n] = data.expression.rna[,"20"]
+      cluster.expression.20[,n] = data.expression.rna[,"20"] * num_cells
     }
     if (c == "21"){
-      cluster.expression.21[,n] = data.expression.rna[,"21"]
+      cluster.expression.21[,n] = data.expression.rna[,"21"] * num_cells
     }
     if (c == "22"){
-      cluster.expression.22[,n] = data.expression.rna[,"22"]
+      cluster.expression.22[,n] = data.expression.rna[,"22"] * num_cells
     }
     if (c == "23"){
-      cluster.expression.23[,n] = data.expression.rna[,"23"]
+      cluster.expression.23[,n] = data.expression.rna[,"23"] * num_cells
     }
     if (c == "24"){
-      cluster.expression.24[,n] = data.expression.rna[,"24"]
+      cluster.expression.24[,n] = data.expression.rna[,"24"] * num_cells
     }
     if (c == "25"){
-      cluster.expression.25[,n] = data.expression.rna[,"25"]
+      cluster.expression.25[,n] = data.expression.rna[,"25"] * num_cells
     }
     if (c == "26"){
-      cluster.expression.26[,n] = data.expression.rna[,"26"]
+      cluster.expression.26[,n] = data.expression.rna[,"26"] * num_cells
     }
     if (c == "27"){
-      cluster.expression.27[,n] = data.expression.rna[,"27"]
+      cluster.expression.27[,n] = data.expression.rna[,"27"] * num_cells
     }
     if (c == "28"){
-      cluster.expression.28[,n] = data.expression.rna[,"28"]
+      cluster.expression.28[,n] = data.expression.rna[,"28"] * num_cells
     }
     if (c == "29"){
-      cluster.expression.29[,n] = data.expression.rna[,"29"]
+      cluster.expression.29[,n] = data.expression.rna[,"29"] * num_cells
     }
     if (c == "30"){
-      cluster.expression.30[,n] = data.expression.rna[,"30"]
+      cluster.expression.30[,n] = data.expression.rna[,"30"] * num_cells
     }
     if (c == "31"){
-      cluster.expression.31[,n] = data.expression.rna[,"31"]
+      cluster.expression.31[,n] = data.expression.rna[,"31"] * num_cells
     }
     if (c == "32"){
-      cluster.expression.32[,n] = data.expression.rna[,"32"]
+      cluster.expression.32[,n] = data.expression.rna[,"32"] * num_cells
     }
     if (c == "33"){
-      cluster.expression.33[,n] = data.expression.rna[,"33"]
+      cluster.expression.33[,n] = data.expression.rna[,"33"] * num_cells
     }
     if (c == "34"){
-      cluster.expression.34[,n] = data.expression.rna[,"34"]
+      cluster.expression.34[,n] = data.expression.rna[,"34"] * num_cells
     }
     if (c == "35"){
-      cluster.expression.35[,n] = data.expression.rna[,"35"]
+      cluster.expression.35[,n] = data.expression.rna[,"35"] * num_cells
     }
     if (c == "36"){
-      cluster.expression.36[,n] = data.expression.rna[,"36"]
+      cluster.expression.36[,n] = data.expression.rna[,"36"] * num_cells
     }
     if (c == "37"){
-      cluster.expression.37[,n] = data.expression.rna[,"37"]
+      cluster.expression.37[,n] = data.expression.rna[,"37"] * num_cells
     }
     if (c == "38"){
-      cluster.expression.38[,n] = data.expression.rna[,"38"]
+      cluster.expression.38[,n] = data.expression.rna[,"38"] * num_cells
     }
     }
 }
