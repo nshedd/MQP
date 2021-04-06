@@ -2,7 +2,7 @@ library(Seurat)
 library(DESeq2)
 ## BA4/6
 
-metaData = read.table("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata.txt", sep='\t', header=TRUE)
+metaData = read.table("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata_cluster0.txt", sep='\t', header=TRUE)
 head(metaData)
 
 countData = read.table(file="/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", header=TRUE, sep="\t")
@@ -29,9 +29,11 @@ ggsave("/data/rusers/sheddn/UCLA-ASD/plots/DEG_cluster0.png")
 
 q()
 for (i in range(1,38)) {
-  file = paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster", i, ".txt", sep='')
-  print(file)
-  countData = read.table(file=file, sep="\t")
+  metadata_file = paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata_cluster", i, ".txt", sep='')
+  countData = read.table(file=metadata_file, sep="\t")
+  
+  expression_file = paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster", i, ".txt", sep='')
+  countData = read.table(file=expression_file, sep="\t")
   head(countData)
   dds <- DESeqDataSetFromMatrix(countData=countData, 
                                 colData=metaData, 
