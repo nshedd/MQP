@@ -10,8 +10,8 @@ head(countData)
 
 dds <- DESeqDataSetFromMatrix(countData=countData, 
                               colData=metaData, 
-                              design=~Group)
-dds <- DESeq(dds)
+                              design=~1 + Sample + Group)
+dds <- DESeq(dds, full=~Group)
 
 res <- results(dds)
 head(results(dds, tidy=TRUE))
@@ -37,8 +37,8 @@ for (i in range(1,38)) {
   head(countData)
   dds <- DESeqDataSetFromMatrix(countData=countData, 
                                 colData=metaData, 
-                                design=~Group, tidy = TRUE)
-  dds <- DESeq(dds)
+                                design=~1 + Sample + Group)
+  dds <- DESeq(dds, full=~Group)
   
   res <- results(dds)
   head(results(dds, tidy=TRUE))
