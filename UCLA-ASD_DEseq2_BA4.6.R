@@ -10,7 +10,7 @@ head(countData)
 
 dds <- DESeqDataSetFromMatrix(countData=countData, 
                               colData=metaData, 
-                              design=~1 + Sample)
+                              design=~Group)
 dds <- DESeq(dds)
 
 res <- results(dds)
