@@ -181,121 +181,121 @@ for (s in sample) {
     }
 }
 cluster.expression.0[,"0"] <- NULL            
-write.table(cluster.expression.0, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.0, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.1[,"1"] <- NULL    
-write.table(cluster.expression.1, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster1.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.1, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster1.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.2[,"2"] <- NULL
-write.table(cluster.expression.2, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster2.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.2, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster2.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.3[,"3"] <- NULL
-write.table(cluster.expression.3, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster3.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.3, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster3.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.4[,"4"] <- NULL
-write.table(cluster.expression.4, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster4.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.4, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster4.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.5[,"5"] <- NULL
-write.table(cluster.expression.5, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster5.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.5, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster5.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.6[,"6"] <- NULL
-write.table(cluster.expression.6, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster6.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.6, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster6.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.7[,"7"] <- NULL
-write.table(cluster.expression.7, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster7.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.7, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster7.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.8[,"8"] <- NULL
-write.table(cluster.expression.8, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster8.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.8, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster8.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.9[,"9"] <- NULL
-write.table(cluster.expression.9, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster9.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.9, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster9.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.10[,"10"] <- NULL
-write.table(cluster.expression.10, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster10.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.10, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster10.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.11[,"11"] <- NULL  
-write.table(cluster.expression.11, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster11.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.11, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster11.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.12[,"12"] <- NULL  
-write.table(cluster.expression.12, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster12.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.12, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster12.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.13[,"13"] <- NULL  
-write.table(cluster.expression.13, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster13.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.13, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster13.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.14[,"14"] <- NULL  
-write.table(cluster.expression.14, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster14.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.14, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster14.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.15[,"15"] <- NULL  
-write.table(cluster.expression.15, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster15.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.15, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster15.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.16[,"16"] <- NULL  
-write.table(cluster.expression.16, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster16.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.16, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster16.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.17[,"17"] <- NULL  
-write.table(cluster.expression.17, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster17.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.17, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster17.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.18[,"18"] <- NULL  
-write.table(cluster.expression.18, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster18.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.18, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster18.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.19[,"19"] <- NULL  
-write.table(cluster.expression.19, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster19.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.19, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster19.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.20[,"20"] <- NULL
-write.table(cluster.expression.20, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster20.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.20, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster20.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.21[,"21"] <- NULL
-write.table(cluster.expression.21, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster21.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.21, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster21.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.22[,"22"] <- NULL
-write.table(cluster.expression.22, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster22.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.22, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster22.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.23[,"23"] <- NULL
-write.table(cluster.expression.23, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster23.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.23, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster23.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.24[,"24"] <- NULL
-write.table(cluster.expression.24, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster24.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.24, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster24.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.25[,"25"] <- NULL
-write.table(cluster.expression.25, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster25.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.25, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster25.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.26[,"26"] <- NULL
-write.table(cluster.expression.26, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster26.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.26, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster26.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.27[,"27"] <- NULL
-write.table(cluster.expression.27, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster27.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.27, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster27.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.28[,"28"] <- NULL
-write.table(cluster.expression.28, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster28.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.28, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster28.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.29[,"29"] <- NULL
-write.table(cluster.expression.29, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster29.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.29, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster29.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.30[,"30"] <- NULL
-write.table(cluster.expression.30, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster30.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.30, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster30.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.31[,"31"] <- NULL
-write.table(cluster.expression.31, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster31.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.31, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster31.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.32[,"32"] <- NULL
-write.table(cluster.expression.32, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster32.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.32, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster32.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.33[,"33"] <- NULL
-write.table(cluster.expression.33, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster33.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.33, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster33.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.34[,"34"] <- NULL
-write.table(cluster.expression.34, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster34.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.34, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster34.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.35[,"35"] <- NULL
-write.table(cluster.expression.35, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster35.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.35, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster35.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.36[,"36"] <- NULL
-write.table(cluster.expression.36, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster36.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.36, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster36.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.37[,"37"] <- NULL
-write.table(cluster.expression.37, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster37.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.37, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster37.txt", row.names=TRUE, sep='\t')
 
 cluster.expression.38[,"38"] <- NULL
-write.table(cluster.expression.38, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster38.txt", row.names=TRUE, col.names=TRUE, sep='\t')
+write.table(cluster.expression.38, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster38.txt", row.names=TRUE, sep='\t')
 
 head(cluster.expression.0)
 
