@@ -222,7 +222,7 @@ write.table(cluster.expression.37, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output
 write.table(cluster.expression.38, "/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster38.txt", row.names=TRUE, col.names=TRUE, sep='\t')
   
 
-
+q()
 
 BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
 
