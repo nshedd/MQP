@@ -7,7 +7,7 @@ sample = unique(BA4.6$Sample)
 cluster = unique(Idents(BA4.6))
 
 for (c in cluster) {
-  data <- subset(BA4.6, ident=c)
+  data <- subset(BA4.6, idents=c)
   expression.data <- as.matrix(GetAssayData(data, slot = "counts"))
   expression_file <- paste("/data/rusers/sheddn/UCLA-ASD/plots/BA4.6_averageexpression_cluster", c, ".txt", sep='')
   write.table(expression.data, expression_file, sep='\t')
