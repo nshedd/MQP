@@ -11,7 +11,7 @@ head(countData)
 dds <- DESeqDataSetFromMatrix(countData=countData, 
                               colData=metaData, 
                               design=~1 + Sample)
-dds <- DESeq(dds, full=~Group)
+dds <- DESeq(dds)
 
 res <- results(dds)
 head(results(dds, tidy=TRUE))
