@@ -11,6 +11,8 @@ for (c in cluster) {
   expression.data <- as.matrix(GetAssayData(data, slot = "counts"))
   expression_file <- paste("/data/rusers/sheddn/UCLA-ASD/plots/BA4.6_averageexpression_cluster", i, ".txt", sep='')
   write.table(expression.data, expression_file, sep='\t')
+  
+  head(expression.data)
             
   df = data[,"Group", drop=FALSE]
   df$Sample = data$Sample
