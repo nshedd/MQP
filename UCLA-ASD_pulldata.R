@@ -9,14 +9,15 @@ cluster = unique(Idents(BA4.6))
 for (c in cluster) {
   data <- subset(BA4.6, ident = c)
   expression.data <- GetAssayData(data, slot = "counts")
-  expression_file <- paste("/data/rusers/sheddn/UCLA-ASD/plots/BA4.6_averageexpression_cluster", c, ".txt", sep='')
+  expression_file <- paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster", c, ".txt", sep='')
   write.table(expression.data, expression_file, sep='\t')
   
   head(expression.data)
             
-  df = data[,"Group", drop=FALSE]
+  df = data$Group
+  head(df)
   df$Sample = data$Sample
-  meta_file <- paste("/data/rusers/sheddn/UCLA-ASD/plots/BA4.6_metadata_cluster", c, ".txt", sep='')
+  meta_file <- paste("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata_cluster", c, ".txt", sep='')
   write.table(df, meta_file, sep='\t')
   
   head(df)
