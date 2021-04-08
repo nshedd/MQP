@@ -7,6 +7,7 @@ head(metaData)
 
 countData = read.table(file="/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", header=TRUE, sep="\t")
 head(countData)
+countData = countData + 4
 
 dds <- DESeqDataSetFromMatrix(countData=countData, 
                               colData=metaData, 
