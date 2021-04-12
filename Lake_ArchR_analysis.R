@@ -2,6 +2,8 @@ library(ArchR)
 
 addArchRGenome("hg38")
 
+marker_gene_table = read.table("~/Zlab single-cell marker genes - Brain 4.tsv", header=TRUE, sep="\t", row.names=FALSE)
+
 args <- commandArgs(trailingOnly = TRUE)
 time = "/data/rusers/sheddn/Lake_ths-seq/Lake_Integration_Analysis"
 print(time)
@@ -76,7 +78,7 @@ markerList <- getMarkers(markersGS, cutOff = "FDR <= 0.01 & Log2FC >= 1.25")
 
 write.table(markerList, file ="/data/rusers/sheddn/Lake_ths-seq/overexpressed_genes.txt", sep = '\t')
 
-marker_gene_table = read.table(path.expand("~/Zlab single-cell marker genes - Brain 4.tsv"), header=TRUE, sep="\t")
+
 all_known_marker_genes = marker_gene_table$Human.Gene
 
 intersection = intersect(markerList$name, all_known_marker_genes)
