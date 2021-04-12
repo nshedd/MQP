@@ -1,5 +1,6 @@
 library(Seurat)
 library(DESeq2)
+library(ggplot2)
 ## BA4/6
 
 metaData = read.table("/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_metadata_cluster0.txt", sep='\t', header=TRUE)
@@ -11,7 +12,7 @@ countData = countData + 4
 
 dds <- DESeqDataSetFromMatrix(countData=countData, 
                               colData=metaData, 
-                              design=~1+Group)
+                              design=~Group)
 dds <- DESeq(dds)
 
 res <- results(dds)
