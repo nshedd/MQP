@@ -83,6 +83,8 @@ intersection = intersect(markerList$name, all_known_marker_genes)
 
 markerGenes  <- intersection
 
+print(markerGenes)
+
 heatmapGS <- markerHeatmap(
   seMarker = markersGS, 
   cutOff = "FDR <= 0.01 & Log2FC >= 1.25",
