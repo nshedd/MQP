@@ -11,7 +11,7 @@ head(metaData)
 
 countData = read.table(file="/data/rusers/sheddn/UCLA-ASD/data/DEG_output/BA4.6_averageexpression_cluster0.txt", header=TRUE, sep="\t")
 head(countData)
-countData = countData + 4
+countData = countData + 4 ##offset to make geometric means non-zero
 
 # Group = CTL or ASD
 # Sample = Donor
