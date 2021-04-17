@@ -167,6 +167,8 @@ p1+p2
 
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA4.6_UMAP_bysample.png', width = 15, height = 7)
 
+
+DefaultAssay(BA4.6) <- "RNA"
 ## pK indetification
 sweep.res.list_pbmc <- paramSweep_v3(BA4.6, PCs = 1:20, sct = FALSE)
 sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
@@ -181,6 +183,7 @@ nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
+DefaultAssay(BA4.6) <- "integrated"
 
 DimPlot(BA4.6, reduction = "umap", split.by = "Group")
 
@@ -377,6 +380,8 @@ p1+p2
 
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA9_UMAP_bysample.png', width = 15, height = 7)
 
+DefaultAssay(BA9) <- "RNA"
+
 ## pK indetification
 sweep.res.list_pbmc <- paramSweep_v3(BA9, PCs = 1:20, sct = FALSE)
 sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
@@ -391,6 +396,7 @@ nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA9 <- doubletFinder_v3(BA9, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
+DefaultAssay(BA9) <- "integrated"
 
 DimPlot(BA9, reduction = "umap", split.by = "Group")
 
