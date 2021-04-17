@@ -168,26 +168,24 @@ p1+p2
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA4.6_UMAP_bysample.png', width = 15, height = 7)
 
 
-DefaultAssay(BA4.6) <- "RNA"
-## pK indetification
-sweep.res.list_pbmc <- paramSweep_v3(BA4.6, PCs = 1:20, sct = FALSE)
-sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
-bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
-bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
+# ## pK indetification
+# sweep.res.list_pbmc <- paramSweep_v3(BA4.6, PCs = 1:20, sct = FALSE)
+# sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
+# bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
+# bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
+# 
+# ## Doublet proportion estimate
+# annotations <- BA4.6@meta.data$seurat_clusters
+# homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
+# nExp_poi <- round(0.15*nrow(BA4.6@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
+# nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
+# 
+# BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
 
-## Doublet proportion estimate
-annotations <- BA4.6@meta.data$seurat_clusters
-homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.15*nrow(BA4.6@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
-nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
-
-BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
-
-DefaultAssay(BA4.6) <- "integrated"
 
 DimPlot(BA4.6, reduction = "umap", split.by = "Group")
 
-saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA4.6_DoubletsRemoved.RDS')
+# saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA4.6_DoubletsRemoved.RDS')
 
 BA4.6.markers <- FindAllMarkers(BA4.6, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 BA4.6.markers %>% group_by(cluster)
@@ -380,27 +378,25 @@ p1+p2
 
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA9_UMAP_bysample.png', width = 15, height = 7)
 
-DefaultAssay(BA9) <- "RNA"
 
-## pK indetification
-sweep.res.list_pbmc <- paramSweep_v3(BA9, PCs = 1:20, sct = FALSE)
-sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
-bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
-bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
-
-## Doublet proportion estimate
-annotations <- BA9@meta.data$seurat_clusters
-homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.15*nrow(BA9@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
-nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
-
-BA9 <- doubletFinder_v3(BA9, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
-
-DefaultAssay(BA9) <- "integrated"
+# ## pK indetification
+# sweep.res.list_pbmc <- paramSweep_v3(BA9, PCs = 1:20, sct = FALSE)
+# sweep.stats_pbmc <- summarizeSweep(sweep.res.list_pbmc, GT = FALSE)
+# bcmvn_pbmc <- find.pK(sweep.stats_pbmc)
+# bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
+# 
+# ## Doublet proportion estimate
+# annotations <- BA9@meta.data$seurat_clusters
+# homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
+# nExp_poi <- round(0.15*nrow(BA9@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
+# nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
+# 
+# BA9 <- doubletFinder_v3(BA9, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
+# 
 
 DimPlot(BA9, reduction = "umap", split.by = "Group")
 
-saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA9_DoubletsRemoved.RDS')
+# saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA9_DoubletsRemoved.RDS')
 
 BA9.markers <- FindAllMarkers(BA9, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 BA9.markers %>% group_by(cluster)
