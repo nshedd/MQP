@@ -726,11 +726,12 @@ BW76$Sample <- "BW76"
 
 
 
-CTL_BA4.6 <- merge(BW60, y=c(BW32,BW31),
-                   add.cell.ids=c('BW60','BW32','BW31'),
+CTL_BA4.6 <- merge(BW60, y=c(BW31,BW26),
+                   add.cell.ids=c('BW60','BW31','BW26'),
                    project = "UCLA-ASD")
-                   #3.7.5,  3.6.7,  3.6.5
-                   #8751,   7152,   7076
+                   #3.7.5,  3.6.7,  3.6.5   3.5.4
+                   #8751,   7152,   7076,   4829
+                   #2593,   373,    1519,   18072
 saveRDS(CTL_BA4.6, '/data/rusers/sheddn/UCLA-ASD/subset/data/ASD_BA4.6')
 
 CTL_BA9 <- merge(BW66, y=c(BW34, BW54),
