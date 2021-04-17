@@ -20,7 +20,7 @@ for (i in clusters_BA4.6) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  p1 <- ggplot(avg.t.cells, aes(ASD, CTL)) + geom_point() + ggtitle(i)
+  p1 <- ggplot(avg.sub, aes(ASD, CTL)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
   link = paste("/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA4.6_DEG_",i,'.png')
