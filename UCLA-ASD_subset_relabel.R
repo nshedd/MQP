@@ -22,6 +22,8 @@ BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 DimPlot(BA4.6, label=TRUE, pt.size=0.5, split.by="Group")
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 16, height = 7)
 
+saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/subset/data/combined_BA4.6_Relabeled.RDS')
+
 
 BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/subset/data/combined_BA9_WithDEGs.RDS')
 
@@ -37,3 +39,4 @@ BA9 <- RenameIdents(BA9, new.cluster.ids)
 DimPlot(BA9, label=TRUE, pt.size=0.5, split.by="Group")
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/plots/UMAP_Harmony_BA9_integrated_SingleRlabel.png', width = 16, height = 7)
 
+saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/subset/data/combined_BA9_Relabeled.RDS')
