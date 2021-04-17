@@ -227,10 +227,10 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/UMAP_BA4.6_i
 saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA4.6_SingleR.RDS')
 
 DefaultAssay(BA4.6) <- "RNA"
-nk.markers <- FindConservedMarkers(BA4.6, ident.1 = 0, grouping.var = "stim", verbose = FALSE)
+nk.markers <- FindConservedMarkers(BA4.6, ident.1 = 0, grouping.var = "Group", verbose = FALSE)
 head(nk.markers)
 
-write.table(mk.markers,  '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA4.6_conserved_markers_cluster0.txt')
+write.table(nk.markers,  '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA4.6_conserved_markers_cluster0.txt')
 
 
 ## BA9
@@ -438,9 +438,9 @@ ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/UMAP_BA9_int
 saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA9_SingleR.RDS')
 
 DefaultAssay(BA9) <- "RNA"
-nk.markers <- FindConservedMarkers(BA9, ident.1 = 0, grouping.var = "stim", verbose = FALSE)
+nk.markers <- FindConservedMarkers(BA9, ident.1 = 0, grouping.var = "Group", verbose = FALSE)
 head(nk.markers)
 
-write.table(mk.markers,  '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA9_conserved_markers_cluster0.txt')
+write.table(nk.markers,  '/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/data/BA9_conserved_markers_cluster0.txt')
 
 
