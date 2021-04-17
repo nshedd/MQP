@@ -163,7 +163,7 @@ BA4.6 <- FindClusters(BA4.6, resolution = 0.5)
 
 p1 <- DimPlot(BA4.6, reduction = "umap", group.by = "Sample")
 p2 <- DimPlot(BA4.6, reduction = "umap", label = TRUE)
-plot_grid(p1, p2)
+p1+p2
 
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA4.6_UMAP_bysample.png', width = 15, height = 7)
 
@@ -373,7 +373,7 @@ BA9 <- FindClusters(BA9, resolution = 0.5)
 
 p1 <- DimPlot(BA9, reduction = "umap", group.by = "Sample")
 p2 <- DimPlot(BA9, reduction = "umap", label = TRUE)
-plot_grid(p1, p2)
+p1+p2
 
 ggsave('/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA9_UMAP_bysample.png', width = 15, height = 7)
 
