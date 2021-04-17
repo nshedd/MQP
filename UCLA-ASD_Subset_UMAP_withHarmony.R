@@ -59,7 +59,9 @@ BA4.6 <- FindNeighbors(BA4.6, reduction = "harmony", dims = 1:20) %>% FindCluste
 before <- DimPlot(BA4.6_noharmony, reduction = "umap", group.by="Sample")
 after <- DimPlot(BA4.6, reduction = "umap", group.by="Sample")
 before + after
-ggsave('/data/rusers/sheddn/UCLA-ASD/subset/plots/UMAP_before_and_after_Harmony.png', width = 16, height = 7)
+ggsave('/data/rusers/sheddn/UCLA-ASD/subset/plots/BA4.6_UMAP_before_and_after_Harmony.png', width = 16, height = 7)
+
+q()
 
 ## pK indetification
 sweep.res.list_pbmc <- paramSweep_v3(BA4.6, PCs = 1:20, sct = FALSE)
