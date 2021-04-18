@@ -39,7 +39,6 @@ for (i in clusters_BA4.6) {
   interferon.response$diff = abs(interferon.response$pct.1 - interferon.response$pct.2)
   interferon.response <- interferon.response[order(interferon.response$diff, decreasing=TRUE),] 
   
-  print(interferon.response)
   
   genes.to.label <- row.names(interferon.response[1:10,])
   
