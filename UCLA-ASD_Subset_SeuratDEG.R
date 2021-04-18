@@ -34,7 +34,10 @@ for (i in clusters_BA4.6) {
   Idents(BA4.6_full) <- "celltype.Group"
   interferon.response <- FindMarkers(BA4.6_full, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
   
-  print(interferon.response[1:10,])
+  interferon.response$diff = abs(interferon.response$pct.1 - interferon.response$pct.2)
+  interferon.response <- interferon.response[order(-diff),] 
+  
+  print(interferon.response)
   
   genes.to.label <- row.names(interferon.response[1:10,])
   
