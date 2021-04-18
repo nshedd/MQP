@@ -29,6 +29,8 @@ for (i in clusters_BA4.6) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
+  head(avg.sub)
+  
   BA4.6_full$celltype.Group <- paste(Idents(BA4.6_full), BA4.6_full$Group, sep = "_")
   BA4.6_full$celltype <- Idents(BA4.6_full)
   Idents(BA4.6_full) <- "celltype.Group"
