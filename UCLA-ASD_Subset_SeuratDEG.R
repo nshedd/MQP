@@ -34,7 +34,7 @@ for (i in clusters_BA4.6) {
   Idents(BA4.6_full) <- "celltype.Group"
   interferon.response <- FindMarkers(BA4.6_full, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
   
-  head(interferon.response, n=10)
+  print(interferon.response[1:10,])
   
   genes.to.label <- row.names(interferon.response[1:10,])
   
