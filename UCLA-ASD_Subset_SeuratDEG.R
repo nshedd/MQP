@@ -12,18 +12,22 @@ new.cluster.ids <- clusters_BA4.6
 names(new.cluster.ids) <- levels(BA4.6)
 BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
+BA4.6_full <- BA4.6
+
 for (i in clusters_BA4.6) {
-  sub <- subset(BA4.6, idents = i)
+  BA4.6_full <- BA4.6
+  
+  print(i)
+  
+  sub <- subset(BA4.6_full, idents = i)
   Idents(sub) <- "Group"
-  print(Idents(sub))
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  BA4.6$celltype.Group <- paste(Idents(BA4.6), BA4.6$Group, sep = "_")
-  BA4.6$celltype <- Idents(BA4.6)
-  Idents(BA4.6) <- "celltype.Group"
-  print(Idents(BA4.6))
-  interferon.response <- FindMarkers(BA4.6, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
+  BA4.6_full$celltype.Group <- paste(Idents(BA4.6_full), BA4.6_full$Group, sep = "_")
+  BA4.6_full$celltype <- Idents(BA4.6_full)
+  Idents(BA4.6_full) <- "celltype.Group"
+  interferon.response <- FindMarkers(BA4.6_full, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
   
   genes.to.label <- row.names(interferon.response[1:10,])
   
