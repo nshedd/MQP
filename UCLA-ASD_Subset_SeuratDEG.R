@@ -15,6 +15,7 @@ BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 for (i in clusters_BA4.6) {
   sub <- subset(BA4.6, idents = i)
   Idents(sub) <- "Group"
+  print(Idents(sub))
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
