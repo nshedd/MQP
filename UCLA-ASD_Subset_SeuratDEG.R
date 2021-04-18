@@ -12,9 +12,10 @@ new.cluster.ids <- clusters_BA4.6
 names(new.cluster.ids) <- levels(BA4.6)
 BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
-clusters_BA4.6 <- c('Ex1','Ex3','In1','Ex4','OPC','In2','Oli','Ex5','Ex6',
+clusters_BA4.6 <- c('Ex1','Ex3','In1','OPC','In2','Oli','Ex5','Ex6',
                     'In3','Ast1','In4','Ex7','Ex8','Ex9','In5','Ex10','Ex11','Ast2',
-                    'Ex12','Ex13','In6','In7','In8','Ex14','Ex15','Ex16') #'Ex2',
+                    'Ex12','Ex13','In6','In7','In8','Ex14','Ex15','Ex16')
+                    #No DEGs pass threshold - 'Ex2','Ex4',
 
 BA4.6_full <- BA4.6
 
