@@ -19,7 +19,7 @@ for (i in clusters_BA4.6) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  Idents(BA4.6) <- "celltype.Group"
+  Idents(BA4.6) <- "ident.Group"
   print(Idents(BA4.6))
   interferon.response <- FindMarkers(BA4.6, ident.1 = paste(i, "ASD", sep="."), ident.2 = paste(i, "CTL", sep="."), verbose = FALSE)
   
