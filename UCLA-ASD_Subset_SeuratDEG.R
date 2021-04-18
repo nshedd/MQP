@@ -31,16 +31,10 @@ for (i in clusters_BA4.6) {
   
   print(avg.sub[1:10,])
   
-  BA4.6_full$celltype.Group <- paste(Idents(BA4.6_full), BA4.6_full$Group, sep = "_")
-  BA4.6_full$celltype <- Idents(BA4.6_full)
-  Idents(BA4.6_full) <- "celltype.Group"
-  interferon.response <- FindMarkers(BA4.6_full, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
+  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
+  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
   
-  interferon.response$diff = abs(interferon.response$pct.1 - interferon.response$pct.2)
-  interferon.response <- interferon.response[order(interferon.response$diff, decreasing=TRUE),] 
-  
-  
-  genes.to.label <- row.names(interferon.response[1:10,])
+  genes.to.label <- row.names(avg.sub[1:10,])
   
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
