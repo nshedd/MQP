@@ -35,7 +35,7 @@ for (i in clusters_BA4.6) {
   interferon.response <- FindMarkers(BA4.6_full, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
   
   interferon.response$diff = abs(interferon.response$pct.1 - interferon.response$pct.2)
-  interferon.response <- interferon.response[order(interferon.response$diff, decreasing=FALSE),] 
+  interferon.response <- interferon.response[order(interferon.response$diff, decreasing=TRUE),] 
   
   print(interferon.response)
   
