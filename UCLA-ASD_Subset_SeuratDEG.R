@@ -13,16 +13,21 @@ names(new.cluster.ids) <- levels(BA4.6)
 BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
 for (i in clusters_BA4.6) {
-  print(i)
-  
   sub <- subset(BA4.6, idents = i)
   Idents(sub) <- "Group"
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
+  Idents(BA4.6) <- "celltype.stim"
+  interferon.response <- FindMarkers(BA4.6, ident.1 = paste(i, "ASD", sep="_"), ident.2 = paste(i, "CTL", sep="_"), verbose = FALSE)
+  
+  genes.to.label <- row.names(interferon.response[1:10,])
+  
   p1 <- ggplot(avg.sub, aes(ASD, CTL)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
-  link = paste("/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA4.6_DEG_",i,'.png')
+  link = paste("/data/rusers/sheddn/UCLA-ASD/subset/Seurat_integrated/plots/BA4.6_DEGS_",i,'.png', sep='')
   ggsave(link)
 }
+
+
