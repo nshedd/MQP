@@ -725,6 +725,20 @@ BW76 <- subset(BW76, subset = nFeature_RNA > featureLOW & nCount_RNA > countLOW 
 BW76$Sample <- "BW76"
 
 
+ASD_BA4.6 <- merge(BW1, y=c(BW10,BW14,BW16,BW17,BW22,BW24,BW26,BW27,BW3,BW31,BW32,BW4,BW59,BW60,BW7,BW9),
+                   add.cell.ids=c('BW1','BW10','BW14','BW16','BW17','BW22','BW24','BW26','BW27','BW3','BW31','BW32','BW4','BW59','BW60','BW7','BW9'),
+                   project = "UCLA-ASD")
+
+saveRDS(ASD_BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
+
+ASD_BA9 <- merge(BW18, y=c(BW19,BW21,BW28,BW29,BW34,BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW50,BW54,BW65,BW66,BW67,BW68,BW70,BW72,BW73,BW75,BW76),
+                 add.cell.ids=c('BW18','BW19','BW21','BW28','BW29','BW34','BW37','BW38','BW39','BW42','BW44','BW45','BW48','BW49','BW50','BW54','BW65','BW66','BW67','BW68','BW70','BW72','BW73','BW75','BW76'),
+                 project = "UCLA-ASD")
+
+saveRDS(ASD_BA9, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA9')
+
+q()
+
 
 CTL_BA4.6 <- merge(BW60, y=c(BW31,BW26),
                    add.cell.ids=c('BW60','BW31','BW26'),
@@ -742,19 +756,6 @@ CTL_BA9 <- merge(BW66, y=c(BW34, BW54),
 
 saveRDS(CTL_BA9, '/data/rusers/sheddn/UCLA-ASD/subset/data/ASD_BA9')
 
-q()
-
-ASD_BA4.6 <- merge(BW1, y=c(BW10,BW14,BW16,BW17,BW22,BW24,BW26,BW27,BW3,BW31,BW32,BW4,BW59,BW60,BW7,BW9),
-                   add.cell.ids=c('BW1','BW10','BW14','BW16','BW17','BW22','BW24','BW26','BW27','BW3','BW31','BW32','BW4','BW59','BW60','BW7','BW9'),
-                   project = "UCLA-ASD")
-
-saveRDS(ASD_BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA4.6')
-
-ASD_BA9 <- merge(BW18, y=c(BW19,BW21,BW28,BW29,BW34,BW37,BW38,BW39,BW42,BW44,BW45,BW48,BW49,BW50,BW54,BW65,BW66,BW67,BW68,BW70,BW72,BW73,BW75,BW76),
-                 add.cell.ids=c('BW18','BW19','BW21','BW28','BW29','BW34','BW37','BW38','BW39','BW42','BW44','BW45','BW48','BW49','BW50','BW54','BW65','BW66','BW67','BW68','BW70','BW72','BW73','BW75','BW76'),
-                 project = "UCLA-ASD")
-
-saveRDS(ASD_BA9, '/data/rusers/sheddn/UCLA-ASD/data/ASD_BA9')
 
 
 # ASD <- merge(BW1, y=c(BW3,BW4,BW7,BW9,BW10,BW14,BW16,BW17,BW18,BW19,BW21,BW22,BW24,BW26,BW27,BW28,BW29,BW31,BW32,BW34,
