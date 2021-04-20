@@ -106,5 +106,5 @@ BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
 print('Plotting...')
 
-DimPlot(BA4.6, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+DimPlot(BA4.6, label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 8, height = 7)
