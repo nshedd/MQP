@@ -57,7 +57,7 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- BA4.6@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.15*nrow(BA4.6@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.7*nrow(BA4.6@meta.data))  ## Assuming 7% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
