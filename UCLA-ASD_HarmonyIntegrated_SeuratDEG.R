@@ -15,8 +15,8 @@ BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 clusters_BA4.6 = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1",
             "Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5",
             "Ex12","Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8",
-            "Ex15","Ex16","In9","OPC2","In10","Ex17","OPC3","In11","Ast5","OPC4")
-            #No DEGs pass threshold -
+            "Ex15","Ex16","In9","OPC2","In10","Ex17","OPC3","In11")
+            # Only exists in CTL - "Ast5","OPC4"
 
 BA4.6_full <- BA4.6
 
