@@ -37,10 +37,6 @@ BA9 <- NormalizeData(BA9, normalization.method = "LogNormalize", scale.factor = 
 BA9 <- FindVariableFeatures(BA9, selection.method = "vst", nfeatures = 2000)
 
 
-saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA9')
-
-BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9')
-
 all.genes <- rownames(BA9)
 BA9 <- ScaleData(BA9, features = all.genes)
 
@@ -61,15 +57,10 @@ bcmvn_pbmc$pK <- as.numeric(as.character(bcmvn_pbmc$pK))
 ## Doublet proportion estimate
 annotations <- BA9@meta.data$seurat_clusters
 homotypic.prop <- modelHomotypic(annotations)           ## ex: annotations <- seu_pbmc@meta.data$ClusteringResults
-nExp_poi <- round(0.15*nrow(BA9@meta.data))  ## Assuming 15% doublet formation rate - tailor for your dataset
+nExp_poi <- round(0.07*nrow(BA9@meta.data))  ## Assuming 7% doublet formation rate - tailor for your dataset
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA9 <- doubletFinder_v3(BA9, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
-
-saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
-
-# BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
-
 
 
 p1 <- DimPlot(BA9, reduction = "umap", group.by = "Group")
@@ -95,21 +86,22 @@ ggsave("/data/rusers/sheddn/UCLA-ASD/plots/combined_BA9_dotplot.png", width = 14
 
 saveRDS(BA9, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
 
-BA9_SCE <- as.SingleCellExperiment(BA9)
-BA9_clust <- Idents(BA9)
-head(BA9_clust)
+BA9_SingleR <- SingleR(test=GetAssayData(BA9, assay = "RNA"),
+                       ref=Lake_SCE,
+                       method='cluster',
+                       labels=Lake_labels,
+                       clusters==Idents(BA9),
+                       assay.type.test = "logcounts",
+                       assay.type.ref = "logcounts")
 
-print('Running SingleR...')
-BA9_SingleR <- SingleR(test=BA9_SCE,
-                         ref=Lake_SCE,
-                         labels=Lake_labels,
-                         clusters=BA9_clust,
-                         assay.type.test = "logcounts",
-                         assay.type.ref = "logcounts")
+print(BA9_SingleR$labels)
+write.table(BA9_SingleR$labels, "/data/rusers/sheddn/UCLA-ASD/data/BA9_cluster_ids.txt")
+
+new.cluster.ids <- BA9_SingleR$labels
+names(new.cluster.ids) <- levels(BA9)
+BA9 <- RenameIdents(BA9, new.cluster.ids)
 
 print('Plotting...')
-BA9$SingleR.pruned.calls <- BA9_SingleR$pruned.labels
-BA9$SingleR.calls <- BA9_SingleR$labels
 
-DimPlot(BA9, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
+DimPlot(BA9, label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_SingleRlabel.png', width = 8, height = 7)
