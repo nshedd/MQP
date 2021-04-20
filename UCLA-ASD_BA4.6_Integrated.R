@@ -37,10 +37,6 @@ BA4.6 <- NormalizeData(BA4.6, normalization.method = "LogNormalize", scale.facto
 BA4.6 <- FindVariableFeatures(BA4.6, selection.method = "vst", nfeatures = 2000)
 
 
-saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
-
-BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6')
-
 all.genes <- rownames(BA4.6)
 BA4.6 <- ScaleData(BA4.6, features = all.genes)
 
@@ -65,10 +61,6 @@ nExp_poi <- round(0.15*nrow(BA4.6@meta.data))  ## Assuming 15% doublet formation
 nExp_poi.adj <- round(nExp_poi*(1-homotypic.prop))
 
 BA4.6 <- doubletFinder_v3(BA4.6, PCs = 1:20, pN = 0.15, pK = bcmvn_pbmc$pK[which.max(bcmvn_pbmc$BCmetric)], nExp = nExp_poi, reuse.pANN = FALSE, sct = FALSE)
-
-saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
-
-# BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
 
 
@@ -95,20 +87,24 @@ ggsave("/data/rusers/sheddn/UCLA-ASD/plots/combined_BA4.6_dotplot.png", width = 
 
 saveRDS(BA4.6, '/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
-BA4.6_SCE <- as.SingleCellExperiment(BA4.6)
-BA4.6_clust <- Idents(BA4.6)
 
 print('Running SingleR...')
-BA4.6_SingleR <- SingleR(test=BA4.6_SCE,
+BA4.6_SingleR <- SingleR(test=GetAssayData(BA4.6, assay = "RNA"),
                        ref=Lake_SCE,
+                       method='cluster',
                        labels=Lake_labels,
-                       clusters=BA4.6_clust,
+                       clusters==Idents(BA4.6),
                        assay.type.test = "logcounts",
                        assay.type.ref = "logcounts")
 
+print(BA4.6_SingleR$labels)
+write.table(BA4.6_SingleR$labels, "/data/rusers/sheddn/UCLA-ASD/data/BA4.6_cluster_ids.txt")
+
+new.cluster.ids <- BA4.6_SingleR$labels
+names(new.cluster.ids) <- levels(BA4.6)
+BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
+
 print('Plotting...')
-BA4.6$SingleR.pruned.calls <- BA4.6_SingleR$pruned.labels
-BA4.6$SingleR.calls <- BA4.6_SingleR$labels
 
 DimPlot(BA4.6, group.by="SingleR.calls", label=TRUE, pt.size=0.5)
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA4.6_integrated_SingleRlabel.png', width = 8, height = 7)
