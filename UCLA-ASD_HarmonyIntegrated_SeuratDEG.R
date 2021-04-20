@@ -40,7 +40,7 @@ for (i in clusters_BA4.6) {
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG/BA4.6_DEGS_",i,'.png', sep='')
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGS_",i,'.png', sep='')
   ggsave(link)
 }
 
@@ -82,7 +82,7 @@ for (i in clusters_BA9) {
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG/BA9_DEGS_",i,'.png', sep='')
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
   ggsave(link)
 }
 
@@ -121,7 +121,7 @@ for (i in clusters_BA4.6) {
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG/BA4.6_DEGS_",i,'.png', sep='')
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGS_",i,'.png', sep='')
   ggsave(link)
 }
 
@@ -158,8 +158,6 @@ for (i in clusters_BA9) {
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG/BA9_DEGS_",i,'.png', sep='')
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
   ggsave(link)
 }
-
-
