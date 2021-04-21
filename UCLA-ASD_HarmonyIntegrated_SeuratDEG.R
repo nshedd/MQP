@@ -3,20 +3,22 @@ library(Seurat)
 
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
 
-clusters_BA4.6 = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1",
-            "Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5",
-            "Ex12","Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8",
-            "Ex15","Ex16","In9","OPC2","In10","Ex17","OPC3","In11","Ast5","OPC4")
+clusters_BA4.6 = c("Ex1","Ex2","Ex3","In1","Ast1","Oli1","In2","OPC1","In3","Ex4",
+                   "Ex5","Ex6","Ex7","Ex8","Ex9","In4","Ex10","Ex11","In5","Ex12",
+                   "Ex13","Oli2","Ex14","Ast2","Ast3","In6","Ast4","In7","Mic1","In8",
+                   "Oli3","In9","Ex15","In10","In11","OPC2","In12","Ex16","Ast5","In13",
+                   "Ast6","OPC3","Mic2")
+
 
 new.cluster.ids <- clusters_BA4.6
 names(new.cluster.ids) <- levels(BA4.6)
 BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
 
-clusters_BA4.6 = c("Ex1","Ex2","Oli1","Ast1","Ex3","Ex4","In1","In2","OPC1",
-            "Ex5","In3","In4","Ex6","Ex7","Ast2","Ex8","Ex9","Ex10","In5",
-            "Ex12","Ex13","Ast2","Ex14","In6","Ast3","In7","Ast4","Mic","In8",
-            "Ex15","Ex16","In9","OPC2","In10","Ex17","OPC3","In11")
-            # Only exists in CTL - "Ast5","OPC4"
+clusters_BA4.6 = c("Ex1","Ex2","Ex3","In1","Ast1","Oli1","In2","OPC1","In3","Ex4",
+                   "Ex5","Ex6","Ex7","Ex8","Ex9","In4","Ex10","Ex11","In5","Ex12",
+                   "Ex13","Oli2","Ex14","Ast2","Ast3","In6","Ast4","In7","Mic1","In8",
+                   "Oli3","In9","Ex15","In10","In11","OPC2","In12","Ex16","Ast5","In13",
+                   "Ast6","OPC3","Mic2")
 
 BA4.6_full <- BA4.6
 
@@ -44,6 +46,7 @@ for (i in clusters_BA4.6) {
   ggsave(link)
 }
 
+q()
 
 BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
 
