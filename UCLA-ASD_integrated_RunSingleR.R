@@ -1,8 +1,5 @@
-library(dplyr)
 library(Seurat)
 library(ggplot2)
-library(harmony)
-library(DoubletFinder)
 library(SingleR)
 library(SingleCellExperiment)
 
