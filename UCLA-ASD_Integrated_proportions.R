@@ -1,10 +1,7 @@
 library(dplyr)
 library(Seurat)
 library(ggplot2)
-library(harmony)
-library(DoubletFinder)
-library(SingleR)
-library(SingleCellExperiment)
+
 
 # Read and relabel clusters and plot
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_withDEGs')
