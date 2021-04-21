@@ -5,7 +5,7 @@ library(SingleCellExperiment)
 
 
 ## Load SingleR reference dataset
-path1 = path.expand("~/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz")
+path1 = "/data/rusers/sheddn/GSE97930_FrontalCortex_snDrop-seq_UMI_Count_Matrix_08-01-2017.txt.gz"
 
 matrix = read.table(path1, header=TRUE, row.names=1)
 Lake <- CreateSeuratObject(counts = matrix, project = "SeuratPipeline", min.cells = 3, min.features = 200)
