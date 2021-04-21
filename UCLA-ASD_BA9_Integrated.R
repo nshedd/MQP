@@ -90,7 +90,7 @@ BA9_SingleR <- SingleR(test=GetAssayData(BA9, assay = "RNA"),
                        ref=Lake_SCE,
                        method='cluster',
                        labels=Lake_labels,
-                       clusters==Idents(BA9),
+                       clusters=Idents(BA9),
                        assay.type.test = "logcounts",
                        assay.type.ref = "logcounts")
 
