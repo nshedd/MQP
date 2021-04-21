@@ -18,8 +18,8 @@ clusters_BA4.6 = c("Ex1","Ex2","Ex3","In1","Ast1","Oli1","In2","OPC1","In3","Ex4
                    "Ex5","Ex6","Ex7","Ex8","Ex9","In4","Ex10","Ex11","In5","Ex12",
                    "Ex13","Oli2","Ex14","Ast2","Ast3","In6","Ast4","In7","Mic1","In8",
                    "Oli3","In9","Ex15","In10","In11","OPC2","In12","Ex16","Ast5","In13",
-                   "OPC3","Mic2")
-                   # only in 1 group - "Ast6"
+                   "Mic2")
+                   # only in 1 group - "Ast6", "OPC3",
 
 BA4.6_full <- BA4.6
 
