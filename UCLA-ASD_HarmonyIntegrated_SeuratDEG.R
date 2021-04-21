@@ -1,7 +1,7 @@
 library(ggplot2)
 library(Seurat)
 
-BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_DoubletsRemoved')
+BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 clusters_BA4.6 = c("Ex1","Ex2","Ex3","In1","Ast1","Oli1","In2","OPC1","In3","Ex4",
                    "Ex5","Ex6","Ex7","Ex8","Ex9","In4","Ex10","Ex11","In5","Ex12",
