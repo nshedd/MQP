@@ -32,7 +32,7 @@ for (i in clusters_BA9) {
   response <- FindMarkers(BA9_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
   print(response[1:25,])
   
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGs-FDR_",i,'.txt', sep='')
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGs-FDR_",i,'.txt', sep='')
   write.table(response, link)
   
   genes.to.label <- row.names(response[1:25,])
