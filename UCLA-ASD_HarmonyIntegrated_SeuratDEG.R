@@ -26,7 +26,7 @@ for (i in clusters_BA9) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  avg.sub$celltype.group <- paste(Idents(avg.sub,avg.sub$Group, sep = "_"))
+  avg.sub$celltype.group <- paste(Idents(avg.sub),avg.sub$Group, sep = "_")
   avg.sub$celltype <- Idents(avg.sub)
   Idents(avg.sub) <- "celltype.group"
   response <- FindMarkers(avg.sub, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
@@ -70,7 +70,7 @@ for (i in clusters_BA4.6) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  avg.sub$celltype.group <- paste(Idents(avg.sub,avg.sub$Group, sep = "_"))
+  avg.sub$celltype.group <- paste(Idents(avg.sub),avg.sub$Group, sep = "_")
   avg.sub$celltype <- Idents(avg.sub)
   Idents(avg.sub) <- "celltype.group"
   response <- FindMarkers(avg.sub, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
