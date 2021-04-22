@@ -3,6 +3,46 @@ library(Seurat)
 
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
+clusters_BA4.6 = c("Ex","Ex","Ex","In","Ast","Oli","In","OPC","In","Ex",
+                   "Ex","Ex","Ex","Ex","Ex","In","Ex","Ex","In","Ex",
+                   "Ex","Oli","Ex","Ast","Ast","In","Ast","In","Mic","In",
+                   "Oli","In","Ex","In","In","OPC","In","Ex","Ast","In",
+                   "Ast","OPC","Mic")
+
+new.cluster.ids <- clusters_BA4.6
+names(new.cluster.ids) <- levels(BA4.6)
+BA4.6 <- RenameIdents(BA4.6, new.cluster.ids)
+
+clusters_BA4.6 = c('Ast','Ex','In','Mic','OPC','Oli')
+
+BA4.6_full <- BA4.6
+
+for (i in clusters_BA4.6) {
+  BA4.6_full <- BA4.6
+  
+  print(i)
+  
+  sub <- subset(BA4.6_full, idents = i)
+  Idents(sub) <- "Group"
+  avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
+  avg.sub$gene <- rownames(avg.sub)
+  
+  print(avg.sub[1:20,])
+  
+  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
+  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
+  
+  genes.to.label <- row.names(avg.sub[1:10,])
+  
+  p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
+  p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
+  
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGS_",i,'.png', sep='')
+  ggsave(link)
+}
+
+q()
+
 clusters_BA4.6 = c("Ex1","Ex2","Ex3","In1","Ast1","Oli1","In2","OPC1","In3","Ex4",
                    "Ex5","Ex6","Ex7","Ex8","Ex9","In4","Ex10","Ex11","In5","Ex12",
                    "Ex13","Oli2","Ex14","Ast2","Ast3","In6","Ast4","In7","Mic1","In8",
