@@ -44,6 +44,8 @@ for (i in clusters_BA9) {
   ggsave(link)
 }
 
+q()
+
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 clusters_BA4.6 = c("Ex","Ex","Ex","In","Ast","Oli","In","OPC","In","Ex",
