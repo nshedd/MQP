@@ -37,11 +37,6 @@ for (i in clusters_BA9) {
   
   genes.to.label <- row.names(response[1:25,])
   
-  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
-  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
-  
-  genes.to.label <- row.names(avg.sub[1:25,])
-  
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
   
@@ -74,11 +69,6 @@ for (i in clusters_BA4.6) {
   Idents(sub) <- "Group"
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
-  
-  print(avg.sub[1:25,])
-  
-  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
-  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
   
   avg.sub$celltype.group <- paste(Idents(avg.sub,avg.sub$Group, sep = "_"))
   avg.sub$celltype <- Idents(avg.sub)
