@@ -1,7 +1,7 @@
 library(ggplot2)
 library(Seurat)
 
-BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
+BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_WithDEGs.RDS')
 
 clusters_BA9 = c("Ex","Ex","Ex","In","Ast","OPC","Mic","Ex","In","Ex",
                  "In","Ex","Ex","In","Ex","Oli","Ast","Ex","Ex","Ex",
