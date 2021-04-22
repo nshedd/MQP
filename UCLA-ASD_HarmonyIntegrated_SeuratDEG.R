@@ -70,10 +70,10 @@ for (i in clusters_BA4.6) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  BA9_full$celltype.group <- paste(Idents(BA9_full),BA9_full$Group, sep = "_")
-  BA9_full$celltype <- Idents(BA9_full)
-  Idents(BA9_full) <- "celltype.group"
-  response <- FindMarkers(BA9_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
+  BA4.6_full$celltype.group <- paste(Idents(BA4.6_full),BA4.6_full$Group, sep = "_")
+  BA4.6_full$celltype <- Idents(BA4.6_full)
+  Idents(BA4.6_full) <- "celltype.group"
+  response <- FindMarkers(BA4.6_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
   print(response[1:25,])
   
   link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGs-FDR_",i,'.txt', sep='')
