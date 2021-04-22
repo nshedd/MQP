@@ -28,12 +28,12 @@ for (i in clusters_BA9) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  print(avg.sub[1:10,])
+  print(avg.sub[1:25,])
   
   avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
   avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
   
-  genes.to.label <- row.names(avg.sub[1:10,])
+  genes.to.label <- row.names(avg.sub[1:25,])
   
   p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
   p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
