@@ -27,7 +27,7 @@ for (i in clusters_BA4.6) {
   avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
   avg.sub$gene <- rownames(avg.sub)
   
-  print(avg.sub[1:20,])
+  print(avg.sub[1:25,])
   
   avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
   avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
