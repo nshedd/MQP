@@ -1,6 +1,88 @@
 library(ggplot2)
 library(Seurat)
 
+BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
+
+clusters_BA9 = c("Ex1","Ex2","Ex3","In1","Ast1","OPC1","Mic","Ex4","In2","Ex5",
+                 "In3","Ex6","Ex7","In4","Ex8","Oli","Ast2","Ex9","Ex10","Ex11",
+                 "Ex11","Ex12","Ex13","Ex14","Ast3","In5","In6","Ex15","Ex16","In7",
+                 "OPC2","Ex17")
+new.cluster.ids <- clusters_BA9
+names(new.cluster.ids) <- levels(BA9)
+BA9 <- RenameIdents(BA9, new.cluster.ids)
+
+clusters_BA9 = c("Ex1","Ex2","Ex3","In1","Ast1","OPC1","Mic","Ex4","In2","Ex5",
+                 "In3","Ex6","Ex7","In4","Ex8","Oli","Ast2","Ex9","Ex10","Ex11",
+                 "Ex11","Ex12","Ex13","Ex14","Ast3","In5","In6","Ex15","Ex16","In7",
+                 "OPC2","Ex17")
+
+BA9_full <- BA9
+
+for (i in clusters_BA9) {
+  BA9_full <- BA9
+  
+  print(i)
+  
+  sub <- subset(BA9_full, idents = i)
+  Idents(sub) <- "Group"
+  avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
+  avg.sub$gene <- rownames(avg.sub)
+  
+  print(avg.sub[1:10,])
+  
+  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
+  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
+  
+  genes.to.label <- row.names(avg.sub[1:10,])
+  
+  p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
+  p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
+  
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
+  ggsave(link)
+}
+
+
+clusters_BA9 = c("Ex","Ex","Ex","In","Ast","OPC","Mic","Ex","In","Ex",
+                 "In","Ex","Ex","In","Ex","Oli","Ast","Ex","Ex","Ex",
+                 "Ex","Ex","Ex","Ex","Ast","In","In","Ex","Ex","In",
+                 "OPC","Ex")
+
+new.cluster.ids <- clusters_BA9
+names(new.cluster.ids) <- levels(BA9)
+BA9 <- RenameIdents(BA9, new.cluster.ids)
+
+clusters_BA9 = c('Ast','Ex','In','Mic','OPC','Oli')
+
+BA9_full <- BA9
+
+for (i in clusters_BA9) {
+  BA9_full <- BA9
+  
+  print(i)
+  
+  sub <- subset(BA9_full, idents = i)
+  Idents(sub) <- "Group"
+  avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
+  avg.sub$gene <- rownames(avg.sub)
+  
+  print(avg.sub[1:10,])
+  
+  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
+  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
+  
+  genes.to.label <- row.names(avg.sub[1:10,])
+  
+  p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
+  p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
+  
+  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
+  ggsave(link)
+}
+
+q()
+
+
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
 clusters_BA4.6 = c("Ex","Ex","Ex","In","Ast","Oli","In","OPC","In","Ex",
@@ -126,84 +208,3 @@ for (i in clusters_BA4.6) {
 
 q()
 
-BA9 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA9_DoubletsRemoved')
-
-clusters_BA9 = c('Ex1','Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5',
-            'Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1','Ex10','In4','Ex11',
-            'Ex12','Ex13','In5','Ex14','Ex15','Ex16','In6','In7','Ex17','In8','Ex18')
-
-new.cluster.ids <- clusters_BA9
-names(new.cluster.ids) <- levels(BA9)
-BA9 <- RenameIdents(BA9, new.cluster.ids)
-
-clusters_BA9 = c('Ex1','Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5',
-            'Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1','Ex10','In4','Ex11',
-            'Ex12','Ex13','In5','Ex14','Ex15','Ex16','In6','In7','Ex17','In8','Ex18')
-            #No DEGs pass threshold -
-
-BA9_full <- BA9
-
-for (i in clusters_BA9) {
-  BA9_full <- BA9
-  
-  print(i)
-  
-  sub <- subset(BA9_full, idents = i)
-  Idents(sub) <- "Group"
-  avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
-  avg.sub$gene <- rownames(avg.sub)
-  
-  print(avg.sub[1:10,])
-  
-  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
-  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
-  
-  genes.to.label <- row.names(avg.sub[1:10,])
-  
-  p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
-  p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
-  
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
-  ggsave(link)
-}
-
-
-
-
-
-
-clusters_BA9 = c('Ex','Ex','Ex','In','Ast','OPC','Ex','Mic','In','Ex',
-            'Ex','In','Ex','Ex','Ex','Ast','Oli','Ex','In','Ex',
-            'Ex','Ex','In','Ex','Ex','Ex','In','In','Ex','In','Ex')
-
-new.cluster.ids <- clusters_BA9
-names(new.cluster.ids) <- levels(BA9)
-BA9 <- RenameIdents(BA9, new.cluster.ids)
-
-clusters_BA9 = c('Ast','Ex','In','Mic','OPC','Oli')
-
-BA9_full <- BA9
-
-for (i in clusters_BA9) {
-  BA9_full <- BA9
-  
-  print(i)
-  
-  sub <- subset(BA9_full, idents = i)
-  Idents(sub) <- "Group"
-  avg.sub <- log1p(AverageExpression(sub, verbose = FALSE)$RNA)
-  avg.sub$gene <- rownames(avg.sub)
-  
-  print(avg.sub[1:10,])
-  
-  avg.sub$diff = abs(avg.sub$ASD - avg.sub$CTL)
-  avg.sub <- avg.sub[order(avg.sub$diff, decreasing=TRUE),] 
-  
-  genes.to.label <- row.names(avg.sub[1:10,])
-  
-  p1 <- ggplot(avg.sub, aes(CTL, ASD)) + geom_point() + ggtitle(i)
-  p1 <- LabelPoints(plot = p1, points = genes.to.label, repel = TRUE)
-  
-  link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
-  ggsave(link)
-}
