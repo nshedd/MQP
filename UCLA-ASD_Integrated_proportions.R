@@ -11,9 +11,10 @@ p2 <- DimPlot(BA9, reduction = "umap", label = TRUE)
 p3 <- p1 + p2
 ggsave('/data/rusers/sheddn/UCLA-ASD/plots/UMAP_Harmony_BA9_integrated_combined.png', width = 16, height = 7)
 
-new_ids = c('Ex1','Ex2','Ex3','In1','Ast1','OPC1','Ex4','Mic','In2','Ex5',
-            'Ex6','In3','Ex7','Ex8','Ex9','Ast2','Oli1','Ex10','In4','Ex11',
-            'Ex12','Ex13','In5','Ex14','Ex15','Ex16','In6','In7','Ex17','In8','Ex18')
+new_ids = c("Ex1","Ex2","Ex3","In1","Ast1","OPC1","Mic","Ex4","In2","Ex5",
+            "In3","Ex6","Ex7","In4","Ex8","Oli","Ast2","Ex9","Ex10","Ex11",
+            "Ex11","Ex12","Ex13","Ex14","Ast3","In5","In6","Ex15","Ex16","In7",
+            "OPC2","Ex17")
 
 new.cluster.ids <- new_ids
 names(new.cluster.ids) <- levels(BA9)
