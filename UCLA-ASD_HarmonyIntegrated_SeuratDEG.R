@@ -29,7 +29,7 @@ for (i in clusters_BA9) {
   BA9_full$celltype.group <- paste(Idents(BA9_full),BA9_full$Group, sep = "_")
   BA9_full$celltype <- Idents(BA9_full)
   Idents(BA9_full) <- "celltype.group"
-  response <- FindMarkers(BA9_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
+  response <- FindMarkers(BA9_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), test.use="DESeq2", verbose = FALSE)
   print(response[1:25,])
   
   link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGs-FDR_",i,'.txt', sep='')
@@ -43,8 +43,6 @@ for (i in clusters_BA9) {
   link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA9_DEGS_",i,'.png', sep='')
   ggsave(link)
 }
-
-q()
 
 BA4.6 <- readRDS('/data/rusers/sheddn/UCLA-ASD/data/combined_BA4.6_WithDEGs.RDS')
 
@@ -75,7 +73,7 @@ for (i in clusters_BA4.6) {
   BA4.6_full$celltype.group <- paste(Idents(BA4.6_full),BA4.6_full$Group, sep = "_")
   BA4.6_full$celltype <- Idents(BA4.6_full)
   Idents(BA4.6_full) <- "celltype.group"
-  response <- FindMarkers(BA4.6_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), verbose = FALSE)
+  response <- FindMarkers(BA4.6_full, ident.1 = paste(i,"ASD", sep='_'), ident.2 = paste(i,"CTL", sep='_'), test.use="DESeq2", verbose = FALSE)
   print(response[1:25,])
   
   link = paste("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGs-FDR_",i,'.txt', sep='')
