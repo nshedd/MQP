@@ -5,7 +5,7 @@ print(Ast_genes)
 write.table(Ast_genes, "/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGs-genelist_Ast.txt", sep=',')
 
 Ex <- read.table("/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGs-FDR_Ex.txt")
-Ex_genes <- row.names(Ex[1:200,])
+Ex_genes <- row.names(Ex)
 Ex_genes <- paste0(Ex_genes, collapse=",")
 print(Ex_genes)
 write.table(Ex_genes, "/data/rusers/sheddn/UCLA-ASD/plots/DEG-nomito/BA4.6_DEGs-genelist_Ex.txt", sep=',')
