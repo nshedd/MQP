@@ -35,7 +35,7 @@ p <- ggPoint(
     ylim = c(0, quantile(df[,2], probs = 0.99))
 ) + geom_hline(yintercept = 4, lty = "dashed") + geom_vline(xintercept = 3, lty = "dashed")
 
-plotPDF(p, name = "TSS-vs-Frags.pdf", ArchRProj = projHeme1, addDOC = FALSE)
+plotPDF(p, name = "TSS-vs-Frags.pdf", ArchRProj = proj, addDOC = FALSE)
 
 q()
 
