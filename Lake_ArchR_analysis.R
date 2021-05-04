@@ -18,9 +18,27 @@ reformatFragmentFiles(
 
 ArrowFiles = createArrowFiles( inputFiles = fragment, sampleNames = key,
   minTSS = 2, minFrags = 100, addTileMat = TRUE, addGeneScoreMat = TRUE,
-  gsubExpression=":.*", force=TRUE)
+  gsubExpression=":.*")
 
 proj = ArchRProject(ArrowFiles = ArrowFiles, outputDirectory = time, copyArrows = TRUE)
+
+df <- getCellColData(proj, select = c("log10(nFrags)", "TSSEnrichment"))
+
+p <- ggPoint(
+    x = df[,1], 
+    y = df[,2], 
+    colorDensity = TRUE,
+    continuousSet = "sambaNight",
+    xlabel = "Log10 Unique Fragments",
+    ylabel = "TSS Enrichment",
+    xlim = c(log10(500), quantile(df[,1], probs = 0.99)),
+    ylim = c(0, quantile(df[,2], probs = 0.99))
+) + geom_hline(yintercept = 4, lty = "dashed") + geom_vline(xintercept = 3, lty = "dashed")
+
+plotPDF(p, name = "TSS-vs-Frags.pdf", ArchRProj = projHeme1, addDOC = FALSE)
+
+q()
+
 print(proj$cellNames)
 rdhss = import("/data/projects/encode/Registry/V2/GRCh38/GRCh38-rDHSs.bed")
 proj = addPeakSet(ArchRProj = proj, peakSet = rdhss)
