@@ -2,8 +2,8 @@ library(ArchR)
 
 addArchRGenome("hg38")
 
-marker_gene_table = read.table("~/Zlab single-cell marker genes - Brain 4.tsv", header=TRUE, sep="\t")
-head(marker_gene_table)
+#marker_gene_table = read.table("~/Zlab single-cell marker genes - Brain 4.tsv", header=TRUE, sep="\t")
+#head(marker_gene_table)
 
 args <- commandArgs(trailingOnly = TRUE)
 time = "/data/rusers/sheddn/Lake_ths-seq/Lake_Integration_Analysis"
